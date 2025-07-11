@@ -1,0 +1,101 @@
+version: '3'
+
+tasks:
+  install:
+    desc: Install dependencies
+    cmds:
+      - pnpm install
+
+  dev:
+    desc: Run development server in foreground
+    cmds:
+      - pnpm dev
+
+  dev-bg:
+    desc: Run development server in background with watch mode
+    cmds:
+      - mkdir -p tmp
+      - |
+        echo "Starting development server in background..."
+        nohup pnpm dev > tmp/dev-server.log 2>&1 &
+        echo $! > tmp/dev-server.pid
+        echo "✅ Dev server started in background (PID: $(cat tmp/dev-server.pid))"
+        echo "📋 Logs: tail -f tmp/dev-server.log"
+        echo "🛑 Stop: task stop"
+
+  build:
+    desc: Build for production
+    cmds:
+      - pnpm build
+
+  start:
+    desc: Start production server
+    cmds:
+      - pnpm start
+
+  start-bg:
+    desc: Start production server in background
+    cmds:
+      - mkdir -p tmp
+      - |
+        echo "Starting production server in background..."
+        nohup pnpm start > tmp/prod-server.log 2>&1 &
+        echo $! > tmp/prod-server.pid
+        echo "✅ Production server started in background (PID: $(cat tmp/prod-server.pid))"
+        echo "📋 Logs: tail -f tmp/prod-server.log"
+        echo "🛑 Stop: task stop"
+
+  stop:
+    desc: Stop all background services
+    cmds:
+      - |
+        echo "Stopping all services..."
+        if [ -f tmp/dev-server.pid ]; then
+          PID=$(cat tmp/dev-server.pid)
+          if kill -0 $PID 2>/dev/null; then
+            kill $PID
+            echo "✅ Stopped dev server (PID: $PID)"
+          fi
+          rm -f tmp/dev-server.pid
+        fi
+        if [ -f tmp/prod-server.pid ]; then
+          PID=$(cat tmp/prod-server.pid)
+          if kill -0 $PID 2>/dev/null; then
+            kill $PID
+            echo "✅ Stopped production server (PID: $PID)"
+          fi
+          rm -f tmp/prod-server.pid
+        fi
+        echo "✅ All services stopped"
+
+  restart:
+    desc: Restart development server
+    cmds:
+      - task: stop
+      - sleep 2
+      - task: dev-bg
+
+  clean:
+    desc: Clean build files and logs
+    cmds:
+      - rm -rf .next
+      - rm -rf out
+      - rm -rf tmp/*.log
+      - echo "✅ Cleaned build files and logs"
+
+  logs:
+    desc: Show development server logs
+    cmds:
+      - tail -f tmp/dev-server.log
+
+  logs-prod:
+    desc: Show production server logs
+    cmds:
+      - tail -f tmp/prod-server.log
+
+  setup:
+    desc: Initial setup
+    cmds:
+      - task: install
+      - mkdir -p tmp
+      - echo "✅ Setup complete! Run 'task dev-bg' to start the development server in background"

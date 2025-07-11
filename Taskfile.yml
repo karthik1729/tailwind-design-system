@@ -1,0 +1,52 @@
+version: '3'
+
+tasks:
+  setup:
+    desc: Setup entire project
+    cmds:
+      - cd design-system-app && task setup
+
+  dev:
+    desc: Run design system app in development mode
+    cmds:
+      - cd design-system-app && task dev
+
+  dev-bg:
+    desc: Run design system app in background
+    cmds:
+      - cd design-system-app && task dev-bg
+
+  stop:
+    desc: Stop all background services
+    cmds:
+      - cd design-system-app && task stop
+
+  restart:
+    desc: Restart all services
+    cmds:
+      - cd design-system-app && task restart
+
+  clean:
+    desc: Clean all build files
+    cmds:
+      - cd design-system-app && task clean
+
+  logs:
+    desc: Show development logs
+    cmds:
+      - cd design-system-app && task logs
+
+  build:
+    desc: Build the design system app
+    cmds:
+      - cd design-system-app && task build
+
+  start:
+    desc: Start production server
+    cmds:
+      - cd design-system-app && task start
+
+  start-bg:
+    desc: Start production server in background
+    cmds:
+      - cd design-system-app && task start-bg
