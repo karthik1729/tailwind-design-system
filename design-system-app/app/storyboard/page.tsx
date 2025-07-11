@@ -108,26 +108,26 @@ export default function StoryboardPage() {
               Design Principles
             </h3>
             <ul className="mt-4 grid gap-3 text-sm text-gray-600 dark:text-gray-400 sm:grid-cols-2">
-              <li className="flex items-start">
-                <span className="mr-2 mt-0.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-indigo-600 dark:bg-indigo-400"></span>
+              <li className="relative pl-4">
+                <span className="absolute left-0 top-2 h-1.5 w-1.5 rounded-full bg-indigo-600 dark:bg-indigo-400"></span>
                 <span>
                   <strong className="font-medium text-gray-900 dark:text-gray-100">Borderless Design:</strong> Visual hierarchy through spacing and subtle backgrounds
                 </span>
               </li>
-              <li className="flex items-start">
-                <span className="mr-2 mt-0.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-indigo-600 dark:bg-indigo-400"></span>
+              <li className="relative pl-4">
+                <span className="absolute left-0 top-2 h-1.5 w-1.5 rounded-full bg-indigo-600 dark:bg-indigo-400"></span>
                 <span>
                   <strong className="font-medium text-gray-900 dark:text-gray-100">Consistent Spacing:</strong> p-4 standard padding, gap-4 between elements
                 </span>
               </li>
-              <li className="flex items-start">
-                <span className="mr-2 mt-0.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-indigo-600 dark:bg-indigo-400"></span>
+              <li className="relative pl-4">
+                <span className="absolute left-0 top-2 h-1.5 w-1.5 rounded-full bg-indigo-600 dark:bg-indigo-400"></span>
                 <span>
                   <strong className="font-medium text-gray-900 dark:text-gray-100">Typography First:</strong> text-sm default, clear hierarchy with font weights
                 </span>
               </li>
-              <li className="flex items-start">
-                <span className="mr-2 mt-0.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-indigo-600 dark:bg-indigo-400"></span>
+              <li className="relative pl-4">
+                <span className="absolute left-0 top-2 h-1.5 w-1.5 rounded-full bg-indigo-600 dark:bg-indigo-400"></span>
                 <span>
                   <strong className="font-medium text-gray-900 dark:text-gray-100">Subtle Shadows:</strong> shadow-sm for depth, no harsh borders
                 </span>
