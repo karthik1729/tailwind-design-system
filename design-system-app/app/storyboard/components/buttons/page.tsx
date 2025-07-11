@@ -1,8 +1,9 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
+import { IconButton } from "@/components/ui/icon-button"
 import { PreviewContainer } from "@/components/storyboard/preview-container"
-import { ArrowRight, Download, Heart, Mail, Plus, Settings, Trash2, Loader2, CheckCircle, AlertCircle, Info, Sparkles } from "lucide-react"
+import { ArrowRight, Download, Heart, Mail, Plus, Settings, Trash2, Loader2, CheckCircle, AlertCircle, Info, Sparkles, Share2, Bookmark, MoreVertical, Search } from "lucide-react"
 
 export default function ButtonsPage() {
   return (
@@ -360,13 +361,13 @@ export default function ButtonsPage() {
         <div>
           <h2 className="text-2xl font-semibold mb-4">Icon Buttons</h2>
           <p className="text-gray-600 dark:text-gray-400 mb-6">
-            Icon-only buttons for compact interfaces and toolbars.
+            Icon-only buttons for compact interfaces and toolbars with rotation micro-interactions.
           </p>
         </div>
 
         <PreviewContainer
-          title="Icon Button Variants"
-          description="Icon buttons in different styles"
+          title="Icon Button Variants with Micro-interactions"
+          description="Icon buttons rotate on hover and scale on click"
           code={`<Button size="icon">
   <Plus className="h-4 w-4" />
 </Button>
@@ -384,21 +385,81 @@ export default function ButtonsPage() {
 </Button>`}
           component={
             <div className="flex flex-wrap items-center gap-4 p-6">
-              <Button size="icon">
+              <Button size="icon" aria-label="Add">
                 <Plus className="h-4 w-4" />
               </Button>
-              <Button size="icon" variant="outline">
+              <Button size="icon" variant="outline" aria-label="Settings">
                 <Settings className="h-4 w-4" />
               </Button>
-              <Button size="icon" variant="ghost">
+              <Button size="icon" variant="ghost" aria-label="Like">
                 <Heart className="h-4 w-4" />
               </Button>
-              <Button size="icon" variant="secondary">
+              <Button size="icon" variant="secondary" aria-label="Email">
                 <Mail className="h-4 w-4" />
               </Button>
-              <Button size="icon" variant="destructive">
+              <Button size="icon" variant="destructive" aria-label="Delete">
                 <Trash2 className="h-4 w-4" />
               </Button>
+            </div>
+          }
+        />
+
+        <PreviewContainer
+          title="Enhanced IconButton Component"
+          description="Dedicated IconButton with built-in accessibility and hover effects"
+          code={`<IconButton label="Share" variant="ghost">
+  <Share2 className="h-4 w-4" />
+</IconButton>
+<IconButton label="Bookmark" variant="outline">
+  <Bookmark className="h-4 w-4" />
+</IconButton>
+<IconButton label="More options">
+  <MoreVertical className="h-4 w-4" />
+</IconButton>
+<IconButton label="Search" variant="secondary">
+  <Search className="h-4 w-4" />
+</IconButton>`}
+          component={
+            <div className="flex flex-wrap items-center gap-4 p-6">
+              <IconButton label="Share" variant="ghost">
+                <Share2 className="h-4 w-4" />
+              </IconButton>
+              <IconButton label="Bookmark" variant="outline">
+                <Bookmark className="h-4 w-4" />
+              </IconButton>
+              <IconButton label="More options">
+                <MoreVertical className="h-4 w-4" />
+              </IconButton>
+              <IconButton label="Search" variant="secondary">
+                <Search className="h-4 w-4" />
+              </IconButton>
+            </div>
+          }
+        />
+
+        <PreviewContainer
+          title="Icon Button Sizes"
+          description="Different sizes for various use cases"
+          code={`<IconButton size="sm" label="Small">
+  <Heart className="h-3.5 w-3.5" />
+</IconButton>
+<IconButton label="Default">
+  <Heart className="h-4 w-4" />
+</IconButton>
+<IconButton size="lg" label="Large">
+  <Heart className="h-5 w-5" />
+</IconButton>`}
+          component={
+            <div className="flex flex-wrap items-center gap-4 p-6">
+              <IconButton size="sm" label="Small">
+                <Heart className="h-3.5 w-3.5" />
+              </IconButton>
+              <IconButton label="Default">
+                <Heart className="h-4 w-4" />
+              </IconButton>
+              <IconButton size="lg" label="Large">
+                <Heart className="h-5 w-5" />
+              </IconButton>
             </div>
           }
         />

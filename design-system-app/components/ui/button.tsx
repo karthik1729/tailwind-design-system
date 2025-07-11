@@ -32,9 +32,9 @@ const buttonVariants = cva(
         sm: "h-8 rounded-md gap-1.5 px-3 text-xs has-[>svg]:px-2.5",
         lg: "h-11 rounded-md px-8 text-base gap-3 has-[>svg]:px-5",
         xl: "h-12 rounded-md px-10 text-lg gap-3 has-[>svg]:px-6",
-        icon: "size-9",
-        "icon-sm": "size-8",
-        "icon-lg": "size-11",
+        icon: "size-9 hover:[&_svg]:rotate-12 active:[&_svg]:rotate-0 active:[&_svg]:scale-90",
+        "icon-sm": "size-8 hover:[&_svg]:rotate-12 active:[&_svg]:rotate-0 active:[&_svg]:scale-90",
+        "icon-lg": "size-11 hover:[&_svg]:rotate-12 active:[&_svg]:rotate-0 active:[&_svg]:scale-90",
       },
     },
     defaultVariants: {

@@ -32,9 +32,9 @@ Systematic enhancement of all 59 components in the design system, focusing on in
 
 ### Phase 4: Component Enhancements 📋
 
-#### Buttons & Actions (1/8)
+#### Buttons & Actions (2/8)
 - [x] Button - Enhanced with 9 variants (including semantic colors), improved hover states, micro-interactions, and proper contrast
-- [ ] IconButton - Add rotation/scale micro-interactions
+- [x] IconButton - Added rotation/scale micro-interactions and dedicated component with accessibility
 - [ ] Toggle - Improve checked/unchecked transitions
 - [ ] ToggleGroup - Better group interaction feedback
 - [ ] DropdownMenuTrigger - Enhance open/close states
@@ -129,8 +129,8 @@ Systematic enhancement of all 59 components in the design system, focusing on in
 
 ## Current Status
 **Phase**: 4 - Component Enhancements (In Progress)
-**Components Enhanced**: Alert ✅, Badge ✅, Button ✅
-**Next Action**: Continue with IconButton, Toggle, and other button/action components
+**Components Enhanced**: Alert ✅, Badge ✅, Button ✅, IconButton ✅
+**Next Action**: Continue with Toggle, ToggleGroup, and other button/action components
 
 ## Recent Updates (Latest - 2025-07-11)
 - ✅ Enhanced Button component with comprehensive improvements
