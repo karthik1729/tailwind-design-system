@@ -100,54 +100,54 @@ export default function FeedbackPage() {
         <PreviewContainer
           title="Alert Variants"
           description="Different alert styles for various contexts"
-          code={`{/* Success Alert */}
-<Alert className="border-green-200 bg-green-50 dark:border-green-800 dark:bg-green-950">
-  <CheckCircle2 className="h-4 w-4 text-green-600 dark:text-green-400" />
-  <AlertTitle className="text-green-800 dark:text-green-200">Success!</AlertTitle>
-  <AlertDescription className="text-green-700 dark:text-green-300">
+          code={`{/* Success Alert - Using the new success variant */}
+<Alert variant="success">
+  <CheckCircle2 className="h-4 w-4" />
+  <AlertTitle>Success!</AlertTitle>
+  <AlertDescription>
     Your changes have been saved successfully.
   </AlertDescription>
 </Alert>
 
-{/* Warning Alert */}
-<Alert className="border-yellow-200 bg-yellow-50 dark:border-yellow-800 dark:bg-yellow-950">
-  <TriangleAlert className="h-4 w-4 text-yellow-600 dark:text-yellow-400" />
-  <AlertTitle className="text-yellow-800 dark:text-yellow-200">Warning</AlertTitle>
-  <AlertDescription className="text-yellow-700 dark:text-yellow-300">
+{/* Warning Alert - Using the new warning variant */}
+<Alert variant="warning">
+  <TriangleAlert className="h-4 w-4" />
+  <AlertTitle>Warning</AlertTitle>
+  <AlertDescription>
     Your API usage is approaching the monthly limit.
   </AlertDescription>
 </Alert>
 
-{/* Info Alert */}
-<Alert className="border-blue-200 bg-blue-50 dark:border-blue-800 dark:bg-blue-950">
-  <InfoIcon className="h-4 w-4 text-blue-600 dark:text-blue-400" />
-  <AlertTitle className="text-blue-800 dark:text-blue-200">Information</AlertTitle>
-  <AlertDescription className="text-blue-700 dark:text-blue-300">
+{/* Info Alert - Using the new info variant */}
+<Alert variant="info">
+  <InfoIcon className="h-4 w-4" />
+  <AlertTitle>Information</AlertTitle>
+  <AlertDescription>
     A new update is available. Click here to learn more.
   </AlertDescription>
 </Alert>`}
           component={
             <div className="w-full max-w-2xl p-6 space-y-4">
-              <Alert className="border-green-200 bg-green-50 dark:border-green-800 dark:bg-green-950">
-                <CheckCircle2 className="h-4 w-4 text-green-600 dark:text-green-400" />
-                <AlertTitle className="text-green-800 dark:text-green-200">Success!</AlertTitle>
-                <AlertDescription className="text-green-700 dark:text-green-300">
+              <Alert variant="success">
+                <CheckCircle2 className="h-4 w-4" />
+                <AlertTitle>Success!</AlertTitle>
+                <AlertDescription>
                   Your changes have been saved successfully.
                 </AlertDescription>
               </Alert>
 
-              <Alert className="border-yellow-200 bg-yellow-50 dark:border-yellow-800 dark:bg-yellow-950">
-                <TriangleAlert className="h-4 w-4 text-yellow-600 dark:text-yellow-400" />
-                <AlertTitle className="text-yellow-800 dark:text-yellow-200">Warning</AlertTitle>
-                <AlertDescription className="text-yellow-700 dark:text-yellow-300">
+              <Alert variant="warning">
+                <TriangleAlert className="h-4 w-4" />
+                <AlertTitle>Warning</AlertTitle>
+                <AlertDescription>
                   Your API usage is approaching the monthly limit.
                 </AlertDescription>
               </Alert>
 
-              <Alert className="border-blue-200 bg-blue-50 dark:border-blue-800 dark:bg-blue-950">
-                <InfoIcon className="h-4 w-4 text-blue-600 dark:text-blue-400" />
-                <AlertTitle className="text-blue-800 dark:text-blue-200">Information</AlertTitle>
-                <AlertDescription className="text-blue-700 dark:text-blue-300">
+              <Alert variant="info">
+                <InfoIcon className="h-4 w-4" />
+                <AlertTitle>Information</AlertTitle>
+                <AlertDescription>
                   A new update is available. Click here to learn more.
                 </AlertDescription>
               </Alert>
