@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { PreviewContainer } from "@/components/storyboard/preview-container"
-import { ArrowRight, Download, Heart, Mail, Plus, Settings, Trash2, Loader2 } from "lucide-react"
+import { ArrowRight, Download, Heart, Mail, Plus, Settings, Trash2, Loader2, CheckCircle, AlertCircle, Info, Sparkles } from "lucide-react"
 
 export default function ButtonsPage() {
   return (
@@ -20,7 +20,7 @@ export default function ButtonsPage() {
         <div>
           <h2 className="text-2xl font-semibold mb-4">Variants</h2>
           <p className="text-gray-600 dark:text-gray-400 mb-6">
-            Six distinct button variants for different use cases and visual hierarchies.
+            Nine distinct button variants for different use cases and visual hierarchies, including semantic color options.
           </p>
         </div>
 
@@ -143,6 +143,66 @@ export default function ButtonsPage() {
             </div>
           }
         />
+
+        {/* Success Variant */}
+        <PreviewContainer
+          title="Success"
+          description="For positive actions and confirmations"
+          code={`<Button variant="success">Success</Button>
+<Button variant="success">
+  <CheckCircle className="h-4 w-4" />
+  Confirm
+</Button>`}
+          component={
+            <div className="flex flex-wrap items-center gap-4 p-6">
+              <Button variant="success">Success</Button>
+              <Button variant="success">
+                <CheckCircle className="h-4 w-4" />
+                Confirm
+              </Button>
+            </div>
+          }
+        />
+
+        {/* Warning Variant */}
+        <PreviewContainer
+          title="Warning"
+          description="For actions that need user attention"
+          code={`<Button variant="warning">Warning</Button>
+<Button variant="warning">
+  <AlertCircle className="h-4 w-4" />
+  Proceed with Caution
+</Button>`}
+          component={
+            <div className="flex flex-wrap items-center gap-4 p-6">
+              <Button variant="warning">Warning</Button>
+              <Button variant="warning">
+                <AlertCircle className="h-4 w-4" />
+                Proceed with Caution
+              </Button>
+            </div>
+          }
+        />
+
+        {/* Info Variant */}
+        <PreviewContainer
+          title="Info"
+          description="For informational actions"
+          code={`<Button variant="info">Info</Button>
+<Button variant="info">
+  <Info className="h-4 w-4" />
+  Learn More
+</Button>`}
+          component={
+            <div className="flex flex-wrap items-center gap-4 p-6">
+              <Button variant="info">Info</Button>
+              <Button variant="info">
+                <Info className="h-4 w-4" />
+                Learn More
+              </Button>
+            </div>
+          }
+        />
       </section>
 
       {/* Button Sizes */}
@@ -156,20 +216,34 @@ export default function ButtonsPage() {
 
         <PreviewContainer
           title="Size Variations"
-          description="Available button sizes from small to large, including icon-only"
+          description="Available button sizes from small to extra large, including icon-only variants"
           code={`<Button size="sm">Small</Button>
 <Button>Default</Button>
 <Button size="lg">Large</Button>
+<Button size="xl">Extra Large</Button>
+<Button size="icon-sm">
+  <Plus className="h-4 w-4" />
+</Button>
 <Button size="icon">
   <Plus className="h-4 w-4" />
+</Button>
+<Button size="icon-lg">
+  <Plus className="h-5 w-5" />
 </Button>`}
           component={
             <div className="flex flex-wrap items-center gap-4 p-6">
               <Button size="sm">Small</Button>
               <Button>Default</Button>
               <Button size="lg">Large</Button>
+              <Button size="xl">Extra Large</Button>
+              <Button size="icon-sm">
+                <Plus className="h-4 w-4" />
+              </Button>
               <Button size="icon">
                 <Plus className="h-4 w-4" />
+              </Button>
+              <Button size="icon-lg">
+                <Plus className="h-5 w-5" />
               </Button>
             </div>
           }
@@ -324,6 +398,38 @@ export default function ButtonsPage() {
               </Button>
               <Button size="icon" variant="destructive">
                 <Trash2 className="h-4 w-4" />
+              </Button>
+            </div>
+          }
+        />
+      </section>
+
+      {/* Interaction States */}
+      <section className="space-y-8">
+        <div>
+          <h2 className="text-2xl font-semibold mb-4">Interaction States</h2>
+          <p className="text-gray-600 dark:text-gray-400 mb-6">
+            Buttons include smooth transitions and micro-interactions for better user feedback.
+          </p>
+        </div>
+
+        <PreviewContainer
+          title="Hover & Active States"
+          description="Buttons lift on hover and scale down on click for tactile feedback"
+          code={`{/* These buttons have built-in hover and active states */}
+<Button>Hover over me</Button>
+<Button variant="secondary">Click and hold</Button>
+<Button variant="success">
+  <Sparkles className="h-4 w-4" />
+  Interactive
+</Button>`}
+          component={
+            <div className="flex flex-wrap items-center gap-4 p-6">
+              <Button>Hover over me</Button>
+              <Button variant="secondary">Click and hold</Button>
+              <Button variant="success">
+                <Sparkles className="h-4 w-4" />
+                Interactive
               </Button>
             </div>
           }
