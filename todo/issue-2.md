@@ -32,11 +32,11 @@ Systematic enhancement of all 59 components in the design system, focusing on in
 
 ### Phase 4: Component Enhancements 📋
 
-#### Buttons & Actions (2/8)
+#### Buttons & Actions (4/8)
 - [x] Button - Enhanced with 9 variants (including semantic colors), improved hover states, micro-interactions, and proper contrast
 - [x] IconButton - Added rotation/scale micro-interactions and dedicated component with accessibility
-- [ ] Toggle - Improve checked/unchecked transitions
-- [ ] ToggleGroup - Better group interaction feedback
+- [x] Toggle - Enhanced with smooth transitions, icon scaling, active states, and added ghost variant
+- [x] ToggleGroup - Added group hover effects, gradient overlays, and better visual feedback
 - [ ] DropdownMenuTrigger - Enhance open/close states
 - [ ] ContextMenuTrigger - Improve right-click feedback
 - [ ] CommandItem - Better keyboard navigation states
@@ -129,18 +129,18 @@ Systematic enhancement of all 59 components in the design system, focusing on in
 
 ## Current Status
 **Phase**: 4 - Component Enhancements (In Progress)
-**Components Enhanced**: Alert ✅, Badge ✅, Button ✅, IconButton ✅
-**Next Action**: Continue with Toggle, ToggleGroup, and other button/action components
+**Components Enhanced**: Alert ✅, Badge ✅, Button ✅, IconButton ✅, Toggle ✅, ToggleGroup ✅
+**Next Action**: Continue with DropdownMenuTrigger, ContextMenuTrigger, and other button/action components
 
 ## Recent Updates (Latest - 2025-07-11)
-- ✅ Enhanced Button component with comprehensive improvements
-  - Added 9 variants including semantic colors (success, warning, info)
-  - Implemented smooth micro-interactions (hover lift, active scale)
-  - Added 7 size options including xl and icon variants
-  - Fixed hover states for ghost/outline (minimal, no background)
-  - Improved dark mode contrast for semantic buttons
-  - Updated warning to orange for better visibility
-  - All buttons now meet WCAG AA contrast standards
+- ✅ Enhanced Toggle & ToggleGroup components
+  - Toggle: Added smooth transitions, icon scaling on activation, active states
+  - Toggle: Added ghost variant for subtle interactions
+  - Toggle: Improved hover/active feedback with scale effects
+  - ToggleGroup: Enhanced group interaction with hover effects
+  - ToggleGroup: Added gradient overlays for selected items
+  - Added both components to the buttons showcase page
+- Previous: Enhanced Button component with semantic colors and micro-interactions
 - Previous: Badge component with semantic color variants
 - Previous: Fixed preview container theme issues
 - Previous: Alert component with semantic tokens

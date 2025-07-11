@@ -2,8 +2,10 @@
 
 import { Button } from "@/components/ui/button"
 import { IconButton } from "@/components/ui/icon-button"
+import { Toggle } from "@/components/ui/toggle"
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 import { PreviewContainer } from "@/components/storyboard/preview-container"
-import { ArrowRight, Download, Heart, Mail, Plus, Settings, Trash2, Loader2, CheckCircle, AlertCircle, Info, Sparkles, Share2, Bookmark, MoreVertical, Search } from "lucide-react"
+import { ArrowRight, Download, Heart, Mail, Plus, Settings, Trash2, Loader2, CheckCircle, AlertCircle, Info, Sparkles, Share2, Bookmark, MoreVertical, Search, Bold, Italic, Underline, AlignLeft, AlignCenter, AlignRight, Link, List, ListOrdered } from "lucide-react"
 
 export default function ButtonsPage() {
   return (
@@ -492,6 +494,362 @@ export default function ButtonsPage() {
                 <Sparkles className="h-4 w-4" />
                 Interactive
               </Button>
+            </div>
+          }
+        />
+      </section>
+
+      {/* Toggle Buttons */}
+      <section className="space-y-8">
+        <div>
+          <h2 className="text-2xl font-semibold mb-4">Toggle Buttons</h2>
+          <p className="text-gray-600 dark:text-gray-400 mb-6">
+            Interactive toggle buttons for switching between states with smooth transitions.
+          </p>
+        </div>
+
+        <PreviewContainer
+          title="Toggle Variants"
+          description="Toggle buttons now use primary color when active, inheriting button styles"
+          code={`<Toggle aria-label="Toggle italic">
+  <Italic className="h-4 w-4" />
+</Toggle>
+<Toggle variant="outline" aria-label="Toggle bold">
+  <Bold className="h-4 w-4" />
+</Toggle>
+<Toggle variant="secondary" aria-label="Toggle underline">
+  <Underline className="h-4 w-4" />
+</Toggle>
+<Toggle variant="ghost" aria-label="Toggle link">
+  <Link className="h-4 w-4" />
+</Toggle>`}
+          component={
+            <div className="flex flex-wrap items-center gap-4 p-6">
+              <Toggle aria-label="Toggle italic">
+                <Italic className="h-4 w-4" />
+              </Toggle>
+              <Toggle variant="outline" aria-label="Toggle bold">
+                <Bold className="h-4 w-4" />
+              </Toggle>
+              <Toggle variant="secondary" aria-label="Toggle underline">
+                <Underline className="h-4 w-4" />
+              </Toggle>
+              <Toggle variant="ghost" aria-label="Toggle link">
+                <Link className="h-4 w-4" />
+              </Toggle>
+            </div>
+          }
+        />
+
+        <PreviewContainer
+          title="Toggle with Text"
+          description="Toggle buttons with text labels"
+          code={`<Toggle aria-label="Toggle bold">
+  <Bold className="h-4 w-4" />
+  Bold
+</Toggle>
+<Toggle variant="outline" aria-label="Toggle italic">
+  <Italic className="h-4 w-4" />
+  Italic
+</Toggle>
+<Toggle variant="secondary" aria-label="Toggle underline">
+  <Underline className="h-4 w-4" />
+  Underline
+</Toggle>
+<Toggle variant="ghost" aria-label="Toggle link">
+  <Link className="h-4 w-4" />
+  Link
+</Toggle>`}
+          component={
+            <div className="flex flex-wrap items-center gap-4 p-6">
+              <Toggle aria-label="Toggle bold">
+                <Bold className="h-4 w-4" />
+                Bold
+              </Toggle>
+              <Toggle variant="outline" aria-label="Toggle italic">
+                <Italic className="h-4 w-4" />
+                Italic
+              </Toggle>
+              <Toggle variant="secondary" aria-label="Toggle underline">
+                <Underline className="h-4 w-4" />
+                Underline
+              </Toggle>
+              <Toggle variant="ghost" aria-label="Toggle link">
+                <Link className="h-4 w-4" />
+                Link
+              </Toggle>
+            </div>
+          }
+        />
+
+        <PreviewContainer
+          title="Toggle Sizes"
+          description="Different sizes for various use cases"
+          code={`<Toggle size="sm" aria-label="Small toggle">
+  <Bold className="h-3.5 w-3.5" />
+</Toggle>
+<Toggle aria-label="Default toggle">
+  <Bold className="h-4 w-4" />
+</Toggle>
+<Toggle size="lg" aria-label="Large toggle">
+  <Bold className="h-5 w-5" />
+</Toggle>
+<Toggle size="icon" aria-label="Icon toggle">
+  <Bold className="h-4 w-4" />
+</Toggle>`}
+          component={
+            <div className="flex flex-wrap items-center gap-4 p-6">
+              <Toggle size="sm" aria-label="Small toggle">
+                <Bold className="h-3.5 w-3.5" />
+              </Toggle>
+              <Toggle aria-label="Default toggle">
+                <Bold className="h-4 w-4" />
+              </Toggle>
+              <Toggle size="lg" aria-label="Large toggle">
+                <Bold className="h-5 w-5" />
+              </Toggle>
+              <Toggle size="icon" aria-label="Icon toggle">
+                <Bold className="h-4 w-4" />
+              </Toggle>
+            </div>
+          }
+        />
+
+        <PreviewContainer
+          title="Toggle States"
+          description="Disabled and pressed states"
+          code={`<Toggle defaultPressed aria-label="Pressed toggle">
+  <Bold className="h-4 w-4" />
+  Pressed
+</Toggle>
+<Toggle disabled aria-label="Disabled toggle">
+  <Italic className="h-4 w-4" />
+  Disabled
+</Toggle>
+<Toggle disabled defaultPressed aria-label="Disabled pressed">
+  <Underline className="h-4 w-4" />
+  Disabled & Pressed
+</Toggle>`}
+          component={
+            <div className="flex flex-wrap items-center gap-4 p-6">
+              <Toggle defaultPressed aria-label="Pressed toggle">
+                <Bold className="h-4 w-4" />
+                Pressed
+              </Toggle>
+              <Toggle disabled aria-label="Disabled toggle">
+                <Italic className="h-4 w-4" />
+                Disabled
+              </Toggle>
+              <Toggle disabled defaultPressed aria-label="Disabled pressed">
+                <Underline className="h-4 w-4" />
+                Disabled & Pressed
+              </Toggle>
+            </div>
+          }
+        />
+      </section>
+
+      {/* Toggle Groups */}
+      <section className="space-y-8">
+        <div>
+          <h2 className="text-2xl font-semibold mb-4">Toggle Groups</h2>
+          <p className="text-gray-600 dark:text-gray-400 mb-6">
+            Group related toggles together for exclusive or multiple selections.
+          </p>
+        </div>
+
+        <PreviewContainer
+          title="Text Formatting Toolbar"
+          description="Single selection toggle group for text formatting"
+          code={`<ToggleGroup type="single" defaultValue="bold">
+  <ToggleGroupItem value="bold" aria-label="Bold">
+    <Bold className="h-4 w-4" />
+  </ToggleGroupItem>
+  <ToggleGroupItem value="italic" aria-label="Italic">
+    <Italic className="h-4 w-4" />
+  </ToggleGroupItem>
+  <ToggleGroupItem value="underline" aria-label="Underline">
+    <Underline className="h-4 w-4" />
+  </ToggleGroupItem>
+</ToggleGroup>`}
+          component={
+            <div className="p-6">
+              <ToggleGroup type="single" defaultValue="bold">
+                <ToggleGroupItem value="bold" aria-label="Bold">
+                  <Bold className="h-4 w-4" />
+                </ToggleGroupItem>
+                <ToggleGroupItem value="italic" aria-label="Italic">
+                  <Italic className="h-4 w-4" />
+                </ToggleGroupItem>
+                <ToggleGroupItem value="underline" aria-label="Underline">
+                  <Underline className="h-4 w-4" />
+                </ToggleGroupItem>
+              </ToggleGroup>
+            </div>
+          }
+        />
+
+        <PreviewContainer
+          title="Text Alignment"
+          description="Exclusive selection for text alignment"
+          code={`<ToggleGroup type="single" defaultValue="left">
+  <ToggleGroupItem value="left" aria-label="Align left">
+    <AlignLeft className="h-4 w-4" />
+  </ToggleGroupItem>
+  <ToggleGroupItem value="center" aria-label="Align center">
+    <AlignCenter className="h-4 w-4" />
+  </ToggleGroupItem>
+  <ToggleGroupItem value="right" aria-label="Align right">
+    <AlignRight className="h-4 w-4" />
+  </ToggleGroupItem>
+</ToggleGroup>`}
+          component={
+            <div className="p-6">
+              <ToggleGroup type="single" defaultValue="left">
+                <ToggleGroupItem value="left" aria-label="Align left">
+                  <AlignLeft className="h-4 w-4" />
+                </ToggleGroupItem>
+                <ToggleGroupItem value="center" aria-label="Align center">
+                  <AlignCenter className="h-4 w-4" />
+                </ToggleGroupItem>
+                <ToggleGroupItem value="right" aria-label="Align right">
+                  <AlignRight className="h-4 w-4" />
+                </ToggleGroupItem>
+              </ToggleGroup>
+            </div>
+          }
+        />
+
+        <PreviewContainer
+          title="Multiple Selection"
+          description="Allow multiple items to be selected"
+          code={`<ToggleGroup type="multiple" defaultValue={["bold", "italic"]}>
+  <ToggleGroupItem value="bold" aria-label="Bold">
+    <Bold className="h-4 w-4" />
+  </ToggleGroupItem>
+  <ToggleGroupItem value="italic" aria-label="Italic">
+    <Italic className="h-4 w-4" />
+  </ToggleGroupItem>
+  <ToggleGroupItem value="underline" aria-label="Underline">
+    <Underline className="h-4 w-4" />
+  </ToggleGroupItem>
+</ToggleGroup>`}
+          component={
+            <div className="p-6">
+              <ToggleGroup type="multiple" defaultValue={["bold", "italic"]}>
+                <ToggleGroupItem value="bold" aria-label="Bold">
+                  <Bold className="h-4 w-4" />
+                </ToggleGroupItem>
+                <ToggleGroupItem value="italic" aria-label="Italic">
+                  <Italic className="h-4 w-4" />
+                </ToggleGroupItem>
+                <ToggleGroupItem value="underline" aria-label="Underline">
+                  <Underline className="h-4 w-4" />
+                </ToggleGroupItem>
+              </ToggleGroup>
+            </div>
+          }
+        />
+
+        <PreviewContainer
+          title="Toggle Group Variants"
+          description="Different visual styles for toggle groups"
+          code={`{/* Default variant */}
+<ToggleGroup type="single" variant="default">
+  <ToggleGroupItem value="list" aria-label="Bullet list">
+    <List className="h-4 w-4" />
+  </ToggleGroupItem>
+  <ToggleGroupItem value="ordered" aria-label="Numbered list">
+    <ListOrdered className="h-4 w-4" />
+  </ToggleGroupItem>
+</ToggleGroup>
+
+{/* Outline variant */}
+<ToggleGroup type="single" variant="outline">
+  <ToggleGroupItem value="list" aria-label="Bullet list">
+    <List className="h-4 w-4" />
+  </ToggleGroupItem>
+  <ToggleGroupItem value="ordered" aria-label="Numbered list">
+    <ListOrdered className="h-4 w-4" />
+  </ToggleGroupItem>
+</ToggleGroup>`}
+          component={
+            <div className="space-y-4 p-6">
+              <ToggleGroup type="single" variant="default">
+                <ToggleGroupItem value="list" aria-label="Bullet list">
+                  <List className="h-4 w-4" />
+                </ToggleGroupItem>
+                <ToggleGroupItem value="ordered" aria-label="Numbered list">
+                  <ListOrdered className="h-4 w-4" />
+                </ToggleGroupItem>
+              </ToggleGroup>
+              <ToggleGroup type="single" variant="outline">
+                <ToggleGroupItem value="list" aria-label="Bullet list">
+                  <List className="h-4 w-4" />
+                </ToggleGroupItem>
+                <ToggleGroupItem value="ordered" aria-label="Numbered list">
+                  <ListOrdered className="h-4 w-4" />
+                </ToggleGroupItem>
+              </ToggleGroup>
+            </div>
+          }
+        />
+
+        <PreviewContainer
+          title="Toggle Group Sizes"
+          description="Different sizes for various contexts"
+          code={`<ToggleGroup type="single" size="sm">
+  <ToggleGroupItem value="bold" aria-label="Bold">
+    <Bold className="h-3.5 w-3.5" />
+  </ToggleGroupItem>
+  <ToggleGroupItem value="italic" aria-label="Italic">
+    <Italic className="h-3.5 w-3.5" />
+  </ToggleGroupItem>
+</ToggleGroup>
+
+<ToggleGroup type="single" size="default">
+  <ToggleGroupItem value="bold" aria-label="Bold">
+    <Bold className="h-4 w-4" />
+  </ToggleGroupItem>
+  <ToggleGroupItem value="italic" aria-label="Italic">
+    <Italic className="h-4 w-4" />
+  </ToggleGroupItem>
+</ToggleGroup>
+
+<ToggleGroup type="single" size="lg">
+  <ToggleGroupItem value="bold" aria-label="Bold">
+    <Bold className="h-5 w-5" />
+  </ToggleGroupItem>
+  <ToggleGroupItem value="italic" aria-label="Italic">
+    <Italic className="h-5 w-5" />
+  </ToggleGroupItem>
+</ToggleGroup>`}
+          component={
+            <div className="space-y-4 p-6">
+              <ToggleGroup type="single" size="sm">
+                <ToggleGroupItem value="bold" aria-label="Bold">
+                  <Bold className="h-3.5 w-3.5" />
+                </ToggleGroupItem>
+                <ToggleGroupItem value="italic" aria-label="Italic">
+                  <Italic className="h-3.5 w-3.5" />
+                </ToggleGroupItem>
+              </ToggleGroup>
+              <ToggleGroup type="single" size="default">
+                <ToggleGroupItem value="bold" aria-label="Bold">
+                  <Bold className="h-4 w-4" />
+                </ToggleGroupItem>
+                <ToggleGroupItem value="italic" aria-label="Italic">
+                  <Italic className="h-4 w-4" />
+                </ToggleGroupItem>
+              </ToggleGroup>
+              <ToggleGroup type="single" size="lg">
+                <ToggleGroupItem value="bold" aria-label="Bold">
+                  <Bold className="h-5 w-5" />
+                </ToggleGroupItem>
+                <ToggleGroupItem value="italic" aria-label="Italic">
+                  <Italic className="h-5 w-5" />
+                </ToggleGroupItem>
+              </ToggleGroup>
             </div>
           }
         />
