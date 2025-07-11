@@ -49,6 +49,18 @@ Currently working on systematic enhancement of all components focusing on:
 - Micro-interactions and smooth transitions
 See GitHub Issue #2 for detailed tracking
 
+### Color System Architecture
+- **Semantic Color Tokens**: Complete system for success, warning, info, and destructive states
+- **Brand Colors**: Primary (blue), Accent (indigo), Purple, Teal, Orange - all with full palettes (50-950)
+- **Each semantic color includes**: background, border, text, text-muted, and foreground variants
+- **Theme-aware**: All colors properly adapt between light and dark modes
+- **Single source of truth**: All theme configuration in `globals.css` using Tailwind v4's `@theme` directive
+
+### Completed Enhancements
+- ✅ Alert component: All variants now use semantic color tokens
+- ✅ Color documentation: Comprehensive color display with theme switcher at `/storyboard/foundations/colors`
+- ✅ Semantic color system: Full implementation with proper contrast ratios
+
 ## Task Management
 - All tasks are tracked in the `todo/` folder
 - Task files are named after GitHub issue numbers (e.g., `todo/issue-2.md`)

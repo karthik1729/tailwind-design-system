@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils"
 import { Search } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { useState } from "react"
+import { ThemeSwitcher } from "@/components/theme-switcher"
 
 import { componentRegistry } from "@/lib/component-registry"
 
@@ -130,6 +131,11 @@ export function StoryboardNavigation() {
         </nav>
 
         <div className="border-t border-gray-200 p-4 dark:border-gray-800">
+          <div className="flex items-center justify-between mb-3">
+            <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Theme</span>
+            <ThemeSwitcher />
+          </div>
+          
           <div className="rounded-lg bg-gray-100 p-3 dark:bg-gray-800">
             <p className="text-xs font-medium text-gray-900 dark:text-gray-100">
               Quick Links

@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
+@custom-variant dark (&:where(.dark, .dark *));
 
 /* Tailwind CSS v4 Theme Configuration - Semantic Design Tokens */
 @theme {
@@ -296,8 +296,8 @@
   --card-foreground: #f9fafb;
   --popover: #111827;
   --popover-foreground: #f9fafb;
-  --primary: #3b82f6; /* blue-500 */
-  --primary-foreground: #030712;
+  --primary: #2563eb; /* blue-600 - darker in dark mode */
+  --primary-foreground: #ffffff; /* white - testing bright color */
   --secondary: #1f2937; /* gray-800 */
   --secondary-foreground: #f9fafb;
   --muted: #1f2937;

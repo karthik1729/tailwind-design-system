@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Check, Copy, Monitor, Moon, Smartphone, Sun, Tablet } from "lucide-react"
+import { Check, Copy, Monitor, Smartphone, Tablet } from "lucide-react"
 import { CodePreview } from "./code-preview"
 
 interface PreviewContainerProps {
@@ -23,7 +23,6 @@ export function PreviewContainer({
   title,
   description
 }: PreviewContainerProps) {
-  const [darkMode, setDarkMode] = useState(false)
   const [viewport, setViewport] = useState<"desktop" | "tablet" | "mobile">("desktop")
   const [copied, setCopied] = useState(false)
 
@@ -88,14 +87,6 @@ export function PreviewContainer({
               </Button>
             </div>
 
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setDarkMode(!darkMode)}
-              className="h-8 w-8 p-0"
-            >
-              {darkMode ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-            </Button>
 
             <Button
               variant="ghost"
@@ -119,17 +110,14 @@ export function PreviewContainer({
         </div>
 
         <TabsContent value="preview" className="mt-4">
-          <Card className={cn(
-            "overflow-hidden",
-            darkMode && "dark"
-          )}>
+          <Card className="overflow-hidden">
             <div className="flex items-center justify-center bg-gray-50 p-8 dark:bg-gray-900">
               <div className={cn(
                 "w-full transition-all duration-300",
                 getViewportWidth(),
                 className
               )}>
-                <div className="bg-white dark:bg-gray-950">
+                <div className="bg-background p-8 rounded-lg">
                   {component}
                 </div>
               </div>
