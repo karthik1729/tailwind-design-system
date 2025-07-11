@@ -26,7 +26,7 @@ const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
           "relative overflow-hidden",
           // Add pulse effect on hover for certain variants
           variant === "ghost" && "hover:before:animate-pulse",
-          "before:absolute before:inset-0 before:rounded-full before:bg-current before:opacity-0 before:transition-opacity hover:before:opacity-10",
+          "before:absolute before:inset-0 before:rounded-full before:bg-accent before:opacity-0 before:transition-opacity hover:before:opacity-10",
           className
         )}
         aria-label={label}

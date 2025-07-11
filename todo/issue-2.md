@@ -32,12 +32,12 @@ Systematic enhancement of all 59 components in the design system, focusing on in
 
 ### Phase 4: Component Enhancements 📋
 
-#### Buttons & Actions (4/8)
+#### Buttons & Actions (5/8)
 - [x] Button - Enhanced with 9 variants (including semantic colors), improved hover states, micro-interactions, and proper contrast
 - [x] IconButton - Added rotation/scale micro-interactions and dedicated component with accessibility
 - [x] Toggle - Enhanced with smooth transitions, icon scaling, active states, and added ghost variant
 - [x] ToggleGroup - Added group hover effects, gradient overlays, and better visual feedback
-- [ ] DropdownMenuTrigger - Enhance open/close states
+- [x] DropdownMenuTrigger - Enhanced with smooth open/close animations, scale effects, and chevron rotation
 - [ ] ContextMenuTrigger - Improve right-click feedback
 - [ ] CommandItem - Better keyboard navigation states
 - [ ] MenubarTrigger - Consistent with other triggers
@@ -129,17 +129,18 @@ Systematic enhancement of all 59 components in the design system, focusing on in
 
 ## Current Status
 **Phase**: 4 - Component Enhancements (In Progress)
-**Components Enhanced**: Alert ✅, Badge ✅, Button ✅, IconButton ✅, Toggle ✅, ToggleGroup ✅
-**Next Action**: Continue with DropdownMenuTrigger, ContextMenuTrigger, and other button/action components
+**Components Enhanced**: Alert ✅, Badge ✅, Button ✅, IconButton ✅, Toggle ✅, ToggleGroup ✅, DropdownMenuTrigger ✅
+**Next Action**: Continue with ContextMenuTrigger, CommandItem, and other button/action components
 
 ## Recent Updates (Latest - 2025-07-11)
-- ✅ Enhanced Toggle & ToggleGroup components
-  - Toggle: Added smooth transitions, icon scaling on activation, active states
-  - Toggle: Added ghost variant for subtle interactions
-  - Toggle: Improved hover/active feedback with scale effects
-  - ToggleGroup: Enhanced group interaction with hover effects
-  - ToggleGroup: Added gradient overlays for selected items
-  - Added both components to the buttons showcase page
+- ✅ Enhanced DropdownMenuTrigger component
+  - Added smooth scale and opacity transitions on open/close states
+  - Implemented chevron rotation animation for dropdown indicators
+  - Enhanced menu items with hover translate effects and icon scaling
+  - Improved checkbox/radio item animations with fade-in indicators
+  - Added example demonstrating fixed-width patterns to prevent resize issues
+  - Updated all dropdown components for consistent micro-interactions
+- Previous: Enhanced Toggle & ToggleGroup components with transitions and active states
 - Previous: Enhanced Button component with semantic colors and micro-interactions
 - Previous: Badge component with semantic color variants
 - Previous: Fixed preview container theme issues

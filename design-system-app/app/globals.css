@@ -153,9 +153,9 @@
   --line-height-loose: 2;
 
   /* Border radius tokens */
-  --radius: 0.375rem; /* Updated to match most used radius-md */
+  --radius: 0.5rem; /* Increased from 0.375rem (6px to 8px) */
   --radius-none: 0px;
-  --radius-sm: 0.125rem;
+  --radius-sm: 0.25rem; /* Increased from 0.125rem (2px to 4px) */
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
@@ -221,13 +221,106 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Interaction Design Tokens */
+  
+  /* Opacity levels for consistent transparency */
+  --opacity-hover: 0.9;
+  --opacity-active: 0.8;
+  --opacity-subtle-hover: 0.1;
+  --opacity-subtle-active: 0.2;
+  --opacity-muted: 0.5;
+  --opacity-disabled: 0.5;
+  --opacity-backdrop: 0.8;
+  
+  /* Transform scale values for micro-interactions */
+  --scale-pressed: 0.98;
+  --scale-active-sm: 0.9;
+  --scale-active: 0.95;
+  --scale-hover-sm: 1.05;
+  --scale-hover: 1.1;
+  
+  /* Rotation values for consistent icon animations */
+  --rotate-hover: 12deg;
+  --rotate-open: 180deg;
+  --rotate-quarter: 90deg;
+  
+  /* Animation zoom values for dropdowns and modals */
+  --zoom-out: 0.95;
+  --zoom-in: 1;
+  
+  /* Micro-spacing adjustments */
+  --translate-hover: -1px;
+  --radius-subtle: 2px;
+  
+  /* Solid color tokens for interactive states */
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-active: var(--primary-active);
+  --color-destructive-hover: var(--destructive-hover);
+  --color-destructive-active: var(--destructive-active);
+  --color-secondary-hover: var(--secondary-hover);
+  --color-secondary-active: var(--secondary-active);
+  --color-success-hover: var(--success-hover);
+  --color-success-active: var(--success-active);
+  --color-warning-hover: var(--warning-hover);
+  --color-warning-active: var(--warning-active);
+  --color-info-hover: var(--info-hover);
+  --color-info-active: var(--info-active);
+  
+  --color-primary-subtle: var(--primary-subtle);
+  --color-primary-subtle-hover: var(--primary-subtle-hover);
+  --color-primary-subtle-active: var(--primary-subtle-active);
+  --color-destructive-subtle: var(--destructive-subtle);
+  --color-destructive-subtle-hover: var(--destructive-subtle-hover);
+  --color-destructive-subtle-active: var(--destructive-subtle-active);
+  --color-success-subtle: var(--success-subtle);
+  --color-success-subtle-hover: var(--success-subtle-hover);
+  --color-success-subtle-active: var(--success-subtle-active);
+  --color-warning-subtle: var(--warning-subtle);
+  --color-warning-subtle-hover: var(--warning-subtle-hover);
+  --color-warning-subtle-active: var(--warning-subtle-active);
+  --color-info-subtle: var(--info-subtle);
+  --color-info-subtle-hover: var(--info-subtle-hover);
+  --color-info-subtle-active: var(--info-subtle-active);
 }
 
 /* Light mode semantic tokens */
 :root {
-  --radius: 0.375rem;
+  --radius: 0.5rem;
   --background: #ffffff;
-  --foreground: #111827; /* gray-900 */
+  --foreground: #111827;
+  
+  /* Solid color variants for interactive states */
+  --primary-hover: #1d4ed8; /* primary-700 */
+  --primary-active: #1e3a8a; /* primary-900 - darker for better feedback */
+  --destructive-hover: #dc2626; /* red-600 */
+  --destructive-active: #991b1b; /* red-800 */
+  --secondary-hover: #e5e7eb; /* gray-200 */
+  --secondary-active: #9ca3af; /* gray-400 - more contrast */
+  --success-hover: #16a34a; /* green-600 */
+  --success-active: #15803d; /* green-700 */
+  --warning-hover: #ca8a04; /* yellow-600 */
+  --warning-active: #a16207; /* yellow-700 */
+  --info-hover: #2563eb; /* blue-600 */
+  --info-active: #1d4ed8; /* blue-700 */
+  
+  /* Subtle variants for light backgrounds */
+  --primary-subtle: #eff6ff; /* primary-50 */
+  --primary-subtle-hover: #dbeafe; /* primary-100 */
+  --primary-subtle-active: #bfdbfe; /* primary-200 */
+  --destructive-subtle: #fef2f2; /* red-50 */
+  --destructive-subtle-hover: #fee2e2; /* red-100 */
+  --destructive-subtle-active: #fecaca; /* red-200 */
+  --success-subtle: #f0fdf4; /* green-50 */
+  --success-subtle-hover: #dcfce7; /* green-100 */
+  --success-subtle-active: #bbf7d0; /* green-200 */
+  --warning-subtle: #fefce8; /* yellow-50 */
+  --warning-subtle-hover: #fef3c7; /* yellow-100 */
+  --warning-subtle-active: #fde68a; /* yellow-200 */
+  --info-subtle: #eff6ff; /* blue-50 */
+  --info-subtle-hover: #dbeafe; /* blue-100 */
+  --info-subtle-active: #bfdbfe; /* blue-200 */
+  
   --card: #ffffff;
   --card-foreground: #111827;
   --popover: #ffffff;
@@ -292,6 +385,38 @@
 .dark {
   --background: #030712; /* gray-950 */
   --foreground: #f9fafb; /* gray-50 */
+  
+  /* Solid color variants for interactive states - Dark Mode */
+  --primary-hover: #3b82f6; /* primary-500 */
+  --primary-active: #60a5fa; /* primary-400 */
+  --destructive-hover: #ef4444; /* red-500 */
+  --destructive-active: #f87171; /* red-400 */
+  --secondary-hover: #374151; /* gray-700 */
+  --secondary-active: #4b5563; /* gray-600 */
+  --success-hover: #22c55e; /* green-500 */
+  --success-active: #4ade80; /* green-400 */
+  --warning-hover: #eab308; /* yellow-500 */
+  --warning-active: #facc15; /* yellow-400 */
+  --info-hover: #3b82f6; /* blue-500 */
+  --info-active: #60a5fa; /* blue-400 */
+  
+  /* Subtle variants for dark backgrounds */
+  --primary-subtle: #1e3a8a; /* primary-900 */
+  --primary-subtle-hover: #1e40af; /* primary-800 */
+  --primary-subtle-active: #1d4ed8; /* primary-700 */
+  --destructive-subtle: #7f1d1d; /* red-900 */
+  --destructive-subtle-hover: #991b1b; /* red-800 */
+  --destructive-subtle-active: #b91c1c; /* red-700 */
+  --success-subtle: #14532d; /* green-900 */
+  --success-subtle-hover: #166534; /* green-800 */
+  --success-subtle-active: #15803d; /* green-700 */
+  --warning-subtle: #713f12; /* yellow-900 */
+  --warning-subtle-hover: #854d0e; /* yellow-800 */
+  --warning-subtle-active: #a16207; /* yellow-700 */
+  --info-subtle: #1e3a8a; /* blue-900 */
+  --info-subtle-hover: #1e40af; /* blue-800 */
+  --info-subtle-active: #1d4ed8; /* blue-700 */
+  
   --card: #111827; /* gray-900 */
   --card-foreground: #f9fafb;
   --popover: #111827;

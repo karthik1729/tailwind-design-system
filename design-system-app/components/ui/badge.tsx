@@ -10,27 +10,27 @@ const badgeVariants = cva(
     variants: {
       variant: {
         default:
-          "border-transparent bg-primary text-primary-foreground focus-visible:ring-ring [[href]&]:hover:bg-primary/90 [[href]&]:active:bg-primary/80 [button&]:hover:bg-primary/90 [button&]:active:bg-primary/80",
+          "border-transparent bg-primary text-primary-foreground focus-visible:ring-ring [[href]&]:hover:bg-primary-hover [[href]&]:active:bg-primary-active [button&]:hover:bg-primary-hover [button&]:active:bg-primary-active",
         secondary:
-          "border-transparent bg-secondary text-secondary-foreground focus-visible:ring-ring [[href]&]:hover:bg-muted [[href]&]:active:bg-muted/80 [button&]:hover:bg-muted [button&]:active:bg-muted/80",
+          "border-transparent bg-secondary text-secondary-foreground focus-visible:ring-ring [[href]&]:hover:bg-muted [[href]&]:active:bg-secondary-active [button&]:hover:bg-muted [button&]:active:bg-secondary-active",
         destructive:
-          "border-transparent bg-destructive text-destructive-foreground focus-visible:ring-destructive [[href]&]:hover:bg-destructive/90 [[href]&]:active:bg-destructive/80 [button&]:hover:bg-destructive/90 [button&]:active:bg-destructive/80",
+          "border-transparent bg-destructive text-destructive-foreground focus-visible:ring-destructive [[href]&]:hover:bg-destructive-hover [[href]&]:active:bg-destructive-active [button&]:hover:bg-destructive-hover [button&]:active:bg-destructive-active",
         outline:
           "border-border bg-background text-foreground focus-visible:ring-ring [[href]&]:hover:bg-muted [[href]&]:active:bg-secondary [button&]:hover:bg-muted [button&]:active:bg-secondary",
         success:
-          "border-transparent bg-success text-success-foreground focus-visible:ring-success [[href]&]:hover:bg-success/90 [[href]&]:active:bg-success/80 [button&]:hover:bg-success/90 [button&]:active:bg-success/80",
+          "border-transparent bg-success text-success-foreground focus-visible:ring-success [[href]&]:hover:bg-success-hover [[href]&]:active:bg-success-active [button&]:hover:bg-success-hover [button&]:active:bg-success-active",
         warning:
-          "border-transparent bg-warning text-warning-foreground focus-visible:ring-warning [[href]&]:hover:bg-warning/90 [[href]&]:active:bg-warning/80 [button&]:hover:bg-warning/90 [button&]:active:bg-warning/80",
+          "border-transparent bg-warning text-warning-foreground focus-visible:ring-warning [[href]&]:hover:bg-warning-hover [[href]&]:active:bg-warning-active [button&]:hover:bg-warning-hover [button&]:active:bg-warning-active",
         info:
-          "border-transparent bg-info text-info-foreground focus-visible:ring-info [[href]&]:hover:bg-info/90 [[href]&]:active:bg-info/80 [button&]:hover:bg-info/90 [button&]:active:bg-info/80",
+          "border-transparent bg-info text-info-foreground focus-visible:ring-info [[href]&]:hover:bg-info-hover [[href]&]:active:bg-info-active [button&]:hover:bg-info-hover [button&]:active:bg-info-active",
         "success-subtle":
-          "border-success-border bg-success-background text-success-text focus-visible:ring-success [[href]&]:hover:bg-success-border/20 [[href]&]:active:bg-success-border/30 [button&]:hover:bg-success-border/20 [button&]:active:bg-success-border/30",
+          "border-success-border bg-success-background text-success-text focus-visible:ring-success [[href]&]:hover:bg-success-subtle-hover [[href]&]:active:bg-success-subtle-active [button&]:hover:bg-success-subtle-hover [button&]:active:bg-success-subtle-active",
         "warning-subtle":
-          "border-warning-border bg-warning-background text-warning-text focus-visible:ring-warning [[href]&]:hover:bg-warning-border/20 [[href]&]:active:bg-warning-border/30 [button&]:hover:bg-warning-border/20 [button&]:active:bg-warning-border/30",
+          "border-warning-border bg-warning-background text-warning-text focus-visible:ring-warning [[href]&]:hover:bg-warning-subtle-hover [[href]&]:active:bg-warning-subtle-active [button&]:hover:bg-warning-subtle-hover [button&]:active:bg-warning-subtle-active",
         "info-subtle":
-          "border-info-border bg-info-background text-info-text focus-visible:ring-info [[href]&]:hover:bg-info-border/20 [[href]&]:active:bg-info-border/30 [button&]:hover:bg-info-border/20 [button&]:active:bg-info-border/30",
+          "border-info-border bg-info-background text-info-text focus-visible:ring-info [[href]&]:hover:bg-info-subtle-hover [[href]&]:active:bg-info-subtle-active [button&]:hover:bg-info-subtle-hover [button&]:active:bg-info-subtle-active",
         "destructive-subtle":
-          "border-destructive-border bg-destructive-background text-destructive-text focus-visible:ring-destructive [[href]&]:hover:bg-destructive-border/20 [[href]&]:active:bg-destructive-border/30 [button&]:hover:bg-destructive-border/20 [button&]:active:bg-destructive-border/30",
+          "border-destructive-border bg-destructive-background text-destructive-text focus-visible:ring-destructive [[href]&]:hover:bg-destructive-subtle-hover [[href]&]:active:bg-destructive-subtle-active [button&]:hover:bg-destructive-subtle-hover [button&]:active:bg-destructive-subtle-active",
       },
       interactive: {
         true: "cursor-pointer select-none",
