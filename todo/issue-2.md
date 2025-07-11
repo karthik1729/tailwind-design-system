@@ -78,13 +78,13 @@ Systematic enhancement of all 59 components in the design system, focusing on in
 - [ ] Tabs - Tab switch animations
 - [ ] Sidebar - Collapse/expand transitions
 
-#### Data Display (0/10)
+#### Data Display (1/10)
 - [ ] Card - Hover lift effects
 - [ ] Accordion - Smooth expand/collapse
 - [ ] Collapsible - Height transitions
 - [ ] Table - Row hover states, selection feedback
 - [ ] Avatar - Loading states, fallback transitions
-- [ ] Badge - Pulse animations for notifications
+- [x] Badge - Added semantic color variants (success, warning, info) with solid and subtle styles
 - [ ] Chart - Interactive data point highlights
 - [ ] Carousel - Smooth slide transitions
 - [ ] AspectRatio - Loading state handling
@@ -128,13 +128,18 @@ Systematic enhancement of all 59 components in the design system, focusing on in
 - Keep bundle size impact minimal
 
 ## Current Status
-**Phase**: 2 - Color System Refinements ✅ (Completed major color system enhancements)
-**Next Action**: Apply semantic colors to remaining components (Badge, Toast, Button) and begin Phase 3 - Border & Spacing Standards
+**Phase**: 2 - Color System Refinements (In Progress)
+**Components Enhanced**: Alert ✅, Badge ✅
+**Next Action**: Continue with Button component color audit, then Toast/Sonner and form elements
 
-## Recent Updates (Latest)
-- Enhanced color system with complete semantic tokens
-- Added indigo as accent color with full palette (50-950)
-- Added 3 supplementary brand colors: purple, teal, orange
-- Created comprehensive color documentation with theme switcher
-- Updated Alert component to use semantic color tokens
-- Improved accessibility and contrast for all color combinations
+## Recent Updates (Latest - 2025-07-11)
+- ✅ Enhanced Badge component with semantic color variants
+  - Added success, warning, info variants with solid and subtle styles
+  - Fixed dark mode theme propagation issues
+  - Updated Tailwind v4 dark variant configuration
+- ✅ Fixed preview container theme issues
+  - Moved ThemeSwitcher to sidebar for global control
+  - Removed local theme toggles from preview containers
+- ✅ Improved dark theme colors for better contrast
+- Previous: Alert component with semantic tokens
+- Previous: Complete color system with semantic tokens

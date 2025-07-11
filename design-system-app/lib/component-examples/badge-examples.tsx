@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge"
 import { ComponentExample } from "@/lib/component-docs"
-import { CheckCircle2, XCircle, AlertCircle, Info, Clock, Star, TrendingUp, Package } from "lucide-react"
+import { CheckCircle2, XCircle, AlertCircle, Info, Clock, Star, TrendingUp, Package, X } from "lucide-react"
+import Link from "next/link"
 
 export const badgeExamples: ComponentExample[] = [
   {
@@ -251,6 +252,196 @@ export const badgeExamples: ComponentExample[] = [
         <div className="flex items-center gap-2">
           <span className="text-sm">Environment:</span>
           <Badge variant="info">Staging</Badge>
+        </div>
+      </div>
+    )
+  },
+  {
+    title: "Interactive Badges",
+    description: "Clickable badges with hover and active states for navigation or actions.",
+    code: `<div className="flex flex-wrap gap-2">
+  {/* Link badges */}
+  <Link href="#">
+    <Badge interactive>View Details</Badge>
+  </Link>
+  <Link href="#">
+    <Badge variant="secondary" interactive>
+      Edit Profile
+    </Badge>
+  </Link>
+  
+  {/* Button badges */}
+  <Badge asChild interactive>
+    <button onClick={() => alert('Tag removed!')}>
+      JavaScript
+      <X className="ml-1 h-3 w-3" />
+    </button>
+  </Badge>
+  
+  {/* Status filter badges */}
+  <Badge variant="success-subtle" asChild interactive>
+    <button>
+      <CheckCircle2 className="mr-1 h-3 w-3" />
+      Completed
+    </button>
+  </Badge>
+  <Badge variant="warning-subtle" asChild interactive>
+    <button>
+      <Clock className="mr-1 h-3 w-3" />
+      In Progress
+    </button>
+  </Badge>
+</div>`,
+    component: () => (
+      <div className="flex flex-wrap gap-2">
+        {/* Link badges */}
+        <Link href="#">
+          <Badge interactive>View Details</Badge>
+        </Link>
+        <Link href="#">
+          <Badge variant="secondary" interactive>
+            Edit Profile
+          </Badge>
+        </Link>
+        
+        {/* Button badges */}
+        <Badge asChild interactive>
+          <button onClick={() => alert('Tag removed!')}>
+            JavaScript
+            <X className="ml-1 h-3 w-3" />
+          </button>
+        </Badge>
+        
+        {/* Status filter badges */}
+        <Badge variant="success-subtle" asChild interactive>
+          <button>
+            <CheckCircle2 className="mr-1 h-3 w-3" />
+            Completed
+          </button>
+        </Badge>
+        <Badge variant="warning-subtle" asChild interactive>
+          <button>
+            <Clock className="mr-1 h-3 w-3" />
+            In Progress
+          </button>
+        </Badge>
+      </div>
+    )
+  },
+  {
+    title: "Removable Tags",
+    description: "Interactive badges used as removable tags or filters.",
+    code: `<div className="space-y-4">
+  {/* Selected filters */}
+  <div>
+    <p className="text-sm font-medium mb-2">Applied Filters:</p>
+    <div className="flex flex-wrap gap-2">
+      <Badge variant="secondary" asChild interactive>
+        <button className="group">
+          Category: Electronics
+          <X className="ml-1 h-3 w-3 opacity-70 group-hover:opacity-100" />
+        </button>
+      </Badge>
+      <Badge variant="secondary" asChild interactive>
+        <button className="group">
+          Price: $100-$500
+          <X className="ml-1 h-3 w-3 opacity-70 group-hover:opacity-100" />
+        </button>
+      </Badge>
+      <Badge variant="secondary" asChild interactive>
+        <button className="group">
+          Brand: Apple
+          <X className="ml-1 h-3 w-3 opacity-70 group-hover:opacity-100" />
+        </button>
+      </Badge>
+      <Badge variant="outline" asChild interactive>
+        <button className="text-muted-foreground">
+          Clear all
+        </button>
+      </Badge>
+    </div>
+  </div>
+
+  {/* Skills/Tags selection */}
+  <div>
+    <p className="text-sm font-medium mb-2">Selected Skills:</p>
+    <div className="flex flex-wrap gap-2">
+      <Badge variant="info-subtle" asChild interactive>
+        <button className="group">
+          React
+          <X className="ml-1 h-3 w-3 opacity-70 group-hover:opacity-100" />
+        </button>
+      </Badge>
+      <Badge variant="info-subtle" asChild interactive>
+        <button className="group">
+          TypeScript
+          <X className="ml-1 h-3 w-3 opacity-70 group-hover:opacity-100" />
+        </button>
+      </Badge>
+      <Badge variant="info-subtle" asChild interactive>
+        <button className="group">
+          Node.js
+          <X className="ml-1 h-3 w-3 opacity-70 group-hover:opacity-100" />
+        </button>
+      </Badge>
+    </div>
+  </div>
+</div>`,
+    component: () => (
+      <div className="space-y-4">
+        {/* Selected filters */}
+        <div>
+          <p className="text-sm font-medium mb-2">Applied Filters:</p>
+          <div className="flex flex-wrap gap-2">
+            <Badge variant="secondary" asChild interactive>
+              <button className="group">
+                Category: Electronics
+                <X className="ml-1 h-3 w-3 opacity-70 group-hover:opacity-100" />
+              </button>
+            </Badge>
+            <Badge variant="secondary" asChild interactive>
+              <button className="group">
+                Price: $100-$500
+                <X className="ml-1 h-3 w-3 opacity-70 group-hover:opacity-100" />
+              </button>
+            </Badge>
+            <Badge variant="secondary" asChild interactive>
+              <button className="group">
+                Brand: Apple
+                <X className="ml-1 h-3 w-3 opacity-70 group-hover:opacity-100" />
+              </button>
+            </Badge>
+            <Badge variant="outline" asChild interactive>
+              <button className="text-muted-foreground">
+                Clear all
+              </button>
+            </Badge>
+          </div>
+        </div>
+
+        {/* Skills/Tags selection */}
+        <div>
+          <p className="text-sm font-medium mb-2">Selected Skills:</p>
+          <div className="flex flex-wrap gap-2">
+            <Badge variant="info-subtle" asChild interactive>
+              <button className="group">
+                React
+                <X className="ml-1 h-3 w-3 opacity-70 group-hover:opacity-100" />
+              </button>
+            </Badge>
+            <Badge variant="info-subtle" asChild interactive>
+              <button className="group">
+                TypeScript
+                <X className="ml-1 h-3 w-3 opacity-70 group-hover:opacity-100" />
+              </button>
+            </Badge>
+            <Badge variant="info-subtle" asChild interactive>
+              <button className="group">
+                Node.js
+                <X className="ml-1 h-3 w-3 opacity-70 group-hover:opacity-100" />
+              </button>
+            </Badge>
+          </div>
         </div>
       </div>
     )
