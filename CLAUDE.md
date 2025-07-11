@@ -48,3 +48,9 @@ Currently working on systematic enhancement of all components focusing on:
 - Accessibility improvements
 - Micro-interactions and smooth transitions
 See GitHub Issue #2 for detailed tracking
+
+## Task Management
+- All tasks are tracked in the `todo/` folder
+- Task files are named after GitHub issue numbers (e.g., `todo/issue-2.md`)
+- Each task file contains detailed progress tracking and checklists
+- See `todo/README.md` for the task tracking system documentation
