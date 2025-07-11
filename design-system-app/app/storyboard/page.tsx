@@ -86,19 +86,19 @@ export default function StoryboardPage() {
             <ul className="mt-4 space-y-2 text-sm">
               <li className="flex items-center justify-between">
                 <span className="text-gray-600 dark:text-gray-400">Total Components</span>
-                <span className="font-medium text-indigo-600 dark:text-indigo-400">410+</span>
+                <span className="font-medium text-indigo-600 dark:text-indigo-400">410</span>
               </li>
               <li className="flex items-center justify-between">
                 <span className="text-gray-600 dark:text-gray-400">Design Tokens</span>
-                <span className="font-medium text-indigo-600 dark:text-indigo-400">150+</span>
+                <span className="font-medium text-indigo-600 dark:text-indigo-400">179</span>
               </li>
               <li className="flex items-center justify-between">
                 <span className="text-gray-600 dark:text-gray-400">Color Variations</span>
-                <span className="font-medium text-indigo-600 dark:text-indigo-400">12</span>
+                <span className="font-medium text-indigo-600 dark:text-indigo-400">6</span>
               </li>
               <li className="flex items-center justify-between">
                 <span className="text-gray-600 dark:text-gray-400">Component Categories</span>
-                <span className="font-medium text-indigo-600 dark:text-indigo-400">4</span>
+                <span className="font-medium text-indigo-600 dark:text-indigo-400">3</span>
               </li>
             </ul>
           </div>
