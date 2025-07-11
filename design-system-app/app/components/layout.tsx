@@ -66,11 +66,37 @@ export default function ComponentsLayout({
       {/* Sidebar - Using background color instead of border */}
       <aside className="w-64 flex-shrink-0 bg-muted/30 flex flex-col h-full">
         {/* Sidebar Header - Using spacing instead of border */}
-        <div className="p-6 flex items-center justify-between flex-shrink-0">
-          <Link href="/" className="text-lg font-semibold hover:text-primary transition-colors">
-            Design System
-          </Link>
-          <ThemeSwitcher />
+        <div className="p-6 flex flex-col gap-4 flex-shrink-0">
+          <div className="flex items-center justify-between">
+            <Link href="/" className="text-lg font-semibold hover:text-primary transition-colors">
+              Design System
+            </Link>
+            <ThemeSwitcher />
+          </div>
+          <div className="flex gap-2">
+            <Link 
+              href="/components" 
+              className={cn(
+                "flex-1 rounded-md px-3 py-1.5 text-sm font-medium text-center transition-colors",
+                pathname.startsWith("/components")
+                  ? "bg-primary text-primary-foreground"
+                  : "bg-muted hover:bg-muted/80"
+              )}
+            >
+              Components
+            </Link>
+            <Link 
+              href="/storyboard" 
+              className={cn(
+                "flex-1 rounded-md px-3 py-1.5 text-sm font-medium text-center transition-colors",
+                pathname.startsWith("/storyboard")
+                  ? "bg-primary text-primary-foreground"
+                  : "bg-muted hover:bg-muted/80"
+              )}
+            >
+              Storyboard
+            </Link>
+          </div>
         </div>
         
         {/* Sidebar Navigation - More spacing, better hover states */}

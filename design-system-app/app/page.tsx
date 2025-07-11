@@ -11,7 +11,7 @@ export default function Home() {
               Tailwind CSS v4 Design System
             </h1>
             <p className="text-xl text-muted-foreground">
-              Clean slate with extracted theme from 410 analyzed components
+              Clean slate with extracted theme from 410 analyzed UI elements
             </p>
           </div>
           

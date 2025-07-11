@@ -8,7 +8,7 @@ const openSans = Open_Sans({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Design System - Tailwind UI Components',
-  description: 'Professional design system built from 410 analyzed Tailwind UI components',
+  description: 'Professional design system built from 410 analyzed Tailwind UI elements',
 }
 
 export default function RootLayout({
