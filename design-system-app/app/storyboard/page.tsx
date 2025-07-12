@@ -1,141 +1,278 @@
 import Link from 'next/link'
+import { 
+  Palette, 
+  Type, 
+  Layers, 
+  Sparkles, 
+  Code2, 
+  Layout, 
+  BookOpen,
+  Boxes,
+  Zap
+} from 'lucide-react'
 
 export default function StoryboardPage() {
   return (
-    <div className="max-w-7xl">
-      <div className="space-y-8">
-        <div>
-          <h1 className="text-4xl font-bold text-foreground">
+    <div className="space-y-12">
+        {/* Hero Section */}
+        <div className="text-center">
+          <h1 className="text-5xl font-bold tracking-tight text-foreground">
             Design System Storyboard
           </h1>
-          <p className="mt-4 text-lg text-muted-foreground">
-            A comprehensive showcase of design tokens, components, and patterns extracted from 410+ Tailwind UI elements
+          <p className="mt-4 text-xl text-muted-foreground max-w-3xl mx-auto">
+            A comprehensive showcase of 59 components built from design standards extracted from 410+ Tailwind UI elements
           </p>
-        </div>
-
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          <Link href="/storyboard/foundations" className="group relative rounded-lg bg-muted p-6 hover:bg-muted/80 transition-colors cursor-pointer">
-            <div>
-              <span className="inline-flex rounded-lg bg-indigo-50 p-3 text-indigo-600 dark:bg-indigo-950 dark:text-indigo-400">
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
-                </svg>
-              </span>
+          <div className="mt-8 flex items-center justify-center gap-x-6">
+            <div className="text-sm">
+              <span className="font-semibold text-foreground">59</span>
+              <span className="text-muted-foreground"> Components</span>
             </div>
-            <div className="mt-4">
-              <h3 className="text-lg font-medium text-foreground">
-                Foundations
-              </h3>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Core design tokens and system primitives
-              </p>
-              <p className="mt-1 text-sm font-medium text-indigo-600 dark:text-indigo-400">
-                Colors, Typography, Spacing, Effects
-              </p>
+            <div className="h-4 w-px bg-border"></div>
+            <div className="text-sm">
+              <span className="font-semibold text-foreground">7</span>
+              <span className="text-muted-foreground"> Categories</span>
             </div>
-          </Link>
-
-          <Link href="/storyboard/components" className="group relative rounded-lg bg-muted p-6 hover:bg-muted/80 transition-colors cursor-pointer">
-            <div>
-              <span className="inline-flex rounded-lg bg-indigo-50 p-3 text-indigo-600 dark:bg-indigo-950 dark:text-indigo-400">
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
-                </svg>
-              </span>
+            <div className="h-4 w-px bg-border"></div>
+            <div className="text-sm">
+              <span className="font-semibold text-foreground">Light & Dark</span>
+              <span className="text-muted-foreground"> Themes</span>
             </div>
-            <div className="mt-4">
-              <h3 className="text-lg font-medium text-foreground">
-                Components
-              </h3>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Reusable UI elements and building blocks
-              </p>
-              <p className="mt-1 text-sm font-medium text-indigo-600 dark:text-indigo-400">
-                Buttons, Forms, Navigation, Data Display
-              </p>
-            </div>
-          </Link>
-
-          <Link href="/storyboard/patterns" className="group relative rounded-lg bg-muted p-6 hover:bg-muted/80 transition-colors cursor-pointer">
-            <div>
-              <span className="inline-flex rounded-lg bg-indigo-50 p-3 text-indigo-600 dark:bg-indigo-950 dark:text-indigo-400">
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
-                </svg>
-              </span>
-            </div>
-            <div className="mt-4">
-              <h3 className="text-lg font-medium text-foreground">
-                Patterns
-              </h3>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Complete UI sections and application patterns
-              </p>
-              <p className="mt-1 text-sm font-medium text-indigo-600 dark:text-indigo-400">
-                Heroes, Features, CTAs, Dashboards, Auth
-              </p>
-            </div>
-          </Link>
-        </div>
-
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          <div className="rounded-lg bg-indigo-50 p-6 dark:bg-indigo-950/30">
-            <h3 className="text-lg font-semibold text-foreground">
-              By the Numbers
-            </h3>
-            <ul className="mt-4 space-y-2 text-sm">
-              <li className="flex items-center justify-between">
-                <span className="text-muted-foreground">Total Components</span>
-                <span className="font-medium text-indigo-600 dark:text-indigo-400">410</span>
-              </li>
-              <li className="flex items-center justify-between">
-                <span className="text-muted-foreground">Design Tokens</span>
-                <span className="font-medium text-indigo-600 dark:text-indigo-400">179</span>
-              </li>
-              <li className="flex items-center justify-between">
-                <span className="text-muted-foreground">Color Variations</span>
-                <span className="font-medium text-indigo-600 dark:text-indigo-400">6</span>
-              </li>
-              <li className="flex items-center justify-between">
-                <span className="text-muted-foreground">Component Categories</span>
-                <span className="font-medium text-indigo-600 dark:text-indigo-400">3</span>
-              </li>
-            </ul>
-          </div>
-
-          <div className="rounded-lg bg-indigo-50 p-6 dark:bg-indigo-950/30 sm:col-span-2">
-            <h3 className="text-lg font-semibold text-foreground">
-              Design Principles
-            </h3>
-            <ul className="mt-4 grid gap-3 text-sm text-muted-foreground sm:grid-cols-2">
-              <li className="relative pl-4">
-                <span className="absolute left-0 top-2 h-1.5 w-1.5 rounded-full bg-indigo-600 dark:bg-indigo-400"></span>
-                <span>
-                  <strong className="font-medium text-foreground">Borderless Design:</strong> Visual hierarchy through spacing and subtle backgrounds
-                </span>
-              </li>
-              <li className="relative pl-4">
-                <span className="absolute left-0 top-2 h-1.5 w-1.5 rounded-full bg-indigo-600 dark:bg-indigo-400"></span>
-                <span>
-                  <strong className="font-medium text-foreground">Consistent Spacing:</strong> p-4 standard padding, gap-4 between elements
-                </span>
-              </li>
-              <li className="relative pl-4">
-                <span className="absolute left-0 top-2 h-1.5 w-1.5 rounded-full bg-indigo-600 dark:bg-indigo-400"></span>
-                <span>
-                  <strong className="font-medium text-foreground">Typography First:</strong> text-sm default, clear hierarchy with font weights
-                </span>
-              </li>
-              <li className="relative pl-4">
-                <span className="absolute left-0 top-2 h-1.5 w-1.5 rounded-full bg-indigo-600 dark:bg-indigo-400"></span>
-                <span>
-                  <strong className="font-medium text-foreground">Subtle Shadows:</strong> shadow-sm for depth, no harsh borders
-                </span>
-              </li>
-            </ul>
           </div>
         </div>
-      </div>
+
+        {/* Main Navigation Cards */}
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <Link href="/storyboard/foundations" className="group relative overflow-hidden rounded-lg border border-border bg-card p-6 hover:bg-accent/50 hover:border-primary/20 transition-all duration-200">
+            <div className="flex items-start justify-between">
+              <div className="flex-1">
+                <span className="inline-flex rounded-lg bg-primary/10 p-3 text-primary">
+                  <Palette className="h-6 w-6" />
+                </span>
+                <h3 className="mt-4 text-lg font-semibold text-foreground">
+                  Foundations
+                </h3>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Core design tokens that power the entire system
+                </p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  <span className="inline-flex items-center rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
+                    Colors
+                  </span>
+                  <span className="inline-flex items-center rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
+                    Typography
+                  </span>
+                  <span className="inline-flex items-center rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
+                    Spacing
+                  </span>
+                  <span className="inline-flex items-center rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
+                    Effects
+                  </span>
+                </div>
+              </div>
+            </div>
+          </Link>
+
+          <Link href="/storyboard/components" className="group relative overflow-hidden rounded-lg border border-border bg-card p-6 hover:bg-accent/50 hover:border-primary/20 transition-all duration-200">
+            <div className="flex items-start justify-between">
+              <div className="flex-1">
+                <span className="inline-flex rounded-lg bg-primary/10 p-3 text-primary">
+                  <Boxes className="h-6 w-6" />
+                </span>
+                <h3 className="mt-4 text-lg font-semibold text-foreground">
+                  Components
+                </h3>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  59 production-ready UI components
+                </p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  <span className="inline-flex items-center rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
+                    Buttons
+                  </span>
+                  <span className="inline-flex items-center rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
+                    Forms
+                  </span>
+                  <span className="inline-flex items-center rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
+                    Navigation
+                  </span>
+                  <span className="inline-flex items-center rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
+                    +4 more
+                  </span>
+                </div>
+              </div>
+            </div>
+          </Link>
+
+          <Link href="/storyboard/patterns" className="group relative overflow-hidden rounded-lg border border-border bg-card p-6 hover:bg-accent/50 hover:border-primary/20 transition-all duration-200">
+            <div className="flex items-start justify-between">
+              <div className="flex-1">
+                <span className="inline-flex rounded-lg bg-primary/10 p-3 text-primary">
+                  <Layout className="h-6 w-6" />
+                </span>
+                <h3 className="mt-4 text-lg font-semibold text-foreground">
+                  Patterns
+                </h3>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Complete sections and page templates
+                </p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  <span className="inline-flex items-center rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
+                    Heroes
+                  </span>
+                  <span className="inline-flex items-center rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
+                    Features
+                  </span>
+                  <span className="inline-flex items-center rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
+                    CTAs
+                  </span>
+                  <span className="inline-flex items-center rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
+                    +2 more
+                  </span>
+                </div>
+              </div>
+            </div>
+          </Link>
+        </div>
+
+        {/* Design Standards Quick Links */}
+        <div className="rounded-lg border border-border bg-card/50">
+          <div className="p-6">
+            <h2 className="text-xl font-semibold text-foreground flex items-center gap-2">
+              <BookOpen className="h-5 w-5 text-primary" />
+              Design Standards
+            </h2>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Comprehensive guidelines extracted from analyzing 410+ Tailwind UI components
+            </p>
+          </div>
+          <div className="border-t border-border">
+            <div className="grid divide-y divide-border md:grid-cols-2 md:divide-x md:divide-y-0">
+              <Link href="/storyboard/standards/visual-hierarchy" className="group p-6 hover:bg-accent/50 transition-colors">
+                <h3 className="font-medium text-foreground group-hover:text-primary transition-colors">
+                  Visual Hierarchy & Emphasis
+                </h3>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Primary actions, spacing patterns, border radius usage
+                </p>
+              </Link>
+              <Link href="/storyboard/standards/interaction-states" className="group p-6 hover:bg-accent/50 transition-colors">
+                <h3 className="font-medium text-foreground group-hover:text-primary transition-colors">
+                  Interaction States
+                </h3>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Hover effects, focus states, transitions, micro-interactions
+                </p>
+              </Link>
+              <Link href="/storyboard/standards/responsive-design" className="group p-6 hover:bg-accent/50 transition-colors">
+                <h3 className="font-medium text-foreground group-hover:text-primary transition-colors">
+                  Responsive Design
+                </h3>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Mobile-first approach, breakpoints, progressive enhancement
+                </p>
+              </Link>
+              <Link href="/storyboard/standards/accessibility" className="group p-6 hover:bg-accent/50 transition-colors">
+                <h3 className="font-medium text-foreground group-hover:text-primary transition-colors">
+                  Accessibility
+                </h3>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  ARIA attributes, keyboard navigation, screen reader support
+                </p>
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Component Categories Grid */}
+        <div>
+          <h2 className="text-2xl font-semibold text-foreground mb-6 flex items-center gap-2">
+            <Sparkles className="h-6 w-6 text-primary" />
+            Component Categories
+          </h2>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <div className="rounded-lg border border-border bg-card p-4">
+              <h3 className="font-medium text-foreground">Buttons & Actions</h3>
+              <p className="mt-1 text-sm text-muted-foreground">8 components</p>
+              <div className="mt-3 text-xs text-muted-foreground">
+                Button, IconButton, Toggle, ToggleGroup, Split Button, Button Group, Floating Action, Action Menu
+              </div>
+            </div>
+            <div className="rounded-lg border border-border bg-card p-4">
+              <h3 className="font-medium text-foreground">Form Elements</h3>
+              <p className="mt-1 text-sm text-muted-foreground">13 components</p>
+              <div className="mt-3 text-xs text-muted-foreground">
+                Input, Textarea, Select, Checkbox, Radio, Switch, Slider, DatePicker, TimePicker, ColorPicker, FileUpload, Form, OTP Input
+              </div>
+            </div>
+            <div className="rounded-lg border border-border bg-card p-4">
+              <h3 className="font-medium text-foreground">Feedback</h3>
+              <p className="mt-1 text-sm text-muted-foreground">8 components</p>
+              <div className="mt-3 text-xs text-muted-foreground">
+                Alert, Toast, Progress, Skeleton, Spinner, Badge, Notification, Empty State
+              </div>
+            </div>
+            <div className="rounded-lg border border-border bg-card p-4">
+              <h3 className="font-medium text-foreground">Navigation</h3>
+              <p className="mt-1 text-sm text-muted-foreground">9 components</p>
+              <div className="mt-3 text-xs text-muted-foreground">
+                Navbar, Sidebar, Tabs, Breadcrumb, Pagination, Stepper, Navigation Menu, Command Palette, Mobile Navigation
+              </div>
+            </div>
+            <div className="rounded-lg border border-border bg-card p-4">
+              <h3 className="font-medium text-foreground">Data Display</h3>
+              <p className="mt-1 text-sm text-muted-foreground">10 components</p>
+              <div className="mt-3 text-xs text-muted-foreground">
+                Table, List, Card, Accordion, Carousel, Timeline, Stats, Avatar, Image Gallery, Code Block
+              </div>
+            </div>
+            <div className="rounded-lg border border-border bg-card p-4">
+              <h3 className="font-medium text-foreground">Overlay</h3>
+              <p className="mt-1 text-sm text-muted-foreground">7 components</p>
+              <div className="mt-3 text-xs text-muted-foreground">
+                Modal, Popover, Tooltip, Dropdown, Context Menu, Command Menu, Sheet
+              </div>
+            </div>
+            <div className="rounded-lg border border-border bg-card p-4">
+              <h3 className="font-medium text-foreground">Layout</h3>
+              <p className="mt-1 text-sm text-muted-foreground">4 components</p>
+              <div className="mt-3 text-xs text-muted-foreground">
+                Container, Grid, Stack, Divider
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Key Features */}
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="rounded-lg bg-primary/5 p-6">
+            <Zap className="h-8 w-8 text-primary" />
+            <h3 className="mt-4 text-lg font-semibold text-foreground">
+              Production Ready
+            </h3>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Every component is built with accessibility, performance, and real-world usage in mind
+            </p>
+          </div>
+
+          <div className="rounded-lg bg-success/10 p-6">
+            <Type className="h-8 w-8 text-success" />
+            <h3 className="mt-4 text-lg font-semibold text-foreground">
+              Consistent Design Language
+            </h3>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Unified spacing, typography, and interaction patterns across all components
+            </p>
+          </div>
+
+          <div className="rounded-lg bg-info/10 p-6">
+            <Code2 className="h-8 w-8 text-info" />
+            <h3 className="mt-4 text-lg font-semibold text-foreground">
+              Developer Experience
+            </h3>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Clean APIs, comprehensive examples, and TypeScript support throughout
+            </p>
+          </div>
+        </div>
     </div>
   )
 }

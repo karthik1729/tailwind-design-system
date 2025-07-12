@@ -21,13 +21,12 @@ export default function FormsPage() {
   const [sliderValue, setSliderValue] = useState([50])
 
   return (
-    <div className="container mx-auto px-4 py-12 max-w-7xl">
-      <div className="space-y-12">
+    <div className="space-y-12">
         <div>
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100">
+          <h1 className="text-4xl font-bold text-foreground">
             Form Elements
           </h1>
-          <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
+          <p className="mt-4 text-lg text-muted-foreground">
             A comprehensive collection of form components with various states and configurations
           </p>
         </div>
@@ -37,7 +36,7 @@ export default function FormsPage() {
           title="Input"
           description="Basic input field with different states and variations"
           component={
-            <div className="space-y-6 p-6">
+            <div className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="default-input">Default Input</Label>
                 <Input
@@ -104,7 +103,7 @@ export function InputExample() {
           title="Textarea"
           description="Multi-line text input for longer content"
           component={
-            <div className="space-y-6 p-6">
+            <div className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="default-textarea">Default Textarea</Label>
                 <Textarea
@@ -159,7 +158,7 @@ export function TextareaExample() {
           title="Select"
           description="Dropdown selection component with search functionality"
           component={
-            <div className="space-y-6 p-6">
+            <div className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="default-select">Default Select</Label>
                 <Select value={selectValue} onValueChange={setSelectValue}>
@@ -233,7 +232,7 @@ export function SelectExample() {
           title="Checkbox"
           description="Checkbox input for boolean values and multiple selections"
           component={
-            <div className="space-y-6 p-6">
+            <div className="space-y-4">
               <div className="flex items-center space-x-2">
                 <Checkbox
                   id="default-checkbox"
@@ -247,14 +246,14 @@ export function SelectExample() {
               
               <div className="flex items-center space-x-2">
                 <Checkbox id="disabled-checkbox" disabled />
-                <Label htmlFor="disabled-checkbox" className="text-gray-400">
+                <Label htmlFor="disabled-checkbox" className="text-muted-foreground">
                   Disabled checkbox
                 </Label>
               </div>
               
               <div className="flex items-center space-x-2">
                 <Checkbox id="checked-disabled" disabled checked />
-                <Label htmlFor="checked-disabled" className="text-gray-400">
+                <Label htmlFor="checked-disabled" className="text-muted-foreground">
                   Checked and disabled
                 </Label>
               </div>
@@ -304,7 +303,7 @@ export function CheckboxExample() {
           title="Radio Group"
           description="Radio buttons for single selection from multiple options"
           component={
-            <div className="space-y-6 p-6">
+            <div className="space-y-4">
               <div className="space-y-2">
                 <Label>Select an option</Label>
                 <RadioGroup value={radioValue} onValueChange={setRadioValue}>
@@ -328,13 +327,13 @@ export function CheckboxExample() {
                 <RadioGroup disabled defaultValue="option1">
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="option1" id="radio-disabled-1" />
-                    <Label htmlFor="radio-disabled-1" className="text-gray-400">
+                    <Label htmlFor="radio-disabled-1" className="text-muted-foreground">
                       Disabled Option 1
                     </Label>
                   </div>
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="option2" id="radio-disabled-2" />
-                    <Label htmlFor="radio-disabled-2" className="text-gray-400">
+                    <Label htmlFor="radio-disabled-2" className="text-muted-foreground">
                       Disabled Option 2
                     </Label>
                   </div>
@@ -375,7 +374,7 @@ export function RadioGroupExample() {
           title="Switch"
           description="Toggle switch for on/off states"
           component={
-            <div className="space-y-6 p-6">
+            <div className="space-y-4">
               <div className="flex items-center space-x-2">
                 <Switch
                   id="default-switch"
@@ -387,14 +386,14 @@ export function RadioGroupExample() {
               
               <div className="flex items-center space-x-2">
                 <Switch id="disabled-switch" disabled />
-                <Label htmlFor="disabled-switch" className="text-gray-400">
+                <Label htmlFor="disabled-switch" className="text-muted-foreground">
                   Disabled switch
                 </Label>
               </div>
               
               <div className="flex items-center space-x-2">
                 <Switch id="checked-disabled-switch" disabled checked />
-                <Label htmlFor="checked-disabled-switch" className="text-gray-400">
+                <Label htmlFor="checked-disabled-switch" className="text-muted-foreground">
                   Checked and disabled
                 </Label>
               </div>
@@ -442,7 +441,7 @@ export function SwitchExample() {
           title="Slider"
           description="Range slider for selecting numeric values"
           component={
-            <div className="space-y-6 p-6">
+            <div className="space-y-4">
               <div className="space-y-2">
                 <Label>Default Slider</Label>
                 <Slider
@@ -452,7 +451,7 @@ export function SwitchExample() {
                   step={1}
                   className="w-full"
                 />
-                <p className="text-sm text-gray-600 dark:text-gray-400">
+                <p className="text-sm text-muted-foreground">
                   Value: {sliderValue[0]}
                 </p>
               </div>
@@ -477,7 +476,7 @@ export function SwitchExample() {
                   step={5}
                   className="w-full"
                 />
-                <p className="text-sm text-gray-600 dark:text-gray-400">
+                <p className="text-sm text-muted-foreground">
                   Range: 0 - 200, Step: 5
                 </p>
               </div>
@@ -490,7 +489,7 @@ export function SwitchExample() {
                   step={1}
                   className="w-full"
                 />
-                <p className="text-sm text-gray-600 dark:text-gray-400">
+                <p className="text-sm text-muted-foreground">
                   Range selection
                 </p>
               </div>
@@ -512,14 +511,13 @@ export function SliderExample() {
         step={1}
         className="w-full"
       />
-      <p className="text-sm text-gray-600">
+      <p className="text-sm text-muted-foreground">
         Value: {value[0]}
       </p>
     </div>
   )
 }`}
         />
-      </div>
     </div>
   )
 }

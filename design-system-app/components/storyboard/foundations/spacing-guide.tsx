@@ -67,20 +67,20 @@ const SpacingGuide = () => {
   ]
 
   return (
-    <div className="max-w-7xl mx-auto p-6 space-y-12">
+    <div className="space-y-12">
       {/* Header */}
-      <div className="space-y-4">
+      <div>
         <h1 className="text-4xl font-bold text-foreground">Spacing System</h1>
-        <p className="text-lg text-muted-foreground">
+        <p className="mt-4 text-lg text-muted-foreground">
           Tailwind's spacing scale is used for margin, padding, width, height, and gap utilities.
           The scale is based on a 4px (0.25rem) unit.
         </p>
       </div>
 
       {/* Complete Spacing Scale */}
-      <section className="space-y-6">
+      <section className="space-y-8">
         <div>
-          <h2 className="text-2xl font-semibold text-foreground mb-2">Complete Spacing Scale</h2>
+          <h2 className="text-2xl font-semibold mb-4">Complete Spacing Scale</h2>
           <p className="text-muted-foreground mb-6">
             Visual representation of all spacing values from 0 to 96
           </p>
@@ -104,9 +104,9 @@ const SpacingGuide = () => {
       </section>
 
       {/* Common Padding Patterns */}
-      <section className="space-y-6">
+      <section className="space-y-8">
         <div>
-          <h2 className="text-2xl font-semibold text-foreground mb-2">Common Padding Patterns</h2>
+          <h2 className="text-2xl font-semibold mb-4">Common Padding Patterns</h2>
           <p className="text-muted-foreground mb-6">
             Frequently used padding combinations for various UI components
           </p>
@@ -131,9 +131,9 @@ const SpacingGuide = () => {
       </section>
 
       {/* Gap Utilities */}
-      <section className="space-y-6">
+      <section className="space-y-8">
         <div>
-          <h2 className="text-2xl font-semibold text-foreground mb-2">Gap Utilities</h2>
+          <h2 className="text-2xl font-semibold mb-4">Gap Utilities</h2>
           <p className="text-muted-foreground mb-6">
             Spacing between grid and flex container items
           </p>
@@ -197,9 +197,9 @@ const SpacingGuide = () => {
       </section>
 
       {/* Spacing Guidelines */}
-      <section className="space-y-6">
+      <section className="space-y-8">
         <div>
-          <h2 className="text-2xl font-semibold text-foreground mb-2">Spacing Guidelines</h2>
+          <h2 className="text-2xl font-semibold mb-4">Spacing Guidelines</h2>
           <p className="text-muted-foreground mb-6">
             Best practices for using spacing in your designs
           </p>

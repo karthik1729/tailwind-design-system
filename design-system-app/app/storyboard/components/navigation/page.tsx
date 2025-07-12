@@ -23,8 +23,8 @@ export default function NavigationPage() {
     <div className="space-y-12">
       {/* Page Header */}
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Navigation</h1>
-        <p className="mt-2 text-gray-600 dark:text-gray-400">
+        <h1 className="text-4xl font-bold text-foreground">Navigation</h1>
+        <p className="mt-4 text-lg text-muted-foreground">
           Essential navigation components for organizing content and improving user experience.
         </p>
       </div>
@@ -33,7 +33,7 @@ export default function NavigationPage() {
       <section className="space-y-8">
         <div>
           <h2 className="text-2xl font-semibold mb-4">Navigation Menu</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-muted-foreground mb-6">
             A sophisticated navigation menu component with dropdown capabilities for complex site structures.
           </p>
         </div>
@@ -103,7 +103,7 @@ export default function NavigationPage() {
   </NavigationMenuList>
 </NavigationMenu>`}
           component={
-            <div className="flex items-center justify-center p-8">
+            <div className="flex items-center justify-center gap-4">
               <NavigationMenu>
                 <NavigationMenuList>
                   <NavigationMenuItem>
@@ -174,7 +174,7 @@ export default function NavigationPage() {
       <section className="space-y-8">
         <div>
           <h2 className="text-2xl font-semibold mb-4">Dropdown Menu</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-muted-foreground mb-6">
             A comprehensive dropdown menu component with support for submenus, groups, and keyboard shortcuts.
           </p>
         </div>
@@ -271,7 +271,7 @@ export default function NavigationPage() {
   </DropdownMenuContent>
 </DropdownMenu>`}
           component={
-            <div className="flex items-center justify-center p-8">
+            <div className="flex items-center justify-center gap-4">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="outline">
@@ -382,7 +382,7 @@ export default function NavigationPage() {
   </DropdownMenuContent>
 </DropdownMenu>`}
           component={
-            <div className="flex items-center justify-center p-8">
+            <div className="flex items-center justify-center gap-4">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost" size="icon">
@@ -450,7 +450,7 @@ return (
   </DropdownMenu>
 )`}
           component={
-            <div className="flex items-center justify-center p-8">
+            <div className="flex items-center justify-center gap-4">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="outline">
@@ -498,7 +498,7 @@ return (
       <section className="space-y-8">
         <div>
           <h2 className="text-2xl font-semibold mb-4">Breadcrumb</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-muted-foreground mb-6">
             Shows the user's current location within a website's hierarchy and enables navigation.
           </p>
         </div>
@@ -522,7 +522,7 @@ return (
   </BreadcrumbList>
 </Breadcrumb>`}
           component={
-            <div className="flex items-center justify-center p-8">
+            <div className="flex items-center justify-center gap-4">
               <Breadcrumb>
                 <BreadcrumbList>
                   <BreadcrumbItem>
@@ -567,7 +567,7 @@ return (
   </BreadcrumbList>
 </Breadcrumb>`}
           component={
-            <div className="flex items-center justify-center p-8">
+            <div className="flex items-center justify-center gap-4">
               <Breadcrumb>
                 <BreadcrumbList>
                   <BreadcrumbItem>
@@ -616,7 +616,7 @@ return (
   </BreadcrumbList>
 </Breadcrumb>`}
           component={
-            <div className="flex items-center justify-center p-8">
+            <div className="flex items-center justify-center gap-4">
               <Breadcrumb>
                 <BreadcrumbList>
                   <BreadcrumbItem>
@@ -645,7 +645,7 @@ return (
       <section className="space-y-8">
         <div>
           <h2 className="text-2xl font-semibold mb-4">Tabs</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-muted-foreground mb-6">
             Organize content into different sections that users can switch between.
           </p>
         </div>
@@ -714,7 +714,7 @@ return (
   </TabsContent>
 </Tabs>`}
           component={
-            <div className="flex items-center justify-center p-8">
+            <div className="flex items-center justify-center gap-4">
               <Tabs defaultValue="account" className="w-[400px]">
                 <TabsList>
                   <TabsTrigger value="account">Account</TabsTrigger>
@@ -843,7 +843,7 @@ return (
   </TabsContent>
 </Tabs>`}
           component={
-            <div className="flex items-center justify-center p-8">
+            <div className="flex items-center justify-center gap-4">
               <Tabs defaultValue="dashboard" className="w-[500px]">
                 <TabsList className="grid w-full grid-cols-4">
                   <TabsTrigger value="dashboard">
@@ -913,7 +913,7 @@ return (
       <section className="space-y-8">
         <div>
           <h2 className="text-2xl font-semibold mb-4">Pagination</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-muted-foreground mb-6">
             Navigate through multiple pages of content with various pagination styles.
           </p>
         </div>
@@ -949,7 +949,7 @@ return (
   </PaginationContent>
 </Pagination>`}
           component={
-            <div className="flex items-center justify-center p-8">
+            <div className="flex items-center justify-center gap-4">
               <Pagination>
                 <PaginationContent>
                   <PaginationItem>
@@ -1018,7 +1018,7 @@ return (
   </PaginationContent>
 </Pagination>`}
           component={
-            <div className="flex items-center justify-center p-8">
+            <div className="flex items-center justify-center gap-4">
               <Pagination>
                 <PaginationContent>
                   <PaginationItem>
@@ -1075,7 +1075,7 @@ return (
   </PaginationContent>
 </Pagination>`}
           component={
-            <div className="flex items-center justify-center p-8">
+            <div className="flex items-center justify-center gap-4">
               <Pagination>
                 <PaginationContent>
                   <PaginationItem>

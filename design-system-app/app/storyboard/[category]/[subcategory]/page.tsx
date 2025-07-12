@@ -21,7 +21,7 @@ export default async function SubcategoryPage({ params }: SubcategoryPageProps) 
   }
 
   return (
-    <div className="container mx-auto px-4 py-12 max-w-7xl">
+    <div>
       <div className="space-y-8">
         <div>
           <div className="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400">

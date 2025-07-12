@@ -36,8 +36,8 @@ export default function DataDisplayPage() {
     <div className="space-y-12">
       {/* Page Header */}
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Data Display</h1>
-        <p className="mt-2 text-gray-600 dark:text-gray-400">
+        <h1 className="text-4xl font-bold text-foreground">Data Display</h1>
+        <p className="mt-4 text-lg text-muted-foreground">
           Components for presenting and organizing information in various formats.
         </p>
       </div>
@@ -46,7 +46,7 @@ export default function DataDisplayPage() {
       <section className="space-y-8">
         <div>
           <h2 className="text-2xl font-semibold mb-4">Card</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-muted-foreground mb-6">
             A versatile container component for grouping related content and actions.
           </p>
         </div>
@@ -65,7 +65,7 @@ export default function DataDisplayPage() {
   </CardContent>
 </Card>`}
           component={
-            <div className="p-6">
+            <div className="gap-4">
               <Card className="max-w-md">
                 <CardHeader>
                   <CardTitle>Card Title</CardTitle>
@@ -106,7 +106,7 @@ export default function DataDisplayPage() {
   </CardFooter>
 </Card>`}
           component={
-            <div className="p-6">
+            <div className="gap-4">
               <Card className="max-w-md">
                 <CardHeader>
                   <CardTitle>Account Settings</CardTitle>
@@ -165,7 +165,7 @@ export default function DataDisplayPage() {
   </CardContent>
 </Card>`}
           component={
-            <div className="p-6">
+            <div className="gap-4">
               <Card className="max-w-md">
                 <CardHeader>
                   <CardTitle>Recent Activity</CardTitle>
@@ -202,7 +202,7 @@ export default function DataDisplayPage() {
       <section className="space-y-8">
         <div>
           <h2 className="text-2xl font-semibold mb-4">Table</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-muted-foreground mb-6">
             Display tabular data with support for headers, footers, and responsive scrolling.
           </p>
         </div>
@@ -244,7 +244,7 @@ export default function DataDisplayPage() {
   </TableBody>
 </Table>`}
           component={
-            <div className="p-6">
+            <div className="gap-4">
               <Table>
                 <TableHeader>
                   <TableRow>
@@ -321,7 +321,7 @@ export default function DataDisplayPage() {
   </TableFooter>
 </Table>`}
           component={
-            <div className="p-6">
+            <div className="gap-4">
               <Table>
                 <TableCaption>A list of recent transactions</TableCaption>
                 <TableHeader>
@@ -366,7 +366,7 @@ export default function DataDisplayPage() {
       <section className="space-y-8">
         <div>
           <h2 className="text-2xl font-semibold mb-4">Avatar</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-muted-foreground mb-6">
             Display user profile images with fallback support.
           </p>
         </div>
@@ -397,7 +397,7 @@ export default function DataDisplayPage() {
   <AvatarFallback className="text-lg">LG</AvatarFallback>
 </Avatar>`}
           component={
-            <div className="flex items-center gap-4 p-6">
+            <div className="flex items-center gap-4">
               <Avatar>
                 <AvatarImage src="https://github.com/shadcn.png" alt="User" />
                 <AvatarFallback>CN</AvatarFallback>
@@ -437,7 +437,7 @@ export default function DataDisplayPage() {
   </Avatar>
 </div>`}
           component={
-            <div className="p-6">
+            <div className="gap-4">
               <div className="flex -space-x-2">
                 <Avatar className="border-2 border-background">
                   <AvatarFallback>JD</AvatarFallback>
@@ -461,7 +461,7 @@ export default function DataDisplayPage() {
       <section className="space-y-8">
         <div>
           <h2 className="text-2xl font-semibold mb-4">Badge</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-muted-foreground mb-6">
             Small status indicators and labels for highlighting information.
           </p>
         </div>
@@ -475,7 +475,7 @@ export default function DataDisplayPage() {
 <Badge variant="destructive">Destructive</Badge>
 <Badge variant="outline">Outline</Badge>`}
           component={
-            <div className="flex flex-wrap items-center gap-4 p-6">
+            <div className="flex flex-wrap items-center gap-4">
               <Badge>Default</Badge>
               <Badge variant="secondary">Secondary</Badge>
               <Badge variant="destructive">Destructive</Badge>
@@ -501,7 +501,7 @@ export default function DataDisplayPage() {
   Pending
 </Badge>`}
           component={
-            <div className="flex flex-wrap items-center gap-4 p-6">
+            <div className="flex flex-wrap items-center gap-4">
               <Badge>
                 <Check className="h-3 w-3" />
                 Success
@@ -529,7 +529,7 @@ export default function DataDisplayPage() {
   <button>Button Badge</button>
 </Badge>`}
           component={
-            <div className="flex flex-wrap items-center gap-4 p-6">
+            <div className="flex flex-wrap items-center gap-4">
               <Badge asChild>
                 <a href="#">Link Badge</a>
               </Badge>
@@ -545,7 +545,7 @@ export default function DataDisplayPage() {
       <section className="space-y-8">
         <div>
           <h2 className="text-2xl font-semibold mb-4">Accordion</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-muted-foreground mb-6">
             Collapsible content panels for organizing information hierarchically.
           </p>
         </div>
@@ -578,7 +578,7 @@ export default function DataDisplayPage() {
   </AccordionItem>
 </Accordion>`}
           component={
-            <div className="p-6 max-w-2xl">
+            <div className="max-w-2xl">
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="item-1">
                   <AccordionTrigger>What is this component?</AccordionTrigger>
@@ -635,7 +635,7 @@ export default function DataDisplayPage() {
   </AccordionItem>
 </Accordion>`}
           component={
-            <div className="p-6 max-w-2xl">
+            <div className="max-w-2xl">
               <Accordion type="multiple" className="w-full">
                 <AccordionItem value="item-1">
                   <AccordionTrigger>Features</AccordionTrigger>

@@ -33,8 +33,8 @@ export default function FeedbackPage() {
     <div className="space-y-12">
       {/* Page Header */}
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Feedback Components</h1>
-        <p className="mt-2 text-gray-600 dark:text-gray-400">
+        <h1 className="text-4xl font-bold text-foreground">Feedback Components</h1>
+        <p className="mt-4 text-lg text-muted-foreground">
           Components for displaying feedback, alerts, loading states, and user confirmations.
         </p>
       </div>
@@ -43,7 +43,7 @@ export default function FeedbackPage() {
       <section className="space-y-8">
         <div>
           <h2 className="text-2xl font-semibold mb-4">Alert</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-muted-foreground mb-6">
             Displays important messages to users with various severity levels.
           </p>
         </div>
@@ -60,7 +60,7 @@ export default function FeedbackPage() {
   </AlertDescription>
 </Alert>`}
           component={
-            <div className="w-full max-w-2xl p-6 space-y-4">
+            <div className="w-full max-w-2xl space-y-4">
               <Alert>
                 <InfoIcon className="h-4 w-4" />
                 <AlertTitle>Heads up!</AlertTitle>
@@ -84,7 +84,7 @@ export default function FeedbackPage() {
   </AlertDescription>
 </Alert>`}
           component={
-            <div className="w-full max-w-2xl p-6 space-y-4">
+            <div className="w-full max-w-2xl space-y-4">
               <Alert variant="destructive">
                 <XCircle className="h-4 w-4" />
                 <AlertTitle>Error</AlertTitle>
@@ -127,7 +127,7 @@ export default function FeedbackPage() {
   </AlertDescription>
 </Alert>`}
           component={
-            <div className="w-full max-w-2xl p-6 space-y-4">
+            <div className="w-full max-w-2xl space-y-4">
               <Alert variant="success">
                 <CheckCircle2 className="h-4 w-4" />
                 <AlertTitle>Success!</AlertTitle>
@@ -170,7 +170,7 @@ export default function FeedbackPage() {
   </AlertDescription>
 </Alert>`}
           component={
-            <div className="w-full max-w-2xl p-6">
+            <div className="w-full max-w-2xl">
               <Alert>
                 <Terminal className="h-4 w-4" />
                 <AlertTitle>Terminal</AlertTitle>
@@ -190,7 +190,7 @@ export default function FeedbackPage() {
       <section className="space-y-8">
         <div>
           <h2 className="text-2xl font-semibold mb-4">Progress</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-muted-foreground mb-6">
             Shows the completion progress of a task or process.
           </p>
         </div>
@@ -203,7 +203,7 @@ export default function FeedbackPage() {
 <Progress value={66} className="w-full" />
 <Progress value={100} className="w-full" />`}
           component={
-            <div className="w-full max-w-2xl p-6 space-y-4">
+            <div className="w-full max-w-2xl space-y-4">
               <Progress value={33} className="w-full" />
               <Progress value={66} className="w-full" />
               <Progress value={100} className="w-full" />
@@ -223,7 +223,7 @@ export default function FeedbackPage() {
   <Progress value={progress} className="w-full" />
 </div>`}
           component={
-            <div className="w-full max-w-2xl p-6">
+            <div className="w-full max-w-2xl">
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
                   <span className="text-sm font-medium">Uploading files...</span>
@@ -253,7 +253,7 @@ export default function FeedbackPage() {
 <Progress value={50} className="w-full [&>div]:bg-yellow-500" />
 <Progress value={30} className="w-full [&>div]:bg-red-500" />`}
           component={
-            <div className="w-full max-w-2xl p-6 space-y-4">
+            <div className="w-full max-w-2xl space-y-4">
               <div className="space-y-2">
                 <Progress value={60} className="w-full h-1" />
                 <Progress value={60} className="w-full h-2" />
@@ -274,7 +274,7 @@ export default function FeedbackPage() {
       <section className="space-y-8">
         <div>
           <h2 className="text-2xl font-semibold mb-4">Skeleton</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-muted-foreground mb-6">
             Placeholder loading states that indicate content is being fetched.
           </p>
         </div>
@@ -289,7 +289,7 @@ export default function FeedbackPage() {
   <Skeleton className="h-4 w-[150px]" />
 </div>`}
           component={
-            <div className="w-full max-w-2xl p-6">
+            <div className="w-full max-w-2xl">
               <div className="space-y-2">
                 <Skeleton className="h-4 w-[250px]" />
                 <Skeleton className="h-4 w-[200px]" />
@@ -318,7 +318,7 @@ export default function FeedbackPage() {
   </CardFooter>
 </Card>`}
           component={
-            <div className="w-full max-w-md p-6">
+            <div className="w-full max-w-md">
               <Card>
                 <CardHeader>
                   <Skeleton className="h-6 w-[180px]" />
@@ -354,7 +354,7 @@ export default function FeedbackPage() {
   </div>
 </div>`}
           component={
-            <div className="w-full max-w-2xl p-6">
+            <div className="w-full max-w-2xl">
               <div className="flex items-start space-x-4">
                 <Skeleton className="h-12 w-12 rounded-full" />
                 <div className="space-y-2 flex-1">
@@ -376,7 +376,7 @@ export default function FeedbackPage() {
       <section className="space-y-8">
         <div>
           <h2 className="text-2xl font-semibold mb-4">Dialog</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-muted-foreground mb-6">
             Modal dialogs for presenting content or gathering user input.
           </p>
         </div>
@@ -400,7 +400,7 @@ export default function FeedbackPage() {
   </DialogContent>
 </Dialog>`}
           component={
-            <div className="p-6">
+            <div className="gap-4">
               <Dialog>
                 <DialogTrigger asChild>
                   <Button>Open Dialog</Button>
@@ -464,7 +464,7 @@ export default function FeedbackPage() {
   </DialogContent>
 </Dialog>`}
           component={
-            <div className="p-6">
+            <div className="gap-4">
               <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
                 <DialogTrigger asChild>
                   <Button>Edit Profile</Button>
@@ -514,7 +514,7 @@ export default function FeedbackPage() {
       <section className="space-y-8">
         <div>
           <h2 className="text-2xl font-semibold mb-4">Alert Dialog</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-muted-foreground mb-6">
             Modal dialogs that interrupt the user with important information and require a response.
           </p>
         </div>
@@ -542,7 +542,7 @@ export default function FeedbackPage() {
   </AlertDialogContent>
 </AlertDialog>`}
           component={
-            <div className="p-6">
+            <div className="gap-4">
               <AlertDialog>
                 <AlertDialogTrigger asChild>
                   <Button variant="destructive">Delete Account</Button>
@@ -597,7 +597,7 @@ export default function FeedbackPage() {
   </AlertDialogContent>
 </AlertDialog>`}
           component={
-            <div className="p-6">
+            <div className="gap-4">
               <AlertDialog>
                 <AlertDialogTrigger asChild>
                   <Button variant="outline">

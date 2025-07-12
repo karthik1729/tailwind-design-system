@@ -2,8 +2,7 @@ import SemanticColorTokens from "@/components/storyboard/foundations/semantic-co
 
 export default function ColorsPage() {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-7xl">
-      <div className="space-y-12">
+    <div className="space-y-12">
         <div>
           <h1 className="text-4xl font-bold text-foreground">
             Colors
@@ -14,7 +13,6 @@ export default function ColorsPage() {
         </div>
 
         <SemanticColorTokens />
-      </div>
     </div>
   )
 }

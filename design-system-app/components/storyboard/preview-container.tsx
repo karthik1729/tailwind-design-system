@@ -110,19 +110,17 @@ export function PreviewContainer({
         </div>
 
         <TabsContent value="preview" className="mt-4">
-          <Card className="overflow-hidden">
-            <div className="flex items-center justify-center bg-muted p-8">
+          <div className="overflow-hidden rounded-lg border">
+            <div className="flex min-h-[200px] items-center justify-center bg-muted/30 p-6">
               <div className={cn(
                 "w-full transition-all duration-300",
                 getViewportWidth(),
                 className
               )}>
-                <div className="bg-background p-8 rounded-lg">
-                  {component}
-                </div>
+                {component}
               </div>
             </div>
-          </Card>
+          </div>
         </TabsContent>
 
         <TabsContent value="code" className="mt-4">

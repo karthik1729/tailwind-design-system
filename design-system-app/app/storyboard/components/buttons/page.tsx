@@ -9,12 +9,11 @@ import { ArrowRight, Download, Heart, Mail, Plus, Settings, Trash2, Loader2, Che
 
 export default function ButtonsPage() {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-7xl">
-      <div className="space-y-12">
+    <div className="space-y-12">
         {/* Page Header */}
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Buttons</h1>
-          <p className="mt-2 text-gray-600 dark:text-gray-400">
+          <h1 className="text-4xl font-bold text-foreground">Buttons</h1>
+          <p className="mt-4 text-lg text-muted-foreground">
             A collection of button components with various styles, sizes, and states.
           </p>
         </div>
@@ -23,7 +22,7 @@ export default function ButtonsPage() {
         <section className="space-y-8">
           <div>
             <h2 className="text-2xl font-semibold mb-4">Variants</h2>
-            <p className="text-gray-600 dark:text-gray-400 mb-6">
+            <p className="text-muted-foreground mb-6">
               Nine distinct button variants for different use cases and visual hierarchies, including semantic color options.
             </p>
           </div>
@@ -38,7 +37,7 @@ export default function ButtonsPage() {
   Send Email
 </Button>`}
           component={
-            <div className="flex flex-wrap items-center gap-4 p-6">
+            <div className="flex flex-wrap items-center gap-4">
               <Button>Click me</Button>
               <Button>
                 <Mail className="h-4 w-4" />
@@ -58,7 +57,7 @@ export default function ButtonsPage() {
   Remove Item
 </Button>`}
           component={
-            <div className="flex flex-wrap items-center gap-4 p-6">
+            <div className="flex flex-wrap items-center gap-4">
               <Button variant="destructive">Delete</Button>
               <Button variant="destructive">
                 <Trash2 className="h-4 w-4" />
@@ -78,7 +77,7 @@ export default function ButtonsPage() {
   Download
 </Button>`}
           component={
-            <div className="flex flex-wrap items-center gap-4 p-6">
+            <div className="flex flex-wrap items-center gap-4">
               <Button variant="outline">Outline</Button>
               <Button variant="outline">
                 <Download className="h-4 w-4" />
@@ -98,7 +97,7 @@ export default function ButtonsPage() {
   Settings
 </Button>`}
           component={
-            <div className="flex flex-wrap items-center gap-4 p-6">
+            <div className="flex flex-wrap items-center gap-4">
               <Button variant="secondary">Secondary</Button>
               <Button variant="secondary">
                 <Settings className="h-4 w-4" />
@@ -118,7 +117,7 @@ export default function ButtonsPage() {
   Like
 </Button>`}
           component={
-            <div className="flex flex-wrap items-center gap-4 p-6">
+            <div className="flex flex-wrap items-center gap-4">
               <Button variant="ghost">Ghost</Button>
               <Button variant="ghost">
                 <Heart className="h-4 w-4" />
@@ -138,7 +137,7 @@ export default function ButtonsPage() {
   <ArrowRight className="h-4 w-4" />
 </Button>`}
           component={
-            <div className="flex flex-wrap items-center gap-4 p-6">
+            <div className="flex flex-wrap items-center gap-4">
               <Button variant="link">Link Button</Button>
               <Button variant="link">
                 Learn more
@@ -158,7 +157,7 @@ export default function ButtonsPage() {
   Confirm
 </Button>`}
           component={
-            <div className="flex flex-wrap items-center gap-4 p-6">
+            <div className="flex flex-wrap items-center gap-4">
               <Button variant="success">Success</Button>
               <Button variant="success">
                 <CheckCircle className="h-4 w-4" />
@@ -178,7 +177,7 @@ export default function ButtonsPage() {
   Proceed with Caution
 </Button>`}
           component={
-            <div className="flex flex-wrap items-center gap-4 p-6">
+            <div className="flex flex-wrap items-center gap-4">
               <Button variant="warning">Warning</Button>
               <Button variant="warning">
                 <AlertCircle className="h-4 w-4" />
@@ -198,7 +197,7 @@ export default function ButtonsPage() {
   Learn More
 </Button>`}
           component={
-            <div className="flex flex-wrap items-center gap-4 p-6">
+            <div className="flex flex-wrap items-center gap-4">
               <Button variant="info">Info</Button>
               <Button variant="info">
                 <Info className="h-4 w-4" />
@@ -213,7 +212,7 @@ export default function ButtonsPage() {
         <section className="space-y-8">
           <div>
           <h2 className="text-2xl font-semibold mb-4">Sizes</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-muted-foreground mb-6">
             Four size options to fit different contexts and layouts.
           </p>
           </div>
@@ -235,7 +234,7 @@ export default function ButtonsPage() {
   <Plus className="h-5 w-5" />
 </Button>`}
           component={
-            <div className="flex flex-wrap items-center gap-4 p-6">
+            <div className="flex flex-wrap items-center gap-4">
               <Button size="sm">Small</Button>
               <Button>Default</Button>
               <Button size="lg">Large</Button>
@@ -272,7 +271,7 @@ export default function ButtonsPage() {
 <Button size="lg" variant="secondary">Secondary</Button>
 <Button size="lg" variant="outline">Outline</Button>`}
           component={
-            <div className="space-y-4 p-6">
+            <div className="space-y-4">
               <div className="flex flex-wrap items-center gap-4">
                 <Button size="sm">Default</Button>
                 <Button size="sm" variant="secondary">Secondary</Button>
@@ -297,7 +296,7 @@ export default function ButtonsPage() {
         <section className="space-y-8">
           <div>
           <h2 className="text-2xl font-semibold mb-4">States</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-muted-foreground mb-6">
             Interactive states including disabled and loading states.
           </p>
         </div>
@@ -313,7 +312,7 @@ export default function ButtonsPage() {
 <Button variant="ghost" disabled>Ghost</Button>
 <Button variant="link" disabled>Link</Button>`}
           component={
-            <div className="flex flex-wrap items-center gap-4 p-6">
+            <div className="flex flex-wrap items-center gap-4">
               <Button disabled>Default</Button>
               <Button variant="destructive" disabled>Destructive</Button>
               <Button variant="outline" disabled>Outline</Button>
@@ -341,7 +340,7 @@ export default function ButtonsPage() {
   Processing
 </Button>`}
           component={
-            <div className="flex flex-wrap items-center gap-4 p-6">
+            <div className="flex flex-wrap items-center gap-4">
               <Button disabled>
                 <Loader2 className="h-4 w-4 animate-spin" />
                 Loading...
@@ -363,7 +362,7 @@ export default function ButtonsPage() {
         <section className="space-y-8">
           <div>
           <h2 className="text-2xl font-semibold mb-4">Icon Buttons</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-muted-foreground mb-6">
             Icon-only buttons for compact interfaces and toolbars with rotation micro-interactions.
           </p>
           </div>
@@ -387,7 +386,7 @@ export default function ButtonsPage() {
   <Trash2 className="h-4 w-4" />
 </Button>`}
           component={
-            <div className="flex flex-wrap items-center gap-4 p-6">
+            <div className="flex flex-wrap items-center gap-4">
               <Button size="icon" aria-label="Add">
                 <Plus className="h-4 w-4" />
               </Button>
@@ -423,7 +422,7 @@ export default function ButtonsPage() {
   <Search className="h-4 w-4" />
 </IconButton>`}
           component={
-            <div className="flex flex-wrap items-center gap-4 p-6">
+            <div className="flex flex-wrap items-center gap-4">
               <IconButton label="Share" variant="ghost">
                 <Share2 className="h-4 w-4" />
               </IconButton>
@@ -453,7 +452,7 @@ export default function ButtonsPage() {
   <Heart className="h-5 w-5" />
 </IconButton>`}
           component={
-            <div className="flex flex-wrap items-center gap-4 p-6">
+            <div className="flex flex-wrap items-center gap-4">
               <IconButton size="sm" label="Small">
                 <Heart className="h-3.5 w-3.5" />
               </IconButton>
@@ -472,7 +471,7 @@ export default function ButtonsPage() {
         <section className="space-y-8">
           <div>
           <h2 className="text-2xl font-semibold mb-4">Interaction States</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-muted-foreground mb-6">
             Buttons include smooth transitions and micro-interactions for better user feedback.
           </p>
           </div>
@@ -488,7 +487,7 @@ export default function ButtonsPage() {
   Interactive
 </Button>`}
           component={
-            <div className="flex flex-wrap items-center gap-4 p-6">
+            <div className="flex flex-wrap items-center gap-4">
               <Button>Hover over me</Button>
               <Button variant="secondary">Click and hold</Button>
               <Button variant="success">
@@ -504,7 +503,7 @@ export default function ButtonsPage() {
         <section className="space-y-8">
           <div>
           <h2 className="text-2xl font-semibold mb-4">Toggle Buttons</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-muted-foreground mb-6">
             Interactive toggle buttons for switching between states with smooth transitions.
           </p>
           </div>
@@ -525,7 +524,7 @@ export default function ButtonsPage() {
   <Link className="h-4 w-4" />
 </Toggle>`}
           component={
-            <div className="flex flex-wrap items-center gap-4 p-6">
+            <div className="flex flex-wrap items-center gap-4">
               <Toggle aria-label="Toggle italic">
                 <Italic className="h-4 w-4" />
               </Toggle>
@@ -562,7 +561,7 @@ export default function ButtonsPage() {
   Link
 </Toggle>`}
           component={
-            <div className="flex flex-wrap items-center gap-4 p-6">
+            <div className="flex flex-wrap items-center gap-4">
               <Toggle aria-label="Toggle bold">
                 <Bold className="h-4 w-4" />
                 Bold
@@ -599,7 +598,7 @@ export default function ButtonsPage() {
   <Bold className="h-4 w-4" />
 </Toggle>`}
           component={
-            <div className="flex flex-wrap items-center gap-4 p-6">
+            <div className="flex flex-wrap items-center gap-4">
               <Toggle size="sm" aria-label="Small toggle">
                 <Bold className="h-3.5 w-3.5" />
               </Toggle>
@@ -632,7 +631,7 @@ export default function ButtonsPage() {
   Disabled & Pressed
 </Toggle>`}
           component={
-            <div className="flex flex-wrap items-center gap-4 p-6">
+            <div className="flex flex-wrap items-center gap-4">
               <Toggle defaultPressed aria-label="Pressed toggle">
                 <Bold className="h-4 w-4" />
                 Pressed
@@ -654,7 +653,7 @@ export default function ButtonsPage() {
         <section className="space-y-8">
           <div>
           <h2 className="text-2xl font-semibold mb-4">Toggle Groups</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-muted-foreground mb-6">
             Group related toggles together for exclusive or multiple selections.
           </p>
           </div>
@@ -674,7 +673,7 @@ export default function ButtonsPage() {
   </ToggleGroupItem>
 </ToggleGroup>`}
           component={
-            <div className="p-6">
+            <div className="gap-4">
               <ToggleGroup type="single" defaultValue="bold">
                 <ToggleGroupItem value="bold" aria-label="Bold">
                   <Bold className="h-4 w-4" />
@@ -705,7 +704,7 @@ export default function ButtonsPage() {
   </ToggleGroupItem>
 </ToggleGroup>`}
           component={
-            <div className="p-6">
+            <div className="gap-4">
               <ToggleGroup type="single" defaultValue="left">
                 <ToggleGroupItem value="left" aria-label="Align left">
                   <AlignLeft className="h-4 w-4" />
@@ -736,7 +735,7 @@ export default function ButtonsPage() {
   </ToggleGroupItem>
 </ToggleGroup>`}
           component={
-            <div className="p-6">
+            <div className="gap-4">
               <ToggleGroup type="multiple" defaultValue={["bold", "italic"]}>
                 <ToggleGroupItem value="bold" aria-label="Bold">
                   <Bold className="h-4 w-4" />
@@ -775,7 +774,7 @@ export default function ButtonsPage() {
   </ToggleGroupItem>
 </ToggleGroup>`}
           component={
-            <div className="space-y-4 p-6">
+            <div className="space-y-4">
               <ToggleGroup type="single" variant="default">
                 <ToggleGroupItem value="list" aria-label="Bullet list">
                   <List className="h-4 w-4" />
@@ -826,7 +825,7 @@ export default function ButtonsPage() {
   </ToggleGroupItem>
 </ToggleGroup>`}
           component={
-            <div className="space-y-4 p-6">
+            <div className="space-y-4">
               <ToggleGroup type="single" size="sm">
                 <ToggleGroupItem value="bold" aria-label="Bold">
                   <Bold className="h-3.5 w-3.5" />
@@ -860,7 +859,7 @@ export default function ButtonsPage() {
         <section className="space-y-8">
           <div>
           <h2 className="text-2xl font-semibold mb-4">Button Compositions</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-muted-foreground mb-6">
             Common button group patterns and compositions.
           </p>
           </div>
@@ -879,7 +878,7 @@ export default function ButtonsPage() {
   <Button>Continue</Button>
 </div>`}
           component={
-            <div className="space-y-4 p-6">
+            <div className="space-y-4">
               <div className="flex items-center gap-2">
                 <Button variant="outline">Cancel</Button>
                 <Button>Save Changes</Button>
@@ -903,7 +902,7 @@ export default function ButtonsPage() {
   </Button>
 </div>`}
           component={
-            <div className="p-6">
+            <div className="gap-4">
               <div className="w-full max-w-sm space-y-2">
                 <Button className="w-full">Sign In</Button>
                 <Button variant="outline" className="w-full">
@@ -914,7 +913,6 @@ export default function ButtonsPage() {
           }
           />
         </section>
-      </div>
     </div>
   )
 }
