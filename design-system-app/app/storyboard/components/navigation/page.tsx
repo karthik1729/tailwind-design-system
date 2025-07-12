@@ -5,10 +5,11 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem,
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator, BreadcrumbEllipsis } from "@/components/ui/breadcrumb"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination"
+import { Command, CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator, CommandShortcut } from "@/components/ui/command"
 import { PreviewContainer } from "@/components/storyboard/preview-container"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ChevronDown, Cloud, CreditCard, Github, Home, Keyboard, LifeBuoy, LogOut, Mail, MessageSquare, Plus, PlusCircle, Settings, Store, User, UserPlus, Users, FileText, BarChart3 } from "lucide-react"
+import { ChevronDown, Cloud, CreditCard, Github, Home, Keyboard, LifeBuoy, LogOut, Mail, MessageSquare, Plus, PlusCircle, Settings, Store, User, UserPlus, Users, FileText, BarChart3, Calculator, Calendar, Search, Smile, CreditCard as CreditCardIcon } from "lucide-react"
 import Link from "next/link"
 import React from "react"
 import { cn } from "@/lib/utils"
@@ -1099,6 +1100,239 @@ return (
           }
         />
       </section>
+
+      {/* Command */}
+      <section className="space-y-8">
+        <div>
+          <h2 className="text-2xl font-semibold mb-4">Command</h2>
+          <p className="text-muted-foreground mb-6">
+            Fast, composable command menu with keyboard navigation, search, and item selection.
+          </p>
+        </div>
+
+        <PreviewContainer
+          title="Basic Command Menu"
+          description="Command palette with search and keyboard navigation"
+          code={`<Command className="rounded-lg border shadow-md">
+  <CommandInput placeholder="Type a command or search..." />
+  <CommandList>
+    <CommandEmpty>No results found.</CommandEmpty>
+    <CommandGroup heading="Suggestions">
+      <CommandItem>
+        <Calendar className="mr-2 h-4 w-4" />
+        <span>Calendar</span>
+      </CommandItem>
+      <CommandItem>
+        <Smile className="mr-2 h-4 w-4" />
+        <span>Search Emoji</span>
+      </CommandItem>
+      <CommandItem>
+        <Calculator className="mr-2 h-4 w-4" />
+        <span>Calculator</span>
+      </CommandItem>
+    </CommandGroup>
+    <CommandSeparator />
+    <CommandGroup heading="Settings">
+      <CommandItem>
+        <User className="mr-2 h-4 w-4" />
+        <span>Profile</span>
+        <CommandShortcut>⌘P</CommandShortcut>
+      </CommandItem>
+      <CommandItem>
+        <CreditCard className="mr-2 h-4 w-4" />
+        <span>Billing</span>
+        <CommandShortcut>⌘B</CommandShortcut>
+      </CommandItem>
+      <CommandItem>
+        <Settings className="mr-2 h-4 w-4" />
+        <span>Settings</span>
+        <CommandShortcut>⌘S</CommandShortcut>
+      </CommandItem>
+    </CommandGroup>
+  </CommandList>
+</Command>`}
+          component={
+            <div className="flex items-center justify-center">
+              <Command className="rounded-lg border shadow-md w-[450px]">
+                <CommandInput placeholder="Type a command or search..." />
+                <CommandList>
+                  <CommandEmpty>No results found.</CommandEmpty>
+                  <CommandGroup heading="Suggestions">
+                    <CommandItem>
+                      <Calendar className="mr-2 h-4 w-4" />
+                      <span>Calendar</span>
+                    </CommandItem>
+                    <CommandItem>
+                      <Smile className="mr-2 h-4 w-4" />
+                      <span>Search Emoji</span>
+                    </CommandItem>
+                    <CommandItem>
+                      <Calculator className="mr-2 h-4 w-4" />
+                      <span>Calculator</span>
+                    </CommandItem>
+                  </CommandGroup>
+                  <CommandSeparator />
+                  <CommandGroup heading="Settings">
+                    <CommandItem>
+                      <User className="mr-2 h-4 w-4" />
+                      <span>Profile</span>
+                      <CommandShortcut>⌘P</CommandShortcut>
+                    </CommandItem>
+                    <CommandItem>
+                      <CreditCardIcon className="mr-2 h-4 w-4" />
+                      <span>Billing</span>
+                      <CommandShortcut>⌘B</CommandShortcut>
+                    </CommandItem>
+                    <CommandItem>
+                      <Settings className="mr-2 h-4 w-4" />
+                      <span>Settings</span>
+                      <CommandShortcut>⌘S</CommandShortcut>
+                    </CommandItem>
+                  </CommandGroup>
+                </CommandList>
+              </Command>
+            </div>
+          }
+        />
+
+        <PreviewContainer
+          title="Command Dialog"
+          description="Command menu in a dialog/modal format"
+          code={`const [open, setOpen] = React.useState(false)
+
+React.useEffect(() => {
+  const down = (e: KeyboardEvent) => {
+    if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
+      e.preventDefault()
+      setOpen((open) => !open)
+    }
+  }
+  document.addEventListener("keydown", down)
+  return () => document.removeEventListener("keydown", down)
+}, [])
+
+return (
+  <>
+    <p className="text-sm text-muted-foreground">
+      Press{" "}
+      <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
+        <span className="text-xs">⌘</span>K
+      </kbd>
+    </p>
+    <CommandDialog open={open} onOpenChange={setOpen}>
+      <CommandInput placeholder="Type a command or search..." />
+      <CommandList>
+        <CommandEmpty>No results found.</CommandEmpty>
+        <CommandGroup heading="Suggestions">
+          <CommandItem onSelect={() => { console.log("Calendar"); setOpen(false) }}>
+            <Calendar className="mr-2 h-4 w-4" />
+            <span>Calendar</span>
+          </CommandItem>
+          <CommandItem onSelect={() => { console.log("Search Emoji"); setOpen(false) }}>
+            <Smile className="mr-2 h-4 w-4" />
+            <span>Search Emoji</span>
+          </CommandItem>
+          <CommandItem onSelect={() => { console.log("Calculator"); setOpen(false) }}>
+            <Calculator className="mr-2 h-4 w-4" />
+            <span>Calculator</span>
+          </CommandItem>
+        </CommandGroup>
+        <CommandSeparator />
+        <CommandGroup heading="Settings">
+          <CommandItem onSelect={() => { console.log("Profile"); setOpen(false) }}>
+            <User className="mr-2 h-4 w-4" />
+            <span>Profile</span>
+            <CommandShortcut>⌘P</CommandShortcut>
+          </CommandItem>
+          <CommandItem onSelect={() => { console.log("Billing"); setOpen(false) }}>
+            <CreditCard className="mr-2 h-4 w-4" />
+            <span>Billing</span>
+            <CommandShortcut>⌘B</CommandShortcut>
+          </CommandItem>
+          <CommandItem onSelect={() => { console.log("Settings"); setOpen(false) }}>
+            <Settings className="mr-2 h-4 w-4" />
+            <span>Settings</span>
+            <CommandShortcut>⌘S</CommandShortcut>
+          </CommandItem>
+        </CommandGroup>
+      </CommandList>
+    </CommandDialog>
+  </>
+)`}
+          component={
+            <CommandDialogDemo />
+          }
+        />
+
+        <PreviewContainer
+          title="Command with Disabled Items"
+          description="Command menu with some disabled items"
+          code={`<Command className="rounded-lg border shadow-md">
+  <CommandInput placeholder="Search features..." />
+  <CommandList>
+    <CommandEmpty>No features found.</CommandEmpty>
+    <CommandGroup heading="Features">
+      <CommandItem>
+        <Search className="mr-2 h-4 w-4" />
+        <span>Search</span>
+      </CommandItem>
+      <CommandItem>
+        <FileText className="mr-2 h-4 w-4" />
+        <span>Documents</span>
+      </CommandItem>
+      <CommandItem disabled>
+        <Cloud className="mr-2 h-4 w-4" />
+        <span>Cloud Sync</span>
+        <span className="ml-auto text-xs text-muted-foreground">Coming soon</span>
+      </CommandItem>
+      <CommandItem>
+        <Github className="mr-2 h-4 w-4" />
+        <span>GitHub Integration</span>
+      </CommandItem>
+      <CommandItem disabled>
+        <BarChart3 className="mr-2 h-4 w-4" />
+        <span>Analytics</span>
+        <span className="ml-auto text-xs text-muted-foreground">Pro only</span>
+      </CommandItem>
+    </CommandGroup>
+  </CommandList>
+</Command>`}
+          component={
+            <div className="flex items-center justify-center">
+              <Command className="rounded-lg border shadow-md w-[450px]">
+                <CommandInput placeholder="Search features..." />
+                <CommandList>
+                  <CommandEmpty>No features found.</CommandEmpty>
+                  <CommandGroup heading="Features">
+                    <CommandItem>
+                      <Search className="mr-2 h-4 w-4" />
+                      <span>Search</span>
+                    </CommandItem>
+                    <CommandItem>
+                      <FileText className="mr-2 h-4 w-4" />
+                      <span>Documents</span>
+                    </CommandItem>
+                    <CommandItem disabled>
+                      <Cloud className="mr-2 h-4 w-4" />
+                      <span>Cloud Sync</span>
+                      <span className="ml-auto text-xs text-muted-foreground">Coming soon</span>
+                    </CommandItem>
+                    <CommandItem>
+                      <Github className="mr-2 h-4 w-4" />
+                      <span>GitHub Integration</span>
+                    </CommandItem>
+                    <CommandItem disabled>
+                      <BarChart3 className="mr-2 h-4 w-4" />
+                      <span>Analytics</span>
+                      <span className="ml-auto text-xs text-muted-foreground">Pro only</span>
+                    </CommandItem>
+                  </CommandGroup>
+                </CommandList>
+              </Command>
+            </div>
+          }
+        />
+      </section>
     </div>
   )
 }
@@ -1129,3 +1363,73 @@ const ListItem = React.forwardRef<
   )
 })
 ListItem.displayName = "ListItem"
+
+// Command Dialog Demo Component
+function CommandDialogDemo() {
+  const [open, setOpen] = React.useState(false)
+
+  React.useEffect(() => {
+    const down = (e: KeyboardEvent) => {
+      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault()
+        setOpen((open) => !open)
+      }
+    }
+    document.addEventListener("keydown", down)
+    return () => document.removeEventListener("keydown", down)
+  }, [])
+
+  return (
+    <>
+      <div className="flex flex-col items-center gap-4">
+        <p className="text-sm text-muted-foreground">
+          Press{" "}
+          <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
+            <span className="text-xs">⌘</span>K
+          </kbd>
+        </p>
+        <Button onClick={() => setOpen(true)} variant="outline">
+          Open Command Menu
+        </Button>
+      </div>
+      <CommandDialog open={open} onOpenChange={setOpen}>
+        <CommandInput placeholder="Type a command or search..." />
+        <CommandList>
+          <CommandEmpty>No results found.</CommandEmpty>
+          <CommandGroup heading="Suggestions">
+            <CommandItem onSelect={() => { console.log("Calendar"); setOpen(false) }}>
+              <Calendar className="mr-2 h-4 w-4" />
+              <span>Calendar</span>
+            </CommandItem>
+            <CommandItem onSelect={() => { console.log("Search Emoji"); setOpen(false) }}>
+              <Smile className="mr-2 h-4 w-4" />
+              <span>Search Emoji</span>
+            </CommandItem>
+            <CommandItem onSelect={() => { console.log("Calculator"); setOpen(false) }}>
+              <Calculator className="mr-2 h-4 w-4" />
+              <span>Calculator</span>
+            </CommandItem>
+          </CommandGroup>
+          <CommandSeparator />
+          <CommandGroup heading="Settings">
+            <CommandItem onSelect={() => { console.log("Profile"); setOpen(false) }}>
+              <User className="mr-2 h-4 w-4" />
+              <span>Profile</span>
+              <CommandShortcut>⌘P</CommandShortcut>
+            </CommandItem>
+            <CommandItem onSelect={() => { console.log("Billing"); setOpen(false) }}>
+              <CreditCardIcon className="mr-2 h-4 w-4" />
+              <span>Billing</span>
+              <CommandShortcut>⌘B</CommandShortcut>
+            </CommandItem>
+            <CommandItem onSelect={() => { console.log("Settings"); setOpen(false) }}>
+              <Settings className="mr-2 h-4 w-4" />
+              <span>Settings</span>
+              <CommandShortcut>⌘S</CommandShortcut>
+            </CommandItem>
+          </CommandGroup>
+        </CommandList>
+      </CommandDialog>
+    </>
+  )
+}
