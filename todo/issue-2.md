@@ -132,8 +132,14 @@ Systematic enhancement of all 59 components in the design system, focusing on in
 **Components Enhanced**: Alert ✅, Badge ✅, Button ✅, IconButton ✅, Toggle ✅, ToggleGroup ✅, DropdownMenuTrigger ✅, ContextMenuTrigger ✅
 **Next Action**: Continue with CommandItem, MenubarTrigger, and other button/action components
 
-## Recent Updates (Latest - 2025-07-11)
-- ✅ Enhanced ContextMenuTrigger component
+## Recent Updates (Latest - 2025-07-12)
+- ✅ Fixed dark mode semantic colors for buttons and badges
+  - Corrected semantic colors to use vibrant, saturated colors (500 level) in dark mode
+  - Fixed success (green-500), destructive (red-500), warning (orange-500), info (blue-500)
+  - Updated hover/active states to use proper darker shades (600/700 levels)
+  - Ensured all semantic color foregrounds are white for proper contrast
+  - Resolved issue where dark mode colors appeared washed out
+- Previous: Enhanced ContextMenuTrigger component
   - Added ripple effect animation on right-click with visual feedback
   - Improved menu open/close transitions with smoother zoom and fade animations
   - Enhanced all menu items with hover translate effects and icon scaling
