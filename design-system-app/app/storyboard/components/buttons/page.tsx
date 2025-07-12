@@ -9,26 +9,27 @@ import { ArrowRight, Download, Heart, Mail, Plus, Settings, Trash2, Loader2, Che
 
 export default function ButtonsPage() {
   return (
-    <div className="space-y-12">
-      {/* Page Header */}
-      <div>
-        <h1 className="text-3xl font-bold tracking-tight">Buttons</h1>
-        <p className="mt-2 text-gray-600 dark:text-gray-400">
-          A collection of button components with various styles, sizes, and states.
-        </p>
-      </div>
-
-      {/* Button Variants */}
-      <section className="space-y-8">
+    <div className="container mx-auto px-4 py-12 max-w-7xl">
+      <div className="space-y-12">
+        {/* Page Header */}
         <div>
-          <h2 className="text-2xl font-semibold mb-4">Variants</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
-            Nine distinct button variants for different use cases and visual hierarchies, including semantic color options.
+          <h1 className="text-3xl font-bold tracking-tight">Buttons</h1>
+          <p className="mt-2 text-gray-600 dark:text-gray-400">
+            A collection of button components with various styles, sizes, and states.
           </p>
         </div>
 
-        {/* Default Variant */}
-        <PreviewContainer
+        {/* Button Variants */}
+        <section className="space-y-8">
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">Variants</h2>
+            <p className="text-gray-600 dark:text-gray-400 mb-6">
+              Nine distinct button variants for different use cases and visual hierarchies, including semantic color options.
+            </p>
+          </div>
+
+          {/* Default Variant */}
+          <PreviewContainer
           title="Default"
           description="Primary action button with solid background"
           code={`<Button>Click me</Button>
@@ -47,8 +48,8 @@ export default function ButtonsPage() {
           }
         />
 
-        {/* Destructive Variant */}
-        <PreviewContainer
+          {/* Destructive Variant */}
+          <PreviewContainer
           title="Destructive"
           description="Used for dangerous or irreversible actions"
           code={`<Button variant="destructive">Delete</Button>
@@ -67,8 +68,8 @@ export default function ButtonsPage() {
           }
         />
 
-        {/* Outline Variant */}
-        <PreviewContainer
+          {/* Outline Variant */}
+          <PreviewContainer
           title="Outline"
           description="Secondary action with border styling"
           code={`<Button variant="outline">Outline</Button>
@@ -87,8 +88,8 @@ export default function ButtonsPage() {
           }
         />
 
-        {/* Secondary Variant */}
-        <PreviewContainer
+          {/* Secondary Variant */}
+          <PreviewContainer
           title="Secondary"
           description="Alternative secondary action style"
           code={`<Button variant="secondary">Secondary</Button>
@@ -107,8 +108,8 @@ export default function ButtonsPage() {
           }
         />
 
-        {/* Ghost Variant */}
-        <PreviewContainer
+          {/* Ghost Variant */}
+          <PreviewContainer
           title="Ghost"
           description="Minimal button style for less prominent actions"
           code={`<Button variant="ghost">Ghost</Button>
@@ -127,8 +128,8 @@ export default function ButtonsPage() {
           }
         />
 
-        {/* Link Variant */}
-        <PreviewContainer
+          {/* Link Variant */}
+          <PreviewContainer
           title="Link"
           description="Styled as a link for navigation actions"
           code={`<Button variant="link">Link Button</Button>
@@ -147,8 +148,8 @@ export default function ButtonsPage() {
           }
         />
 
-        {/* Success Variant */}
-        <PreviewContainer
+          {/* Success Variant */}
+          <PreviewContainer
           title="Success"
           description="For positive actions and confirmations"
           code={`<Button variant="success">Success</Button>
@@ -167,8 +168,8 @@ export default function ButtonsPage() {
           }
         />
 
-        {/* Warning Variant */}
-        <PreviewContainer
+          {/* Warning Variant */}
+          <PreviewContainer
           title="Warning"
           description="For actions that need user attention"
           code={`<Button variant="warning">Warning</Button>
@@ -187,8 +188,8 @@ export default function ButtonsPage() {
           }
         />
 
-        {/* Info Variant */}
-        <PreviewContainer
+          {/* Info Variant */}
+          <PreviewContainer
           title="Info"
           description="For informational actions"
           code={`<Button variant="info">Info</Button>
@@ -205,19 +206,19 @@ export default function ButtonsPage() {
               </Button>
             </div>
           }
-        />
-      </section>
+          />
+        </section>
 
-      {/* Button Sizes */}
-      <section className="space-y-8">
-        <div>
+        {/* Button Sizes */}
+        <section className="space-y-8">
+          <div>
           <h2 className="text-2xl font-semibold mb-4">Sizes</h2>
           <p className="text-gray-600 dark:text-gray-400 mb-6">
             Four size options to fit different contexts and layouts.
           </p>
-        </div>
+          </div>
 
-        <PreviewContainer
+          <PreviewContainer
           title="Size Variations"
           description="Available button sizes from small to extra large, including icon-only variants"
           code={`<Button size="sm">Small</Button>
@@ -289,12 +290,12 @@ export default function ButtonsPage() {
               </div>
             </div>
           }
-        />
-      </section>
+          />
+        </section>
 
-      {/* Button States */}
-      <section className="space-y-8">
-        <div>
+        {/* Button States */}
+        <section className="space-y-8">
+          <div>
           <h2 className="text-2xl font-semibold mb-4">States</h2>
           <p className="text-gray-600 dark:text-gray-400 mb-6">
             Interactive states including disabled and loading states.
@@ -355,19 +356,19 @@ export default function ButtonsPage() {
               </Button>
             </div>
           }
-        />
-      </section>
+          />
+        </section>
 
-      {/* Icon Buttons */}
-      <section className="space-y-8">
-        <div>
+        {/* Icon Buttons */}
+        <section className="space-y-8">
+          <div>
           <h2 className="text-2xl font-semibold mb-4">Icon Buttons</h2>
           <p className="text-gray-600 dark:text-gray-400 mb-6">
             Icon-only buttons for compact interfaces and toolbars with rotation micro-interactions.
           </p>
-        </div>
+          </div>
 
-        <PreviewContainer
+          <PreviewContainer
           title="Icon Button Variants with Micro-interactions"
           description="Icon buttons rotate on hover and scale on click"
           code={`<Button size="icon">
@@ -464,19 +465,19 @@ export default function ButtonsPage() {
               </IconButton>
             </div>
           }
-        />
-      </section>
+          />
+        </section>
 
-      {/* Interaction States */}
-      <section className="space-y-8">
-        <div>
+        {/* Interaction States */}
+        <section className="space-y-8">
+          <div>
           <h2 className="text-2xl font-semibold mb-4">Interaction States</h2>
           <p className="text-gray-600 dark:text-gray-400 mb-6">
             Buttons include smooth transitions and micro-interactions for better user feedback.
           </p>
-        </div>
+          </div>
 
-        <PreviewContainer
+          <PreviewContainer
           title="Hover & Active States"
           description="Buttons lift on hover and scale down on click for tactile feedback"
           code={`{/* These buttons have built-in hover and active states */}
@@ -496,19 +497,19 @@ export default function ButtonsPage() {
               </Button>
             </div>
           }
-        />
-      </section>
+          />
+        </section>
 
-      {/* Toggle Buttons */}
-      <section className="space-y-8">
-        <div>
+        {/* Toggle Buttons */}
+        <section className="space-y-8">
+          <div>
           <h2 className="text-2xl font-semibold mb-4">Toggle Buttons</h2>
           <p className="text-gray-600 dark:text-gray-400 mb-6">
             Interactive toggle buttons for switching between states with smooth transitions.
           </p>
-        </div>
+          </div>
 
-        <PreviewContainer
+          <PreviewContainer
           title="Toggle Variants"
           description="Toggle buttons now use primary color when active, inheriting button styles"
           code={`<Toggle aria-label="Toggle italic">
@@ -646,19 +647,19 @@ export default function ButtonsPage() {
               </Toggle>
             </div>
           }
-        />
-      </section>
+          />
+        </section>
 
-      {/* Toggle Groups */}
-      <section className="space-y-8">
-        <div>
+        {/* Toggle Groups */}
+        <section className="space-y-8">
+          <div>
           <h2 className="text-2xl font-semibold mb-4">Toggle Groups</h2>
           <p className="text-gray-600 dark:text-gray-400 mb-6">
             Group related toggles together for exclusive or multiple selections.
           </p>
-        </div>
+          </div>
 
-        <PreviewContainer
+          <PreviewContainer
           title="Text Formatting Toolbar"
           description="Single selection toggle group for text formatting"
           code={`<ToggleGroup type="single" defaultValue="bold">
@@ -852,19 +853,19 @@ export default function ButtonsPage() {
               </ToggleGroup>
             </div>
           }
-        />
-      </section>
+          />
+        </section>
 
-      {/* Button Groups */}
-      <section className="space-y-8">
-        <div>
+        {/* Button Groups */}
+        <section className="space-y-8">
+          <div>
           <h2 className="text-2xl font-semibold mb-4">Button Compositions</h2>
           <p className="text-gray-600 dark:text-gray-400 mb-6">
             Common button group patterns and compositions.
           </p>
-        </div>
+          </div>
 
-        <PreviewContainer
+          <PreviewContainer
           title="Button Group"
           description="Grouped buttons for related actions"
           code={`<div className="flex items-center gap-2">
@@ -911,8 +912,9 @@ export default function ButtonsPage() {
               </div>
             </div>
           }
-        />
-      </section>
+          />
+        </section>
+      </div>
     </div>
   )
 }

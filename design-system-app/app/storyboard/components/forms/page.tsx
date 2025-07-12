@@ -21,7 +21,7 @@ export default function FormsPage() {
   const [sliderValue, setSliderValue] = useState([50])
 
   return (
-    <div className="max-w-7xl">
+    <div className="container mx-auto px-4 py-12 max-w-7xl">
       <div className="space-y-12">
         <div>
           <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100">

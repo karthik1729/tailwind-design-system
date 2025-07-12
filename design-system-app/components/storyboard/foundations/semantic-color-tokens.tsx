@@ -4,21 +4,6 @@ import React from 'react'
 
 const SemanticColorTokens: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = React.useState('brand')
-  const [isDarkMode, setIsDarkMode] = React.useState(false)
-
-  React.useEffect(() => {
-    // Check initial theme
-    setIsDarkMode(document.documentElement.classList.contains('dark'))
-  }, [])
-
-  const toggleTheme = () => {
-    if (isDarkMode) {
-      document.documentElement.classList.remove('dark')
-    } else {
-      document.documentElement.classList.add('dark')
-    }
-    setIsDarkMode(!isDarkMode)
-  }
 
   const categories = {
     brand: {
@@ -441,12 +426,6 @@ const SemanticColorTokens: React.FC = () => {
               </button>
             ))}
           </div>
-          <button
-            onClick={toggleTheme}
-            className="mb-4 px-4 py-2 rounded-lg bg-muted text-muted-foreground hover:bg-muted/80 transition-colors text-sm font-medium"
-          >
-            {isDarkMode ? '☀️ Light' : '🌙 Dark'}
-          </button>
         </div>
       </div>
 

@@ -93,7 +93,7 @@ export default function PatternsPage() {
   ]
 
   return (
-    <div className="max-w-7xl">
+    <div className="container mx-auto px-4 py-12 max-w-7xl">
       <div className="mb-8">
         <nav className="mb-4 flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400">
           <Link href="/storyboard" className="hover:text-indigo-600 dark:hover:text-indigo-400">

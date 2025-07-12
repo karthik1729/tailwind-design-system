@@ -17,7 +17,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   }
 
   return (
-    <div className="max-w-7xl">
+    <div className="container mx-auto px-4 py-12 max-w-7xl">
       <div className="space-y-8">
         <div>
           <h1 className="text-4xl font-bold text-foreground">
