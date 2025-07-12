@@ -35,7 +35,7 @@ function ContextMenuTrigger({
     >
       {children}
       {isRightClicked && (
-        <span className="pointer-events-none absolute inset-0 rounded-[inherit] animate-ripple bg-gray-400/20 dark:bg-gray-300/20" />
+        <span className="pointer-events-none absolute inset-0 rounded-[inherit] animate-ripple bg-muted-foreground/20" />
       )}
     </ContextMenuPrimitive.Trigger>
   )

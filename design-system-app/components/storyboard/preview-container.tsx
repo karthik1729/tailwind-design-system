@@ -47,8 +47,8 @@ export function PreviewContainer({
     <div className="space-y-4">
       {(title || description) && (
         <div>
-          {title && <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100">{title}</h3>}
-          {description && <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">{description}</p>}
+          {title && <h3 className="text-lg font-medium text-foreground">{title}</h3>}
+          {description && <p className="mt-1 text-sm text-muted-foreground">{description}</p>}
         </div>
       )}
 
@@ -60,11 +60,11 @@ export function PreviewContainer({
           </TabsList>
 
           <div className="flex items-center gap-2">
-            <div className="flex items-center rounded-md bg-gray-100 p-1 dark:bg-gray-800">
+            <div className="flex items-center rounded-md bg-muted p-1">
               <Button
                 variant="ghost"
                 size="sm"
-                className={cn("h-7 w-7 p-0", viewport === "desktop" && "bg-white dark:bg-gray-900")}
+                className={cn("h-7 w-7 p-0", viewport === "desktop" && "bg-background")}
                 onClick={() => setViewport("desktop")}
               >
                 <Monitor className="h-3.5 w-3.5" />
@@ -72,7 +72,7 @@ export function PreviewContainer({
               <Button
                 variant="ghost"
                 size="sm"
-                className={cn("h-7 w-7 p-0", viewport === "tablet" && "bg-white dark:bg-gray-900")}
+                className={cn("h-7 w-7 p-0", viewport === "tablet" && "bg-background")}
                 onClick={() => setViewport("tablet")}
               >
                 <Tablet className="h-3.5 w-3.5" />
@@ -80,7 +80,7 @@ export function PreviewContainer({
               <Button
                 variant="ghost"
                 size="sm"
-                className={cn("h-7 w-7 p-0", viewport === "mobile" && "bg-white dark:bg-gray-900")}
+                className={cn("h-7 w-7 p-0", viewport === "mobile" && "bg-background")}
                 onClick={() => setViewport("mobile")}
               >
                 <Smartphone className="h-3.5 w-3.5" />
@@ -111,7 +111,7 @@ export function PreviewContainer({
 
         <TabsContent value="preview" className="mt-4">
           <Card className="overflow-hidden">
-            <div className="flex items-center justify-center bg-gray-50 p-8 dark:bg-gray-900">
+            <div className="flex items-center justify-center bg-muted p-8">
               <div className={cn(
                 "w-full transition-all duration-300",
                 getViewportWidth(),

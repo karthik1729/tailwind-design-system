@@ -29,10 +29,10 @@ const SemanticColorTokens: React.FC = () => {
           name: 'Primary', 
           var: '--primary',
           variants: [
-            { shade: '50', class: 'bg-primary-50', textClass: 'text-gray-900' },
-            { shade: '100', class: 'bg-primary-100', textClass: 'text-gray-900' },
-            { shade: '200', class: 'bg-primary-200', textClass: 'text-gray-900' },
-            { shade: '300', class: 'bg-primary-300', textClass: 'text-gray-900' },
+            { shade: '50', class: 'bg-primary-50', textClass: 'text-foreground' },
+            { shade: '100', class: 'bg-primary-100', textClass: 'text-foreground' },
+            { shade: '200', class: 'bg-primary-200', textClass: 'text-foreground' },
+            { shade: '300', class: 'bg-primary-300', textClass: 'text-foreground' },
             { shade: '400', class: 'bg-primary-400', textClass: 'text-white' },
             { shade: '500', class: 'bg-primary-500', textClass: 'text-white' },
             { shade: '600', class: 'bg-primary-600', textClass: 'text-white' },
@@ -46,10 +46,10 @@ const SemanticColorTokens: React.FC = () => {
           name: 'Accent', 
           var: '--accent',
           variants: [
-            { shade: '50', class: 'bg-accent-50', textClass: 'text-gray-900' },
-            { shade: '100', class: 'bg-accent-100', textClass: 'text-gray-900' },
-            { shade: '200', class: 'bg-accent-200', textClass: 'text-gray-900' },
-            { shade: '300', class: 'bg-accent-300', textClass: 'text-gray-900' },
+            { shade: '50', class: 'bg-accent-50', textClass: 'text-foreground' },
+            { shade: '100', class: 'bg-accent-100', textClass: 'text-foreground' },
+            { shade: '200', class: 'bg-accent-200', textClass: 'text-foreground' },
+            { shade: '300', class: 'bg-accent-300', textClass: 'text-foreground' },
             { shade: '400', class: 'bg-accent-400', textClass: 'text-white' },
             { shade: '500', class: 'bg-accent-500', textClass: 'text-white' },
             { shade: '600', class: 'bg-accent-600', textClass: 'text-white' },
@@ -75,10 +75,10 @@ const SemanticColorTokens: React.FC = () => {
           name: 'Purple', 
           var: '--purple',
           variants: [
-            { shade: '50', class: 'bg-purple-50', textClass: 'text-gray-900' },
-            { shade: '100', class: 'bg-purple-100', textClass: 'text-gray-900' },
-            { shade: '200', class: 'bg-purple-200', textClass: 'text-gray-900' },
-            { shade: '300', class: 'bg-purple-300', textClass: 'text-gray-900' },
+            { shade: '50', class: 'bg-purple-50', textClass: 'text-foreground' },
+            { shade: '100', class: 'bg-purple-100', textClass: 'text-foreground' },
+            { shade: '200', class: 'bg-purple-200', textClass: 'text-foreground' },
+            { shade: '300', class: 'bg-purple-300', textClass: 'text-foreground' },
             { shade: '400', class: 'bg-purple-400', textClass: 'text-white' },
             { shade: '500', class: 'bg-purple-500', textClass: 'text-white' },
             { shade: '600', class: 'bg-purple-600', textClass: 'text-white' },
@@ -92,11 +92,11 @@ const SemanticColorTokens: React.FC = () => {
           name: 'Teal', 
           var: '--teal',
           variants: [
-            { shade: '50', class: 'bg-teal-50', textClass: 'text-gray-900' },
-            { shade: '100', class: 'bg-teal-100', textClass: 'text-gray-900' },
-            { shade: '200', class: 'bg-teal-200', textClass: 'text-gray-900' },
-            { shade: '300', class: 'bg-teal-300', textClass: 'text-gray-900' },
-            { shade: '400', class: 'bg-teal-400', textClass: 'text-gray-900' },
+            { shade: '50', class: 'bg-teal-50', textClass: 'text-foreground' },
+            { shade: '100', class: 'bg-teal-100', textClass: 'text-foreground' },
+            { shade: '200', class: 'bg-teal-200', textClass: 'text-foreground' },
+            { shade: '300', class: 'bg-teal-300', textClass: 'text-foreground' },
+            { shade: '400', class: 'bg-teal-400', textClass: 'text-foreground' },
             { shade: '500', class: 'bg-teal-500', textClass: 'text-white' },
             { shade: '600', class: 'bg-teal-600', textClass: 'text-white' },
             { shade: '700', class: 'bg-teal-700', textClass: 'text-white' },
@@ -109,11 +109,11 @@ const SemanticColorTokens: React.FC = () => {
           name: 'Orange', 
           var: '--orange',
           variants: [
-            { shade: '50', class: 'bg-orange-50', textClass: 'text-gray-900' },
-            { shade: '100', class: 'bg-orange-100', textClass: 'text-gray-900' },
-            { shade: '200', class: 'bg-orange-200', textClass: 'text-gray-900' },
-            { shade: '300', class: 'bg-orange-300', textClass: 'text-gray-900' },
-            { shade: '400', class: 'bg-orange-400', textClass: 'text-gray-900' },
+            { shade: '50', class: 'bg-orange-50', textClass: 'text-foreground' },
+            { shade: '100', class: 'bg-orange-100', textClass: 'text-foreground' },
+            { shade: '200', class: 'bg-orange-200', textClass: 'text-foreground' },
+            { shade: '300', class: 'bg-orange-300', textClass: 'text-foreground' },
+            { shade: '400', class: 'bg-orange-400', textClass: 'text-foreground' },
             { shade: '500', class: 'bg-orange-500', textClass: 'text-white' },
             { shade: '600', class: 'bg-orange-600', textClass: 'text-white' },
             { shade: '700', class: 'bg-orange-700', textClass: 'text-white' },
@@ -282,7 +282,7 @@ const SemanticColorTokens: React.FC = () => {
   const renderColorPalette = (token: any) => {
     return (
       <div className="space-y-3">
-        <h4 className="font-medium text-gray-900 dark:text-gray-100">{token.name}</h4>
+        <h4 className="font-medium text-foreground">{token.name}</h4>
         <div className="grid grid-cols-11 gap-0.5 rounded-lg overflow-hidden">
           {token.variants.map((variant: any) => (
             <div key={variant.shade} className="relative group">
@@ -307,16 +307,16 @@ const SemanticColorTokens: React.FC = () => {
     return (
       <div className="group relative">
         {/* Main color display */}
-        <div className="aspect-square relative overflow-hidden rounded-lg border border-gray-200 dark:border-gray-700">
+        <div className="aspect-square relative overflow-hidden rounded-lg border border-border">
           {isText ? (
-            <div className="w-full h-full flex items-center justify-center bg-white dark:bg-gray-950">
+            <div className="w-full h-full flex items-center justify-center bg-background">
               <span className={`text-4xl font-bold ${token.class}`}>Aa</span>
             </div>
           ) : isBorder ? (
-            <div className={`w-full h-full bg-white dark:bg-gray-950 border-8 ${token.class}`} />
+            <div className={`w-full h-full bg-background border-8 ${token.class}`} />
           ) : isRing ? (
-            <div className="w-full h-full flex items-center justify-center bg-white dark:bg-gray-950">
-              <div className={`w-16 h-16 bg-gray-200 dark:bg-gray-800 rounded ring-4 ${token.class}`} />
+            <div className="w-full h-full flex items-center justify-center bg-background">
+              <div className={`w-16 h-16 bg-muted rounded ring-4 ${token.class}`} />
             </div>
           ) : (
             <div className={`w-full h-full ${token.class}`}>
@@ -331,14 +331,14 @@ const SemanticColorTokens: React.FC = () => {
 
         {/* Token info */}
         <div className="mt-3">
-          <h4 className="font-medium text-gray-900 dark:text-gray-100">{token.name}</h4>
-          <code className="text-xs text-gray-500 dark:text-gray-400 font-mono">
+          <h4 className="font-medium text-foreground">{token.name}</h4>
+          <code className="text-xs text-muted-foreground font-mono">
             {token.class}
           </code>
         </div>
 
         {/* Hover tooltip */}
-        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 dark:bg-gray-800 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10">
+        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-foreground text-background text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10">
           var({token.var})
         </div>
       </div>
@@ -349,9 +349,9 @@ const SemanticColorTokens: React.FC = () => {
     return (
       <div className="space-y-4">
         {/* Main token */}
-        <div className="p-4 bg-gray-50 dark:bg-gray-900 rounded-lg">
+        <div className="p-4 bg-muted rounded-lg">
           <div className="flex items-center justify-between mb-3">
-            <h4 className="font-semibold text-gray-900 dark:text-gray-100">{token.name}</h4>
+            <h4 className="font-semibold text-foreground">{token.name}</h4>
             <div className={`px-3 py-1 rounded-full text-sm font-medium ${token.class} ${token.foreground?.class || 'text-white'}`}>
               Preview
             </div>
@@ -368,19 +368,19 @@ const SemanticColorTokens: React.FC = () => {
               </div>
               <div className="grid grid-cols-2 gap-2 text-sm">
                 <div>
-                  <span className="text-gray-500 dark:text-gray-400">Background:</span>
+                  <span className="text-muted-foreground">Background:</span>
                   <code className="ml-1 text-xs">{token.variants.background.class}</code>
                 </div>
                 <div>
-                  <span className="text-gray-500 dark:text-gray-400">Border:</span>
+                  <span className="text-muted-foreground">Border:</span>
                   <code className="ml-1 text-xs">{token.variants.border.class}</code>
                 </div>
                 <div>
-                  <span className="text-gray-500 dark:text-gray-400">Text:</span>
+                  <span className="text-muted-foreground">Text:</span>
                   <code className="ml-1 text-xs">{token.variants.text.class}</code>
                 </div>
                 <div>
-                  <span className="text-gray-500 dark:text-gray-400">Muted:</span>
+                  <span className="text-muted-foreground">Muted:</span>
                   <code className="ml-1 text-xs">{token.variants.textMuted.class}</code>
                 </div>
               </div>
@@ -388,8 +388,8 @@ const SemanticColorTokens: React.FC = () => {
           )}
 
           {/* Code reference */}
-          <div className="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
-            <code className="text-xs text-gray-600 dark:text-gray-400 font-mono">
+          <div className="mt-3 pt-3 border-t border-border">
+            <code className="text-xs text-muted-foreground font-mono">
               var({token.var})
             </code>
           </div>
@@ -401,15 +401,15 @@ const SemanticColorTokens: React.FC = () => {
   const renderColorCombination = (combination: any) => {
     return (
       <div className="space-y-6">
-        <h4 className="font-medium text-gray-900 dark:text-gray-100">{combination.name} Combinations</h4>
+        <h4 className="font-medium text-foreground">{combination.name} Combinations</h4>
         <div className="grid grid-cols-2 gap-4">
           {combination.combinations.map((combo: any, index: number) => (
             <div key={index} className="space-y-2">
-              <div className={`p-6 rounded-lg ${combo.bg} ${combo.text} border border-gray-200 dark:border-gray-700`}>
+              <div className={`p-6 rounded-lg ${combo.bg} ${combo.text} border border-border`}>
                 <p className="font-medium text-lg">Sample Text</p>
                 <p className="opacity-80">This shows how text appears on this background</p>
               </div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">
+              <div className="text-sm text-muted-foreground">
                 <code>{combo.label}</code>
               </div>
             </div>
@@ -424,7 +424,7 @@ const SemanticColorTokens: React.FC = () => {
   return (
     <div className="w-full max-w-7xl">
       {/* Header with category tabs and theme toggle */}
-      <div className="border-b border-gray-200 dark:border-gray-700 mb-8">
+      <div className="border-b border-border mb-8">
         <div className="flex justify-between items-end">
           <div className="flex gap-8">
             {Object.entries(categories).map(([key, category]) => (
@@ -434,7 +434,7 @@ const SemanticColorTokens: React.FC = () => {
                 className={`pb-4 text-sm font-medium border-b-2 transition-colors ${
                   selectedCategory === key
                     ? 'text-primary border-primary'
-                    : 'text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 border-transparent'
+                    : 'text-muted-foreground hover:text-foreground border-transparent'
                 }`}
               >
                 {category.title}
@@ -443,7 +443,7 @@ const SemanticColorTokens: React.FC = () => {
           </div>
           <button
             onClick={toggleTheme}
-            className="mb-4 px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors text-sm font-medium"
+            className="mb-4 px-4 py-2 rounded-lg bg-muted text-muted-foreground hover:bg-muted/80 transition-colors text-sm font-medium"
           >
             {isDarkMode ? '☀️ Light' : '🌙 Dark'}
           </button>
@@ -453,10 +453,10 @@ const SemanticColorTokens: React.FC = () => {
       {/* Category content */}
       <div className="space-y-8">
         <div>
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+          <h2 className="text-2xl font-bold text-foreground">
             {currentCategory.title}
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 mt-1">
+          <p className="text-muted-foreground mt-1">
             {currentCategory.description}
           </p>
         </div>
@@ -482,7 +482,7 @@ const SemanticColorTokens: React.FC = () => {
             {/* Brand colors with foregrounds */}
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="space-y-4">
-                <h4 className="font-medium text-gray-900 dark:text-gray-100">Primary + Foreground</h4>
+                <h4 className="font-medium text-foreground">Primary + Foreground</h4>
                 <div className="bg-primary text-primary-foreground p-6 rounded-lg">
                   <p className="font-semibold text-lg mb-2">Primary Background</p>
                   <p>This text uses primary-foreground color</p>
@@ -490,7 +490,7 @@ const SemanticColorTokens: React.FC = () => {
                 </div>
               </div>
               <div className="space-y-4">
-                <h4 className="font-medium text-gray-900 dark:text-gray-100">Accent + Foreground</h4>
+                <h4 className="font-medium text-foreground">Accent + Foreground</h4>
                 <div className="bg-accent text-accent-foreground p-6 rounded-lg">
                   <p className="font-semibold text-lg mb-2">Accent Background</p>
                   <p>This text uses accent-foreground color</p>
@@ -498,7 +498,7 @@ const SemanticColorTokens: React.FC = () => {
                 </div>
               </div>
               <div className="space-y-4">
-                <h4 className="font-medium text-gray-900 dark:text-gray-100">Purple + Foreground</h4>
+                <h4 className="font-medium text-foreground">Purple + Foreground</h4>
                 <div className="bg-purple text-purple-foreground p-6 rounded-lg">
                   <p className="font-semibold text-lg mb-2">Purple Background</p>
                   <p>This text uses purple-foreground color</p>
@@ -506,7 +506,7 @@ const SemanticColorTokens: React.FC = () => {
                 </div>
               </div>
               <div className="space-y-4">
-                <h4 className="font-medium text-gray-900 dark:text-gray-100">Teal + Foreground</h4>
+                <h4 className="font-medium text-foreground">Teal + Foreground</h4>
                 <div className="bg-teal text-teal-foreground p-6 rounded-lg">
                   <p className="font-semibold text-lg mb-2">Teal Background</p>
                   <p>This text uses teal-foreground color</p>
@@ -514,7 +514,7 @@ const SemanticColorTokens: React.FC = () => {
                 </div>
               </div>
               <div className="space-y-4">
-                <h4 className="font-medium text-gray-900 dark:text-gray-100">Orange + Foreground</h4>
+                <h4 className="font-medium text-foreground">Orange + Foreground</h4>
                 <div className="bg-orange text-orange-foreground p-6 rounded-lg">
                   <p className="font-semibold text-lg mb-2">Orange Background</p>
                   <p>This text uses orange-foreground color</p>
@@ -574,14 +574,14 @@ const SemanticColorTokens: React.FC = () => {
       </div>
 
       {/* Quick reference */}
-      <div className="mt-12 p-6 bg-gray-50 dark:bg-gray-900 rounded-lg">
-        <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">
+      <div className="mt-12 p-6 bg-muted rounded-lg">
+        <h3 className="text-lg font-semibold text-foreground mb-4">
           Quick Reference
         </h3>
         <div className="grid gap-4 md:grid-cols-2 text-sm">
           <div>
-            <h4 className="font-medium text-gray-700 dark:text-gray-300 mb-2">Common Patterns</h4>
-            <pre className="text-xs bg-gray-100 dark:bg-gray-800 p-3 rounded font-mono">
+            <h4 className="font-medium text-muted-foreground mb-2">Common Patterns</h4>
+            <pre className="text-xs bg-background p-3 rounded font-mono">
 {`<div className="bg-card text-card-foreground">
   <button className="bg-primary text-primary-foreground">
     Primary Action
@@ -593,8 +593,8 @@ const SemanticColorTokens: React.FC = () => {
             </pre>
           </div>
           <div>
-            <h4 className="font-medium text-gray-700 dark:text-gray-300 mb-2">Status Messages</h4>
-            <pre className="text-xs bg-gray-100 dark:bg-gray-800 p-3 rounded font-mono">
+            <h4 className="font-medium text-muted-foreground mb-2">Status Messages</h4>
+            <pre className="text-xs bg-background p-3 rounded font-mono">
 {`<div className="bg-success-background 
      text-success-text 
      border border-success-border">

@@ -6,7 +6,7 @@ export default function StoryboardLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className="flex h-screen bg-white dark:bg-gray-950">
+    <div className="flex h-screen bg-background">
       <StoryboardNavigation />
       <main className="flex-1 overflow-y-auto">
         <div className="px-8 py-8">

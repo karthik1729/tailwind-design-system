@@ -47,25 +47,25 @@ export function StoryboardNavigation() {
   }, 0)
 
   return (
-    <aside className="w-80 border-r border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-900">
+    <aside className="w-80 border-r border-border bg-muted">
       <div className="flex h-full flex-col">
-        <div className="border-b border-gray-200 p-4 dark:border-gray-800">
+        <div className="border-b border-border p-4">
           <Link href="/storyboard" className="flex items-center space-x-2">
-            <span className="text-xl font-semibold text-gray-900 dark:text-gray-100">
+            <span className="text-xl font-semibold text-foreground">
               Design System
             </span>
             <span className="rounded-full bg-indigo-100 px-2 py-0.5 text-xs font-medium text-indigo-600 dark:bg-indigo-950 dark:text-indigo-400">
               v4
             </span>
           </Link>
-          <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+          <p className="mt-1 text-sm text-muted-foreground">
             {totalElements} design elements
           </p>
         </div>
 
-        <div className="border-b border-gray-200 p-4 dark:border-gray-800">
+        <div className="border-b border-border p-4">
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
+            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
             <Input
               type="search"
               placeholder="Search design elements..."
@@ -82,17 +82,17 @@ export function StoryboardNavigation() {
               <li key={key}>
                 <button
                   onClick={() => toggleCategory(key)}
-                  className="flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:text-gray-100 dark:hover:bg-gray-800"
+                  className="flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-medium text-foreground hover:bg-muted"
                 >
                   <div className="flex items-center space-x-3">
-                    <span className="text-gray-400 dark:text-gray-500">
+                    <span className="text-muted-foreground">
                       {categoryIcons[key as keyof typeof categoryIcons]}
                     </span>
                     <span>{category.name}</span>
                   </div>
                   <svg
                     className={cn(
-                      "h-4 w-4 text-gray-400 transition-transform",
+                      "h-4 w-4 text-muted-foreground transition-transform",
                       expandedCategories.includes(key) && "rotate-90"
                     )}
                     fill="none"
@@ -110,14 +110,14 @@ export function StoryboardNavigation() {
                         <Link
                           href={`/storyboard/${key}/${subKey}`}
                           className={cn(
-                            "flex items-center justify-between rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-800",
+                            "flex items-center justify-between rounded-md px-3 py-2 text-sm hover:bg-muted",
                             pathname === `/storyboard/${key}/${subKey}`
                               ? "bg-indigo-50 text-indigo-600 dark:bg-indigo-950/50 dark:text-indigo-400"
-                              : "text-gray-700 dark:text-gray-300"
+                              : "text-muted-foreground"
                           )}
                         >
                           <span>{subcategory.name}</span>
-                          <span className="text-xs text-gray-500 dark:text-gray-400">
+                          <span className="text-xs text-muted-foreground">
                             {subcategory.count}
                           </span>
                         </Link>
@@ -130,26 +130,26 @@ export function StoryboardNavigation() {
           </ul>
         </nav>
 
-        <div className="border-t border-gray-200 p-4 dark:border-gray-800">
+        <div className="border-t border-border p-4">
           <div className="flex items-center justify-between mb-3">
-            <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Theme</span>
+            <span className="text-sm font-medium text-muted-foreground">Theme</span>
             <ThemeSwitcher />
           </div>
           
-          <div className="rounded-lg bg-gray-100 p-3 dark:bg-gray-800">
-            <p className="text-xs font-medium text-gray-900 dark:text-gray-100">
+          <div className="rounded-lg bg-muted p-3">
+            <p className="text-xs font-medium text-foreground">
               Quick Links
             </p>
             <div className="mt-2 space-y-1">
               <Link
                 href="/components"
-                className="block text-xs text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
+                className="block text-xs text-muted-foreground hover:text-foreground"
               >
                 Component Library
               </Link>
               <Link
                 href="/"
-                className="block text-xs text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
+                className="block text-xs text-muted-foreground hover:text-foreground"
               >
                 Documentation
               </Link>

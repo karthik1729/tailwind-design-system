@@ -54,10 +54,10 @@ const ColorPalette: React.FC = () => {
       title: "Gray Scale",
       description: "Neutral colors for text, backgrounds, borders, and UI elements",
       colors: [
-        { name: "Gray 50", value: "#f9fafb", class: "bg-gray-50", textColor: "text-gray-900" },
-        { name: "Gray 100", value: "#f3f4f6", class: "bg-gray-100", textColor: "text-gray-900" },
-        { name: "Gray 200", value: "#e5e7eb", class: "bg-gray-200", textColor: "text-gray-900" },
-        { name: "Gray 300", value: "#d1d5db", class: "bg-gray-300", textColor: "text-gray-900" },
+        { name: "Gray 50", value: "#f9fafb", class: "bg-gray-50", textColor: "text-foreground" },
+        { name: "Gray 100", value: "#f3f4f6", class: "bg-gray-100", textColor: "text-foreground" },
+        { name: "Gray 200", value: "#e5e7eb", class: "bg-gray-200", textColor: "text-foreground" },
+        { name: "Gray 300", value: "#d1d5db", class: "bg-gray-300", textColor: "text-foreground" },
         { name: "Gray 400", value: "#9ca3af", class: "bg-gray-400", textColor: "text-white" },
         { name: "Gray 500", value: "#6b7280", class: "bg-gray-500", textColor: "text-white" },
         { name: "Gray 600", value: "#4b5563", class: "bg-gray-600", textColor: "text-white" },
@@ -160,10 +160,10 @@ const ColorPalette: React.FC = () => {
   return (
     <div className="w-full max-w-7xl mx-auto p-6 space-y-12">
       <div className="space-y-4">
-        <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-50">
+        <h1 className="text-4xl font-bold text-foreground">
           Color Palette
         </h1>
-        <p className="text-lg text-gray-600 dark:text-gray-400">
+        <p className="text-lg text-muted-foreground">
           A comprehensive color system designed for consistency, accessibility, and visual harmony across all components.
         </p>
       </div>
@@ -172,11 +172,11 @@ const ColorPalette: React.FC = () => {
       {colorGroups.map((group, groupIndex) => (
         <div key={groupIndex} className="space-y-4">
           <div className="space-y-2">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-50">
+            <h2 className="text-2xl font-semibold text-foreground">
               {group.title}
             </h2>
             {group.description && (
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-muted-foreground">
                 {group.description}
               </p>
             )}
@@ -186,7 +186,7 @@ const ColorPalette: React.FC = () => {
             {group.colors.map((color, index) => (
               <div
                 key={index}
-                className="group relative overflow-hidden rounded-lg border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-200"
+                className="group relative overflow-hidden rounded-lg border border-border hover:shadow-lg transition-shadow duration-200"
               >
                 <div
                   className={`h-24 w-full ${color.class} flex items-center justify-center`}
@@ -195,14 +195,14 @@ const ColorPalette: React.FC = () => {
                     {color.value}
                   </span>
                 </div>
-                <div className="p-3 bg-white dark:bg-gray-800 space-y-1">
-                  <p className="text-sm font-medium text-gray-900 dark:text-gray-100">
+                <div className="p-3 bg-background space-y-1">
+                  <p className="text-sm font-medium text-foreground">
                     {color.name}
                   </p>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 font-mono">
+                  <p className="text-xs text-muted-foreground font-mono">
                     {color.value}
                   </p>
-                  <p className="text-xs text-gray-600 dark:text-gray-300 font-mono">
+                  <p className="text-xs text-muted-foreground font-mono">
                     {color.class}
                   </p>
                 </div>
@@ -213,8 +213,8 @@ const ColorPalette: React.FC = () => {
       ))}
 
       {/* Usage Guidelines */}
-      <div className="space-y-6 border-t border-gray-200 dark:border-gray-700 pt-12">
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-50">
+      <div className="space-y-6 border-t border-border pt-12">
+        <h2 className="text-3xl font-bold text-foreground">
           Usage Guidelines
         </h2>
         
@@ -222,16 +222,16 @@ const ColorPalette: React.FC = () => {
           {usageGuidelines.map((section, index) => (
             <div
               key={index}
-              className="space-y-3 p-6 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700"
+              className="space-y-3 p-6 bg-muted rounded-lg border border-border"
             >
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
+              <h3 className="text-lg font-semibold text-foreground">
                 {section.title}
               </h3>
               <ul className="space-y-2">
                 {section.guidelines.map((guideline, guideIndex) => (
                   <li
                     key={guideIndex}
-                    className="text-sm text-gray-600 dark:text-gray-300 flex items-start"
+                    className="text-sm text-muted-foreground flex items-start"
                   >
                     <span className="inline-block w-1.5 h-1.5 rounded-full bg-primary-500 mt-1.5 mr-2 flex-shrink-0" />
                     {guideline}
@@ -244,62 +244,62 @@ const ColorPalette: React.FC = () => {
       </div>
 
       {/* Quick Reference */}
-      <div className="space-y-4 border-t border-gray-200 dark:border-gray-700 pt-12">
+      <div className="space-y-4 border-t border-border pt-12">
         <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-50">
           Quick Reference
         </h2>
         
         <div className="grid gap-4 md:grid-cols-3">
-          <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
-            <h3 className="font-medium text-gray-900 dark:text-gray-100 mb-2">Text Colors</h3>
+          <div className="p-4 bg-muted rounded-lg border border-border">
+            <h3 className="font-medium text-foreground mb-2">Text Colors</h3>
             <div className="space-y-1 text-sm">
               <div className="flex justify-between">
-                <span className="text-gray-600 dark:text-gray-400">Primary:</span>
-                <code className="text-xs bg-gray-200 dark:bg-gray-700 px-2 py-0.5 rounded">text-gray-900</code>
+                <span className="text-muted-foreground">Primary:</span>
+                <code className="text-xs bg-muted px-2 py-0.5 rounded">text-gray-900</code>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-600 dark:text-gray-400">Secondary:</span>
-                <code className="text-xs bg-gray-200 dark:bg-gray-700 px-2 py-0.5 rounded">text-gray-500</code>
+                <code className="text-xs bg-muted px-2 py-0.5 rounded">text-gray-500</code>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-600 dark:text-gray-400">Tertiary:</span>
-                <code className="text-xs bg-gray-200 dark:bg-gray-700 px-2 py-0.5 rounded">text-gray-400</code>
+                <code className="text-xs bg-muted px-2 py-0.5 rounded">text-gray-400</code>
               </div>
             </div>
           </div>
           
-          <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
-            <h3 className="font-medium text-gray-900 dark:text-gray-100 mb-2">Background Colors</h3>
+          <div className="p-4 bg-muted rounded-lg border border-border">
+            <h3 className="font-medium text-foreground mb-2">Background Colors</h3>
             <div className="space-y-1 text-sm">
               <div className="flex justify-between">
-                <span className="text-gray-600 dark:text-gray-400">Primary:</span>
-                <code className="text-xs bg-gray-200 dark:bg-gray-700 px-2 py-0.5 rounded">bg-white</code>
+                <span className="text-muted-foreground">Primary:</span>
+                <code className="text-xs bg-muted px-2 py-0.5 rounded">bg-white</code>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-600 dark:text-gray-400">Secondary:</span>
-                <code className="text-xs bg-gray-200 dark:bg-gray-700 px-2 py-0.5 rounded">bg-gray-50</code>
+                <code className="text-xs bg-muted px-2 py-0.5 rounded">bg-gray-50</code>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-600 dark:text-gray-400">Tertiary:</span>
-                <code className="text-xs bg-gray-200 dark:bg-gray-700 px-2 py-0.5 rounded">bg-gray-100</code>
+                <code className="text-xs bg-muted px-2 py-0.5 rounded">bg-gray-100</code>
               </div>
             </div>
           </div>
           
-          <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
-            <h3 className="font-medium text-gray-900 dark:text-gray-100 mb-2">Border Colors</h3>
+          <div className="p-4 bg-muted rounded-lg border border-border">
+            <h3 className="font-medium text-foreground mb-2">Border Colors</h3>
             <div className="space-y-1 text-sm">
               <div className="flex justify-between">
-                <span className="text-gray-600 dark:text-gray-400">Primary:</span>
-                <code className="text-xs bg-gray-200 dark:bg-gray-700 px-2 py-0.5 rounded">border-gray-300</code>
+                <span className="text-muted-foreground">Primary:</span>
+                <code className="text-xs bg-muted px-2 py-0.5 rounded">border-gray-300</code>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-600 dark:text-gray-400">Secondary:</span>
-                <code className="text-xs bg-gray-200 dark:bg-gray-700 px-2 py-0.5 rounded">border-gray-200</code>
+                <code className="text-xs bg-muted px-2 py-0.5 rounded">border-gray-200</code>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-600 dark:text-gray-400">Brand:</span>
-                <code className="text-xs bg-gray-200 dark:bg-gray-700 px-2 py-0.5 rounded">border-primary-600</code>
+                <code className="text-xs bg-muted px-2 py-0.5 rounded">border-primary-600</code>
               </div>
             </div>
           </div>

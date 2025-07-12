@@ -387,8 +387,8 @@
   --foreground: #f9fafb; /* gray-50 */
   
   /* Solid color variants for interactive states - Dark Mode */
-  --primary-hover: #3b82f6; /* primary-500 */
-  --primary-active: #60a5fa; /* primary-400 */
+  --primary-hover: #3b82f6; /* primary-500 - darker for hover */
+  --primary-active: #2563eb; /* primary-600 - even darker for active */
   --destructive-hover: #dc2626; /* red-600 - darker for hover */
   --destructive-active: #b91c1c; /* red-700 - even darker for active */
   --secondary-hover: #475569; /* gray-600 - lighter hover */
@@ -421,14 +421,14 @@
   --card-foreground: #f9fafb;
   --popover: #1e293b; /* gray-800 - lighter popover background */
   --popover-foreground: #f9fafb;
-  --primary: #2563eb; /* blue-600 - darker in dark mode */
-  --primary-foreground: #ffffff; /* white - testing bright color */
+  --primary: #60a5fa; /* blue-400 - vibrant blue for dark mode */
+  --primary-foreground: #030712; /* gray-950 for contrast */
   --secondary: #334155; /* gray-700 - lighter secondary background */
   --secondary-foreground: #f9fafb;
   --muted: #334155; /* gray-700 - lighter muted background */
   --muted-foreground: #cbd5e1; /* gray-300 - lighter muted text */
-  --accent: #6366f1; /* accent-500 */
-  --accent-foreground: #f9fafb;
+  --accent: #818cf8; /* accent-400 - more vibrant for dark mode */
+  --accent-foreground: #030712;
   --purple: #a855f7; /* purple-500 */
   --purple-foreground: #030712;
   --teal: #14b8a6; /* teal-500 */

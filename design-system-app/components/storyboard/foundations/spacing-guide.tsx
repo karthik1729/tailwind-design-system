@@ -70,8 +70,8 @@ const SpacingGuide = () => {
     <div className="max-w-7xl mx-auto p-6 space-y-12">
       {/* Header */}
       <div className="space-y-4">
-        <h1 className="text-4xl font-bold text-gray-900">Spacing System</h1>
-        <p className="text-lg text-gray-600">
+        <h1 className="text-4xl font-bold text-foreground">Spacing System</h1>
+        <p className="text-lg text-muted-foreground">
           Tailwind's spacing scale is used for margin, padding, width, height, and gap utilities.
           The scale is based on a 4px (0.25rem) unit.
         </p>
@@ -80,8 +80,8 @@ const SpacingGuide = () => {
       {/* Complete Spacing Scale */}
       <section className="space-y-6">
         <div>
-          <h2 className="text-2xl font-semibold text-gray-900 mb-2">Complete Spacing Scale</h2>
-          <p className="text-gray-600 mb-6">
+          <h2 className="text-2xl font-semibold text-foreground mb-2">Complete Spacing Scale</h2>
+          <p className="text-muted-foreground mb-6">
             Visual representation of all spacing values from 0 to 96
           </p>
         </div>
@@ -89,13 +89,13 @@ const SpacingGuide = () => {
         <div className="grid gap-3">
           {spacingScale.map((space) => (
             <div key={space.key} className="flex items-center gap-4">
-              <div className="w-20 text-sm font-mono text-gray-600 text-right">
+              <div className="w-20 text-sm font-mono text-muted-foreground text-right">
                 {space.key}
               </div>
-              <div className="w-24 text-sm text-gray-500 text-right">
+              <div className="w-24 text-sm text-muted-foreground text-right">
                 {space.value}
               </div>
-              <div className="flex-1 bg-gray-100 rounded-lg p-1">
+              <div className="flex-1 bg-muted rounded-lg p-1">
                 <div className={`bg-blue-500 h-8 rounded ${space.class}`} />
               </div>
             </div>
@@ -106,8 +106,8 @@ const SpacingGuide = () => {
       {/* Common Padding Patterns */}
       <section className="space-y-6">
         <div>
-          <h2 className="text-2xl font-semibold text-gray-900 mb-2">Common Padding Patterns</h2>
-          <p className="text-gray-600 mb-6">
+          <h2 className="text-2xl font-semibold text-foreground mb-2">Common Padding Patterns</h2>
+          <p className="text-muted-foreground mb-6">
             Frequently used padding combinations for various UI components
           </p>
         </div>
@@ -116,11 +116,11 @@ const SpacingGuide = () => {
           {commonPaddingPatterns.map((pattern) => (
             <div key={pattern.name} className="space-y-3">
               <div>
-                <h3 className="font-medium text-gray-900">{pattern.name}</h3>
-                <p className="text-sm text-gray-600">{pattern.description}</p>
+                <h3 className="font-medium text-foreground">{pattern.name}</h3>
+                <p className="text-sm text-muted-foreground">{pattern.description}</p>
                 <code className="text-sm font-mono text-blue-600">{pattern.classes}</code>
               </div>
-              <div className="bg-gray-100 rounded-lg p-4">
+              <div className="bg-muted rounded-lg p-4">
                 <div className={`bg-blue-500 text-white rounded inline-block ${pattern.classes}`}>
                   Sample Content
                 </div>
@@ -133,8 +133,8 @@ const SpacingGuide = () => {
       {/* Gap Utilities */}
       <section className="space-y-6">
         <div>
-          <h2 className="text-2xl font-semibold text-gray-900 mb-2">Gap Utilities</h2>
-          <p className="text-gray-600 mb-6">
+          <h2 className="text-2xl font-semibold text-foreground mb-2">Gap Utilities</h2>
+          <p className="text-muted-foreground mb-6">
             Spacing between grid and flex container items
           </p>
         </div>
@@ -144,13 +144,13 @@ const SpacingGuide = () => {
             <div key={gap.key} className="space-y-3">
               <div className="flex items-baseline gap-4">
                 <code className="text-sm font-mono text-blue-600">gap-{gap.key}</code>
-                <span className="text-sm text-gray-600">{gap.value}</span>
-                <span className="text-sm text-gray-500">{gap.description}</span>
+                <span className="text-sm text-muted-foreground">{gap.value}</span>
+                <span className="text-sm text-muted-foreground">{gap.description}</span>
               </div>
               
               {/* Flex example */}
               <div className="space-y-2">
-                <p className="text-sm font-medium text-gray-700">Flex container:</p>
+                <p className="text-sm font-medium text-muted-foreground">Flex container:</p>
                 <div className={`flex ${
                   gap.key === '1' ? 'gap-1' :
                   gap.key === '2' ? 'gap-2' :
@@ -161,7 +161,7 @@ const SpacingGuide = () => {
                   gap.key === '12' ? 'gap-12' :
                   gap.key === '20' ? 'gap-20' :
                   gap.key === '24' ? 'gap-24' : ''
-                } bg-gray-100 p-4 rounded-lg`}>
+                } bg-muted p-4 rounded-lg`}>
                   {[1, 2, 3, 4].map((i) => (
                     <div key={i} className="bg-blue-500 text-white px-4 py-2 rounded">
                       Item {i}
@@ -172,7 +172,7 @@ const SpacingGuide = () => {
 
               {/* Grid example */}
               <div className="space-y-2">
-                <p className="text-sm font-medium text-gray-700">Grid container:</p>
+                <p className="text-sm font-medium text-muted-foreground">Grid container:</p>
                 <div className={`grid grid-cols-3 ${
                   gap.key === '1' ? 'gap-1' :
                   gap.key === '2' ? 'gap-2' :
@@ -183,7 +183,7 @@ const SpacingGuide = () => {
                   gap.key === '12' ? 'gap-12' :
                   gap.key === '20' ? 'gap-20' :
                   gap.key === '24' ? 'gap-24' : ''
-                } bg-gray-100 p-4 rounded-lg`}>
+                } bg-muted p-4 rounded-lg`}>
                   {[1, 2, 3, 4, 5, 6].map((i) => (
                     <div key={i} className="bg-blue-500 text-white p-4 rounded text-center">
                       {i}
@@ -199,16 +199,16 @@ const SpacingGuide = () => {
       {/* Spacing Guidelines */}
       <section className="space-y-6">
         <div>
-          <h2 className="text-2xl font-semibold text-gray-900 mb-2">Spacing Guidelines</h2>
-          <p className="text-gray-600 mb-6">
+          <h2 className="text-2xl font-semibold text-foreground mb-2">Spacing Guidelines</h2>
+          <p className="text-muted-foreground mb-6">
             Best practices for using spacing in your designs
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          <div className="bg-gray-50 rounded-lg p-6 space-y-4">
-            <h3 className="font-semibold text-gray-900">Component Spacing</h3>
-            <ul className="space-y-2 text-gray-600">
+          <div className="bg-muted rounded-lg p-6 space-y-4">
+            <h3 className="font-semibold text-foreground">Component Spacing</h3>
+            <ul className="space-y-2 text-muted-foreground">
               <li className="flex items-start gap-2">
                 <span className="text-blue-500 mt-1">•</span>
                 <span>Use consistent spacing within components (e.g., p-4 or p-6)</span>
@@ -224,9 +224,9 @@ const SpacingGuide = () => {
             </ul>
           </div>
 
-          <div className="bg-gray-50 rounded-lg p-6 space-y-4">
-            <h3 className="font-semibold text-gray-900">Responsive Spacing</h3>
-            <ul className="space-y-2 text-gray-600">
+          <div className="bg-muted rounded-lg p-6 space-y-4">
+            <h3 className="font-semibold text-foreground">Responsive Spacing</h3>
+            <ul className="space-y-2 text-muted-foreground">
               <li className="flex items-start gap-2">
                 <span className="text-blue-500 mt-1">•</span>
                 <span>Increase spacing on larger screens (p-4 md:p-6 lg:p-8)</span>
