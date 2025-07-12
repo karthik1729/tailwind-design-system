@@ -390,15 +390,15 @@
   --primary-hover: #3b82f6; /* primary-500 */
   --primary-active: #60a5fa; /* primary-400 */
   --destructive-hover: #ef4444; /* red-500 */
-  --destructive-active: #f87171; /* red-400 */
+  --destructive-active: #fca5a5; /* red-300 */
   --secondary-hover: #374151; /* gray-700 */
   --secondary-active: #4b5563; /* gray-600 */
   --success-hover: #22c55e; /* green-500 */
-  --success-active: #4ade80; /* green-400 */
+  --success-active: #86efac; /* green-300 */
   --warning-hover: #f97316; /* orange-500 */
-  --warning-active: #fb923c; /* orange-400 */
+  --warning-active: #fdba74; /* orange-300 */
   --info-hover: #3b82f6; /* blue-500 */
-  --info-active: #60a5fa; /* blue-400 */
+  --info-active: #93c5fd; /* blue-300 */
   
   /* Subtle variants for dark backgrounds */
   --primary-subtle: #1e3a8a; /* primary-900 */
@@ -435,25 +435,25 @@
   --teal-foreground: #030712;
   --orange: #f97316; /* orange-500 */
   --orange-foreground: #030712;
-  --destructive: #ef4444; /* red-500 */
+  --destructive: #f87171; /* red-400 */
   --destructive-foreground: #f9fafb;
   --destructive-background: #7f1d1d; /* red-900 */
   --destructive-border: #991b1b; /* red-800 */
   --destructive-text: #fee2e2; /* red-100 */
   --destructive-text-muted: #fecaca; /* red-200 */
-  --success: #16a34a; /* green-600 */
+  --success: #4ade80; /* green-400 */
   --success-foreground: #ffffff;
   --success-background: #14532d; /* green-900 */
   --success-border: #166534; /* green-800 */
   --success-text: #dcfce7; /* green-100 */
   --success-text-muted: #bbf7d0; /* green-200 */
-  --warning: #ea580c; /* orange-600 */
+  --warning: #fb923c; /* orange-400 */
   --warning-foreground: #ffffff;
   --warning-background: #7c2d12; /* orange-900 */
   --warning-border: #9a3412; /* orange-800 */
   --warning-text: #ffedd5; /* orange-100 */
   --warning-text-muted: #fed7aa; /* orange-200 */
-  --info: #2563eb; /* blue-600 */
+  --info: #60a5fa; /* blue-400 */
   --info-foreground: #ffffff;
   --info-background: #1e3a8a; /* blue-900 */
   --info-border: #1e40af; /* blue-800 */
