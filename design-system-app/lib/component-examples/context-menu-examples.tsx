@@ -98,7 +98,7 @@ export const contextMenuExamples: ComponentExample[] = [
             <ContextMenuShortcut>⌘C</ContextMenuShortcut>
           </ContextMenuItem>
           <ContextMenuItem>
-            <Paste className="mr-2 h-4 w-4" />
+            <Clipboard className="mr-2 h-4 w-4" />
             <span>Paste</span>
             <ContextMenuShortcut>⌘V</ContextMenuShortcut>
           </ContextMenuItem>
@@ -511,7 +511,7 @@ return (
             <ContextMenuShortcut>⌘C</ContextMenuShortcut>
           </ContextMenuItem>
           <ContextMenuItem disabled>
-            <Paste className="mr-2 h-4 w-4" />
+            <Clipboard className="mr-2 h-4 w-4" />
             <span>Paste</span>
             <ContextMenuShortcut>⌘V</ContextMenuShortcut>
           </ContextMenuItem>
@@ -688,6 +688,84 @@ return (
           <ContextMenuItem>
             <Archive className="mr-2 h-4 w-4" />
             Archive
+          </ContextMenuItem>
+        </ContextMenuContent>
+      </ContextMenu>
+    )
+  },
+  {
+    title: "Enhanced Interactions Demo",
+    description: "Context menu with enhanced right-click feedback and micro-interactions.",
+    code: `<ContextMenu>
+  <ContextMenuTrigger className="flex h-[150px] w-[300px] items-center justify-center rounded-md bg-gradient-to-br from-purple-500 to-indigo-600 text-white font-medium">
+    Right-click for enhanced experience
+  </ContextMenuTrigger>
+  <ContextMenuContent className="w-64">
+    <ContextMenuLabel>Enhanced Context Menu</ContextMenuLabel>
+    <ContextMenuSeparator />
+    <ContextMenuItem>
+      <Star className="mr-2 h-4 w-4" />
+      <span>Add to Favorites</span>
+      <ContextMenuShortcut>⌘⇧F</ContextMenuShortcut>
+    </ContextMenuItem>
+    <ContextMenuSub>
+      <ContextMenuSubTrigger>
+        <Share className="mr-2 h-4 w-4" />
+        <span>Share via</span>
+      </ContextMenuSubTrigger>
+      <ContextMenuSubContent className="w-48">
+        <ContextMenuItem>
+          <Mail className="mr-2 h-4 w-4" />
+          <span>Email</span>
+        </ContextMenuItem>
+        <ContextMenuItem>
+          <MessageSquare className="mr-2 h-4 w-4" />
+          <span>Message</span>
+        </ContextMenuItem>
+      </ContextMenuSubContent>
+    </ContextMenuSub>
+    <ContextMenuSeparator />
+    <ContextMenuItem variant="destructive">
+      <Trash2 className="mr-2 h-4 w-4" />
+      <span>Delete</span>
+      <ContextMenuShortcut>⌘⌫</ContextMenuShortcut>
+    </ContextMenuItem>
+  </ContextMenuContent>
+</ContextMenu>`,
+    component: () => (
+      <ContextMenu>
+        <ContextMenuTrigger className="flex h-[150px] w-[300px] items-center justify-center rounded-md bg-gradient-to-br from-purple-500 to-indigo-600 text-white font-medium">
+          Right-click for enhanced experience
+        </ContextMenuTrigger>
+        <ContextMenuContent className="w-64">
+          <ContextMenuLabel>Enhanced Context Menu</ContextMenuLabel>
+          <ContextMenuSeparator />
+          <ContextMenuItem>
+            <Star className="mr-2 h-4 w-4" />
+            <span>Add to Favorites</span>
+            <ContextMenuShortcut>⌘⇧F</ContextMenuShortcut>
+          </ContextMenuItem>
+          <ContextMenuSub>
+            <ContextMenuSubTrigger>
+              <Share className="mr-2 h-4 w-4" />
+              <span>Share via</span>
+            </ContextMenuSubTrigger>
+            <ContextMenuSubContent className="w-48">
+              <ContextMenuItem>
+                <Mail className="mr-2 h-4 w-4" />
+                <span>Email</span>
+              </ContextMenuItem>
+              <ContextMenuItem>
+                <MessageSquare className="mr-2 h-4 w-4" />
+                <span>Message</span>
+              </ContextMenuItem>
+            </ContextMenuSubContent>
+          </ContextMenuSub>
+          <ContextMenuSeparator />
+          <ContextMenuItem variant="destructive">
+            <Trash2 className="mr-2 h-4 w-4" />
+            <span>Delete</span>
+            <ContextMenuShortcut>⌘⌫</ContextMenuShortcut>
           </ContextMenuItem>
         </ContextMenuContent>
       </ContextMenu>

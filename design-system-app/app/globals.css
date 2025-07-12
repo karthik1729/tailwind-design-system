@@ -291,18 +291,18 @@
   --foreground: #111827;
   
   /* Solid color variants for interactive states */
-  --primary-hover: #1d4ed8; /* primary-700 */
-  --primary-active: #1e3a8a; /* primary-900 - darker for better feedback */
-  --destructive-hover: #dc2626; /* red-600 */
+  --primary-hover: #2563eb; /* primary-600 */
+  --primary-active: #1d4ed8; /* primary-700 */
+  --destructive-hover: #b91c1c; /* red-700 */
   --destructive-active: #991b1b; /* red-800 */
   --secondary-hover: #e5e7eb; /* gray-200 */
   --secondary-active: #9ca3af; /* gray-400 - more contrast */
-  --success-hover: #16a34a; /* green-600 */
-  --success-active: #15803d; /* green-700 */
-  --warning-hover: #ca8a04; /* yellow-600 */
-  --warning-active: #a16207; /* yellow-700 */
-  --info-hover: #2563eb; /* blue-600 */
-  --info-active: #1d4ed8; /* blue-700 */
+  --success-hover: #15803d; /* green-700 */
+  --success-active: #14532d; /* green-800 */
+  --warning-hover: #ea580c; /* orange-600 */
+  --warning-active: #c2410c; /* orange-700 */
+  --info-hover: #1d4ed8; /* blue-700 */
+  --info-active: #1e40af; /* blue-800 */
   
   /* Subtle variants for light backgrounds */
   --primary-subtle: #eff6ff; /* primary-50 */
@@ -314,9 +314,9 @@
   --success-subtle: #f0fdf4; /* green-50 */
   --success-subtle-hover: #dcfce7; /* green-100 */
   --success-subtle-active: #bbf7d0; /* green-200 */
-  --warning-subtle: #fefce8; /* yellow-50 */
-  --warning-subtle-hover: #fef3c7; /* yellow-100 */
-  --warning-subtle-active: #fde68a; /* yellow-200 */
+  --warning-subtle: #fff7ed; /* orange-50 */
+  --warning-subtle-hover: #ffedd5; /* orange-100 */
+  --warning-subtle-active: #fed7aa; /* orange-200 */
   --info-subtle: #eff6ff; /* blue-50 */
   --info-subtle-hover: #dbeafe; /* blue-100 */
   --info-subtle-active: #bfdbfe; /* blue-200 */
@@ -325,7 +325,7 @@
   --card-foreground: #111827;
   --popover: #ffffff;
   --popover-foreground: #111827;
-  --primary: #2563eb; /* blue-600 */
+  --primary: #3b82f6; /* blue-500 */
   --primary-foreground: #ffffff;
   --secondary: #f3f4f6; /* gray-100 */
   --secondary-foreground: #111827;
@@ -373,7 +373,7 @@
   --chart-5: 262 51% 65%; /* violet-500 in HSL */
   --sidebar: #ffffff;
   --sidebar-foreground: #111827;
-  --sidebar-primary: #2563eb;
+  --sidebar-primary: #3b82f6;
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #f3f4f6;
   --sidebar-accent-foreground: #111827;
@@ -395,8 +395,8 @@
   --secondary-active: #4b5563; /* gray-600 */
   --success-hover: #22c55e; /* green-500 */
   --success-active: #4ade80; /* green-400 */
-  --warning-hover: #eab308; /* yellow-500 */
-  --warning-active: #facc15; /* yellow-400 */
+  --warning-hover: #f97316; /* orange-500 */
+  --warning-active: #fb923c; /* orange-400 */
   --info-hover: #3b82f6; /* blue-500 */
   --info-active: #60a5fa; /* blue-400 */
   
@@ -410,9 +410,9 @@
   --success-subtle: #14532d; /* green-900 */
   --success-subtle-hover: #166534; /* green-800 */
   --success-subtle-active: #15803d; /* green-700 */
-  --warning-subtle: #713f12; /* yellow-900 */
-  --warning-subtle-hover: #854d0e; /* yellow-800 */
-  --warning-subtle-active: #a16207; /* yellow-700 */
+  --warning-subtle: #7c2d12; /* orange-900 */
+  --warning-subtle-hover: #9a3412; /* orange-800 */
+  --warning-subtle-active: #c2410c; /* orange-700 */
   --info-subtle: #1e3a8a; /* blue-900 */
   --info-subtle-hover: #1e40af; /* blue-800 */
   --info-subtle-active: #1d4ed8; /* blue-700 */
@@ -503,5 +503,31 @@
   
   .ring-focus-destructive {
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-destructive focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+}
+
+@layer utilities {
+  @keyframes ripple {
+    to {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes pulse-once {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.85;
+    }
+  }
+  
+  .animate-ripple {
+    animation: ripple 0.3s ease-out;
+  }
+  
+  .animate-pulse-once {
+    animation: pulse-once 0.3s ease-out;
   }
 }

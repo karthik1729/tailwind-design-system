@@ -10,7 +10,7 @@ interface IconButtonProps extends Omit<ButtonProps, 'size' | 'children'> {
 }
 
 const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
-  ({ className, children, size = "default", label, variant = "ghost", ...props }, ref) => {
+  ({ className, children, size = "default", label, variant = "outline", ...props }, ref) => {
     const sizeMap = {
       sm: "icon-sm",
       default: "icon",
@@ -24,9 +24,6 @@ const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
         variant={variant}
         className={cn(
           "relative overflow-hidden",
-          // Add pulse effect on hover for certain variants
-          variant === "ghost" && "hover:before:animate-pulse",
-          "before:absolute before:inset-0 before:rounded-full before:bg-accent before:opacity-0 before:transition-opacity hover:before:opacity-10",
           className
         )}
         aria-label={label}

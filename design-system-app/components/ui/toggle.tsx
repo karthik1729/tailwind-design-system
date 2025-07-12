@@ -12,7 +12,7 @@ const toggleVariants = cva(
     variants: {
       variant: {
         default: [
-          "bg-transparent",
+          "bg-muted/50",
           "hover:bg-muted hover:text-muted-foreground",
           "data-[state=on]:bg-primary data-[state=on]:text-primary-foreground",
           "data-[state=on]:shadow-sm",
@@ -42,9 +42,10 @@ const toggleVariants = cva(
           "data-[state=on]:[&_svg]:scale-110",
         ],
         ghost: [
-          "hover:text-primary",
-          "data-[state=on]:bg-accent data-[state=on]:text-accent-foreground",
-          "data-[state=on]:hover:bg-accent",
+          "bg-transparent",
+          "hover:bg-muted hover:text-primary",
+          "data-[state=on]:bg-primary/10 data-[state=on]:text-primary data-[state=on]:font-medium",
+          "data-[state=on]:hover:bg-primary/20",
           "focus-visible:ring-ring",
           "[&_svg]:transition-transform [&_svg]:duration-200",
           "data-[state=on]:[&_svg]:scale-110",
