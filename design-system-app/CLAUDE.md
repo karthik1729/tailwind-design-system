@@ -1,87 +1,36 @@
-# Design System Project Guidelines
+# Design System Quick Reference
 
-## Core Design Principles
+## Key Rules
+1. **Use tokens only** - `bg-background` not `bg-white`
+2. **Space over borders** - Create hierarchy with spacing
+3. **Consistent interactions** - All buttons/components feel cohesive
+4. **Dark mode aware** - Everything works in both themes
 
-1. **Token-Based Design**: NEVER hardcode colors or values - always use design tokens
-2. **Borderless Hierarchy**: Create visual structure through spacing, not borders
-3. **Consistent Interactions**: Predictable micro-interactions across all components
-4. **Accessibility First**: All components meet WCAG 2.1 AA standards
+## Common Tokens
+- `bg-background`, `text-foreground` - Main colors
+- `bg-card`, `bg-muted`, `text-muted-foreground` - Secondary
+- `bg-primary`, `bg-destructive`, `bg-success` - Actions
+- Container: `container mx-auto px-4 py-12 max-w-7xl`
 
-## Design Standards
+## Button Pattern
+- Scale: `active:scale-[0.99]` (subtle)
+- Shadows: `shadow-sm` → `hover:shadow-md` → `active:shadow-none`
+- Timing: 200ms hover, 75ms active
 
-### Color Usage
-- **Always use tokens**: `var(--color-primary-400)` or semantic tokens like `var(--destructive)`
-- **Never hardcode**: No hex values like `#3b82f6` in components
-- **Dark mode aware**: Use lighter variants (300-400) for visibility in dark mode
-- **Semantic meanings**:
-  - Destructive: Red tones
-  - Success: Green tones
-  - Warning: Orange tones (NOT yellow)
-  - Info: Blue tones
+## Examples
 
-### Component Patterns
-- **Buttons**: 9 variants with consistent hover/active states
-- **Active states**: Use scale effects (`active:scale-[0.98]`), not color changes
-- **Icon buttons**: `rounded-lg` borders, outline variant by default
-- **Micro-interactions**: 200ms transitions, smooth easing
-
-### Visual Hierarchy Rules
-
-#### ❌ Avoid
-- Heavy borders between sections
-- Border-based layouts
-- Excessive dividing lines
-- Dark borders for containers
-- Hardcoded color values
-
-#### ✅ Prefer
-- White space for separation (space-y-8, space-y-12)
-- Background colors for grouping (bg-white on bg-gray-50)
-- Typography contrast (font-semibold, text-gray-500)
-- Subtle shadows when needed (shadow-sm)
-- Token-based colors and spacing
-
-## Component Patterns
-
-### Cards
 ```jsx
-// Instead of borders, use background and spacing
-<div className="bg-white p-6 space-y-4 shadow-sm rounded-lg">
-  <h3 className="font-semibold text-lg">Title</h3>
-  <p className="text-gray-500">Content</p>
+// Card
+<div className="bg-card p-6 space-y-4 shadow-sm rounded-lg">
+  <h3 className="font-semibold text-lg text-foreground">Title</h3>
+  <p className="text-muted-foreground">Content</p>
+</div>
+
+// Page
+<div className="container mx-auto px-4 py-12 max-w-7xl">
+  <h1 className="text-4xl font-bold text-foreground mb-4">Title</h1>
+  {/* Content */}
 </div>
 ```
 
-### Sections
-```jsx
-// Use spacing instead of border dividers
-<div className="space-y-12">
-  <section className="space-y-4">
-    <h2 className="text-xl font-semibold">Section Title</h2>
-    <div className="bg-white p-6 rounded-lg">
-      {/* Content */}
-    </div>
-  </section>
-</div>
-```
-
-### Lists
-```jsx
-// Use spacing or subtle backgrounds instead of borders
-<ul className="space-y-2">
-  <li className="p-4 hover:bg-gray-50 rounded-lg transition-colors">
-    {/* Item content */}
-  </li>
-</ul>
-```
-
-## Implementation Notes
-
-When updating existing components:
-1. Remove border-based separators
-2. Add appropriate spacing (usually space-y-4, 6, or 8)
-3. Use background colors for visual grouping
-4. Apply consistent typography hierarchy
-5. Test the visual hierarchy without any borders first
-
-See DESIGN_GUIDELINES.md for the complete design system documentation.
+See DESIGN_GUIDELINES.md for detailed documentation.
