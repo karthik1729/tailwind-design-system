@@ -389,16 +389,16 @@
   /* Solid color variants for interactive states - Dark Mode */
   --primary-hover: #3b82f6; /* primary-500 */
   --primary-active: #60a5fa; /* primary-400 */
-  --destructive-hover: var(--destructive-text-muted); /* Using semantic token */
-  --destructive-active: var(--destructive-text); /* Using semantic token */
+  --destructive-hover: #dc2626; /* red-600 - darker for hover */
+  --destructive-active: #b91c1c; /* red-700 - even darker for active */
   --secondary-hover: #374151; /* gray-700 */
   --secondary-active: #4b5563; /* gray-600 */
-  --success-hover: var(--success-text-muted); /* Using semantic token */
-  --success-active: var(--success-text); /* Using semantic token */
-  --warning-hover: var(--color-orange-500); /* Using defined token */
-  --warning-active: var(--color-orange-300); /* Using defined token */
-  --info-hover: var(--color-primary-500); /* Using defined token */
-  --info-active: var(--color-primary-300); /* Using defined token */
+  --success-hover: #16a34a; /* green-600 - darker for hover */
+  --success-active: #15803d; /* green-700 - even darker for active */
+  --warning-hover: #ea580c; /* orange-600 - darker for hover */
+  --warning-active: #c2410c; /* orange-700 - even darker for active */
+  --info-hover: #2563eb; /* blue-600 - darker for hover */
+  --info-active: #1d4ed8; /* blue-700 - even darker for active */
   
   /* Subtle variants for dark backgrounds */
   --primary-subtle: #1e3a8a; /* primary-900 */
@@ -435,26 +435,26 @@
   --teal-foreground: #030712;
   --orange: #f97316; /* orange-500 */
   --orange-foreground: #030712;
-  --destructive: var(--destructive-text); /* Using lighter text color for icon visibility */
-  --destructive-foreground: var(--background);
+  --destructive: #ef4444; /* red-500 - vibrant red for dark mode */
+  --destructive-foreground: #ffffff;
   --destructive-background: #7f1d1d; /* red-900 */
   --destructive-border: #991b1b; /* red-800 */
   --destructive-text: #fee2e2; /* red-100 */
   --destructive-text-muted: #fecaca; /* red-200 */
-  --success: var(--success-text); /* Using lighter text color for icon visibility */
-  --success-foreground: var(--background);
+  --success: #22c55e; /* green-500 - vibrant green for dark mode */
+  --success-foreground: #ffffff;
   --success-background: #14532d; /* green-900 */
   --success-border: #166534; /* green-800 */
   --success-text: #dcfce7; /* green-100 */
   --success-text-muted: #bbf7d0; /* green-200 */
-  --warning: var(--color-orange-400); /* Using defined orange-400 token */
+  --warning: #f97316; /* orange-500 - vibrant orange for dark mode */
   --warning-foreground: #ffffff;
   --warning-background: var(--color-orange-900); /* Using defined token */
   --warning-border: var(--color-orange-800); /* Using defined token */
   --warning-text: var(--color-orange-100); /* Using defined token */
   --warning-text-muted: var(--color-orange-200); /* Using defined token */
-  --info: var(--color-primary-400); /* Using defined primary-400 token */
-  --info-foreground: var(--background);
+  --info: #3b82f6; /* blue-500 - vibrant blue for dark mode */
+  --info-foreground: #ffffff;
   --info-background: var(--color-primary-900); /* Using defined token */
   --info-border: var(--color-primary-800); /* Using defined token */
   --info-text: var(--color-primary-100); /* Using defined token */
