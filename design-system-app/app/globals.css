@@ -383,7 +383,7 @@
 
 /* Dark mode semantic tokens */
 .dark {
-  --background: #030712; /* gray-950 */
+  --background: #0f172a; /* gray-900 - lighter dark background */
   --foreground: #f9fafb; /* gray-50 */
   
   /* Solid color variants for interactive states - Dark Mode */
@@ -391,8 +391,8 @@
   --primary-active: #60a5fa; /* primary-400 */
   --destructive-hover: #dc2626; /* red-600 - darker for hover */
   --destructive-active: #b91c1c; /* red-700 - even darker for active */
-  --secondary-hover: #374151; /* gray-700 */
-  --secondary-active: #4b5563; /* gray-600 */
+  --secondary-hover: #475569; /* gray-600 - lighter hover */
+  --secondary-active: #64748b; /* gray-500 - lighter active */
   --success-hover: #16a34a; /* green-600 - darker for hover */
   --success-active: #15803d; /* green-700 - even darker for active */
   --warning-hover: #ea580c; /* orange-600 - darker for hover */
@@ -417,16 +417,16 @@
   --info-subtle-hover: #1e40af; /* blue-800 */
   --info-subtle-active: #1d4ed8; /* blue-700 */
   
-  --card: #111827; /* gray-900 */
+  --card: #1e293b; /* gray-800 - lighter card background */
   --card-foreground: #f9fafb;
-  --popover: #111827;
+  --popover: #1e293b; /* gray-800 - lighter popover background */
   --popover-foreground: #f9fafb;
   --primary: #2563eb; /* blue-600 - darker in dark mode */
   --primary-foreground: #ffffff; /* white - testing bright color */
-  --secondary: #1f2937; /* gray-800 */
+  --secondary: #334155; /* gray-700 - lighter secondary background */
   --secondary-foreground: #f9fafb;
-  --muted: #1f2937;
-  --muted-foreground: #9ca3af; /* gray-400 */
+  --muted: #334155; /* gray-700 - lighter muted background */
+  --muted-foreground: #cbd5e1; /* gray-300 - lighter muted text */
   --accent: #6366f1; /* accent-500 */
   --accent-foreground: #f9fafb;
   --purple: #a855f7; /* purple-500 */
@@ -459,22 +459,22 @@
   --info-border: var(--color-primary-800); /* Using defined token */
   --info-text: var(--color-primary-100); /* Using defined token */
   --info-text-muted: var(--color-primary-200); /* Using defined token */
-  --border: #374151; /* gray-700 */
-  --input: #374151;
-  --ring: #3b82f6; /* blue-500 */
+  --border: #475569; /* gray-600 - lighter border */
+  --input: #475569; /* gray-600 - lighter input border */
+  --ring: #60a5fa; /* blue-400 - lighter ring for dark mode */
   --chart-1: 217 91% 68%; /* blue-400 in HSL */
   --chart-2: 158 64% 52%; /* emerald-400 in HSL */
   --chart-3: 43 96% 56%; /* amber-400 in HSL */
   --chart-4: 0 93% 71%; /* red-400 in HSL */
   --chart-5: 258 55% 74%; /* violet-400 in HSL */
-  --sidebar: #111827;
+  --sidebar: #1e293b; /* gray-800 - lighter sidebar */
   --sidebar-foreground: #f9fafb;
-  --sidebar-primary: #3b82f6;
-  --sidebar-primary-foreground: #030712;
-  --sidebar-accent: #1f2937;
+  --sidebar-primary: #60a5fa; /* blue-400 - lighter primary */
+  --sidebar-primary-foreground: #0f172a;
+  --sidebar-accent: #334155; /* gray-700 - lighter accent */
   --sidebar-accent-foreground: #f9fafb;
-  --sidebar-border: #374151;
-  --sidebar-ring: #3b82f6;
+  --sidebar-border: #475569; /* gray-600 - lighter border */
+  --sidebar-ring: #60a5fa; /* blue-400 - lighter ring */
 }
 
 @layer base {
