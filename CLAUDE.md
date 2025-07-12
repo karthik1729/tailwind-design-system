@@ -55,9 +55,60 @@ See GitHub Issue #2 for detailed tracking
 - **Each semantic color includes**: background, border, text, text-muted, and foreground variants
 - **Theme-aware**: All colors properly adapt between light and dark modes
 - **Single source of truth**: All theme configuration in `globals.css` using Tailwind v4's `@theme` directive
+- **NO HARDCODED COLORS**: Always use design tokens, never hardcode hex values
+
+### Design Standards & Best Practices
+
+#### 1. Color Usage
+- **Always use tokens**: Reference color tokens like `var(--color-primary-400)` or semantic tokens
+- **Dark mode optimization**: Use lighter color variants (300-400) for icons/text in dark mode
+- **Semantic colors**: 
+  - Destructive: Red tones for errors/deletions
+  - Success: Green tones for confirmations
+  - Warning: Orange tones (not yellow) for warnings
+  - Info: Blue tones for information
+- **Hover states**: Use defined hover tokens (e.g., `bg-primary-hover`)
+- **Active states**: Use scale effects instead of color changes for buttons
+
+#### 2. Component Patterns
+- **Button variants**: 9 total - default, secondary, destructive, outline, ghost, link, success, warning, info
+- **Icon buttons**: Use `rounded-lg` for more rounded appearance, default to outline variant
+- **Toggle components**: 
+  - Default variant has subtle background
+  - Ghost variant uses transparent background with primary color when active
+  - Outline variant has borders
+- **Micro-interactions**: 
+  - Scale effects on click (`active:scale-[0.98]`)
+  - Icon rotation on hover for icon buttons
+  - Smooth transitions (200ms default)
+  - Chevron rotation for expandable items
+
+#### 3. Interaction States
+- **Hover**: Subtle background changes, icon scaling, text color shifts
+- **Focus**: Ring utilities with proper offset
+- **Active**: Scale reduction for tactile feedback
+- **Disabled**: 50% opacity, pointer-events-none
+
+#### 4. Animation Guidelines
+- **Transition duration**: 200ms for most interactions, 150ms for exits
+- **Easing**: Use `ease-in-out` for smooth animations
+- **Context menu**: Ripple effect on right-click
+- **Dropdown/Select**: Smooth open/close with scale animations
+- **Checkbox/Radio**: Fade and zoom effects for indicators
+
+#### 5. Visual Hierarchy (Borderless Design)
+- **Spacing over borders**: Use white space for separation
+- **Background layers**: Create depth with background colors
+- **Typography hierarchy**: Use font weights and colors
+- **Minimal shadows**: Only when necessary for elevation
 
 ### Completed Enhancements
 - ✅ Alert component: All variants now use semantic color tokens
+- ✅ Button component: 9 variants with micro-interactions and proper hover states
+- ✅ IconButton component: Dedicated component with rotation effects
+- ✅ Toggle & ToggleGroup: Enhanced with smooth transitions and variants
+- ✅ DropdownMenuTrigger: Scale animations and chevron rotation
+- ✅ ContextMenuTrigger: Ripple effect and smooth menu transitions
 - ✅ Color documentation: Comprehensive color display with theme switcher at `/storyboard/foundations/colors`
 - ✅ Semantic color system: Full implementation with proper contrast ratios
 

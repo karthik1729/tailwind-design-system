@@ -1,27 +1,45 @@
 # Design System Project Guidelines
 
-## Visual Hierarchy Principles
+## Core Design Principles
 
-This project follows a modern approach to visual hierarchy that minimizes the use of borders. Instead, we create structure through:
+1. **Token-Based Design**: NEVER hardcode colors or values - always use design tokens
+2. **Borderless Hierarchy**: Create visual structure through spacing, not borders
+3. **Consistent Interactions**: Predictable micro-interactions across all components
+4. **Accessibility First**: All components meet WCAG 2.1 AA standards
 
-1. **Spacing** - Generous padding and margins to create visual separation
-2. **Backgrounds** - Subtle background colors to define content areas
-3. **Typography** - Clear font weight and color hierarchy
-4. **Shadows** - Minimal use of shadows for depth
+## Design Standards
 
-## Key Design Rules
+### Color Usage
+- **Always use tokens**: `var(--color-primary-400)` or semantic tokens like `var(--destructive)`
+- **Never hardcode**: No hex values like `#3b82f6` in components
+- **Dark mode aware**: Use lighter variants (300-400) for visibility in dark mode
+- **Semantic meanings**:
+  - Destructive: Red tones
+  - Success: Green tones
+  - Warning: Orange tones (NOT yellow)
+  - Info: Blue tones
 
-### ❌ Avoid
+### Component Patterns
+- **Buttons**: 9 variants with consistent hover/active states
+- **Active states**: Use scale effects (`active:scale-[0.98]`), not color changes
+- **Icon buttons**: `rounded-lg` borders, outline variant by default
+- **Micro-interactions**: 200ms transitions, smooth easing
+
+### Visual Hierarchy Rules
+
+#### ❌ Avoid
 - Heavy borders between sections
 - Border-based layouts
 - Excessive dividing lines
 - Dark borders for containers
+- Hardcoded color values
 
-### ✅ Prefer
+#### ✅ Prefer
 - White space for separation (space-y-8, space-y-12)
 - Background colors for grouping (bg-white on bg-gray-50)
 - Typography contrast (font-semibold, text-gray-500)
 - Subtle shadows when needed (shadow-sm)
+- Token-based colors and spacing
 
 ## Component Patterns
 
