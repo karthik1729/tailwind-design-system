@@ -41,6 +41,10 @@ export default function NavigationPage() {
         <PreviewContainer
           title="Basic Navigation Menu"
           description="A navigation menu with dropdown items and links"
+          className="!overflow-visible"
+          minHeight="min-h-[500px]"
+          contentAlignment="top"
+          allowOverflow={true}
           code={`<NavigationMenu>
   <NavigationMenuList>
     <NavigationMenuItem>
@@ -50,13 +54,13 @@ export default function NavigationPage() {
           <li className="row-span-3">
             <NavigationMenuLink asChild>
               <a
-                className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                className="group flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none transition-colors hover:from-primary hover:to-primary hover:text-primary-foreground focus:shadow-md"
                 href="/"
               >
-                <div className="mb-2 mt-4 text-lg font-medium">
+                <div className="mb-2 mt-4 text-lg font-medium text-foreground group-hover:text-primary-foreground">
                   Design System
                 </div>
-                <p className="text-sm leading-tight text-muted-foreground">
+                <p className="text-sm leading-tight text-muted-foreground group-hover:text-primary-foreground">
                   Beautiful components built with Radix UI and Tailwind CSS.
                 </p>
               </a>
@@ -95,7 +99,7 @@ export default function NavigationPage() {
     </NavigationMenuItem>
     <NavigationMenuItem>
       <NavigationMenuLink asChild>
-        <Link href="/docs" className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
+        <Link href="/docs" className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-primary/50 data-[state=open]:bg-primary/50">
           Documentation
         </Link>
       </NavigationMenuLink>
@@ -103,7 +107,7 @@ export default function NavigationPage() {
   </NavigationMenuList>
 </NavigationMenu>`}
           component={
-            <div className="flex items-center justify-center gap-4">
+            <div className="relative flex items-center justify-center gap-4 overflow-visible">
               <NavigationMenu>
                 <NavigationMenuList>
                   <NavigationMenuItem>
@@ -113,13 +117,13 @@ export default function NavigationPage() {
                         <li className="row-span-3">
                           <NavigationMenuLink asChild>
                             <a
-                              className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                              className="group flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none transition-colors hover:from-primary hover:to-primary hover:text-primary-foreground focus:shadow-md"
                               href="/"
                             >
-                              <div className="mb-2 mt-4 text-lg font-medium">
+                              <div className="mb-2 mt-4 text-lg font-medium text-foreground group-hover:text-primary-foreground">
                                 Design System
                               </div>
-                              <p className="text-sm leading-tight text-muted-foreground">
+                              <p className="text-sm leading-tight text-muted-foreground group-hover:text-primary-foreground">
                                 Beautiful components built with Radix UI and Tailwind CSS.
                               </p>
                             </a>
@@ -158,7 +162,7 @@ export default function NavigationPage() {
                   </NavigationMenuItem>
                   <NavigationMenuItem>
                     <NavigationMenuLink asChild>
-                      <Link href="/docs" className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
+                      <Link href="/docs" className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-primary/50 data-[state=open]:bg-primary/50">
                         Documentation
                       </Link>
                     </NavigationMenuLink>
@@ -1110,13 +1114,13 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            "group block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors text-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground",
             className
           )}
           {...props}
         >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+          <div className="text-sm font-medium leading-none text-foreground group-hover:text-primary-foreground group-focus:text-primary-foreground">{title}</div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground group-hover:text-primary-foreground group-focus:text-primary-foreground">
             {children}
           </p>
         </a>

@@ -14,6 +14,9 @@ interface PreviewContainerProps {
   className?: string
   title?: string
   description?: string
+  allowOverflow?: boolean
+  minHeight?: string
+  contentAlignment?: "center" | "top" | "bottom"
 }
 
 export function PreviewContainer({
@@ -21,7 +24,10 @@ export function PreviewContainer({
   code,
   className,
   title,
-  description
+  description,
+  allowOverflow = false,
+  minHeight = "min-h-[200px]",
+  contentAlignment = "center"
 }: PreviewContainerProps) {
   const [viewport, setViewport] = useState<"desktop" | "tablet" | "mobile">("desktop")
   const [copied, setCopied] = useState(false)
@@ -110,8 +116,13 @@ export function PreviewContainer({
         </div>
 
         <TabsContent value="preview" className="mt-4">
-          <div className="overflow-hidden rounded-lg border">
-            <div className="flex min-h-[200px] items-center justify-center bg-muted/30 p-6">
+          <div className={cn("rounded-lg border", !allowOverflow && "overflow-hidden")}>
+            <div className={cn(
+              "flex bg-muted/30 p-6",
+              contentAlignment === "top" ? "items-start" : contentAlignment === "bottom" ? "items-end" : "items-center",
+              "justify-center",
+              minHeight
+            )}>
               <div className={cn(
                 "w-full transition-all duration-300",
                 getViewportWidth(),

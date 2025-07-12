@@ -296,7 +296,7 @@
   --destructive-hover: #b91c1c; /* red-700 */
   --destructive-active: #991b1b; /* red-800 */
   --secondary-hover: #e5e7eb; /* gray-200 */
-  --secondary-active: #9ca3af; /* gray-400 - more contrast */
+  --secondary-active: #d1d5db; /* gray-300 - subtle contrast */
   --success-hover: #15803d; /* green-700 */
   --success-active: #14532d; /* green-800 */
   --warning-hover: #ea580c; /* orange-600 */
@@ -329,7 +329,7 @@
   --primary-foreground: #ffffff;
   --secondary: #f3f4f6; /* gray-100 */
   --secondary-foreground: #111827;
-  --muted: #f9fafb; /* gray-50 */
+  --muted: #f3f4f6; /* gray-100 */
   --muted-foreground: #6b7280; /* gray-500 */
   --accent: #4f46e5; /* accent-600 */
   --accent-foreground: #ffffff;

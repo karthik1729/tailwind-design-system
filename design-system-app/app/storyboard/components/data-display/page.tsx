@@ -423,32 +423,32 @@ export default function DataDisplayPage() {
           title="Avatar Group"
           description="Display multiple avatars together"
           code={`<div className="flex -space-x-2">
-  <Avatar className="border-2 border-background">
+  <Avatar className="ring-2 ring-background">
     <AvatarFallback>JD</AvatarFallback>
   </Avatar>
-  <Avatar className="border-2 border-background">
+  <Avatar className="ring-2 ring-background">
     <AvatarFallback>AS</AvatarFallback>
   </Avatar>
-  <Avatar className="border-2 border-background">
+  <Avatar className="ring-2 ring-background">
     <AvatarFallback>MK</AvatarFallback>
   </Avatar>
-  <Avatar className="border-2 border-background">
+  <Avatar className="ring-2 ring-background">
     <AvatarFallback>+3</AvatarFallback>
   </Avatar>
 </div>`}
           component={
             <div className="gap-4">
               <div className="flex -space-x-2">
-                <Avatar className="border-2 border-background">
+                <Avatar className="ring-2 ring-background">
                   <AvatarFallback>JD</AvatarFallback>
                 </Avatar>
-                <Avatar className="border-2 border-background">
+                <Avatar className="ring-2 ring-background">
                   <AvatarFallback>AS</AvatarFallback>
                 </Avatar>
-                <Avatar className="border-2 border-background">
+                <Avatar className="ring-2 ring-background">
                   <AvatarFallback>MK</AvatarFallback>
                 </Avatar>
-                <Avatar className="border-2 border-background">
+                <Avatar className="ring-2 ring-background">
                   <AvatarFallback>+3</AvatarFallback>
                 </Avatar>
               </div>

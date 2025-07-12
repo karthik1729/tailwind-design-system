@@ -10,22 +10,22 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-primary text-primary-foreground shadow-sm hover:bg-primary-hover hover:shadow-md active:bg-primary-active active:shadow-none focus-visible:ring-primary",
+          "bg-primary text-primary-foreground hover:bg-primary-hover active:bg-primary-active focus-visible:ring-primary",
         destructive:
-          "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive-hover hover:shadow-md active:bg-destructive-active active:shadow-none focus-visible:ring-destructive",
+          "bg-destructive text-destructive-foreground hover:bg-destructive-hover active:bg-destructive-active focus-visible:ring-destructive",
         outline:
-          "border border-input bg-background shadow-sm hover:border-primary hover:text-primary hover:shadow-md active:shadow-none active:border-primary-active focus-visible:ring-ring",
+          "border border-input bg-background hover:border-primary hover:text-primary active:border-primary-active focus-visible:ring-ring",
         secondary:
-          "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary-hover hover:shadow-md active:bg-secondary-active active:shadow-none focus-visible:ring-ring",
+          "bg-secondary text-secondary-foreground hover:bg-secondary-hover active:bg-secondary-active focus-visible:ring-ring",
         ghost:
           "hover:bg-muted hover:text-primary active:bg-muted/80 focus-visible:ring-ring",
         link: "text-primary underline-offset-4 hover:underline hover:text-primary-hover active:text-primary-active focus-visible:ring-ring",
         success:
-          "bg-success text-success-foreground shadow-sm hover:bg-success-hover hover:shadow-md active:bg-success-active active:shadow-none focus-visible:ring-success",
+          "bg-success text-success-foreground hover:bg-success-hover active:bg-success-active focus-visible:ring-success",
         warning:
-          "bg-warning text-warning-foreground shadow-sm hover:bg-warning-hover hover:shadow-md active:bg-warning-active active:shadow-none focus-visible:ring-warning",
+          "bg-warning text-warning-foreground hover:bg-warning-hover active:bg-warning-active focus-visible:ring-warning",
         info:
-          "bg-info text-info-foreground shadow-sm hover:bg-info-hover hover:shadow-md active:bg-info-active active:shadow-none focus-visible:ring-info",
+          "bg-info text-info-foreground hover:bg-info-hover active:bg-info-active focus-visible:ring-info",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
