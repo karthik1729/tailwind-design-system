@@ -156,19 +156,19 @@ export const toggleExamples: ComponentExample[] = [
     description: "Toggle buttons with custom styles applied.",
     code: `<div className="flex items-center gap-2">
   <Toggle 
-    className="data-[state=on]:bg-violet-600 data-[state=on]:text-white"
+    className="data-[state=on]:bg-purple data-[state=on]:text-purple-foreground"
     aria-label="Toggle link"
   >
     <Link className="h-4 w-4" />
   </Toggle>
   <Toggle 
-    className="data-[state=on]:bg-green-600 data-[state=on]:text-white"
+    className="data-[state=on]:bg-success data-[state=on]:text-success-foreground"
     aria-label="Toggle list"
   >
     <List className="h-4 w-4" />
   </Toggle>
   <Toggle 
-    className="data-[state=on]:bg-blue-600 data-[state=on]:text-white"
+    className="data-[state=on]:bg-primary data-[state=on]:text-primary-foreground"
     aria-label="Toggle ordered list"
   >
     <ListOrdered className="h-4 w-4" />
@@ -177,19 +177,19 @@ export const toggleExamples: ComponentExample[] = [
     component: () => (
       <div className="flex items-center gap-2">
         <Toggle 
-          className="data-[state=on]:bg-violet-600 data-[state=on]:text-white"
+          className="data-[state=on]:bg-purple data-[state=on]:text-purple-foreground"
           aria-label="Toggle link"
         >
           <Link className="h-4 w-4" />
         </Toggle>
         <Toggle 
-          className="data-[state=on]:bg-green-600 data-[state=on]:text-white"
+          className="data-[state=on]:bg-success data-[state=on]:text-success-foreground"
           aria-label="Toggle list"
         >
           <List className="h-4 w-4" />
         </Toggle>
         <Toggle 
-          className="data-[state=on]:bg-blue-600 data-[state=on]:text-white"
+          className="data-[state=on]:bg-primary data-[state=on]:text-primary-foreground"
           aria-label="Toggle ordered list"
         >
           <ListOrdered className="h-4 w-4" />

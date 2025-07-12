@@ -123,21 +123,21 @@ export const avatarExamples: ComponentExample[] = [
       <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
       <AvatarFallback>CN</AvatarFallback>
     </Avatar>
-    <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-green-500 ring-2 ring-white" />
+    <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-success ring-2 ring-background" />
   </div>
   <div className="relative">
     <Avatar>
       <AvatarImage src="https://i.pravatar.cc/150?u=a042581f4e29026024d" alt="User" />
       <AvatarFallback>JD</AvatarFallback>
     </Avatar>
-    <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-yellow-500 ring-2 ring-white" />
+    <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-warning ring-2 ring-background" />
   </div>
   <div className="relative">
     <Avatar>
       <AvatarImage src="https://i.pravatar.cc/150?u=a04258a2462d826712d" alt="User" />
       <AvatarFallback>AB</AvatarFallback>
     </Avatar>
-    <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-gray-400 ring-2 ring-white" />
+    <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-muted-foreground ring-2 ring-background" />
   </div>
 </div>`,
     component: () => (
@@ -147,21 +147,21 @@ export const avatarExamples: ComponentExample[] = [
             <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
-          <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-green-500 ring-2 ring-white" />
+          <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-success ring-2 ring-background" />
         </div>
         <div className="relative">
           <Avatar>
             <AvatarImage src="https://i.pravatar.cc/150?u=a042581f4e29026024d" alt="User" />
             <AvatarFallback>JD</AvatarFallback>
           </Avatar>
-          <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-yellow-500 ring-2 ring-white" />
+          <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-warning ring-2 ring-background" />
         </div>
         <div className="relative">
           <Avatar>
             <AvatarImage src="https://i.pravatar.cc/150?u=a04258a2462d826712d" alt="User" />
             <AvatarFallback>AB</AvatarFallback>
           </Avatar>
-          <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-gray-400 ring-2 ring-white" />
+          <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-muted-foreground ring-2 ring-background" />
         </div>
       </div>
     )

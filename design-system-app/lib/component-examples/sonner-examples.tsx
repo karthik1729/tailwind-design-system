@@ -249,7 +249,7 @@ export const sonnerExamples: ComponentExample[] = [
   onClick={() => {
     toast(
       <div className="flex items-center gap-2">
-        <div className="h-8 w-8 rounded-full bg-blue-500" />
+        <div className="h-8 w-8 rounded-full bg-primary" />
         <div>
           <p className="font-semibold">New message</p>
           <p className="text-sm">From John Doe</p>
@@ -266,7 +266,7 @@ export const sonnerExamples: ComponentExample[] = [
         onClick={() => {
           toast(
             <div className="flex items-center gap-2">
-              <div className="h-8 w-8 rounded-full bg-blue-500" />
+              <div className="h-8 w-8 rounded-full bg-primary" />
               <div>
                 <p className="font-semibold">New message</p>
                 <p className="text-sm">From John Doe</p>

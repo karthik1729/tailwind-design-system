@@ -432,7 +432,7 @@ return (
       <span>Move</span>
     </DropdownMenuItem>
     <DropdownMenuSeparator />
-    <DropdownMenuItem className="text-red-600">
+    <DropdownMenuItem className="text-destructive">
       <Trash2 className="mr-2 h-4 w-4" />
       <span>Delete</span>
     </DropdownMenuItem>
@@ -460,7 +460,7 @@ return (
             <span>Move</span>
           </DropdownMenuItem>
           <DropdownMenuSeparator />
-          <DropdownMenuItem className="text-red-600">
+          <DropdownMenuItem className="text-destructive">
             <Trash2 className="mr-2 h-4 w-4" />
             <span>Delete</span>
           </DropdownMenuItem>
