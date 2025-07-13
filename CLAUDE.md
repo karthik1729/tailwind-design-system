@@ -67,7 +67,10 @@ See GitHub Issue #2 for detailed tracking
   - Success: Green tones for confirmations
   - Warning: Orange tones (not yellow) for warnings
   - Info: Blue tones for information
-- **Hover states**: Use defined hover tokens (e.g., `bg-primary-hover`)
+- **Hover states**: 
+  - Triggers: `bg-primary` with `text-primary-foreground`
+  - Menu items: `bg-primary-subtle-hover` for subtle feedback
+  - Destructive items: `bg-destructive-subtle-hover`
 - **Active states**: Use scale effects instead of color changes for buttons
 
 #### 2. Component Patterns
@@ -90,11 +93,20 @@ See GitHub Issue #2 for detailed tracking
 - **Disabled**: 50% opacity, pointer-events-none
 
 #### 4. Animation Guidelines
-- **Transition duration**: 200ms for most interactions, 150ms for exits
-- **Easing**: Use `ease-in-out` for smooth animations
-- **Context menu**: Ripple effect on right-click
-- **Dropdown/Select**: Smooth open/close with scale animations
-- **Checkbox/Radio**: Fade and zoom effects for indicators
+- **Transition duration**: 
+  - Triggers: 200ms for hover/active states
+  - Menu items: 150ms for quick feedback
+  - Open/close animations: 200ms open, 150ms close
+- **Easing**: Use `ease-out` for consistent feel
+- **Scale effects**:
+  - Triggers: `scale-[0.98]` on open, `scale-[0.97]` on active
+  - Icons: `scale-105` on hover
+- **Rotation effects**:
+  - Chevrons: 180° for dropdowns, 90° for submenus
+  - Icon buttons: Custom rotation on hover
+- **Special animations**:
+  - Context menu: Ripple effect on right-click
+  - Checkbox/Radio: Fade and zoom indicators
 
 #### 5. Visual Hierarchy (Borderless Design)
 - **Spacing over borders**: Use white space for separation
@@ -102,18 +114,34 @@ See GitHub Issue #2 for detailed tracking
 - **Typography hierarchy**: Use font weights and colors
 - **Minimal shadows**: Only when necessary for elevation
 
-### Completed Enhancements
-- ✅ Alert component: All variants now use semantic color tokens
-- ✅ Button component: 9 variants with micro-interactions and proper hover states
-- ✅ IconButton component: Dedicated component with rotation effects
-- ✅ Toggle & ToggleGroup: Enhanced with smooth transitions and variants
-- ✅ DropdownMenuTrigger: Scale animations and chevron rotation
-- ✅ ContextMenuTrigger: Ripple effect and smooth menu transitions
-- ✅ Color documentation: Comprehensive color display with theme switcher at `/storyboard/foundations/colors`
-- ✅ Semantic color system: Full implementation with proper contrast ratios
+### Component Enhancement Standards
+
+#### Trigger Components (Completed ✅)
+All trigger components follow these patterns:
+- **Hover**: Primary background with white text
+- **Open state**: Scale to 0.98 with primary colors maintained
+- **Active**: Scale to 0.97 for tactile feedback
+- **Chevron rotation**: 180° for dropdowns, 90° for submenus
+- **Transitions**: 200ms duration with ease-out
+
+#### Menu Items
+Consistent styling across all menu components:
+- **Hover**: `bg-primary-subtle-hover` for subtle feedback
+- **Border radius**: `rounded-[2px]` for crisp edges
+- **Padding**: `px-2 py-1.5` standard spacing
+- **Icons**: Scale to 105% on hover with 150ms transition
+- **Checked states**: Primary background for checkbox/radio items
 
 ## Task Management
 - All tasks are tracked in the `todo/` folder
 - Task files are named after GitHub issue numbers (e.g., `todo/issue-2.md`)
 - Each task file contains detailed progress tracking and checklists
 - See `todo/README.md` for the task tracking system documentation
+
+## Progress Summary
+- **Buttons & Actions**: 8/8 components enhanced ✅
+- **Form Elements**: 2/13 components enhanced
+- **Feedback Components**: 5/8 components enhanced
+- **Navigation Components**: 5/9 components enhanced
+- **Data Display**: 1/10 components enhanced
+- **Total**: 24/59 components enhanced (40.7%)

@@ -3,9 +3,10 @@
 ## Core Principles
 
 1. **Use tokens, not values** - `bg-background` not `bg-white`
-2. **Space over borders** - Visual hierarchy through spacing and backgrounds
-3. **Consistent feedback** - All interactions feel cohesive
+2. **Borderless design** - Space and color for hierarchy, not borders
+3. **Consistent micro-interactions** - Scale, rotate, and transition effects
 4. **Accessible by default** - WCAG 2.1 AA minimum
+5. **Performance-first** - Remove heavy effects like backdrop blur
 
 ## Color System
 
@@ -28,6 +29,7 @@
 - Always use tokens: `text-muted-foreground` not `text-gray-500`
 - Dark mode uses vibrant colors (500 level) for visibility
 - Light backgrounds → dark text, dark backgrounds → light text
+- Hover states use defined tokens: `primary-subtle-hover`, `destructive-subtle-hover`
 
 ## Layout
 
@@ -43,11 +45,16 @@
 
 ## Components
 
-### Buttons
-- **9 variants**: default, secondary, destructive, outline, ghost, link, success, warning, info
-- **Interactions**: `shadow-sm` → `hover:shadow-md` → `active:shadow-none`
-- **Active scale**: 0.99 (subtle), 75ms duration
-- **All states**: color + shadow changes for clear feedback
+### Buttons & Triggers
+- **9 button variants**: default, secondary, destructive, outline, ghost, link, success, warning, info
+- **No shadows**: Clean, borderless design
+- **Scale effects**: 
+  - Buttons: `active:scale-[0.99]`
+  - Triggers: `data-[state=open]:scale-[0.98]`, `active:scale-[0.97]`
+- **Hover colors**:
+  - Triggers: `hover:bg-primary hover:text-primary-foreground`
+  - Menu items: `hover:bg-primary-subtle-hover`
+- **Transitions**: 200ms for triggers, 150ms for menu items
 
 ### Common Patterns
 ```jsx
@@ -63,12 +70,20 @@
 
 ## States & Interactions
 
-| State | Duration | Effect |
-|-------|----------|--------|
-| Hover | 200ms | Color shift, shadow-md, transforms |
-| Active | 75ms | Scale 0.99, shadow-none, darker color |
-| Focus | - | Ring with offset, `:focus-visible` only |
-| Disabled | - | 50% opacity, cursor-not-allowed |
+### Interactive Elements
+| Element | Hover | Active | Open | Transition |
+|---------|-------|--------|------|------------|
+| Button | Color shift | scale-[0.99] | - | 200ms |
+| Trigger | bg-primary | scale-[0.97] | scale-[0.98] + primary | 200ms |
+| Menu Item | bg-primary-subtle-hover | - | - | 150ms |
+| Icon | scale-105 | - | - | 150ms |
+| Chevron | - | - | rotate-180 or rotate-90 | 200ms |
+
+### Animation Patterns
+- **Easing**: Always use `ease-out` for consistency
+- **Open/close**: 200ms open, 150ms close
+- **Ripple effect**: Context menu right-click
+- **Fade + zoom**: Checkbox/radio indicators
 
 ## Dark Mode
 
@@ -79,13 +94,25 @@
 ## Quick Reference
 
 ✅ **Do**
-- Use design tokens
-- Test both themes
-- Space over borders
-- Clear feedback
+- Use semantic color tokens
+- Apply consistent micro-interactions
+- Test in both light/dark themes
+- Use borderless design patterns
+- Follow established hover states
 
 ❌ **Don't**
-- Hardcode values
-- Skip accessibility
-- Use excessive animation
-- Create one-offs
+- Hardcode hex values
+- Add button shadows
+- Use backdrop blur (performance)
+- Create inconsistent animations
+- Skip keyboard navigation
+
+## Enhancement Progress
+- **Buttons & Actions**: 8/8 ✅
+- **Form Elements**: 2/13
+- **Feedback**: 5/8
+- **Navigation**: 5/9
+- **Data Display**: 1/10
+- **Total**: 24/59 (40.7%)
+
+For detailed standards, see `design-system-app/DESIGN_STANDARDS.md`
