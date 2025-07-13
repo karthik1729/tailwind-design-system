@@ -18,8 +18,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={cn(openSans.className, "overflow-hidden")}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={cn(openSans.className, "overflow-hidden")} suppressHydrationWarning>
         <ToastProvider>
           {children}
           <Toaster />

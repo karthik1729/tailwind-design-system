@@ -8,6 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination"
 import { Command, CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator, CommandShortcut } from "@/components/ui/command"
 import { PreviewContainer } from "@/components/storyboard/preview-container"
+import { ContextMenuExample } from "./context-menu-example"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ChevronDown, Cloud, CreditCard, Github, Home, Keyboard, LifeBuoy, LogOut, Mail, MessageSquare, Plus, PlusCircle, Settings, Store, User, UserPlus, Users, FileText, BarChart3, Calculator, Calendar, Search, Smile, CreditCard as CreditCardIcon } from "lucide-react"
@@ -1385,6 +1386,9 @@ return (
           }
         />
       </section>
+
+      {/* Context Menu */}
+      <ContextMenuExample />
 
       {/* Command */}
       <section className="space-y-8">
