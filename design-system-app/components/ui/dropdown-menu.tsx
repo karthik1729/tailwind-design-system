@@ -31,8 +31,6 @@ function DropdownMenuTrigger({
       className={cn(
         "group inline-flex items-center justify-center gap-2 outline-hidden",
         "transition-all duration-200 ease-out",
-        "data-[state=open]:scale-[0.98]",
-        "data-[state=open]:opacity-90",
         "[&[data-state=open]>svg:last-child]:rotate-180",
         "[&>svg:last-child]:transition-transform [&>svg:last-child]:duration-200",
         className
@@ -62,7 +60,6 @@ function DropdownMenuContent({
           // Enhanced animations
           "data-[state=open]:animate-in data-[state=closed]:animate-out",
           "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
-          "data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-100",
           "data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2",
           "data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
           // Smoother transitions
@@ -151,7 +148,7 @@ function DropdownMenuCheckboxItem({
       {...props}
     >
       <span className="pointer-events-none absolute left-2 flex size-3.5 items-center justify-center">
-        <DropdownMenuPrimitive.ItemIndicator className="animate-in fade-in-0 zoom-in-100 duration-150">
+        <DropdownMenuPrimitive.ItemIndicator className="animate-in fade-in-0 duration-150">
           <CheckIcon className="size-4" />
         </DropdownMenuPrimitive.ItemIndicator>
       </span>
@@ -196,7 +193,7 @@ function DropdownMenuRadioItem({
       {...props}
     >
       <span className="pointer-events-none absolute left-2 flex size-3.5 items-center justify-center">
-        <DropdownMenuPrimitive.ItemIndicator className="animate-in fade-in-0 zoom-in-100 duration-150">
+        <DropdownMenuPrimitive.ItemIndicator className="animate-in fade-in-0 duration-150">
           <CircleIcon className="size-2 fill-current" />
         </DropdownMenuPrimitive.ItemIndicator>
       </span>
@@ -297,7 +294,7 @@ function DropdownMenuSubContent({
     <DropdownMenuPrimitive.SubContent
       data-slot="dropdown-menu-sub-content"
       className={cn(
-        "bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-100 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 min-w-[8rem] origin-(--radix-dropdown-menu-content-transform-origin) overflow-hidden rounded-md border p-0.5 shadow-lg",
+        "bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 min-w-[8rem] origin-(--radix-dropdown-menu-content-transform-origin) overflow-hidden rounded-md border p-0.5 shadow-lg",
         className
       )}
       {...props}
