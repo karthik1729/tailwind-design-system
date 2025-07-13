@@ -22,10 +22,10 @@ const foundationSections = [
     icon: Palette,
     href: "/storyboard/foundations/colors",
     details: [
-      "5 brand colors with full palettes (50-950)",
-      "Semantic colors for success, warning, info, destructive",
-      "Automatic dark mode color mapping",
-      "Accessible contrast ratios"
+      "11 foundation colors with full palettes (50-950)",
+      "Semantic colors for all states (success, warning, info, destructive)",
+      "Additional brand colors (pink, cyan, lime)",
+      "Automatic dark mode color mapping"
     ],
     preview: {
       type: "colors",
@@ -85,10 +85,10 @@ const foundationSections = [
     icon: Sparkles,
     href: "/storyboard/foundations/effects",
     details: [
-      "Elevation shadow scale",
-      "Transition timings and easings",
-      "Hover and focus states",
-      "Border radius system"
+      "Foundation shadow scale (xs to 2xl)",
+      "Colored shadow variants",
+      "Z-index layering system",
+      "Border radius & transition system"
     ],
     preview: {
       type: "effects",
