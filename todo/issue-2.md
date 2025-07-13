@@ -42,9 +42,9 @@ Systematic enhancement of all 59 components in the design system, focusing on in
 - [x] CommandItem - Better keyboard navigation states
 - [x] MenubarTrigger - Enhanced with smooth transitions, scale effects, icon animations, and consistent hover states
 
-#### Form Elements (2/13)
+#### Form Elements (3/13)
 - [x] Input - Enhanced focus states with smooth ring animations (transition-all)
-- [ ] Textarea - Auto-resize interactions, character count
+- [x] Textarea - Auto-resize interactions, character count with visual warnings
 - [x] Select - Active item uses primary color, checkmark inherits color, smooth transitions
 - [ ] Checkbox - Check animation refinement
 - [ ] RadioGroup - Better selection transitions
@@ -129,14 +129,14 @@ Systematic enhancement of all 59 components in the design system, focusing on in
 
 ## Current Status
 **Phase**: 4 - Component Enhancements (In Progress)
-**Components Enhanced**: 24/59 components enhanced
+**Components Enhanced**: 25/59 components enhanced
 - Buttons & Actions: 8/8 ✅ (Button, IconButton, Toggle, ToggleGroup, DropdownMenuTrigger, ContextMenuTrigger, CommandItem, MenubarTrigger)
-- Form Elements: 2/13 (Input, Select)
+- Form Elements: 3/13 (Input, Select, Textarea)
 - Feedback: 5/8 (Alert, Skeleton, Dialog, AlertDialog, Sheet, Drawer)
 - Navigation: 5/9 (NavigationMenu, DropdownMenu, Breadcrumb, Pagination, Command)
 - Data Display: 1/10 (Badge)
 
-**Next Action**: Continue with Form elements starting with Textarea (auto-resize, character count)
+**Next Action**: Continue with Form elements - Checkbox (check animation refinement)
 
 ## Key Accomplishments
 
@@ -167,10 +167,17 @@ All trigger and action components now have consistent micro-interactions:
   - Added Menubar section to storyboard navigation page
   - Updated trigger to use primary colors on hover (blue background, white text)
   - Completed Buttons & Actions category (8/8)
+- ✅ **Textarea Enhancement**
+  - Added auto-resize functionality with configurable min/max rows
+  - Implemented character count display with visual warnings
+  - Character count changes color at 90% (warning) and 100% (destructive)
+  - Smooth height transitions during resize
+  - Supports both controlled and uncontrolled usage
+  - Updated storyboard with multiple examples showcasing new features
 
 ## Component Enhancement Details
 
-### Completed Components (24/59)
+### Completed Components (25/59)
 1. **Button**: 9 variants with semantic colors and micro-interactions
 2. **IconButton**: Dedicated component with rotation/scale effects
 3. **Toggle/ToggleGroup**: Smooth transitions and ghost variant
@@ -189,3 +196,4 @@ All trigger and action components now have consistent micro-interactions:
 16. **Pagination**: Ellipsis icon color
 17. **Command**: Search functionality and animations
 18. **Badge**: Semantic color variants
+19. **Textarea**: Auto-resize functionality, character count with visual warnings

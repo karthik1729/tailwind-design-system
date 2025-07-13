@@ -14,6 +14,9 @@ import { Slider } from "@/components/ui/slider"
 export default function FormsPage() {
   const [inputValue, setInputValue] = useState("")
   const [textareaValue, setTextareaValue] = useState("")
+  const [charCountValue, setCharCountValue] = useState("")
+  const [autoResizeValue, setAutoResizeValue] = useState("")
+  const [combinedValue, setCombinedValue] = useState("")
   const [selectValue, setSelectValue] = useState("")
   const [checkboxChecked, setCheckboxChecked] = useState(false)
   const [radioValue, setRadioValue] = useState("option1")
@@ -101,7 +104,7 @@ export function InputExample() {
         {/* Textarea Component */}
         <PreviewContainer
           title="Textarea"
-          description="Multi-line text input for longer content"
+          description="Multi-line text input with auto-resize and character count features"
           component={
             <div className="space-y-4">
               <div className="space-y-2">
@@ -115,19 +118,60 @@ export function InputExample() {
               </div>
               
               <div className="space-y-2">
+                <Label htmlFor="auto-resize-textarea">Auto-resize Textarea</Label>
+                <Textarea
+                  id="auto-resize-textarea"
+                  placeholder="This textarea will grow as you type..."
+                  value={autoResizeValue}
+                  onChange={(e) => setAutoResizeValue(e.target.value)}
+                  autoResize
+                  minRows={2}
+                  maxRows={8}
+                />
+              </div>
+              
+              <div className="space-y-2">
+                <Label htmlFor="character-count-textarea">With Character Count</Label>
+                <Textarea
+                  id="character-count-textarea"
+                  placeholder="Type up to 100 characters..."
+                  value={charCountValue}
+                  onChange={(e) => setCharCountValue(e.target.value)}
+                  showCharacterCount
+                  maxLength={100}
+                />
+              </div>
+              
+              <div className="space-y-2">
+                <Label htmlFor="combined-textarea">Auto-resize with Character Count</Label>
+                <Textarea
+                  id="combined-textarea"
+                  placeholder="This combines both features..."
+                  value={combinedValue}
+                  onChange={(e) => setCombinedValue(e.target.value)}
+                  autoResize
+                  showCharacterCount
+                  maxLength={200}
+                  minRows={3}
+                  maxRows={6}
+                />
+              </div>
+              
+              <div className="space-y-2">
                 <Label htmlFor="disabled-textarea">Disabled Textarea</Label>
                 <Textarea
                   id="disabled-textarea"
                   placeholder="Disabled textarea"
                   disabled
+                  defaultValue="This textarea is disabled and cannot be edited."
                 />
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="custom-textarea">Custom Rows Textarea</Label>
+                <Label htmlFor="custom-textarea">Fixed Rows Textarea</Label>
                 <Textarea
                   id="custom-textarea"
-                  placeholder="With custom row count..."
+                  placeholder="With fixed row count..."
                   rows={6}
                 />
               </div>
@@ -140,14 +184,54 @@ export function TextareaExample() {
   const [value, setValue] = useState("")
 
   return (
-    <div className="space-y-2">
-      <Label htmlFor="textarea">Default Textarea</Label>
-      <Textarea
-        id="textarea"
-        placeholder="Type your message here..."
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-      />
+    <div className="space-y-4">
+      {/* Basic usage */}
+      <div className="space-y-2">
+        <Label htmlFor="textarea">Default Textarea</Label>
+        <Textarea
+          id="textarea"
+          placeholder="Type your message here..."
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+        />
+      </div>
+
+      {/* Auto-resize */}
+      <div className="space-y-2">
+        <Label htmlFor="auto-resize">Auto-resize Textarea</Label>
+        <Textarea
+          id="auto-resize"
+          placeholder="This textarea will grow as you type..."
+          autoResize
+          minRows={2}
+          maxRows={8}
+        />
+      </div>
+
+      {/* Character count */}
+      <div className="space-y-2">
+        <Label htmlFor="char-count">With Character Count</Label>
+        <Textarea
+          id="char-count"
+          placeholder="Type up to 100 characters..."
+          showCharacterCount
+          maxLength={100}
+        />
+      </div>
+
+      {/* Combined features */}
+      <div className="space-y-2">
+        <Label htmlFor="combined">Auto-resize with Character Count</Label>
+        <Textarea
+          id="combined"
+          placeholder="This combines both features..."
+          autoResize
+          showCharacterCount
+          maxLength={200}
+          minRows={3}
+          maxRows={6}
+        />
+      </div>
     </div>
   )
 }`}
