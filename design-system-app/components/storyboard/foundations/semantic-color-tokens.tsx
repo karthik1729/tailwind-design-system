@@ -14,10 +14,10 @@ const SemanticColorTokens: React.FC = () => {
           name: 'Primary', 
           var: '--primary',
           variants: [
-            { shade: '50', class: 'bg-primary-50', textClass: 'text-foreground' },
-            { shade: '100', class: 'bg-primary-100', textClass: 'text-foreground' },
-            { shade: '200', class: 'bg-primary-200', textClass: 'text-foreground' },
-            { shade: '300', class: 'bg-primary-300', textClass: 'text-foreground' },
+            { shade: '50', class: 'bg-primary-50', textClass: 'text-primary-900' },
+            { shade: '100', class: 'bg-primary-100', textClass: 'text-primary-900' },
+            { shade: '200', class: 'bg-primary-200', textClass: 'text-primary-900' },
+            { shade: '300', class: 'bg-primary-300', textClass: 'text-primary-900' },
             { shade: '400', class: 'bg-primary-400', textClass: 'text-white' },
             { shade: '500', class: 'bg-primary-500', textClass: 'text-white' },
             { shade: '600', class: 'bg-primary-600', textClass: 'text-white' },
@@ -31,10 +31,10 @@ const SemanticColorTokens: React.FC = () => {
           name: 'Accent', 
           var: '--accent',
           variants: [
-            { shade: '50', class: 'bg-accent-50', textClass: 'text-foreground' },
-            { shade: '100', class: 'bg-accent-100', textClass: 'text-foreground' },
-            { shade: '200', class: 'bg-accent-200', textClass: 'text-foreground' },
-            { shade: '300', class: 'bg-accent-300', textClass: 'text-foreground' },
+            { shade: '50', class: 'bg-accent-50', textClass: 'text-accent-900' },
+            { shade: '100', class: 'bg-accent-100', textClass: 'text-accent-900' },
+            { shade: '200', class: 'bg-accent-200', textClass: 'text-accent-900' },
+            { shade: '300', class: 'bg-accent-300', textClass: 'text-accent-900' },
             { shade: '400', class: 'bg-accent-400', textClass: 'text-white' },
             { shade: '500', class: 'bg-accent-500', textClass: 'text-white' },
             { shade: '600', class: 'bg-accent-600', textClass: 'text-white' },
@@ -60,10 +60,10 @@ const SemanticColorTokens: React.FC = () => {
           name: 'Purple', 
           var: '--purple',
           variants: [
-            { shade: '50', class: 'bg-purple-50', textClass: 'text-foreground' },
-            { shade: '100', class: 'bg-purple-100', textClass: 'text-foreground' },
-            { shade: '200', class: 'bg-purple-200', textClass: 'text-foreground' },
-            { shade: '300', class: 'bg-purple-300', textClass: 'text-foreground' },
+            { shade: '50', class: 'bg-purple-50', textClass: 'text-purple-900' },
+            { shade: '100', class: 'bg-purple-100', textClass: 'text-purple-900' },
+            { shade: '200', class: 'bg-purple-200', textClass: 'text-purple-900' },
+            { shade: '300', class: 'bg-purple-300', textClass: 'text-purple-900' },
             { shade: '400', class: 'bg-purple-400', textClass: 'text-white' },
             { shade: '500', class: 'bg-purple-500', textClass: 'text-white' },
             { shade: '600', class: 'bg-purple-600', textClass: 'text-white' },
@@ -77,11 +77,11 @@ const SemanticColorTokens: React.FC = () => {
           name: 'Teal', 
           var: '--teal',
           variants: [
-            { shade: '50', class: 'bg-teal-50', textClass: 'text-foreground' },
-            { shade: '100', class: 'bg-teal-100', textClass: 'text-foreground' },
-            { shade: '200', class: 'bg-teal-200', textClass: 'text-foreground' },
-            { shade: '300', class: 'bg-teal-300', textClass: 'text-foreground' },
-            { shade: '400', class: 'bg-teal-400', textClass: 'text-foreground' },
+            { shade: '50', class: 'bg-teal-50', textClass: 'text-teal-900' },
+            { shade: '100', class: 'bg-teal-100', textClass: 'text-teal-900' },
+            { shade: '200', class: 'bg-teal-200', textClass: 'text-teal-900' },
+            { shade: '300', class: 'bg-teal-300', textClass: 'text-teal-900' },
+            { shade: '400', class: 'bg-teal-400', textClass: 'text-teal-900' },
             { shade: '500', class: 'bg-teal-500', textClass: 'text-white' },
             { shade: '600', class: 'bg-teal-600', textClass: 'text-white' },
             { shade: '700', class: 'bg-teal-700', textClass: 'text-white' },
@@ -94,11 +94,11 @@ const SemanticColorTokens: React.FC = () => {
           name: 'Orange', 
           var: '--orange',
           variants: [
-            { shade: '50', class: 'bg-orange-50', textClass: 'text-foreground' },
-            { shade: '100', class: 'bg-orange-100', textClass: 'text-foreground' },
-            { shade: '200', class: 'bg-orange-200', textClass: 'text-foreground' },
-            { shade: '300', class: 'bg-orange-300', textClass: 'text-foreground' },
-            { shade: '400', class: 'bg-orange-400', textClass: 'text-foreground' },
+            { shade: '50', class: 'bg-orange-50', textClass: 'text-orange-900' },
+            { shade: '100', class: 'bg-orange-100', textClass: 'text-orange-900' },
+            { shade: '200', class: 'bg-orange-200', textClass: 'text-orange-900' },
+            { shade: '300', class: 'bg-orange-300', textClass: 'text-orange-900' },
+            { shade: '400', class: 'bg-orange-400', textClass: 'text-orange-900' },
             { shade: '500', class: 'bg-orange-500', textClass: 'text-white' },
             { shade: '600', class: 'bg-orange-600', textClass: 'text-white' },
             { shade: '700', class: 'bg-orange-700', textClass: 'text-white' },
@@ -268,17 +268,23 @@ const SemanticColorTokens: React.FC = () => {
     return (
       <div className="space-y-3">
         <h4 className="font-medium text-foreground">{token.name}</h4>
-        <div className="grid grid-cols-11 gap-0.5 rounded-lg overflow-hidden">
-          {token.variants.map((variant: any) => (
-            <div key={variant.shade} className="relative group">
-              <div className={`${variant.class} h-16 flex items-end justify-center pb-2`}>
-                <span className={`text-xs font-medium ${variant.textClass} opacity-0 group-hover:opacity-100 transition-opacity`}>
-                  {variant.shade}
-                </span>
+        <div className="grid grid-cols-11 gap-0.5">
+          {token.variants.map((variant: any, index: number) => {
+            const isFirst = index === 0
+            const isLast = index === token.variants.length - 1
+            const roundedClass = isFirst ? 'rounded-l-lg' : isLast ? 'rounded-r-lg' : ''
+            
+            return (
+              <div key={variant.shade} className={`relative group overflow-hidden ${roundedClass}`}>
+                <div className={`${variant.class} h-16 flex items-end justify-center pb-2 ${roundedClass}`}>
+                  <span className={`text-xs font-medium ${variant.textClass} opacity-0 group-hover:opacity-100 transition-opacity`}>
+                    {variant.shade}
+                  </span>
+                </div>
+                <div className={`absolute inset-0 ring-1 ring-inset ring-black/10 ${roundedClass}`} />
               </div>
-              <div className="absolute inset-0 ring-1 ring-inset ring-black/10" />
-            </div>
-          ))}
+            )
+          })}
         </div>
       </div>
     )
@@ -503,21 +509,22 @@ const SemanticColorTokens: React.FC = () => {
             </div>
 
             {/* Single tokens for secondary and muted */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 gap-6">
               {currentCategory.tokens.filter(token => !token.variants).map((token, index) => (
-                <div key={index}>
-                  {renderColorToken(token)}
-                  
-                  {/* Foreground variant if exists */}
-                  {token.foreground && (
-                    <div className="mt-4">
-                      {renderColorToken({
-                        ...token.foreground,
-                        name: `${token.name} Foreground`,
-                        type: 'text'
-                      })}
+                <div key={index} className="space-y-2">
+                  <h4 className="font-medium text-foreground">{token.name}</h4>
+                  <div className={`${token.class} rounded-lg p-6 border border-border`}>
+                    <div className={`${token.foreground?.class || 'text-foreground'}`}>
+                      <p className="text-2xl font-bold mb-2">Aa</p>
+                      <p className="text-sm opacity-80">Sample text on {token.name.toLowerCase()} background</p>
                     </div>
-                  )}
+                  </div>
+                  <div className="space-y-1">
+                    <code className="text-xs text-muted-foreground font-mono block">{token.class}</code>
+                    {token.foreground && (
+                      <code className="text-xs text-muted-foreground font-mono block">{token.foreground.class}</code>
+                    )}
+                  </div>
                 </div>
               ))}
             </div>
@@ -532,22 +539,37 @@ const SemanticColorTokens: React.FC = () => {
           </div>
         ) : (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {currentCategory.tokens.map((token, index) => (
-              <div key={index}>
-                {renderColorToken(token)}
-                
-                {/* Foreground variant if exists */}
-                {token.foreground && (
-                  <div className="mt-4">
-                    {renderColorToken({
-                      ...token.foreground,
-                      name: `${token.name} Foreground`,
-                      type: 'text'
-                    })}
+            {currentCategory.tokens.map((token, index) => {
+              // For tokens with foreground pairs, show them combined
+              if (token.foreground && !token.type) {
+                return (
+                  <div key={index} className="group relative">
+                    <div className={`${token.class} aspect-square rounded-lg border border-border flex items-center justify-center`}>
+                      <div className={`${token.foreground.class} text-center`}>
+                        <p className="text-2xl font-bold">Aa</p>
+                        <p className="text-xs mt-1 opacity-80">{token.name}</p>
+                      </div>
+                    </div>
+                    <div className="mt-3">
+                      <h4 className="font-medium text-foreground">{token.name}</h4>
+                      <div className="space-y-0.5 mt-1">
+                        <code className="text-xs text-muted-foreground font-mono block">{token.class}</code>
+                        <code className="text-xs text-muted-foreground font-mono block">{token.foreground.class}</code>
+                      </div>
+                    </div>
+                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-foreground text-background text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10">
+                      var({token.var})
+                    </div>
                   </div>
-                )}
-              </div>
-            ))}
+                )
+              }
+              // For other tokens (text, border, ring), show individually
+              return (
+                <div key={index}>
+                  {renderColorToken(token)}
+                </div>
+              )
+            })}
           </div>
         )}
       </div>
