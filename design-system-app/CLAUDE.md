@@ -1,78 +1,102 @@
-# Design System Quick Reference
+# Tailwind Design System Guide
 
-## Core Rules
-1. **Use semantic tokens** - `bg-primary` not `bg-blue-500`
-2. **No shadows on buttons** - Clean, borderless design
-3. **Smooth transitions** - 200ms for hover, 75ms for active
-4. **Test both themes** - Everything must work in light/dark
+## File Organization
 
-## Essential Classes
+### Storyboard Structure
+**Keep storyboard pages clean and modular:**
 
-### Layout
-```jsx
-// Page container
-<div className="container mx-auto px-4 py-12 max-w-7xl">
-
-// Section spacing
-<section className="space-y-8">
-
-// Component spacing
-<div className="space-y-4">
+```
+app/storyboard/components/forms/
+├── page.tsx                 // Main page - imports only
+├── input-example.tsx        // Input component examples
+├── textarea-example.tsx     // Textarea component examples
+├── select-example.tsx       // Select component examples
+└── ...                      // One file per component type
 ```
 
-### Colors
-```jsx
-// Backgrounds
-bg-background    // Main page background
-bg-card         // Card/elevated content
-bg-muted        // Subtle backgrounds
-bg-primary      // Primary actions (blue)
+**Main page pattern:**
+```tsx
+// page.tsx - Keep it simple
+import { InputExample } from "./input-example"
+import { TextareaExample } from "./textarea-example"
 
-// Text
-text-foreground       // Primary text
-text-muted-foreground // Secondary text
-text-primary-foreground // White text on primary bg
+export default function FormsPage() {
+  return (
+    <div className="space-y-12">
+      <h1>Form Elements</h1>
+      <InputExample />
+      <TextareaExample />
+    </div>
+  )
+}
 ```
 
-### Interactive States
-```jsx
-// Button pattern
-<Button className="
-  hover:bg-primary-hover 
-  active:bg-primary-active 
-  active:scale-[0.99]
-  transition-all duration-200
-">
+**Component example pattern:**
+```tsx
+// input-example.tsx - Complete, isolated component
+"use client"
+import { useState } from "react"
+import { Input } from "@/components/ui/input"
+import { PreviewContainer } from "@/components/storyboard/preview-container"
 
-// Input pattern  
-<Input className="
-  focus:ring-2 
-  focus:ring-primary
-  transition-all duration-200
-">
+export function InputExample() {
+  const [value, setValue] = useState("")
+  
+  return (
+    <PreviewContainer
+      title="Input"
+      description="Input field variations"
+      component={<Input value={value} onChange={setValue} />}
+      code={`// Code example here`}
+    />
+  )
+}
 ```
 
-### Typography Scale
-```jsx
+## Design Rules
+
+### 1. Colors - Use Semantic Tokens
+```tsx
+bg-primary              // Primary actions (blue)
+bg-background           // Main page background  
+bg-card                 // Card/elevated content
+text-foreground         // Primary text
+text-muted-foreground   // Secondary text
+```
+
+### 2. Interactions - Smooth & Consistent
+```tsx
+// Button states
+hover:bg-primary-hover 
+active:scale-[0.99]
+transition-all duration-200
+
+// Input focus
+focus:ring-2 focus:ring-primary
+transition-all duration-200
+```
+
+### 3. Typography - Clear Hierarchy
+```tsx
 text-4xl font-bold      // Page titles
-text-2xl font-semibold  // Section headers
+text-2xl font-semibold  // Section headers  
 text-lg font-medium     // Subsections
-text-base              // Body text
-text-sm                // Small text/labels
+text-base               // Body text
+text-sm                 // Labels/small text
 ```
 
-## Component Examples
-
-### Card
-```jsx
-<Card className="bg-card p-6 space-y-4">
-  <h3 className="text-lg font-semibold text-foreground">Title</h3>
-  <p className="text-muted-foreground">Description</p>
-</Card>
+### 4. Spacing - Consistent Scale
+```tsx
+space-y-12              // Between major sections
+space-y-6               // Between components
+space-y-4               // Between form fields
+space-y-2               // Label to input
 ```
+
+## Component Patterns
 
 ### Form Field
-```jsx
+```tsx
 <div className="space-y-2">
   <Label>Email</Label>
   <Input 
@@ -83,25 +107,30 @@ text-sm                // Small text/labels
 </div>
 ```
 
-### Alert
-```jsx
-<Alert variant="info" className="space-y-2">
-  <AlertTitle>Info</AlertTitle>
-  <AlertDescription>Message here</AlertDescription>
-</Alert>
+### Card Layout
+```tsx
+<Card className="bg-card p-6 space-y-4">
+  <h3 className="text-lg font-semibold">Title</h3>
+  <p className="text-muted-foreground">Description</p>
+</Card>
 ```
 
-## Don'ts
-- ❌ No hardcoded colors: `text-gray-500`
-- ❌ No button shadows: `shadow-lg`
-- ❌ No heavy borders: `border-2`
-- ❌ No instant transitions: `duration-0`
+## Quick Rules
 
-## Do's
-- ✅ Semantic tokens: `text-muted-foreground`
-- ✅ Clean buttons: No shadows
-- ✅ Subtle borders: `border` only when needed
-- ✅ Smooth animations: `duration-200`
+### ✅ Do
+- Use semantic color tokens
+- Clean button design (no shadows)
+- Smooth animations (200ms)
+- Modular file organization
+- One component example per file
+
+### ❌ Don't  
+- Hardcode colors (`text-gray-500`)
+- Add button shadows (`shadow-lg`)
+- Create massive page files
+- Mix multiple components in one example file
+- Skip transitions (`duration-0`)
 
 ---
-For detailed guidelines, see DESIGN_GUIDELINES.md
+
+Keep it simple. Keep it modular. Keep it semantic.
