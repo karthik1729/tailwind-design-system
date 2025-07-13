@@ -18,16 +18,16 @@ export function RadioGroupExample() {
             <Label className="text-sm font-medium">Choose your plan</Label>
             <RadioGroup value={radioValue} onValueChange={setRadioValue}>
               <div className="flex items-center space-x-2">
-                <RadioGroupItem value="option1" id="option1" />
-                <Label htmlFor="option1">Free plan</Label>
+                <RadioGroupItem value="option1" id="radio-option1" />
+                <Label htmlFor="radio-option1">Free plan</Label>
               </div>
               <div className="flex items-center space-x-2">
-                <RadioGroupItem value="option2" id="option2" />
-                <Label htmlFor="option2">Pro plan</Label>
+                <RadioGroupItem value="option2" id="radio-option2" />
+                <Label htmlFor="radio-option2">Pro plan</Label>
               </div>
               <div className="flex items-center space-x-2">
-                <RadioGroupItem value="option3" id="option3" />
-                <Label htmlFor="option3">Enterprise plan</Label>
+                <RadioGroupItem value="option3" id="radio-option3" />
+                <Label htmlFor="radio-option3">Enterprise plan</Label>
               </div>
             </RadioGroup>
           </div>
@@ -86,16 +86,16 @@ export function RadioGroupExample() {
       <Label className="text-sm font-medium">Choose your plan</Label>
       <RadioGroup value={value} onValueChange={setValue}>
         <div className="flex items-center space-x-2">
-          <RadioGroupItem value="option1" id="option1" />
-          <Label htmlFor="option1">Free plan</Label>
+          <RadioGroupItem value="option1" id="radio-code-option1" />
+          <Label htmlFor="radio-code-option1">Free plan</Label>
         </div>
         <div className="flex items-center space-x-2">
-          <RadioGroupItem value="option2" id="option2" />
-          <Label htmlFor="option2">Pro plan</Label>
+          <RadioGroupItem value="option2" id="radio-code-option2" />
+          <Label htmlFor="radio-code-option2">Pro plan</Label>
         </div>
         <div className="flex items-center space-x-2">
-          <RadioGroupItem value="option3" id="option3" />
-          <Label htmlFor="option3">Enterprise plan</Label>
+          <RadioGroupItem value="option3" id="radio-code-option3" />
+          <Label htmlFor="radio-code-option3">Enterprise plan</Label>
         </div>
       </RadioGroup>
     </div>

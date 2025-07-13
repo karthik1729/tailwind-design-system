@@ -11,7 +11,7 @@ export function SelectExample() {
   return (
     <PreviewContainer
       title="Select"
-      description="Dropdown selection component with various options and configurations"
+      description="Dropdown selection component for choosing from a list of options"
       component={
         <div className="space-y-4">
           <div className="space-y-2">

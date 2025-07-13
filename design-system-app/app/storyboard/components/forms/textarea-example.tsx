@@ -73,7 +73,16 @@ export function TextareaExample() {
               id="disabled-textarea"
               placeholder="Disabled textarea"
               disabled
-              defaultValue="This textarea is disabled"
+              defaultValue="This textarea is disabled and cannot be edited."
+            />
+          </div>
+          
+          <div className="space-y-2">
+            <Label htmlFor="fixed-rows-textarea">Fixed Rows Textarea</Label>
+            <Textarea
+              id="fixed-rows-textarea"
+              placeholder="With fixed row count..."
+              rows={6}
             />
           </div>
         </div>

@@ -9,6 +9,7 @@ import { SwitchExample } from "./switch-example"
 import { SliderExample } from "./slider-example"
 import { InputOTPExample } from "./input-otp-example"
 import { DatePickerExample } from "./date-picker-example"
+import { FileUploadExample } from "./file-upload-example"
 
 export default function FormsPage() {
   return (
@@ -31,6 +32,7 @@ export default function FormsPage() {
       <SliderExample />
       <InputOTPExample />
       <DatePickerExample />
+      <FileUploadExample />
     </div>
   )
 }

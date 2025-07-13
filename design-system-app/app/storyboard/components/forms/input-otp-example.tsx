@@ -17,6 +17,7 @@ export function InputOTPExample() {
     <PreviewContainer
       title="Input OTP"
       description="One-time password input with enhanced individual digit focus states"
+      allowOverflow={true}
       component={
         <div className="space-y-6">
           <div className="space-y-3">
@@ -90,6 +91,45 @@ export function InputOTPExample() {
                 <InputOTPSlot index={7} />
               </InputOTPGroup>
             </InputOTP>
+          </div>
+          
+          <div className="space-y-3">
+            <Label>8-Digit Code with Groups</Label>
+            <InputOTP maxLength={8}>
+              <InputOTPGroup>
+                <InputOTPSlot index={0} />
+                <InputOTPSlot index={1} />
+                <InputOTPSlot index={2} />
+                <InputOTPSlot index={3} />
+              </InputOTPGroup>
+              <InputOTPSeparator />
+              <InputOTPGroup>
+                <InputOTPSlot index={4} />
+                <InputOTPSlot index={5} />
+                <InputOTPSlot index={6} />
+                <InputOTPSlot index={7} />
+              </InputOTPGroup>
+            </InputOTP>
+            <p className="text-sm text-muted-foreground">
+              Extended code with visual grouping
+            </p>
+          </div>
+          
+          <div className="space-y-3">
+            <Label>Custom Styled Slots</Label>
+            <InputOTP maxLength={6}>
+              <InputOTPGroup className="gap-3">
+                <InputOTPSlot index={0} className="!rounded-xl h-12 w-12 !border" />
+                <InputOTPSlot index={1} className="!rounded-xl h-12 w-12 !border" />
+                <InputOTPSlot index={2} className="!rounded-xl h-12 w-12 !border" />
+                <InputOTPSlot index={3} className="!rounded-xl h-12 w-12 !border" />
+                <InputOTPSlot index={4} className="!rounded-xl h-12 w-12 !border" />
+                <InputOTPSlot index={5} className="!rounded-xl h-12 w-12 !border" />
+              </InputOTPGroup>
+            </InputOTP>
+            <p className="text-sm text-muted-foreground">
+              Larger slots with rounded corners
+            </p>
           </div>
           
           <div className="space-y-3">
@@ -176,6 +216,21 @@ export function InputOTPExample() {
           <InputOTPGroup>
             <InputOTPSlot index={6} />
             <InputOTPSlot index={7} />
+          </InputOTPGroup>
+        </InputOTP>
+      </div>
+
+      {/* Custom styled */}
+      <div className="space-y-3">
+        <Label>Custom Styled Slots</Label>
+        <InputOTP maxLength={6}>
+          <InputOTPGroup className="gap-3">
+            <InputOTPSlot index={0} className="!rounded-xl h-12 w-12 !border" />
+            <InputOTPSlot index={1} className="!rounded-xl h-12 w-12 !border" />
+            <InputOTPSlot index={2} className="!rounded-xl h-12 w-12 !border" />
+            <InputOTPSlot index={3} className="!rounded-xl h-12 w-12 !border" />
+            <InputOTPSlot index={4} className="!rounded-xl h-12 w-12 !border" />
+            <InputOTPSlot index={5} className="!rounded-xl h-12 w-12 !border" />
           </InputOTPGroup>
         </InputOTP>
       </div>

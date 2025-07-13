@@ -62,16 +62,16 @@ export function CheckboxExample() {
             <Label className="text-sm font-medium">Multiple Options</Label>
             <div className="space-y-2">
               <div className="flex items-center space-x-2">
-                <Checkbox id="option1" />
-                <Label htmlFor="option1" className="text-sm">Option 1</Label>
+                <Checkbox id="checkbox-option1" />
+                <Label htmlFor="checkbox-option1" className="text-sm">Option 1</Label>
               </div>
               <div className="flex items-center space-x-2">
-                <Checkbox id="option2" />
-                <Label htmlFor="option2" className="text-sm">Option 2</Label>
+                <Checkbox id="checkbox-option2" />
+                <Label htmlFor="checkbox-option2" className="text-sm">Option 2</Label>
               </div>
               <div className="flex items-center space-x-2">
-                <Checkbox id="option3" />
-                <Label htmlFor="option3" className="text-sm">Option 3</Label>
+                <Checkbox id="checkbox-option3" />
+                <Label htmlFor="checkbox-option3" className="text-sm">Option 3</Label>
               </div>
             </div>
           </div>
@@ -103,12 +103,12 @@ export function CheckboxExample() {
       {/* Multiple checkboxes */}
       <div className="space-y-2">
         <div className="flex items-center space-x-2">
-          <Checkbox id="option1" />
-          <Label htmlFor="option1">Option 1</Label>
+          <Checkbox id="checkbox-code-option1" />
+          <Label htmlFor="checkbox-code-option1">Option 1</Label>
         </div>
         <div className="flex items-center space-x-2">
-          <Checkbox id="option2" />
-          <Label htmlFor="option2">Option 2</Label>
+          <Checkbox id="checkbox-code-option2" />
+          <Label htmlFor="checkbox-code-option2">Option 2</Label>
         </div>
       </div>
     </div>
