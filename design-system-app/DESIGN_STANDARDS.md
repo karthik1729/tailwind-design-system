@@ -67,10 +67,18 @@ This document outlines the comprehensive design standards and best practices for
 - Active state uses primary color
 
 ### Form Elements
-- Consistent focus rings
-- Clear error states
-- Smooth transitions on all interactions
-- Proper disabled states
+- **Focus Rings**: Consistent 2px solid primary with 2px offset
+- **Input**: Smooth ring animations on focus (transition-all)
+- **Textarea**: Auto-resize with min/max rows, character count with visual warnings
+- **Select**: Active item uses primary color, smooth transitions
+- **Checkbox/Radio**: Scale/opacity transitions, filled indicators
+- **Switch**: Smooth toggle animation, scale effects on thumb
+- **Slider**: Track hover effects, thumb scaling (110% hover, 95% active)
+- **InputOTP**: 
+  - Individual digit focus with scale (105%) and ring effects
+  - Connected design with proper border handling
+  - Smart select-all behavior (hides individual rings)
+  - Zoom-in animation for entered digits
 
 ## 3. Micro-Interactions
 
@@ -268,6 +276,21 @@ const Component = React.forwardRef<HTMLElement, ComponentProps>(
   <div className="p-4 bg-white rounded">Item 2</div>
 </div>
 ```
+
+## Recent Enhancements (2025-07-13)
+
+### Form Components
+- **InputOTP**: Enhanced with individual digit focus states, smooth animations, and smart select-all handling
+- **Slider**: Fixed focus ring consistency to match standard 2px solid pattern
+- **Textarea**: Added auto-resize and character count features
+- **Checkbox/RadioGroup**: Improved animations and fixed indicator rendering
+- **Switch**: Added smooth toggle animations and hover effects
+
+### Design Patterns Established
+- **Focus Rings**: Standardized to 2px solid primary with 2px offset
+- **Select-All Handling**: Hide individual focus rings when multiple elements are selected
+- **Connected Components**: Special border handling for elements that connect (like InputOTP)
+- **Custom Styling**: Use `!important` modifiers when overriding connected designs
 
 ## Conclusion
 
