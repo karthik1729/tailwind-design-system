@@ -10,6 +10,12 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Switch } from "@/components/ui/switch"
 import { Slider } from "@/components/ui/slider"
+import {
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSeparator,
+  InputOTPSlot,
+} from "@/components/ui/input-otp"
 
 export default function FormsPage() {
   const [inputValue, setInputValue] = useState("")
@@ -22,6 +28,7 @@ export default function FormsPage() {
   const [radioValue, setRadioValue] = useState("option1")
   const [switchChecked, setSwitchChecked] = useState(false)
   const [sliderValue, setSliderValue] = useState([50])
+  const [otpValue, setOtpValue] = useState("")
 
   return (
     <div className="space-y-12">
@@ -663,6 +670,202 @@ export function SliderExample() {
         <p className="text-sm text-muted-foreground">
           Range: 0 - 1000, Step: 10
         </p>
+      </div>
+    </div>
+  )
+}`}
+        />
+
+        {/* InputOTP Component */}
+        <PreviewContainer
+          title="Input OTP"
+          description="Enhanced one-time password input with individual digit focus states and visual feedback"
+          component={
+            <div className="space-y-6">
+              <div className="space-y-3">
+                <Label>6-Digit Verification Code</Label>
+                <InputOTP maxLength={6} value={otpValue} onChange={setOtpValue}>
+                  <InputOTPGroup>
+                    <InputOTPSlot index={0} />
+                    <InputOTPSlot index={1} />
+                    <InputOTPSlot index={2} />
+                    <InputOTPSlot index={3} />
+                    <InputOTPSlot index={4} />
+                    <InputOTPSlot index={5} />
+                  </InputOTPGroup>
+                </InputOTP>
+                <div className="text-center text-sm text-muted-foreground">
+                  {otpValue ? `Entered: ${otpValue}` : "Enter your verification code"}
+                </div>
+              </div>
+              
+              <div className="space-y-3">
+                <Label>With Separator</Label>
+                <InputOTP maxLength={6}>
+                  <InputOTPGroup>
+                    <InputOTPSlot index={0} />
+                    <InputOTPSlot index={1} />
+                    <InputOTPSlot index={2} />
+                  </InputOTPGroup>
+                  <InputOTPSeparator />
+                  <InputOTPGroup>
+                    <InputOTPSlot index={3} />
+                    <InputOTPSlot index={4} />
+                    <InputOTPSlot index={5} />
+                  </InputOTPGroup>
+                </InputOTP>
+                <p className="text-sm text-muted-foreground">
+                  Visual separation for better readability
+                </p>
+              </div>
+              
+              <div className="space-y-3">
+                <Label>4-Digit PIN</Label>
+                <InputOTP maxLength={4}>
+                  <InputOTPGroup>
+                    <InputOTPSlot index={0} />
+                    <InputOTPSlot index={1} />
+                    <InputOTPSlot index={2} />
+                    <InputOTPSlot index={3} />
+                  </InputOTPGroup>
+                </InputOTP>
+                <p className="text-sm text-muted-foreground">
+                  Try focusing on individual digits
+                </p>
+              </div>
+              
+              <div className="space-y-3">
+                <Label>8-Digit Code with Groups</Label>
+                <InputOTP maxLength={8}>
+                  <InputOTPGroup>
+                    <InputOTPSlot index={0} />
+                    <InputOTPSlot index={1} />
+                    <InputOTPSlot index={2} />
+                    <InputOTPSlot index={3} />
+                  </InputOTPGroup>
+                  <InputOTPSeparator />
+                  <InputOTPGroup>
+                    <InputOTPSlot index={4} />
+                    <InputOTPSlot index={5} />
+                    <InputOTPSlot index={6} />
+                    <InputOTPSlot index={7} />
+                  </InputOTPGroup>
+                </InputOTP>
+                <p className="text-sm text-muted-foreground">
+                  Extended code with visual grouping
+                </p>
+              </div>
+              
+              <div className="space-y-3">
+                <Label>Custom Styled Slots</Label>
+                <InputOTP maxLength={6}>
+                  <InputOTPGroup className="gap-3">
+                    <InputOTPSlot index={0} className="!rounded-xl h-12 w-12 !border" />
+                    <InputOTPSlot index={1} className="!rounded-xl h-12 w-12 !border" />
+                    <InputOTPSlot index={2} className="!rounded-xl h-12 w-12 !border" />
+                    <InputOTPSlot index={3} className="!rounded-xl h-12 w-12 !border" />
+                    <InputOTPSlot index={4} className="!rounded-xl h-12 w-12 !border" />
+                    <InputOTPSlot index={5} className="!rounded-xl h-12 w-12 !border" />
+                  </InputOTPGroup>
+                </InputOTP>
+                <p className="text-sm text-muted-foreground">
+                  Larger slots with rounded corners
+                </p>
+              </div>
+              
+              <div className="space-y-3">
+                <Label>Disabled State</Label>
+                <InputOTP maxLength={6} disabled defaultValue="123456">
+                  <InputOTPGroup>
+                    <InputOTPSlot index={0} />
+                    <InputOTPSlot index={1} />
+                    <InputOTPSlot index={2} />
+                    <InputOTPSlot index={3} />
+                    <InputOTPSlot index={4} />
+                    <InputOTPSlot index={5} />
+                  </InputOTPGroup>
+                </InputOTP>
+                <p className="text-sm text-muted-foreground">
+                  Non-interactive disabled state
+                </p>
+              </div>
+            </div>
+          }
+          code={`import {
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSeparator,
+  InputOTPSlot,
+} from "@/components/ui/input-otp"
+import { Label } from "@/components/ui/label"
+
+export function InputOTPExample() {
+  const [value, setValue] = useState("")
+
+  return (
+    <div className="space-y-6">
+      {/* Basic 6-digit OTP */}
+      <div className="space-y-3">
+        <Label>6-Digit Verification Code</Label>
+        <InputOTP maxLength={6} value={value} onChange={setValue}>
+          <InputOTPGroup>
+            <InputOTPSlot index={0} />
+            <InputOTPSlot index={1} />
+            <InputOTPSlot index={2} />
+            <InputOTPSlot index={3} />
+            <InputOTPSlot index={4} />
+            <InputOTPSlot index={5} />
+          </InputOTPGroup>
+        </InputOTP>
+        <div className="text-center text-sm text-muted-foreground">
+          {value ? \`Entered: \${value}\` : "Enter your verification code"}
+        </div>
+      </div>
+
+      {/* With separator */}
+      <div className="space-y-3">
+        <Label>With Separator</Label>
+        <InputOTP maxLength={6}>
+          <InputOTPGroup>
+            <InputOTPSlot index={0} />
+            <InputOTPSlot index={1} />
+            <InputOTPSlot index={2} />
+          </InputOTPGroup>
+          <InputOTPSeparator />
+          <InputOTPGroup>
+            <InputOTPSlot index={3} />
+            <InputOTPSlot index={4} />
+            <InputOTPSlot index={5} />
+          </InputOTPGroup>
+        </InputOTP>
+      </div>
+
+      {/* 4-digit PIN */}
+      <div className="space-y-3">
+        <Label>4-Digit PIN</Label>
+        <InputOTP maxLength={4}>
+          <InputOTPGroup>
+            <InputOTPSlot index={0} />
+            <InputOTPSlot index={1} />
+            <InputOTPSlot index={2} />
+            <InputOTPSlot index={3} />
+          </InputOTPGroup>
+        </InputOTP>
+      </div>
+
+      {/* Custom styled */}
+      <div className="space-y-3">
+        <Label>Custom Styled Slots</Label>
+        <InputOTP maxLength={6}>
+          <InputOTPGroup className="gap-3">
+            <InputOTPSlot index={0} className="!rounded-xl h-12 w-12 !border" />
+            <InputOTPSlot index={1} className="!rounded-xl h-12 w-12 !border" />
+            <InputOTPSlot index={2} className="!rounded-xl h-12 w-12 !border" />
+            <InputOTPSlot index={3} className="!rounded-xl h-12 w-12 !border" />
+            <InputOTPSlot index={4} className="!rounded-xl h-12 w-12 !border" />
+            <InputOTPSlot index={5} className="!rounded-xl h-12 w-12 !border" />
+          </InputOTPGroup>
+        </InputOTP>
       </div>
     </div>
   )

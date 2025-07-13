@@ -59,11 +59,11 @@ function Slider({
           data-slot="slider-thumb"
           key={index}
           className={cn(
-            "border-primary bg-background ring-primary/20",
+            "border-primary bg-background",
             "block size-4 shrink-0 rounded-full border shadow-sm",
             "transition-all duration-200",
-            "hover:ring-4 hover:scale-110 hover:shadow-md",
-            "focus-visible:ring-4 focus-visible:scale-110 focus-visible:outline-hidden",
+            "hover:scale-110",
+            "focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background focus-visible:outline-hidden",
             "active:scale-95",
             "disabled:pointer-events-none disabled:opacity-50"
           )}
