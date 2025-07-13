@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { PreviewContainer } from "@/components/storyboard/preview-container"
 import { AlertCircle, CheckCircle2, InfoIcon, Terminal, TriangleAlert, XCircle } from "lucide-react"
+import { ToastExample } from "./toast-example"
 
 export default function FeedbackPage() {
   const [progress, setProgress] = useState(0)
@@ -241,17 +242,18 @@ export default function FeedbackPage() {
         {/* Styled Progress */}
         <PreviewContainer
           title="Styled Progress"
-          description="Progress bars with custom styling"
+          description="Progress bars with custom styling and animations"
           code={`{/* Different Heights */}
 <Progress value={60} className="w-full h-1" />
 <Progress value={60} className="w-full h-2" />
 <Progress value={60} className="w-full h-3" />
 <Progress value={60} className="w-full h-4" />
 
-{/* Custom Colors */}
-<Progress value={80} className="w-full [&>div]:bg-green-500" />
-<Progress value={50} className="w-full [&>div]:bg-yellow-500" />
-<Progress value={30} className="w-full [&>div]:bg-red-500" />`}
+{/* Custom Colors with semantic tokens */}
+<Progress value={80} indicatorClassName="bg-success" />
+<Progress value={50} indicatorClassName="bg-warning" />
+<Progress value={30} indicatorClassName="bg-destructive" />
+<Progress value={70} indicatorClassName="bg-info" />`}
           component={
             <div className="w-full max-w-2xl space-y-4">
               <div className="space-y-2">
@@ -261,9 +263,34 @@ export default function FeedbackPage() {
                 <Progress value={60} className="w-full h-4" />
               </div>
               <div className="space-y-2 mt-6">
-                <Progress value={80} className="w-full [&>div]:bg-green-500" />
-                <Progress value={50} className="w-full [&>div]:bg-yellow-500" />
-                <Progress value={30} className="w-full [&>div]:bg-red-500" />
+                <div className="space-y-1">
+                  <div className="flex justify-between text-sm">
+                    <span className="text-muted-foreground">Success</span>
+                    <span className="text-success">80%</span>
+                  </div>
+                  <Progress value={80} indicatorClassName="bg-success" />
+                </div>
+                <div className="space-y-1">
+                  <div className="flex justify-between text-sm">
+                    <span className="text-muted-foreground">Warning</span>
+                    <span className="text-warning">50%</span>
+                  </div>
+                  <Progress value={50} indicatorClassName="bg-warning" />
+                </div>
+                <div className="space-y-1">
+                  <div className="flex justify-between text-sm">
+                    <span className="text-muted-foreground">Critical</span>
+                    <span className="text-destructive">30%</span>
+                  </div>
+                  <Progress value={30} indicatorClassName="bg-destructive" />
+                </div>
+                <div className="space-y-1">
+                  <div className="flex justify-between text-sm">
+                    <span className="text-muted-foreground">Information</span>
+                    <span className="text-info">70%</span>
+                  </div>
+                  <Progress value={70} indicatorClassName="bg-info" />
+                </div>
               </div>
             </div>
           }
@@ -628,6 +655,11 @@ export default function FeedbackPage() {
             </div>
           }
         />
+      </section>
+
+      {/* Toast Component */}
+      <section className="space-y-8">
+        <ToastExample />
       </section>
     </div>
   )
