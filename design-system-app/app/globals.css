@@ -990,4 +990,41 @@
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* ================================================================
+   ACCORDION ANIMATIONS
+   ================================================================
+   
+   Smooth expand/collapse animations for accordion content.
+   Uses height transitions with ease-out timing for natural feel.
+   ================================================================ */
+
+/* Accordion collapse animation */
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+/* Accordion expand animation */
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+/* Animation utility classes */
+.animate-accordion-up {
+  animation: accordion-up 0.2s ease-out;
+}
+
+.animate-accordion-down {
+  animation: accordion-down 0.2s ease-out;
+}
+
 

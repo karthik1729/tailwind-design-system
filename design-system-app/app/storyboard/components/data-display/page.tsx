@@ -29,6 +29,7 @@ import {
 } from "@/components/ui/accordion"
 import { PreviewContainer } from "@/components/storyboard/preview-container"
 import { Button } from "@/components/ui/button"
+import { AccordionEnhancedExample } from "./accordion-enhanced-example"
 import { MoreHorizontal, Check, X, Clock } from "lucide-react"
 
 export default function DataDisplayPage() {
@@ -189,6 +190,244 @@ export default function DataDisplayPage() {
                         <AvatarFallback>AS</AvatarFallback>
                       </Avatar>
                       <span className="text-sm">Alice added a comment</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          }
+        />
+
+        {/* Interactive Card */}
+        <PreviewContainer
+          title="Interactive Card"
+          description="Clickable card with hover lift effects and focus states"
+          code={`<Card 
+  interactive 
+  onClick={() => console.log('Card clicked')}
+>
+  <CardHeader>
+    <CardTitle>Interactive Card</CardTitle>
+    <CardDescription>Click or hover to see the interactive effects</CardDescription>
+  </CardHeader>
+  <CardContent>
+    <p>This card has hover lift effects, scale animations, and focus states for accessibility.</p>
+    <div className="mt-4 flex items-center gap-2">
+      <Badge>Interactive</Badge>
+      <Badge variant="secondary">Accessible</Badge>
+    </div>
+  </CardContent>
+</Card>`}
+          component={
+            <div className="gap-4">
+              <Card 
+                interactive 
+                className="max-w-md"
+                onClick={() => console.log('Card clicked')}
+              >
+                <CardHeader>
+                  <CardTitle>Interactive Card</CardTitle>
+                  <CardDescription>Click or hover to see the interactive effects</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p>This card has hover lift effects, scale animations, and focus states for accessibility.</p>
+                  <div className="mt-4 flex items-center gap-2">
+                    <Badge>Interactive</Badge>
+                    <Badge variant="secondary">Accessible</Badge>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          }
+        />
+
+        {/* Card Variants */}
+        <PreviewContainer
+          title="Card Variants"
+          description="Different card styles including elevated and flat variants"
+          code={`{/* Default Card */}
+<Card>
+  <CardHeader>
+    <CardTitle>Default Card</CardTitle>
+    <CardDescription>Standard shadow and border</CardDescription>
+  </CardHeader>
+  <CardContent>
+    <p>This is the default card style with subtle shadow.</p>
+  </CardContent>
+</Card>
+
+{/* Elevated Card */}
+<Card variant="elevated">
+  <CardHeader>
+    <CardTitle>Elevated Card</CardTitle>
+    <CardDescription>Higher elevation with stronger shadows</CardDescription>
+  </CardHeader>
+  <CardContent>
+    <p>This card has enhanced shadows for more prominent appearance.</p>
+  </CardContent>
+</Card>
+
+{/* Flat Card */}
+<Card variant="flat">
+  <CardHeader>
+    <CardTitle>Flat Card</CardTitle>
+    <CardDescription>Minimalist style without shadows or borders</CardDescription>
+  </CardHeader>
+  <CardContent>
+    <p>This card has no shadow or border for a clean, flat design.</p>
+  </CardContent>
+</Card>`}
+          component={
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <Card className="max-w-md">
+                <CardHeader>
+                  <CardTitle>Default Card</CardTitle>
+                  <CardDescription>Standard shadow and border</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p>This is the default card style with subtle shadow.</p>
+                </CardContent>
+              </Card>
+              
+              <Card variant="elevated" className="max-w-md">
+                <CardHeader>
+                  <CardTitle>Elevated Card</CardTitle>
+                  <CardDescription>Higher elevation with stronger shadows</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p>This card has enhanced shadows for more prominent appearance.</p>
+                </CardContent>
+              </Card>
+              
+              <Card variant="flat" className="max-w-md">
+                <CardHeader>
+                  <CardTitle>Flat Card</CardTitle>
+                  <CardDescription>Minimalist style without shadows or borders</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p>This card has no shadow or border for a clean, flat design.</p>
+                </CardContent>
+              </Card>
+            </div>
+          }
+        />
+
+        {/* Interactive Card Grid */}
+        <PreviewContainer
+          title="Interactive Card Grid"
+          description="Grid of interactive cards showcasing hover effects together"
+          code={`<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <Card interactive variant="elevated">
+    <CardHeader>
+      <CardTitle>Project Alpha</CardTitle>
+      <CardDescription>Web application development</CardDescription>
+    </CardHeader>
+    <CardContent>
+      <div className="space-y-2">
+        <div className="flex justify-between">
+          <span>Progress</span>
+          <Badge>75%</Badge>
+        </div>
+        <div className="flex justify-between">
+          <span>Due Date</span>
+          <span className="text-sm text-muted-foreground">Dec 15, 2024</span>
+        </div>
+      </div>
+    </CardContent>
+  </Card>
+  
+  <Card interactive variant="elevated">
+    <CardHeader>
+      <CardTitle>Project Beta</CardTitle>
+      <CardDescription>Mobile app redesign</CardDescription>
+    </CardHeader>
+    <CardContent>
+      <div className="space-y-2">
+        <div className="flex justify-between">
+          <span>Progress</span>
+          <Badge variant="secondary">45%</Badge>
+        </div>
+        <div className="flex justify-between">
+          <span>Due Date</span>
+          <span className="text-sm text-muted-foreground">Jan 20, 2025</span>
+        </div>
+      </div>
+    </CardContent>
+  </Card>
+  
+  <Card interactive variant="elevated">
+    <CardHeader>
+      <CardTitle>Project Gamma</CardTitle>
+      <CardDescription>API development</CardDescription>
+    </CardHeader>
+    <CardContent>
+      <div className="space-y-2">
+        <div className="flex justify-between">
+          <span>Progress</span>
+          <Badge>90%</Badge>
+        </div>
+        <div className="flex justify-between">
+          <span>Due Date</span>
+          <span className="text-sm text-muted-foreground">Nov 30, 2024</span>
+        </div>
+      </div>
+    </CardContent>
+  </Card>
+</div>`}
+          component={
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <Card interactive variant="elevated">
+                <CardHeader>
+                  <CardTitle>Project Alpha</CardTitle>
+                  <CardDescription>Web application development</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2">
+                    <div className="flex justify-between">
+                      <span>Progress</span>
+                      <Badge>75%</Badge>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Due Date</span>
+                      <span className="text-sm text-muted-foreground">Dec 15, 2024</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+              
+              <Card interactive variant="elevated">
+                <CardHeader>
+                  <CardTitle>Project Beta</CardTitle>
+                  <CardDescription>Mobile app redesign</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2">
+                    <div className="flex justify-between">
+                      <span>Progress</span>
+                      <Badge variant="secondary">45%</Badge>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Due Date</span>
+                      <span className="text-sm text-muted-foreground">Jan 20, 2025</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+              
+              <Card interactive variant="elevated">
+                <CardHeader>
+                  <CardTitle>Project Gamma</CardTitle>
+                  <CardDescription>API development</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2">
+                    <div className="flex justify-between">
+                      <span>Progress</span>
+                      <Badge>90%</Badge>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Due Date</span>
+                      <span className="text-sm text-muted-foreground">Nov 30, 2024</span>
                     </div>
                   </div>
                 </CardContent>
@@ -663,6 +902,9 @@ export default function DataDisplayPage() {
             </div>
           }
         />
+
+        {/* Enhanced Accordion Examples */}
+        <AccordionEnhancedExample />
       </section>
     </div>
   )

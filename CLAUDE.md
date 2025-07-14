@@ -2,9 +2,9 @@
 
 ## Critical Rules
 - **Never import from** `organized-components/` - it's reference only
-- **Always use task commands** (`task dev-bg`, not `pnpm dev`)
+- **Always use gotask as task runner**
 - **Always use design tokens** - no hardcoded hex values
-- **Development server runs in background** - don't start it again
+- **Development server will be in background check check for app.log file in the base directory**
 
 ## Quick Reference
 - Theme config: `design-system-app/app/globals.css` (Tailwind v4 `@theme`)
@@ -39,3 +39,6 @@
 - Enhancing components: 25/59 done (42.4%)
 - Active: Form Elements (3/13 complete)
 - Details: See `todo/issue-2.md`
+
+## Development Logs
+- Development server will be already running check logs in app.log
