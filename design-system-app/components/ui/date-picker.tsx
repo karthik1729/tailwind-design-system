@@ -65,12 +65,12 @@ export function DatePicker({
           disabled={disabled}
           className={cn(
             "w-[280px] justify-start text-left font-normal",
-            "hover:bg-primary-subtle-hover hover:text-foreground",
+            "",
             "transition-all duration-200",
             "active:scale-100", // Override the default button scale
             !date && "text-muted-foreground",
             disabled && "opacity-50 cursor-not-allowed",
-            open && "ring-2 ring-primary ring-offset-2",
+            open && "ring-2 ring-ring ring-offset-2 ring-offset-background",
             buttonClassName
           )}
         >
@@ -311,12 +311,12 @@ export function DateRangePicker({
           disabled={disabled}
           className={cn(
             "w-[300px] justify-start text-left font-normal",
-            "hover:bg-primary-subtle-hover hover:text-foreground",
+            "",
             "transition-all duration-200",
             "active:scale-100", // Override the default button scale
             !dateRange?.from && "text-muted-foreground",
             disabled && "opacity-50 cursor-not-allowed",
-            open && "ring-2 ring-primary ring-offset-2",
+            open && "ring-2 ring-ring ring-offset-2 ring-offset-background",
             buttonClassName
           )}
         >
