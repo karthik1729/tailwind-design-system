@@ -379,7 +379,34 @@ return (
         dataKey="value"
         animationBegin={0}
         animationDuration={800}
-        label={({ name, percent }) => \`\${name} \${(percent * 100).toFixed(0)}%\`}
+        label={({
+          cx,
+          cy,
+          midAngle,
+          innerRadius,
+          outerRadius,
+          name,
+          percent,
+          index
+        }) => {
+          const RADIAN = Math.PI / 180
+          const radius = innerRadius + (outerRadius - innerRadius) * 0.5
+          const x = cx + radius * Math.cos(-midAngle * RADIAN)
+          const y = cy + radius * Math.sin(-midAngle * RADIAN)
+          
+          return (
+            <text 
+              x={x} 
+              y={y} 
+              fill="hsl(var(--foreground))" 
+              textAnchor={x > cx ? 'start' : 'end'} 
+              dominantBaseline="central"
+              className="text-xs font-medium"
+            >
+              {\`\${name} \${(percent * 100).toFixed(0)}%\`}
+            </text>
+          )
+        }}
       >
         {pieData.map((entry, index) => (
           <Cell 
@@ -410,7 +437,34 @@ return (
                 dataKey="value"
                 animationBegin={0}
                 animationDuration={800}
-                label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+                label={({
+                  cx,
+                  cy,
+                  midAngle,
+                  innerRadius,
+                  outerRadius,
+                  name,
+                  percent,
+                  index
+                }) => {
+                  const RADIAN = Math.PI / 180
+                  const radius = innerRadius + (outerRadius - innerRadius) * 0.5
+                  const x = cx + radius * Math.cos(-midAngle * RADIAN)
+                  const y = cy + radius * Math.sin(-midAngle * RADIAN)
+                  
+                  return (
+                    <text 
+                      x={x} 
+                      y={y} 
+                      fill="hsl(var(--foreground))" 
+                      textAnchor={x > cx ? 'start' : 'end'} 
+                      dominantBaseline="central"
+                      className="text-xs font-medium"
+                    >
+                      {`${name} ${(percent * 100).toFixed(0)}%`}
+                    </text>
+                  )
+                }}
               >
                 {pieData.map((entry, index) => (
                   <Cell 
@@ -579,7 +633,7 @@ return (
                 y={2500} 
                 stroke="hsl(var(--muted-foreground))" 
                 strokeDasharray="5 5"
-                label="Target"
+                label={{ value: "Target", fill: "hsl(var(--foreground))" }}
               />
             </ComposedChart>
           </ChartContainer>
