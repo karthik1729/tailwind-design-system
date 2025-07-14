@@ -398,7 +398,7 @@ return (
             <text 
               x={x} 
               y={y} 
-              fill="hsl(var(--foreground))" 
+              fill="white" 
               textAnchor={x > cx ? 'start' : 'end'} 
               dominantBaseline="central"
               className="text-xs font-medium"
@@ -452,11 +452,12 @@ return (
                   const x = cx + radius * Math.cos(-midAngle * RADIAN)
                   const y = cy + radius * Math.sin(-midAngle * RADIAN)
                   
+                  // Use white text for better contrast on colored backgrounds
                   return (
                     <text 
                       x={x} 
                       y={y} 
-                      fill="hsl(var(--foreground))" 
+                      fill="white" 
                       textAnchor={x > cx ? 'start' : 'end'} 
                       dominantBaseline="central"
                       className="text-xs font-medium"
@@ -633,7 +634,7 @@ return (
                 y={2500} 
                 stroke="hsl(var(--muted-foreground))" 
                 strokeDasharray="5 5"
-                label={{ value: "Target", fill: "hsl(var(--foreground))" }}
+                label="Target"
               />
             </ComposedChart>
           </ChartContainer>
