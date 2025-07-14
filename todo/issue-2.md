@@ -75,11 +75,11 @@ Systematic enhancement of all 59 components in the design system, focusing on in
 - [x] Tabs - Enhanced with hover states, smooth transitions, fade-in animations, and scale effects
 - [x] Sidebar - Enhanced with smooth collapse/expand transitions, hover effects, and micro-interactions
 
-#### Data Display (3/10)
+#### Data Display (5/10)
 - [x] Card - Enhanced with hover lift effects, interactive states, and variant system (default, elevated, flat)
 - [x] Accordion - Enhanced with smooth expand/collapse animations, chevron rotation, and hover states
-- [ ] Collapsible - Height transitions (Note: Radix Collapsible has compatibility issues with smooth animations)
-- [ ] Table - Row hover states, selection feedback
+- [x] Collapsible - Fixed color consistency issues, removed accent colors, added proper text colors (Note: Radix Collapsible has compatibility issues with smooth animations)
+- [x] Table - Enhanced with row hover states, selection feedback, sorting capabilities, and proper padding
 - [ ] Avatar - Loading states, fallback transitions
 - [x] Badge - Added semantic color variants (success, warning, info) with solid and subtle styles
 - [ ] Chart - Interactive data point highlights
@@ -126,14 +126,14 @@ Systematic enhancement of all 59 components in the design system, focusing on in
 
 ## Current Status
 **Phase**: 4 - Component Enhancements (In Progress)
-**Components Enhanced**: 39/56 components enhanced (removed non-existent components from count)
+**Components Enhanced**: 41/56 components enhanced (removed non-existent components from count)
 - Buttons & Actions: 8/8 ✅ (Button, IconButton, Toggle, ToggleGroup, DropdownMenuTrigger, ContextMenuTrigger, CommandItem, MenubarTrigger)
 - Form Elements: 10/10 ✅ (Input, Select, Textarea, Checkbox, RadioGroup, Switch, Slider, InputOTP, DatePicker, FileUpload)
 - Feedback: 7/8 (Alert, Toast, Progress, Skeleton, Dialog, AlertDialog, Sheet, Drawer)
 - Navigation: 8/9 (NavigationMenu, DropdownMenu, ContextMenu, Menubar, Breadcrumb, Pagination, Command, Sidebar)
-- Data Display: 3/10 (Badge, Card, Accordion)
+- Data Display: 5/10 (Badge, Card, Accordion, Collapsible, Table)
 
-**Next Action**: Continue with Data Display - Table (row hover states), Avatar (loading states)
+**Next Action**: Continue with Data Display - Avatar (loading states), Chart (interactive highlights)
 
 ## Key Accomplishments
 
@@ -157,7 +157,28 @@ All trigger and action components now have consistent micro-interactions:
 - Optimized transition durations
 - Fixed scrollbar issues in menus
 
-## Recent Updates (2025-07-13)
+## Recent Updates (2025-07-14)
+- ✅ **Collapsible Component Color Fixes**
+  - Fixed all color consistency issues across different states
+  - Removed accent color hover states, replaced with muted/50 for subtlety
+  - Added proper text-foreground colors to all main text elements
+  - Fixed icon colors to use text-muted-foreground consistently
+  - Enhanced code blocks with proper bg-muted/50 and text colors
+  - Added explicit border-border classes for consistent styling
+- ✅ **Table Component Enhancement**
+  - Enhanced row hover states with bg-muted/50 instead of accent
+  - Added selection feedback with primary/10 background
+  - Improved padding on cells (p-3) and headers (h-12 px-3)
+  - Created comprehensive table examples with 6 variations:
+    - Basic table with hover states
+    - Table with checkbox selection
+    - Sortable table with visual indicators
+    - Table with row actions and dropdown menus
+    - Table with footer summaries
+    - Responsive table with horizontal scroll
+  - Added proper text colors for headers (text-muted-foreground)
+
+## Previous Updates (2025-07-13)
 - ✅ **Toast Component Enhancement**
   - Completely replaced Sonner with custom toast implementation
   - Added smooth slide animations from appropriate directions
@@ -234,7 +255,7 @@ All trigger and action components now have consistent micro-interactions:
 
 ## Component Enhancement Details
 
-### Completed Components (33/59)
+### Completed Components (35/59)
 1. **Button**: 9 variants with semantic colors and micro-interactions
 2. **IconButton**: Dedicated component with rotation/scale effects
 3. **Toggle/ToggleGroup**: Smooth transitions and ghost variant
@@ -262,3 +283,5 @@ All trigger and action components now have consistent micro-interactions:
 25. **DatePicker**: Enhanced calendar interactions with hover/active states, smooth popover animations, rotating calendar icon
 26. **FileUpload**: Created full-featured component with enhanced drag states, smooth scale animations on drag over, visual feedback for all drag events, file validation, and comprehensive file management
 27. **ContextMenu**: Enhanced with position-aware animations, ripple effect on right-click, smooth menu transitions, and primary-subtle-hover states
+28. **Collapsible**: Fixed color consistency issues, removed accent colors, added proper text colors throughout all examples
+29. **Table**: Enhanced with row hover states (muted/50), selection feedback, improved padding, and comprehensive examples

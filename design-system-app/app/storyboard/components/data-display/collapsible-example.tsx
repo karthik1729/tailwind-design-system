@@ -56,19 +56,19 @@ return (
       </h4>
       <CollapsibleTrigger asChild>
         <Button variant="ghost" size="sm" className="w-9 p-0">
-          <ChevronsUpDown className="h-4 w-4" />
+          <ChevronsUpDown className="h-4 w-4 text-muted-foreground" />
           <span className="sr-only">Toggle</span>
         </Button>
       </CollapsibleTrigger>
     </div>
-    <div className="rounded-md border px-4 py-3 font-mono text-sm">
+    <div className="rounded-md border border-border bg-muted/50 px-4 py-3 font-mono text-sm text-foreground">
       @radix-ui/primitives
     </div>
     <CollapsibleContent className="space-y-2">
-      <div className="rounded-md border px-4 py-3 font-mono text-sm">
+      <div className="rounded-md border border-border bg-muted/50 px-4 py-3 font-mono text-sm text-foreground">
         @radix-ui/colors
       </div>
-      <div className="rounded-md border px-4 py-3 font-mono text-sm">
+      <div className="rounded-md border border-border bg-muted/50 px-4 py-3 font-mono text-sm text-foreground">
         @stitches/react
       </div>
     </CollapsibleContent>
@@ -87,19 +87,19 @@ return (
                 </h4>
                 <CollapsibleTrigger asChild>
                   <Button variant="ghost" size="sm" className="w-9 p-0">
-                    <ChevronsUpDown className="h-4 w-4" />
+                    <ChevronsUpDown className="h-4 w-4 text-muted-foreground" />
                     <span className="sr-only">Toggle</span>
                   </Button>
                 </CollapsibleTrigger>
               </div>
-              <div className="rounded-md border px-4 py-3 font-mono text-sm">
+              <div className="rounded-md border border-border bg-muted/50 px-4 py-3 font-mono text-sm text-foreground">
                 @radix-ui/primitives
               </div>
               <CollapsibleContent className="space-y-2">
-                <div className="rounded-md border px-4 py-3 font-mono text-sm">
+                <div className="rounded-md border border-border bg-muted/50 px-4 py-3 font-mono text-sm text-foreground">
                   @radix-ui/colors
                 </div>
-                <div className="rounded-md border px-4 py-3 font-mono text-sm">
+                <div className="rounded-md border border-border bg-muted/50 px-4 py-3 font-mono text-sm text-foreground">
                   @stitches/react
                 </div>
               </CollapsibleContent>
@@ -147,10 +147,10 @@ return (
             <Collapsible className="w-full max-w-md">
               <Card>
                 <CollapsibleTrigger className="block w-full">
-                  <CardHeader>
+                  <CardHeader className="hover:bg-muted/50 transition-colors duration-200">
                     <div className="flex items-center justify-between">
                       <CardTitle className="text-base">Project Details</CardTitle>
-                      <ChevronDown className="h-4 w-4 transition-transform duration-200 data-[state=open]:rotate-180" />
+                      <ChevronDown className="h-4 w-4 text-muted-foreground transition-transform duration-200 data-[state=open]:rotate-180" />
                     </div>
                   </CardHeader>
                 </CollapsibleTrigger>
@@ -206,8 +206,8 @@ return (
       </CollapsibleTrigger>
       <CollapsibleContent>
         <CardContent className="pt-0">
-          <pre className="overflow-x-auto rounded-md bg-muted p-4">
-            <code className="text-sm">{\`import { useState, useEffect } from 'react'
+          <pre className="overflow-x-auto rounded-md bg-muted/50 p-4">
+            <code className="text-sm text-foreground">{\`import { useState, useEffect } from 'react'
 
 export function useAuth() {
   const [user, setUser] = useState(null)
@@ -235,22 +235,22 @@ export function useAuth() {
             >
               <Card>
                 <CollapsibleTrigger className="block w-full" asChild>
-                  <CardHeader className="cursor-pointer">
+                  <CardHeader className="cursor-pointer hover:bg-muted/50 transition-colors duration-200">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
                         <Code className="h-4 w-4 text-muted-foreground" />
-                        <code className="text-sm font-mono">useAuth.ts</code>
+                        <code className="text-sm font-mono text-foreground">useAuth.ts</code>
                       </div>
-                      <Button variant="ghost" size="sm" asChild>
-                        <span>{codeOpen ? "Hide" : "Show"} Code</span>
+                      <Button variant="ghost" size="sm">
+                        {codeOpen ? "Hide" : "Show"} Code
                       </Button>
                     </div>
                   </CardHeader>
                 </CollapsibleTrigger>
                 <CollapsibleContent>
                   <CardContent className="pt-0">
-                    <pre className="overflow-x-auto rounded-md bg-muted p-4">
-                      <code className="text-sm">{`import { useState, useEffect } from 'react'
+                    <pre className="overflow-x-auto rounded-md bg-muted/50 p-4">
+                      <code className="text-sm text-foreground">{`import { useState, useEffect } from 'react'
 
 export function useAuth() {
   const [user, setUser] = useState(null)
@@ -284,34 +284,34 @@ return (
     onOpenChange={setIsOpen}
     className="w-full max-w-md"
   >
-    <div className="rounded-lg border">
-      <CollapsibleTrigger className="flex w-full items-center gap-3 p-4 hover:bg-accent">
-        <div className={\`rounded-lg p-2 transition-colors \${
+    <div className="rounded-lg border border-border">
+      <CollapsibleTrigger className="flex w-full items-center gap-3 p-4 hover:bg-muted/50 transition-colors duration-200">
+        <div className={\`rounded-lg p-2 transition-colors duration-200 \${
           isOpen ? 'bg-primary text-primary-foreground' : 'bg-muted'
         }\`}>
           <Settings className="h-4 w-4" />
         </div>
-        <span className="flex-1 text-left font-medium">Advanced Settings</span>
-        <ChevronDown className="h-4 w-4 transition-transform duration-200 data-[state=open]:rotate-180" />
+        <span className="flex-1 text-left font-medium text-foreground">Advanced Settings</span>
+        <ChevronDown className="h-4 w-4 text-muted-foreground transition-transform duration-200 data-[state=open]:rotate-180" />
       </CollapsibleTrigger>
       <CollapsibleContent>
         <div className="border-t px-4 pb-4 pt-3">
           <div className="space-y-3">
-            <button className="flex w-full items-center gap-3 rounded-md p-2 text-left hover:bg-accent">
+            <button className="flex w-full items-center gap-3 rounded-md p-2 text-left hover:bg-muted/50 transition-colors duration-200">
               <User className="h-4 w-4 text-muted-foreground" />
               <div>
                 <div className="text-sm font-medium">Profile Settings</div>
                 <div className="text-xs text-muted-foreground">Manage your profile</div>
               </div>
             </button>
-            <button className="flex w-full items-center gap-3 rounded-md p-2 text-left hover:bg-accent">
+            <button className="flex w-full items-center gap-3 rounded-md p-2 text-left hover:bg-muted/50 transition-colors duration-200">
               <Bell className="h-4 w-4 text-muted-foreground" />
               <div>
                 <div className="text-sm font-medium">Notifications</div>
                 <div className="text-xs text-muted-foreground">Configure alerts</div>
               </div>
             </button>
-            <button className="flex w-full items-center gap-3 rounded-md p-2 text-left hover:bg-accent">
+            <button className="flex w-full items-center gap-3 rounded-md p-2 text-left hover:bg-muted/50 transition-colors duration-200">
               <Shield className="h-4 w-4 text-muted-foreground" />
               <div>
                 <div className="text-sm font-medium">Privacy</div>
@@ -332,36 +332,36 @@ return (
               className="w-full max-w-md"
             >
               <div className="rounded-lg border">
-                <CollapsibleTrigger className="flex w-full items-center gap-3 p-4 hover:bg-accent">
-                  <div className={`rounded-lg p-2 transition-colors ${
+                <CollapsibleTrigger className="flex w-full items-center gap-3 p-4 hover:bg-muted/50 transition-colors duration-200">
+                  <div className={`rounded-lg p-2 transition-colors duration-200 ${
                     settingsOpen ? 'bg-primary text-primary-foreground' : 'bg-muted'
                   }`}>
                     <Settings className="h-4 w-4" />
                   </div>
-                  <span className="flex-1 text-left font-medium">Advanced Settings</span>
-                  <ChevronDown className="h-4 w-4 transition-transform duration-200 data-[state=open]:rotate-180" />
+                  <span className="flex-1 text-left font-medium text-foreground">Advanced Settings</span>
+                  <ChevronDown className="h-4 w-4 text-muted-foreground transition-transform duration-200 data-[state=open]:rotate-180" />
                 </CollapsibleTrigger>
                 <CollapsibleContent>
-                  <div className="border-t px-4 pb-4 pt-3">
+                  <div className="border-t border-border px-4 pb-4 pt-3">
                     <div className="space-y-3">
-                      <button className="flex w-full items-center gap-3 rounded-md p-2 text-left hover:bg-accent">
+                      <button className="flex w-full items-center gap-3 rounded-md p-2 text-left hover:bg-muted/50 transition-colors duration-200">
                         <User className="h-4 w-4 text-muted-foreground" />
                         <div>
-                          <div className="text-sm font-medium">Profile Settings</div>
+                          <div className="text-sm font-medium text-foreground">Profile Settings</div>
                           <div className="text-xs text-muted-foreground">Manage your profile</div>
                         </div>
                       </button>
-                      <button className="flex w-full items-center gap-3 rounded-md p-2 text-left hover:bg-accent">
+                      <button className="flex w-full items-center gap-3 rounded-md p-2 text-left hover:bg-muted/50 transition-colors duration-200">
                         <Bell className="h-4 w-4 text-muted-foreground" />
                         <div>
-                          <div className="text-sm font-medium">Notifications</div>
+                          <div className="text-sm font-medium text-foreground">Notifications</div>
                           <div className="text-xs text-muted-foreground">Configure alerts</div>
                         </div>
                       </button>
-                      <button className="flex w-full items-center gap-3 rounded-md p-2 text-left hover:bg-accent">
+                      <button className="flex w-full items-center gap-3 rounded-md p-2 text-left hover:bg-muted/50 transition-colors duration-200">
                         <Shield className="h-4 w-4 text-muted-foreground" />
                         <div>
-                          <div className="text-sm font-medium">Privacy</div>
+                          <div className="text-sm font-medium text-foreground">Privacy</div>
                           <div className="text-xs text-muted-foreground">Data preferences</div>
                         </div>
                       </button>
@@ -398,9 +398,9 @@ return (
     {faqs.map((faq, index) => (
       <Collapsible key={index}>
         <div className="rounded-lg border">
-          <CollapsibleTrigger className="flex w-full items-center justify-between p-4 text-left hover:bg-accent">
+          <CollapsibleTrigger className="flex w-full items-center justify-between p-4 text-left hover:bg-muted/50 transition-colors duration-200">
             <span className="font-medium pr-4">{faq.question}</span>
-            <ChevronsUpDown className="h-4 w-4 shrink-0 text-muted-foreground" />
+            <ChevronsUpDown className="h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200" />
           </CollapsibleTrigger>
           <CollapsibleContent>
             <div className="border-t px-4 pb-4 pt-3">
@@ -432,13 +432,13 @@ return (
                 }
               ].map((faq, index) => (
                 <Collapsible key={index}>
-                  <div className="rounded-lg border">
-                    <CollapsibleTrigger className="flex w-full items-center justify-between p-4 text-left hover:bg-accent">
-                      <span className="font-medium pr-4">{faq.question}</span>
-                      <ChevronsUpDown className="h-4 w-4 shrink-0 text-muted-foreground" />
+                  <div className="rounded-lg border border-border">
+                    <CollapsibleTrigger className="flex w-full items-center justify-between p-4 text-left hover:bg-muted/50 transition-colors duration-200">
+                      <span className="font-medium pr-4 text-foreground">{faq.question}</span>
+                      <ChevronsUpDown className="h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200" />
                     </CollapsibleTrigger>
                     <CollapsibleContent>
-                      <div className="border-t px-4 pb-4 pt-3">
+                      <div className="border-t border-border px-4 pb-4 pt-3">
                         <p className="text-sm text-muted-foreground">
                           {faq.answer}
                         </p>
@@ -488,11 +488,11 @@ return (
         component={
           <div className="flex justify-center">
             <Collapsible defaultOpen className="w-full max-w-md">
-              <div className="rounded-lg border bg-card">
-                <CollapsibleTrigger className="flex w-full items-center justify-between p-4">
+              <div className="rounded-lg border border-border bg-card">
+                <CollapsibleTrigger className="flex w-full items-center justify-between p-4 hover:bg-muted/50 transition-colors duration-200">
                   <div className="flex items-center gap-2">
-                    <FileText className="h-4 w-4" />
-                    <span className="font-medium">Documentation</span>
+                    <FileText className="h-4 w-4 text-muted-foreground" />
+                    <span className="font-medium text-foreground">Documentation</span>
                   </div>
                   <ChevronDown className="h-4 w-4 transition-transform duration-200 data-[state=open]:rotate-180" />
                 </CollapsibleTrigger>
