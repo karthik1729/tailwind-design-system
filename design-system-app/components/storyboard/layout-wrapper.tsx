@@ -12,12 +12,17 @@ const userNavigation = [
   { name: "Sign out", href: "#" },
 ]
 
-export function LayoutWrapper({ children }: { children: React.ReactNode }) {
+interface LayoutWrapperProps {
+  children: React.ReactNode
+  currentTheme: 'light' | 'dark'
+}
+
+export function LayoutWrapper({ children, currentTheme }: LayoutWrapperProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
     <div className="h-screen flex">
-      <StoryboardNavigation sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+      <StoryboardNavigation sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} currentTheme={currentTheme} />
       
       <div className="flex-1 flex flex-col lg:pl-72">
         <header className="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-4 border-b border-border bg-background px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8">

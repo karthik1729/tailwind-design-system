@@ -3,6 +3,8 @@ import { Open_Sans } from 'next/font/google'
 import { cn } from '@/lib/utils'
 import { ToastProvider } from '@/components/ui/toast-provider'
 import { Toaster } from '@/components/ui/toaster'
+import { getTheme } from '@/lib/theme-cookie'
+import { ThemeScript } from './theme-script'
 import './globals.css'
 
 const openSans = Open_Sans({ subsets: ['latin'] })
@@ -17,8 +19,13 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const theme = getTheme()
+  
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={theme} suppressHydrationWarning>
+      <head>
+        <ThemeScript theme={theme} />
+      </head>
       <body className={cn(openSans.className, "overflow-hidden")} suppressHydrationWarning>
         <ToastProvider>
           {children}

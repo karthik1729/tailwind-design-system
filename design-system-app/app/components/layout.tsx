@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
-import { ThemeSwitcher } from "@/components/theme-switcher"
+import { ThemeSwitcherClient } from "@/components/theme-switcher-client"
 
 const components = [
   { name: "Accordion", slug: "accordion" },
@@ -71,7 +71,7 @@ export default function ComponentsLayout({
             <Link href="/" className="text-lg font-semibold hover:text-primary transition-colors">
               Design System
             </Link>
-            <ThemeSwitcher />
+            <ThemeSwitcherClient />
           </div>
           <div className="flex gap-2">
             <Link 

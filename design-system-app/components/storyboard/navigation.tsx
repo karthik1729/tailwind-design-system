@@ -13,7 +13,6 @@ import {
 } from "@heroicons/react/24/outline"
 import { componentRegistry } from "@/lib/component-registry"
 import { ThemeSwitcher } from "@/components/theme-switcher"
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
 import {
   Sidebar,
   SidebarHeader,
@@ -35,11 +34,16 @@ const navigation = [
 interface StoryboardNavigationProps {
   sidebarOpen: boolean
   setSidebarOpen: (open: boolean) => void
+  currentTheme: 'light' | 'dark'
 }
 
-export function StoryboardNavigation({ sidebarOpen, setSidebarOpen }: StoryboardNavigationProps) {
+export function StoryboardNavigation({ sidebarOpen, setSidebarOpen, currentTheme }: StoryboardNavigationProps) {
   const pathname = usePathname()
-  const [expandedCategories, setExpandedCategories] = useState<string[]>(["foundations", "components", "patterns"])
+  // Start with all categories expanded to prevent flicker
+  const [expandedCategories, setExpandedCategories] = useState<string[]>(() => {
+    // Get all category keys to expand them by default
+    return Object.keys(componentRegistry)
+  })
 
   const NavigationContent = () => (
     <>
@@ -69,31 +73,34 @@ export function StoryboardNavigation({ sidebarOpen, setSidebarOpen }: Storyboard
           </SidebarGroup>
           
           <SidebarGroup label="Categories">
-            {Object.entries(componentRegistry).map(([key, category]) => (
-              <SidebarItem key={key}>
-                <Collapsible
-                  open={expandedCategories.includes(key)}
-                  onOpenChange={(open) => {
-                    if (open) {
-                      setExpandedCategories(prev => [...prev, key])
-                    } else {
-                      setExpandedCategories(prev => prev.filter(c => c !== key))
-                    }
-                  }}
-                >
-                  <CollapsibleTrigger asChild>
-                    <button className="group flex w-full items-center gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-muted-foreground hover:bg-muted hover:text-foreground transition-colors duration-200">
+            {Object.entries(componentRegistry).map(([key, category]) => {
+              const isExpanded = expandedCategories.includes(key)
+              return (
+                <SidebarItem key={key}>
+                  <div>
+                    <button 
+                      onClick={() => {
+                        if (isExpanded) {
+                          setExpandedCategories(prev => prev.filter(c => c !== key))
+                        } else {
+                          setExpandedCategories(prev => [...prev, key])
+                        }
+                      }}
+                      className="group flex w-full items-center gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-muted-foreground hover:bg-muted hover:text-foreground transition-colors duration-200"
+                    >
                       <ChevronDownIcon
                         className={cn(
                           "size-5 shrink-0 transition-transform duration-200",
-                          expandedCategories.includes(key) && "rotate-180"
+                          isExpanded && "rotate-180"
                         )}
                       />
                       <span className="truncate">{category.name}</span>
                     </button>
-                  </CollapsibleTrigger>
-                  <CollapsibleContent className="overflow-hidden data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down">
-                    <ul className="mt-1 space-y-1 px-2">
+                    {/* Always render the content, just hide it with CSS */}
+                    <ul className={cn(
+                      "mt-1 space-y-1 px-2 overflow-hidden transition-all duration-200",
+                      isExpanded ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+                    )}>
                       {Object.entries(category.subcategories).map(([subKey, subcategory]) => (
                         <li key={subKey}>
                           <Link
@@ -113,10 +120,10 @@ export function StoryboardNavigation({ sidebarOpen, setSidebarOpen }: Storyboard
                         </li>
                       ))}
                     </ul>
-                  </CollapsibleContent>
-                </Collapsible>
-              </SidebarItem>
-            ))}
+                  </div>
+                </SidebarItem>
+              )
+            })}
           </SidebarGroup>
         </ul>
       </SidebarContent>
@@ -124,7 +131,7 @@ export function StoryboardNavigation({ sidebarOpen, setSidebarOpen }: Storyboard
       <SidebarFooter>
         <div className="group flex gap-x-3 rounded-md p-2 text-sm/6 font-medium text-muted-foreground">
           <span className="flex-1">Theme</span>
-          <ThemeSwitcher />
+          <ThemeSwitcher currentTheme={currentTheme} />
         </div>
       </SidebarFooter>
     </>

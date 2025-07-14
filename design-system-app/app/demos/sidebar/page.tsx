@@ -24,7 +24,7 @@ import {
   SidebarFooter,
   SidebarTrigger,
 } from "@/components/ui/sidebar"
-import { ThemeSwitcher } from "@/components/theme-switcher"
+import { ThemeSwitcherClient } from "@/components/theme-switcher-client"
 import { Button } from "@/components/ui/button"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
 import { ChevronDownIcon } from "@heroicons/react/20/solid"
@@ -227,7 +227,7 @@ export default function SidebarDemoPage() {
         <SidebarFooter>
           <div className="group flex gap-x-3 rounded-md p-2 text-sm/6 font-medium text-muted-foreground">
             <span className="flex-1">Theme</span>
-            <ThemeSwitcher />
+            <ThemeSwitcherClient />
           </div>
         </SidebarFooter>
       </Sidebar>
