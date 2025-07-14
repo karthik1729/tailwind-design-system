@@ -35,12 +35,12 @@ function AccordionTrigger({
       <AccordionPrimitive.Trigger
         data-slot="accordion-trigger"
         className={cn(
-          // Base styles
-          "flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-left text-sm font-medium outline-none disabled:pointer-events-none disabled:opacity-50",
-          // Hover states - Using design system tokens
-          "hover:bg-primary-subtle-hover transition-all duration-200 ease-out",
-          // Active state with scale effect
-          "active:scale-[0.98]",
+          // Base styles with proper padding
+          "flex flex-1 items-center justify-between gap-4 rounded-md px-4 py-4 text-left text-sm font-medium outline-none disabled:pointer-events-none disabled:opacity-50",
+          // Subtle hover states
+          "hover:bg-muted/50 transition-all duration-200 ease-out",
+          // Subtle active state with minimal scale effect
+          "active:scale-[0.995]",
           // Focus styles
           "focus-visible:ring-ring/50 focus-visible:ring-[3px]",
           // Chevron rotation animation - 180 degrees as specified
@@ -67,7 +67,7 @@ function AccordionContent({
       className="data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm transition-all"
       {...props}
     >
-      <div className={cn("pt-0 pb-4 transition-opacity duration-150 ease-out", className)}>
+      <div className={cn("px-4 pt-2 pb-4 transition-opacity duration-150 ease-out", className)}>
         {children}
       </div>
     </AccordionPrimitive.Content>
