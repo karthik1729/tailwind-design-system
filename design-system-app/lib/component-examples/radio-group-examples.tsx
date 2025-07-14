@@ -416,6 +416,62 @@ return (
     )
   },
   {
+    title: "With Animation Preview",
+    description: "Radio group showcasing smooth selection transitions.",
+    code: `const [selected, setSelected] = useState("")
+
+return (
+  <div className="space-y-4">
+    <RadioGroup value={selected} onValueChange={setSelected}>
+      <div className="space-y-3">
+        <div className="flex items-center space-x-2">
+          <RadioGroupItem value="instant" id="instant" />
+          <Label htmlFor="instant">Instant Delivery</Label>
+        </div>
+        <div className="flex items-center space-x-2">
+          <RadioGroupItem value="scheduled" id="scheduled" />
+          <Label htmlFor="scheduled">Scheduled Delivery</Label>
+        </div>
+        <div className="flex items-center space-x-2">
+          <RadioGroupItem value="recurring" id="recurring" />
+          <Label htmlFor="recurring">Recurring Delivery</Label>
+        </div>
+      </div>
+    </RadioGroup>
+    <p className="text-sm text-muted-foreground">
+      Try clicking different options to see the smooth transitions
+    </p>
+  </div>
+)`,
+    component: () => {
+      const [selected, setSelected] = useState("")
+
+      return (
+        <div className="space-y-4">
+          <RadioGroup value={selected} onValueChange={setSelected}>
+            <div className="space-y-3">
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="instant" id="instant" />
+                <Label htmlFor="instant">Instant Delivery</Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="scheduled" id="scheduled" />
+                <Label htmlFor="scheduled">Scheduled Delivery</Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="recurring" id="recurring" />
+                <Label htmlFor="recurring">Recurring Delivery</Label>
+              </div>
+            </div>
+          </RadioGroup>
+          <p className="text-sm text-muted-foreground">
+            Try clicking different options to see the smooth transitions
+          </p>
+        </div>
+      )
+    }
+  },
+  {
     title: "Horizontal Layout",
     description: "Radio group with horizontal orientation.",
     code: `<div className="space-y-4">
@@ -492,6 +548,78 @@ return (
             </div>
           </RadioGroup>
         </div>
+      </div>
+    )
+  },
+  {
+    title: "Interactive States Demo",
+    description: "Radio group with hover and focus states visible.",
+    code: `<div className="space-y-6">
+  <div className="space-y-2">
+    <Label className="text-sm font-medium">Theme Preference</Label>
+    <RadioGroup defaultValue="system">
+      <div className="grid gap-3">
+        <div className="flex items-center space-x-3 rounded-lg p-2 hover:bg-muted/50 transition-colors">
+          <RadioGroupItem value="light" id="light-theme" />
+          <Label htmlFor="light-theme" className="flex-1 cursor-pointer">
+            <div className="font-medium">Light</div>
+            <div className="text-sm text-muted-foreground">Bright and clean interface</div>
+          </Label>
+        </div>
+        <div className="flex items-center space-x-3 rounded-lg p-2 hover:bg-muted/50 transition-colors">
+          <RadioGroupItem value="dark" id="dark-theme" />
+          <Label htmlFor="dark-theme" className="flex-1 cursor-pointer">
+            <div className="font-medium">Dark</div>
+            <div className="text-sm text-muted-foreground">Easy on the eyes</div>
+          </Label>
+        </div>
+        <div className="flex items-center space-x-3 rounded-lg p-2 hover:bg-muted/50 transition-colors">
+          <RadioGroupItem value="system" id="system-theme" />
+          <Label htmlFor="system-theme" className="flex-1 cursor-pointer">
+            <div className="font-medium">System</div>
+            <div className="text-sm text-muted-foreground">Adapts to your OS setting</div>
+          </Label>
+        </div>
+      </div>
+    </RadioGroup>
+  </div>
+  <p className="text-xs text-muted-foreground">
+    Notice the smooth scale animation on click and the hover effects
+  </p>
+</div>`,
+    component: () => (
+      <div className="space-y-6">
+        <div className="space-y-2">
+          <Label className="text-sm font-medium">Theme Preference</Label>
+          <RadioGroup defaultValue="system">
+            <div className="grid gap-3">
+              <div className="flex items-center space-x-3 rounded-lg p-2 hover:bg-muted/50 transition-colors">
+                <RadioGroupItem value="light" id="light-theme" />
+                <Label htmlFor="light-theme" className="flex-1 cursor-pointer">
+                  <div className="font-medium">Light</div>
+                  <div className="text-sm text-muted-foreground">Bright and clean interface</div>
+                </Label>
+              </div>
+              <div className="flex items-center space-x-3 rounded-lg p-2 hover:bg-muted/50 transition-colors">
+                <RadioGroupItem value="dark" id="dark-theme" />
+                <Label htmlFor="dark-theme" className="flex-1 cursor-pointer">
+                  <div className="font-medium">Dark</div>
+                  <div className="text-sm text-muted-foreground">Easy on the eyes</div>
+                </Label>
+              </div>
+              <div className="flex items-center space-x-3 rounded-lg p-2 hover:bg-muted/50 transition-colors">
+                <RadioGroupItem value="system" id="system-theme" />
+                <Label htmlFor="system-theme" className="flex-1 cursor-pointer">
+                  <div className="font-medium">System</div>
+                  <div className="text-sm text-muted-foreground">Adapts to your OS setting</div>
+                </Label>
+              </div>
+            </div>
+          </RadioGroup>
+        </div>
+        <p className="text-xs text-muted-foreground">
+          Notice the smooth scale animation on click and the hover effects
+        </p>
       </div>
     )
   }

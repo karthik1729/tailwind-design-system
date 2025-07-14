@@ -87,34 +87,36 @@ const componentCategories = [
 
 export default function ComponentsPage() {
   return (
-    <div className="space-y-8">
-      <div>
-        <h1 className="text-3xl font-bold text-gray-900">Components</h1>
-        <p className="mt-2 text-lg text-gray-600">
-          Beautifully designed components built with Radix UI and Tailwind CSS.
-        </p>
-      </div>
+    <div className="container mx-auto px-4 py-12 max-w-7xl">
+      <div className="space-y-8">
+        <div>
+          <h1 className="text-3xl font-bold text-gray-900">Components</h1>
+          <p className="mt-2 text-lg text-gray-600">
+            Beautifully designed components built with Radix UI and Tailwind CSS.
+          </p>
+        </div>
 
-      <div className="space-y-12">
-        {componentCategories.map((category) => (
-          <div key={category.title}>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">{category.title}</h2>
-            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-              {category.components.map((component) => (
-                <Link key={component.slug} href={`/components/${component.slug}`}>
-                  <Card className="h-full hover:shadow-md transition-shadow cursor-pointer">
-                    <CardHeader>
-                      <CardTitle className="text-base">{component.name}</CardTitle>
-                      <CardDescription className="text-sm">
-                        {component.description}
-                      </CardDescription>
-                    </CardHeader>
-                  </Card>
-                </Link>
-              ))}
+        <div className="space-y-12">
+          {componentCategories.map((category) => (
+            <div key={category.title}>
+              <h2 className="text-xl font-semibold text-gray-900 mb-4">{category.title}</h2>
+              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                {category.components.map((component) => (
+                  <Link key={component.slug} href={`/components/${component.slug}`}>
+                    <Card className="h-full hover:shadow-md transition-shadow cursor-pointer">
+                      <CardHeader>
+                        <CardTitle className="text-base">{component.name}</CardTitle>
+                        <CardDescription className="text-sm">
+                          {component.description}
+                        </CardDescription>
+                      </CardHeader>
+                    </Card>
+                  </Link>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   )

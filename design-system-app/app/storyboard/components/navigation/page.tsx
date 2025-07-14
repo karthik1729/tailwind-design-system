@@ -1,25 +1,33 @@
 "use client"
 
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuPortal, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuPortal, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger, DropdownMenuCheckboxItem, DropdownMenuRadioGroup, DropdownMenuRadioItem } from "@/components/ui/dropdown-menu"
+import { Menubar, MenubarCheckboxItem, MenubarContent, MenubarGroup, MenubarItem, MenubarLabel, MenubarMenu, MenubarRadioGroup, MenubarRadioItem, MenubarSeparator, MenubarShortcut, MenubarSub, MenubarSubContent, MenubarSubTrigger, MenubarTrigger } from "@/components/ui/menubar"
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator, BreadcrumbEllipsis } from "@/components/ui/breadcrumb"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination"
+import { Command, CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator, CommandShortcut } from "@/components/ui/command"
 import { PreviewContainer } from "@/components/storyboard/preview-container"
+import { ContextMenuExample } from "./context-menu-example"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ChevronDown, Cloud, CreditCard, Github, Home, Keyboard, LifeBuoy, LogOut, Mail, MessageSquare, Plus, PlusCircle, Settings, Store, User, UserPlus, Users, FileText, BarChart3 } from "lucide-react"
+import { ChevronDown, Cloud, CreditCard, Github, Home, Keyboard, LifeBuoy, LogOut, Mail, MessageSquare, Plus, PlusCircle, Settings, Store, User, UserPlus, Users, FileText, BarChart3, Calculator, Calendar, Search, Smile, CreditCard as CreditCardIcon } from "lucide-react"
 import Link from "next/link"
 import React from "react"
 import { cn } from "@/lib/utils"
 
 export default function NavigationPage() {
+  const [showStatusBar, setShowStatusBar] = React.useState(true)
+  const [showActivityBar, setShowActivityBar] = React.useState(false)
+  const [showPanel, setShowPanel] = React.useState(false)
+  const [position, setPosition] = React.useState("bottom")
+
   return (
     <div className="space-y-12">
       {/* Page Header */}
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Navigation</h1>
-        <p className="mt-2 text-gray-600 dark:text-gray-400">
+        <h1 className="text-4xl font-bold text-foreground">Navigation</h1>
+        <p className="mt-4 text-lg text-muted-foreground">
           Essential navigation components for organizing content and improving user experience.
         </p>
       </div>
@@ -28,7 +36,7 @@ export default function NavigationPage() {
       <section className="space-y-8">
         <div>
           <h2 className="text-2xl font-semibold mb-4">Navigation Menu</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-muted-foreground mb-6">
             A sophisticated navigation menu component with dropdown capabilities for complex site structures.
           </p>
         </div>
@@ -36,6 +44,10 @@ export default function NavigationPage() {
         <PreviewContainer
           title="Basic Navigation Menu"
           description="A navigation menu with dropdown items and links"
+          className="!overflow-visible"
+          minHeight="min-h-[500px]"
+          contentAlignment="top"
+          allowOverflow={true}
           code={`<NavigationMenu>
   <NavigationMenuList>
     <NavigationMenuItem>
@@ -45,13 +57,13 @@ export default function NavigationPage() {
           <li className="row-span-3">
             <NavigationMenuLink asChild>
               <a
-                className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                className="group flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none transition-colors hover:from-primary hover:to-primary hover:text-primary-foreground focus:shadow-md"
                 href="/"
               >
-                <div className="mb-2 mt-4 text-lg font-medium">
+                <div className="mb-2 mt-4 text-lg font-medium text-foreground group-hover:text-primary-foreground">
                   Design System
                 </div>
-                <p className="text-sm leading-tight text-muted-foreground">
+                <p className="text-sm leading-tight text-muted-foreground group-hover:text-primary-foreground">
                   Beautiful components built with Radix UI and Tailwind CSS.
                 </p>
               </a>
@@ -90,7 +102,7 @@ export default function NavigationPage() {
     </NavigationMenuItem>
     <NavigationMenuItem>
       <NavigationMenuLink asChild>
-        <Link href="/docs" className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
+        <Link href="/docs" className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-primary/50 data-[state=open]:bg-primary/50">
           Documentation
         </Link>
       </NavigationMenuLink>
@@ -98,7 +110,7 @@ export default function NavigationPage() {
   </NavigationMenuList>
 </NavigationMenu>`}
           component={
-            <div className="flex items-center justify-center p-8">
+            <div className="relative flex items-center justify-center gap-4 overflow-visible">
               <NavigationMenu>
                 <NavigationMenuList>
                   <NavigationMenuItem>
@@ -108,13 +120,13 @@ export default function NavigationPage() {
                         <li className="row-span-3">
                           <NavigationMenuLink asChild>
                             <a
-                              className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                              className="group flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none transition-colors hover:from-primary hover:to-primary hover:text-primary-foreground focus:shadow-md"
                               href="/"
                             >
-                              <div className="mb-2 mt-4 text-lg font-medium">
+                              <div className="mb-2 mt-4 text-lg font-medium text-foreground group-hover:text-primary-foreground">
                                 Design System
                               </div>
-                              <p className="text-sm leading-tight text-muted-foreground">
+                              <p className="text-sm leading-tight text-muted-foreground group-hover:text-primary-foreground">
                                 Beautiful components built with Radix UI and Tailwind CSS.
                               </p>
                             </a>
@@ -153,7 +165,7 @@ export default function NavigationPage() {
                   </NavigationMenuItem>
                   <NavigationMenuItem>
                     <NavigationMenuLink asChild>
-                      <Link href="/docs" className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
+                      <Link href="/docs" className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-primary/50 data-[state=open]:bg-primary/50">
                         Documentation
                       </Link>
                     </NavigationMenuLink>
@@ -169,7 +181,7 @@ export default function NavigationPage() {
       <section className="space-y-8">
         <div>
           <h2 className="text-2xl font-semibold mb-4">Dropdown Menu</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-muted-foreground mb-6">
             A comprehensive dropdown menu component with support for submenus, groups, and keyboard shortcuts.
           </p>
         </div>
@@ -266,7 +278,7 @@ export default function NavigationPage() {
   </DropdownMenuContent>
 </DropdownMenu>`}
           component={
-            <div className="flex items-center justify-center p-8">
+            <div className="flex items-center justify-center gap-4">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="outline">
@@ -377,7 +389,7 @@ export default function NavigationPage() {
   </DropdownMenuContent>
 </DropdownMenu>`}
           component={
-            <div className="flex items-center justify-center p-8">
+            <div className="flex items-center justify-center gap-4">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost" size="icon">
@@ -395,13 +407,389 @@ export default function NavigationPage() {
             </div>
           }
         />
+
+        <PreviewContainer
+          title="Dropdown with Checkboxes and Radio"
+          description="Dropdown menu with checkbox and radio items showing active states"
+          code={`const [showStatusBar, setShowStatusBar] = useState(true)
+const [showActivityBar, setShowActivityBar] = useState(false)
+const [showPanel, setShowPanel] = useState(false)
+const [position, setPosition] = useState("bottom")
+
+return (
+  <DropdownMenu>
+    <DropdownMenuTrigger asChild>
+      <Button variant="outline">
+        View Options
+        <ChevronDown className="ml-2 h-4 w-4" />
+      </Button>
+    </DropdownMenuTrigger>
+    <DropdownMenuContent className="w-56">
+      <DropdownMenuLabel>Appearance</DropdownMenuLabel>
+      <DropdownMenuSeparator />
+      <DropdownMenuCheckboxItem
+        checked={showStatusBar}
+        onCheckedChange={setShowStatusBar}
+      >
+        Show Status Bar
+      </DropdownMenuCheckboxItem>
+      <DropdownMenuCheckboxItem
+        checked={showActivityBar}
+        onCheckedChange={setShowActivityBar}
+      >
+        Show Activity Bar
+      </DropdownMenuCheckboxItem>
+      <DropdownMenuCheckboxItem
+        checked={showPanel}
+        onCheckedChange={setShowPanel}
+      >
+        Show Panel
+      </DropdownMenuCheckboxItem>
+      <DropdownMenuSeparator />
+      <DropdownMenuLabel>Position</DropdownMenuLabel>
+      <DropdownMenuSeparator />
+      <DropdownMenuRadioGroup value={position} onValueChange={setPosition}>
+        <DropdownMenuRadioItem value="top">Top</DropdownMenuRadioItem>
+        <DropdownMenuRadioItem value="bottom">Bottom</DropdownMenuRadioItem>
+        <DropdownMenuRadioItem value="right">Right</DropdownMenuRadioItem>
+      </DropdownMenuRadioGroup>
+    </DropdownMenuContent>
+  </DropdownMenu>
+)`}
+          component={
+            <div className="flex items-center justify-center gap-4">
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="outline">
+                    View Options
+                    <ChevronDown className="ml-2 h-4 w-4" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-56">
+                  <DropdownMenuLabel>Appearance</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuCheckboxItem
+                    checked={showStatusBar}
+                    onCheckedChange={setShowStatusBar}
+                  >
+                    Show Status Bar
+                  </DropdownMenuCheckboxItem>
+                  <DropdownMenuCheckboxItem
+                    checked={showActivityBar}
+                    onCheckedChange={setShowActivityBar}
+                  >
+                    Show Activity Bar
+                  </DropdownMenuCheckboxItem>
+                  <DropdownMenuCheckboxItem
+                    checked={showPanel}
+                    onCheckedChange={setShowPanel}
+                  >
+                    Show Panel
+                  </DropdownMenuCheckboxItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuLabel>Position</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuRadioGroup value={position} onValueChange={setPosition}>
+                    <DropdownMenuRadioItem value="top">Top</DropdownMenuRadioItem>
+                    <DropdownMenuRadioItem value="bottom">Bottom</DropdownMenuRadioItem>
+                    <DropdownMenuRadioItem value="right">Right</DropdownMenuRadioItem>
+                  </DropdownMenuRadioGroup>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
+          }
+        />
+      </section>
+
+      {/* Menubar */}
+      <section className="space-y-8">
+        <div>
+          <h2 className="text-2xl font-semibold mb-4">Menubar</h2>
+          <p className="text-muted-foreground mb-6">
+            A horizontal menu bar typically used for application-level navigation and commands.
+          </p>
+        </div>
+
+        <PreviewContainer
+          title="Basic Menubar"
+          description="Standard menubar with dropdown menus"
+          code={`<Menubar>
+  <MenubarMenu>
+    <MenubarTrigger>File</MenubarTrigger>
+    <MenubarContent>
+      <MenubarItem>
+        New Tab <MenubarShortcut>⌘T</MenubarShortcut>
+      </MenubarItem>
+      <MenubarItem>
+        New Window <MenubarShortcut>⌘N</MenubarShortcut>
+      </MenubarItem>
+      <MenubarItem disabled>New Incognito Window</MenubarItem>
+      <MenubarSeparator />
+      <MenubarSub>
+        <MenubarSubTrigger>Share</MenubarSubTrigger>
+        <MenubarSubContent>
+          <MenubarItem>Email link</MenubarItem>
+          <MenubarItem>Messages</MenubarItem>
+          <MenubarItem>Notes</MenubarItem>
+        </MenubarSubContent>
+      </MenubarSub>
+      <MenubarSeparator />
+      <MenubarItem>
+        Print... <MenubarShortcut>⌘P</MenubarShortcut>
+      </MenubarItem>
+    </MenubarContent>
+  </MenubarMenu>
+  <MenubarMenu>
+    <MenubarTrigger>Edit</MenubarTrigger>
+    <MenubarContent>
+      <MenubarItem>
+        Undo <MenubarShortcut>⌘Z</MenubarShortcut>
+      </MenubarItem>
+      <MenubarItem>
+        Redo <MenubarShortcut>⇧⌘Z</MenubarShortcut>
+      </MenubarItem>
+      <MenubarSeparator />
+      <MenubarSub>
+        <MenubarSubTrigger>Find</MenubarSubTrigger>
+        <MenubarSubContent>
+          <MenubarItem>Search the web</MenubarItem>
+          <MenubarSeparator />
+          <MenubarItem>Find...</MenubarItem>
+          <MenubarItem>Find Next</MenubarItem>
+          <MenubarItem>Find Previous</MenubarItem>
+        </MenubarSubContent>
+      </MenubarSub>
+      <MenubarSeparator />
+      <MenubarItem>Cut</MenubarItem>
+      <MenubarItem>Copy</MenubarItem>
+      <MenubarItem>Paste</MenubarItem>
+    </MenubarContent>
+  </MenubarMenu>
+  <MenubarMenu>
+    <MenubarTrigger>View</MenubarTrigger>
+    <MenubarContent>
+      <MenubarCheckboxItem>Always Show Bookmarks Bar</MenubarCheckboxItem>
+      <MenubarCheckboxItem checked>
+        Always Show Full URLs
+      </MenubarCheckboxItem>
+      <MenubarSeparator />
+      <MenubarItem inset>
+        Reload <MenubarShortcut>⌘R</MenubarShortcut>
+      </MenubarItem>
+      <MenubarItem disabled inset>
+        Force Reload <MenubarShortcut>⇧⌘R</MenubarShortcut>
+      </MenubarItem>
+      <MenubarSeparator />
+      <MenubarItem inset>Toggle Fullscreen</MenubarItem>
+      <MenubarSeparator />
+      <MenubarItem inset>Hide Sidebar</MenubarItem>
+    </MenubarContent>
+  </MenubarMenu>
+  <MenubarMenu>
+    <MenubarTrigger>Profiles</MenubarTrigger>
+    <MenubarContent>
+      <MenubarRadioGroup value="john">
+        <MenubarRadioItem value="andy">Andy</MenubarRadioItem>
+        <MenubarRadioItem value="john">John</MenubarRadioItem>
+        <MenubarRadioItem value="julia">Julia</MenubarRadioItem>
+      </MenubarRadioGroup>
+      <MenubarSeparator />
+      <MenubarItem inset>Edit...</MenubarItem>
+      <MenubarSeparator />
+      <MenubarItem inset>Add Profile...</MenubarItem>
+    </MenubarContent>
+  </MenubarMenu>
+</Menubar>`}
+          component={
+            <div className="flex items-center justify-center">
+              <Menubar>
+                <MenubarMenu>
+                  <MenubarTrigger>File</MenubarTrigger>
+                  <MenubarContent>
+                    <MenubarItem>
+                      New Tab <MenubarShortcut>⌘T</MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarItem>
+                      New Window <MenubarShortcut>⌘N</MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarItem disabled>New Incognito Window</MenubarItem>
+                    <MenubarSeparator />
+                    <MenubarSub>
+                      <MenubarSubTrigger>Share</MenubarSubTrigger>
+                      <MenubarSubContent>
+                        <MenubarItem>Email link</MenubarItem>
+                        <MenubarItem>Messages</MenubarItem>
+                        <MenubarItem>Notes</MenubarItem>
+                      </MenubarSubContent>
+                    </MenubarSub>
+                    <MenubarSeparator />
+                    <MenubarItem>
+                      Print... <MenubarShortcut>⌘P</MenubarShortcut>
+                    </MenubarItem>
+                  </MenubarContent>
+                </MenubarMenu>
+                <MenubarMenu>
+                  <MenubarTrigger>Edit</MenubarTrigger>
+                  <MenubarContent>
+                    <MenubarItem>
+                      Undo <MenubarShortcut>⌘Z</MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarItem>
+                      Redo <MenubarShortcut>⇧⌘Z</MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarSeparator />
+                    <MenubarSub>
+                      <MenubarSubTrigger>Find</MenubarSubTrigger>
+                      <MenubarSubContent>
+                        <MenubarItem>Search the web</MenubarItem>
+                        <MenubarSeparator />
+                        <MenubarItem>Find...</MenubarItem>
+                        <MenubarItem>Find Next</MenubarItem>
+                        <MenubarItem>Find Previous</MenubarItem>
+                      </MenubarSubContent>
+                    </MenubarSub>
+                    <MenubarSeparator />
+                    <MenubarItem>Cut</MenubarItem>
+                    <MenubarItem>Copy</MenubarItem>
+                    <MenubarItem>Paste</MenubarItem>
+                  </MenubarContent>
+                </MenubarMenu>
+                <MenubarMenu>
+                  <MenubarTrigger>View</MenubarTrigger>
+                  <MenubarContent>
+                    <MenubarCheckboxItem>Always Show Bookmarks Bar</MenubarCheckboxItem>
+                    <MenubarCheckboxItem checked>
+                      Always Show Full URLs
+                    </MenubarCheckboxItem>
+                    <MenubarSeparator />
+                    <MenubarItem inset>
+                      Reload <MenubarShortcut>⌘R</MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarItem disabled inset>
+                      Force Reload <MenubarShortcut>⇧⌘R</MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarSeparator />
+                    <MenubarItem inset>Toggle Fullscreen</MenubarItem>
+                    <MenubarSeparator />
+                    <MenubarItem inset>Hide Sidebar</MenubarItem>
+                  </MenubarContent>
+                </MenubarMenu>
+                <MenubarMenu>
+                  <MenubarTrigger>Profiles</MenubarTrigger>
+                  <MenubarContent>
+                    <MenubarRadioGroup value="john">
+                      <MenubarRadioItem value="andy">Andy</MenubarRadioItem>
+                      <MenubarRadioItem value="john">John</MenubarRadioItem>
+                      <MenubarRadioItem value="julia">Julia</MenubarRadioItem>
+                    </MenubarRadioGroup>
+                    <MenubarSeparator />
+                    <MenubarItem inset>Edit...</MenubarItem>
+                    <MenubarSeparator />
+                    <MenubarItem inset>Add Profile...</MenubarItem>
+                  </MenubarContent>
+                </MenubarMenu>
+              </Menubar>
+            </div>
+          }
+        />
+
+        <PreviewContainer
+          title="Menubar with Icons"
+          description="Menubar with icons in menu items"
+          code={`<Menubar>
+  <MenubarMenu>
+    <MenubarTrigger>Account</MenubarTrigger>
+    <MenubarContent>
+      <MenubarItem>
+        <User className="mr-2 h-4 w-4" />
+        <span>Profile</span>
+      </MenubarItem>
+      <MenubarItem>
+        <CreditCard className="mr-2 h-4 w-4" />
+        <span>Billing</span>
+      </MenubarItem>
+      <MenubarItem>
+        <Settings className="mr-2 h-4 w-4" />
+        <span>Settings</span>
+      </MenubarItem>
+      <MenubarSeparator />
+      <MenubarItem>
+        <LogOut className="mr-2 h-4 w-4" />
+        <span>Log out</span>
+      </MenubarItem>
+    </MenubarContent>
+  </MenubarMenu>
+  <MenubarMenu>
+    <MenubarTrigger>Help</MenubarTrigger>
+    <MenubarContent>
+      <MenubarItem>
+        <LifeBuoy className="mr-2 h-4 w-4" />
+        <span>Support</span>
+      </MenubarItem>
+      <MenubarItem>
+        <FileText className="mr-2 h-4 w-4" />
+        <span>Documentation</span>
+      </MenubarItem>
+      <MenubarItem>
+        <Keyboard className="mr-2 h-4 w-4" />
+        <span>Keyboard shortcuts</span>
+      </MenubarItem>
+    </MenubarContent>
+  </MenubarMenu>
+</Menubar>`}
+          component={
+            <div className="flex items-center justify-center">
+              <Menubar>
+                <MenubarMenu>
+                  <MenubarTrigger>Account</MenubarTrigger>
+                  <MenubarContent>
+                    <MenubarItem>
+                      <User className="mr-2 h-4 w-4" />
+                      <span>Profile</span>
+                    </MenubarItem>
+                    <MenubarItem>
+                      <CreditCard className="mr-2 h-4 w-4" />
+                      <span>Billing</span>
+                    </MenubarItem>
+                    <MenubarItem>
+                      <Settings className="mr-2 h-4 w-4" />
+                      <span>Settings</span>
+                    </MenubarItem>
+                    <MenubarSeparator />
+                    <MenubarItem>
+                      <LogOut className="mr-2 h-4 w-4" />
+                      <span>Log out</span>
+                    </MenubarItem>
+                  </MenubarContent>
+                </MenubarMenu>
+                <MenubarMenu>
+                  <MenubarTrigger>Help</MenubarTrigger>
+                  <MenubarContent>
+                    <MenubarItem>
+                      <LifeBuoy className="mr-2 h-4 w-4" />
+                      <span>Support</span>
+                    </MenubarItem>
+                    <MenubarItem>
+                      <FileText className="mr-2 h-4 w-4" />
+                      <span>Documentation</span>
+                    </MenubarItem>
+                    <MenubarItem>
+                      <Keyboard className="mr-2 h-4 w-4" />
+                      <span>Keyboard shortcuts</span>
+                    </MenubarItem>
+                  </MenubarContent>
+                </MenubarMenu>
+              </Menubar>
+            </div>
+          }
+        />
       </section>
 
       {/* Breadcrumb */}
       <section className="space-y-8">
         <div>
           <h2 className="text-2xl font-semibold mb-4">Breadcrumb</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-muted-foreground mb-6">
             Shows the user's current location within a website's hierarchy and enables navigation.
           </p>
         </div>
@@ -425,7 +813,7 @@ export default function NavigationPage() {
   </BreadcrumbList>
 </Breadcrumb>`}
           component={
-            <div className="flex items-center justify-center p-8">
+            <div className="flex items-center justify-center gap-4">
               <Breadcrumb>
                 <BreadcrumbList>
                   <BreadcrumbItem>
@@ -470,7 +858,7 @@ export default function NavigationPage() {
   </BreadcrumbList>
 </Breadcrumb>`}
           component={
-            <div className="flex items-center justify-center p-8">
+            <div className="flex items-center justify-center gap-4">
               <Breadcrumb>
                 <BreadcrumbList>
                   <BreadcrumbItem>
@@ -519,7 +907,7 @@ export default function NavigationPage() {
   </BreadcrumbList>
 </Breadcrumb>`}
           component={
-            <div className="flex items-center justify-center p-8">
+            <div className="flex items-center justify-center gap-4">
               <Breadcrumb>
                 <BreadcrumbList>
                   <BreadcrumbItem>
@@ -548,7 +936,7 @@ export default function NavigationPage() {
       <section className="space-y-8">
         <div>
           <h2 className="text-2xl font-semibold mb-4">Tabs</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-muted-foreground mb-6">
             Organize content into different sections that users can switch between.
           </p>
         </div>
@@ -617,7 +1005,7 @@ export default function NavigationPage() {
   </TabsContent>
 </Tabs>`}
           component={
-            <div className="flex items-center justify-center p-8">
+            <div className="flex items-center justify-center gap-4">
               <Tabs defaultValue="account" className="w-[400px]">
                 <TabsList>
                   <TabsTrigger value="account">Account</TabsTrigger>
@@ -746,7 +1134,7 @@ export default function NavigationPage() {
   </TabsContent>
 </Tabs>`}
           component={
-            <div className="flex items-center justify-center p-8">
+            <div className="flex items-center justify-center gap-4">
               <Tabs defaultValue="dashboard" className="w-[500px]">
                 <TabsList className="grid w-full grid-cols-4">
                   <TabsTrigger value="dashboard">
@@ -816,7 +1204,7 @@ export default function NavigationPage() {
       <section className="space-y-8">
         <div>
           <h2 className="text-2xl font-semibold mb-4">Pagination</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-muted-foreground mb-6">
             Navigate through multiple pages of content with various pagination styles.
           </p>
         </div>
@@ -852,7 +1240,7 @@ export default function NavigationPage() {
   </PaginationContent>
 </Pagination>`}
           component={
-            <div className="flex items-center justify-center p-8">
+            <div className="flex items-center justify-center gap-4">
               <Pagination>
                 <PaginationContent>
                   <PaginationItem>
@@ -921,7 +1309,7 @@ export default function NavigationPage() {
   </PaginationContent>
 </Pagination>`}
           component={
-            <div className="flex items-center justify-center p-8">
+            <div className="flex items-center justify-center gap-4">
               <Pagination>
                 <PaginationContent>
                   <PaginationItem>
@@ -978,7 +1366,7 @@ export default function NavigationPage() {
   </PaginationContent>
 </Pagination>`}
           component={
-            <div className="flex items-center justify-center p-8">
+            <div className="flex items-center justify-center gap-4">
               <Pagination>
                 <PaginationContent>
                   <PaginationItem>
@@ -998,6 +1386,354 @@ export default function NavigationPage() {
           }
         />
       </section>
+
+
+      {/* Sidebar */}
+      <section className="space-y-8">
+        <div>
+          <h2 className="text-2xl font-semibold mb-4">Sidebar</h2>
+          <p className="text-muted-foreground mb-6">
+            A responsive navigation sidebar with support for mobile and desktop layouts, collapsible sections, and multiple variants.
+          </p>
+        </div>
+
+        <PreviewContainer
+          title="Sidebar Component"
+          description="Full-featured sidebar navigation with responsive design"
+          code={`import {
+  Sidebar,
+  SidebarHeader,
+  SidebarContent,
+  SidebarGroup,
+  SidebarItem,
+  SidebarLink,
+  SidebarFooter,
+  SidebarTrigger,
+} from "@/components/ui/sidebar"
+
+export function AppSidebar() {
+  const [open, setOpen] = useState(false)
+  
+  return (
+    <>
+      {/* Mobile trigger - use SidebarTrigger outside of Sidebar */}
+      <SidebarTrigger icon={MenuIcon} onOpen={() => setOpen(true)} />
+      
+      <Sidebar open={open} onOpenChange={setOpen}>
+        <SidebarHeader>
+          <div className="flex items-center gap-3">
+            <Logo />
+            <span className="font-semibold">App Name</span>
+          </div>
+        </SidebarHeader>
+        
+        <SidebarContent>
+          <SidebarGroup>
+            {navigation.map((item) => (
+              <SidebarItem key={item.name}>
+                <SidebarLink
+                  href={item.href}
+                  active={pathname === item.href}
+                  icon={item.icon}
+                >
+                  {item.name}
+                </SidebarLink>
+              </SidebarItem>
+            ))}
+          </SidebarGroup>
+          
+          <SidebarGroup label="Teams">
+            {teams.map((team) => (
+              <SidebarItem key={team.id}>
+                <SidebarLink href={team.href}>
+                  {team.name}
+                </SidebarLink>
+              </SidebarItem>
+            ))}
+          </SidebarGroup>
+        </SidebarContent>
+        
+        <SidebarFooter>
+          <SidebarLink href="/settings" icon={CogIcon}>
+            Settings
+          </SidebarLink>
+        </SidebarFooter>
+      </Sidebar>
+    </>
+  )
+}`}
+          component={
+            <div className="text-center space-y-6">
+              <div className="inline-flex flex-col items-center gap-4">
+                <div className="text-sm text-muted-foreground">
+                  The sidebar component requires a full-page layout to demonstrate properly.
+                </div>
+                <Link href="/demos/sidebar">
+                  <Button>
+                    View Full Sidebar Demo
+                  </Button>
+                </Link>
+              </div>
+              <div className="grid grid-cols-2 gap-4 max-w-2xl mx-auto text-left">
+                <div className="rounded-lg border border-border p-4">
+                  <h3 className="font-medium mb-2">Features</h3>
+                  <ul className="space-y-1 text-sm text-muted-foreground">
+                    <li>• Responsive mobile drawer</li>
+                    <li>• Multiple variants & sizes</li>
+                    <li>• Collapsible sections</li>
+                    <li>• Active state management</li>
+                  </ul>
+                </div>
+                <div className="rounded-lg border border-border p-4">
+                  <h3 className="font-medium mb-2">Customization</h3>
+                  <ul className="space-y-1 text-sm text-muted-foreground">
+                    <li>• Configurable breakpoints</li>
+                    <li>• Max-width constraints</li>
+                    <li>• Theme-aware styling</li>
+                    <li>• Composable structure</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          }
+        />
+      </section>
+
+      {/* Context Menu */}
+      <ContextMenuExample />
+
+      {/* Command */}
+      <section className="space-y-8">
+        <div>
+          <h2 className="text-2xl font-semibold mb-4">Command</h2>
+          <p className="text-muted-foreground mb-6">
+            Fast, composable command menu with keyboard navigation, search, and item selection.
+          </p>
+        </div>
+
+        <PreviewContainer
+          title="Basic Command Menu"
+          description="Command palette with search and keyboard navigation"
+          code={`<Command className="rounded-lg border shadow-md">
+  <CommandInput placeholder="Type a command or search..." />
+  <CommandList>
+    <CommandEmpty>No results found.</CommandEmpty>
+    <CommandGroup heading="Suggestions">
+      <CommandItem>
+        <Calendar className="mr-2 h-4 w-4" />
+        <span>Calendar</span>
+      </CommandItem>
+      <CommandItem>
+        <Smile className="mr-2 h-4 w-4" />
+        <span>Search Emoji</span>
+      </CommandItem>
+      <CommandItem>
+        <Calculator className="mr-2 h-4 w-4" />
+        <span>Calculator</span>
+      </CommandItem>
+    </CommandGroup>
+    <CommandSeparator />
+    <CommandGroup heading="Settings">
+      <CommandItem>
+        <User className="mr-2 h-4 w-4" />
+        <span>Profile</span>
+        <CommandShortcut>⌘P</CommandShortcut>
+      </CommandItem>
+      <CommandItem>
+        <CreditCard className="mr-2 h-4 w-4" />
+        <span>Billing</span>
+        <CommandShortcut>⌘B</CommandShortcut>
+      </CommandItem>
+      <CommandItem>
+        <Settings className="mr-2 h-4 w-4" />
+        <span>Settings</span>
+        <CommandShortcut>⌘S</CommandShortcut>
+      </CommandItem>
+    </CommandGroup>
+  </CommandList>
+</Command>`}
+          component={
+            <div className="flex items-center justify-center">
+              <Command className="rounded-lg border shadow-md w-[450px]">
+                <CommandInput placeholder="Type a command or search..." />
+                <CommandList>
+                  <CommandEmpty>No results found.</CommandEmpty>
+                  <CommandGroup heading="Suggestions">
+                    <CommandItem>
+                      <Calendar className="mr-2 h-4 w-4" />
+                      <span>Calendar</span>
+                    </CommandItem>
+                    <CommandItem>
+                      <Smile className="mr-2 h-4 w-4" />
+                      <span>Search Emoji</span>
+                    </CommandItem>
+                    <CommandItem>
+                      <Calculator className="mr-2 h-4 w-4" />
+                      <span>Calculator</span>
+                    </CommandItem>
+                  </CommandGroup>
+                  <CommandSeparator />
+                  <CommandGroup heading="Settings">
+                    <CommandItem>
+                      <User className="mr-2 h-4 w-4" />
+                      <span>Profile</span>
+                      <CommandShortcut>⌘P</CommandShortcut>
+                    </CommandItem>
+                    <CommandItem>
+                      <CreditCardIcon className="mr-2 h-4 w-4" />
+                      <span>Billing</span>
+                      <CommandShortcut>⌘B</CommandShortcut>
+                    </CommandItem>
+                    <CommandItem>
+                      <Settings className="mr-2 h-4 w-4" />
+                      <span>Settings</span>
+                      <CommandShortcut>⌘S</CommandShortcut>
+                    </CommandItem>
+                  </CommandGroup>
+                </CommandList>
+              </Command>
+            </div>
+          }
+        />
+
+        <PreviewContainer
+          title="Command Dialog"
+          description="Command menu in a dialog/modal format"
+          code={`const [open, setOpen] = React.useState(false)
+
+React.useEffect(() => {
+  const down = (e: KeyboardEvent) => {
+    if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
+      e.preventDefault()
+      setOpen((open) => !open)
+    }
+  }
+  document.addEventListener("keydown", down)
+  return () => document.removeEventListener("keydown", down)
+}, [])
+
+return (
+  <>
+    <p className="text-sm text-muted-foreground">
+      Press{" "}
+      <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
+        <span className="text-xs">⌘</span>K
+      </kbd>
+    </p>
+    <CommandDialog open={open} onOpenChange={setOpen}>
+      <CommandInput placeholder="Type a command or search..." />
+      <CommandList>
+        <CommandEmpty>No results found.</CommandEmpty>
+        <CommandGroup heading="Suggestions">
+          <CommandItem onSelect={() => { console.log("Calendar"); setOpen(false) }}>
+            <Calendar className="mr-2 h-4 w-4" />
+            <span>Calendar</span>
+          </CommandItem>
+          <CommandItem onSelect={() => { console.log("Search Emoji"); setOpen(false) }}>
+            <Smile className="mr-2 h-4 w-4" />
+            <span>Search Emoji</span>
+          </CommandItem>
+          <CommandItem onSelect={() => { console.log("Calculator"); setOpen(false) }}>
+            <Calculator className="mr-2 h-4 w-4" />
+            <span>Calculator</span>
+          </CommandItem>
+        </CommandGroup>
+        <CommandSeparator />
+        <CommandGroup heading="Settings">
+          <CommandItem onSelect={() => { console.log("Profile"); setOpen(false) }}>
+            <User className="mr-2 h-4 w-4" />
+            <span>Profile</span>
+            <CommandShortcut>⌘P</CommandShortcut>
+          </CommandItem>
+          <CommandItem onSelect={() => { console.log("Billing"); setOpen(false) }}>
+            <CreditCard className="mr-2 h-4 w-4" />
+            <span>Billing</span>
+            <CommandShortcut>⌘B</CommandShortcut>
+          </CommandItem>
+          <CommandItem onSelect={() => { console.log("Settings"); setOpen(false) }}>
+            <Settings className="mr-2 h-4 w-4" />
+            <span>Settings</span>
+            <CommandShortcut>⌘S</CommandShortcut>
+          </CommandItem>
+        </CommandGroup>
+      </CommandList>
+    </CommandDialog>
+  </>
+)`}
+          component={
+            <CommandDialogDemo />
+          }
+        />
+
+        <PreviewContainer
+          title="Command with Disabled Items"
+          description="Command menu with some disabled items"
+          code={`<Command className="rounded-lg border shadow-md">
+  <CommandInput placeholder="Search features..." />
+  <CommandList>
+    <CommandEmpty>No features found.</CommandEmpty>
+    <CommandGroup heading="Features">
+      <CommandItem>
+        <Search className="mr-2 h-4 w-4" />
+        <span>Search</span>
+      </CommandItem>
+      <CommandItem>
+        <FileText className="mr-2 h-4 w-4" />
+        <span>Documents</span>
+      </CommandItem>
+      <CommandItem disabled>
+        <Cloud className="mr-2 h-4 w-4" />
+        <span>Cloud Sync</span>
+        <span className="ml-auto text-xs text-muted-foreground">Coming soon</span>
+      </CommandItem>
+      <CommandItem>
+        <Github className="mr-2 h-4 w-4" />
+        <span>GitHub Integration</span>
+      </CommandItem>
+      <CommandItem disabled>
+        <BarChart3 className="mr-2 h-4 w-4" />
+        <span>Analytics</span>
+        <span className="ml-auto text-xs text-muted-foreground">Pro only</span>
+      </CommandItem>
+    </CommandGroup>
+  </CommandList>
+</Command>`}
+          component={
+            <div className="flex items-center justify-center">
+              <Command className="rounded-lg border shadow-md w-[450px]">
+                <CommandInput placeholder="Search features..." />
+                <CommandList>
+                  <CommandEmpty>No features found.</CommandEmpty>
+                  <CommandGroup heading="Features">
+                    <CommandItem>
+                      <Search className="mr-2 h-4 w-4" />
+                      <span>Search</span>
+                    </CommandItem>
+                    <CommandItem>
+                      <FileText className="mr-2 h-4 w-4" />
+                      <span>Documents</span>
+                    </CommandItem>
+                    <CommandItem disabled>
+                      <Cloud className="mr-2 h-4 w-4" />
+                      <span>Cloud Sync</span>
+                      <span className="ml-auto text-xs text-muted-foreground">Coming soon</span>
+                    </CommandItem>
+                    <CommandItem>
+                      <Github className="mr-2 h-4 w-4" />
+                      <span>GitHub Integration</span>
+                    </CommandItem>
+                    <CommandItem disabled>
+                      <BarChart3 className="mr-2 h-4 w-4" />
+                      <span>Analytics</span>
+                      <span className="ml-auto text-xs text-muted-foreground">Pro only</span>
+                    </CommandItem>
+                  </CommandGroup>
+                </CommandList>
+              </Command>
+            </div>
+          }
+        />
+      </section>
     </div>
   )
 }
@@ -1013,13 +1749,13 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            "group block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors text-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground",
             className
           )}
           {...props}
         >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+          <div className="text-sm font-medium leading-none text-foreground group-hover:text-primary-foreground group-focus:text-primary-foreground">{title}</div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground group-hover:text-primary-foreground group-focus:text-primary-foreground">
             {children}
           </p>
         </a>
@@ -1028,3 +1764,73 @@ const ListItem = React.forwardRef<
   )
 })
 ListItem.displayName = "ListItem"
+
+// Command Dialog Demo Component
+function CommandDialogDemo() {
+  const [open, setOpen] = React.useState(false)
+
+  React.useEffect(() => {
+    const down = (e: KeyboardEvent) => {
+      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault()
+        setOpen((open) => !open)
+      }
+    }
+    document.addEventListener("keydown", down)
+    return () => document.removeEventListener("keydown", down)
+  }, [])
+
+  return (
+    <>
+      <div className="flex flex-col items-center gap-4">
+        <p className="text-sm text-muted-foreground">
+          Press{" "}
+          <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
+            <span className="text-xs">⌘</span>K
+          </kbd>
+        </p>
+        <Button onClick={() => setOpen(true)} variant="outline">
+          Open Command Menu
+        </Button>
+      </div>
+      <CommandDialog open={open} onOpenChange={setOpen}>
+        <CommandInput placeholder="Type a command or search..." />
+        <CommandList>
+          <CommandEmpty>No results found.</CommandEmpty>
+          <CommandGroup heading="Suggestions">
+            <CommandItem onSelect={() => { console.log("Calendar"); setOpen(false) }}>
+              <Calendar className="mr-2 h-4 w-4" />
+              <span>Calendar</span>
+            </CommandItem>
+            <CommandItem onSelect={() => { console.log("Search Emoji"); setOpen(false) }}>
+              <Smile className="mr-2 h-4 w-4" />
+              <span>Search Emoji</span>
+            </CommandItem>
+            <CommandItem onSelect={() => { console.log("Calculator"); setOpen(false) }}>
+              <Calculator className="mr-2 h-4 w-4" />
+              <span>Calculator</span>
+            </CommandItem>
+          </CommandGroup>
+          <CommandSeparator />
+          <CommandGroup heading="Settings">
+            <CommandItem onSelect={() => { console.log("Profile"); setOpen(false) }}>
+              <User className="mr-2 h-4 w-4" />
+              <span>Profile</span>
+              <CommandShortcut>⌘P</CommandShortcut>
+            </CommandItem>
+            <CommandItem onSelect={() => { console.log("Billing"); setOpen(false) }}>
+              <CreditCardIcon className="mr-2 h-4 w-4" />
+              <span>Billing</span>
+              <CommandShortcut>⌘B</CommandShortcut>
+            </CommandItem>
+            <CommandItem onSelect={() => { console.log("Settings"); setOpen(false) }}>
+              <Settings className="mr-2 h-4 w-4" />
+              <span>Settings</span>
+              <CommandShortcut>⌘S</CommandShortcut>
+            </CommandItem>
+          </CommandGroup>
+        </CommandList>
+      </CommandDialog>
+    </>
+  )
+}

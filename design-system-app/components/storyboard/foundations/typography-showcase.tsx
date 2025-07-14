@@ -49,17 +49,17 @@ export default function TypographyShowcase() {
     <div className="space-y-12">
       {/* Heading Scales */}
       <section>
-        <h2 className="text-2xl font-bold mb-6 text-gray-800">Text Sizes</h2>
+        <h2 className="text-2xl font-bold mb-6 text-foreground">Text Sizes</h2>
         <div className="space-y-6">
           {textSizes.map((item) => (
-            <div key={item.size} className="border-b border-gray-200 pb-4">
+            <div key={item.size} className="border-b border-border pb-4">
               <div className="flex items-baseline gap-4 mb-2">
-                <code className="text-sm bg-gray-100 px-2 py-1 rounded font-mono text-gray-700">
+                <code className="text-sm bg-muted px-2 py-1 rounded font-mono text-muted-foreground">
                   {item.size}
                 </code>
-                <span className="text-sm text-gray-600">{item.label}</span>
+                <span className="text-sm text-muted-foreground">{item.label}</span>
               </div>
-              <p className={`${item.size} text-gray-900`}>{item.example}</p>
+              <p className={`${item.size} text-foreground`}>{item.example}</p>
             </div>
           ))}
         </div>
@@ -67,17 +67,17 @@ export default function TypographyShowcase() {
 
       {/* Font Weights */}
       <section>
-        <h2 className="text-2xl font-bold mb-6 text-gray-800">Font Weights</h2>
+        <h2 className="text-2xl font-bold mb-6 text-foreground">Font Weights</h2>
         <div className="space-y-4">
           {fontWeights.map((item) => (
-            <div key={item.weight} className="border-b border-gray-200 pb-4">
+            <div key={item.weight} className="border-b border-border pb-4">
               <div className="flex items-baseline gap-4 mb-2">
-                <code className="text-sm bg-gray-100 px-2 py-1 rounded font-mono text-gray-700">
+                <code className="text-sm bg-muted px-2 py-1 rounded font-mono text-muted-foreground">
                   {item.weight}
                 </code>
-                <span className="text-sm text-gray-600">{item.label}</span>
+                <span className="text-sm text-muted-foreground">{item.label}</span>
               </div>
-              <p className={`text-lg ${item.weight} text-gray-900`}>{item.example}</p>
+              <p className={`text-lg ${item.weight} text-foreground`}>{item.example}</p>
             </div>
           ))}
         </div>
@@ -85,17 +85,17 @@ export default function TypographyShowcase() {
 
       {/* Line Heights */}
       <section>
-        <h2 className="text-2xl font-bold mb-6 text-gray-800">Line Heights</h2>
+        <h2 className="text-2xl font-bold mb-6 text-foreground">Line Heights</h2>
         <div className="space-y-6">
           {lineHeights.map((item) => (
-            <div key={item.height} className="border-b border-gray-200 pb-4">
+            <div key={item.height} className="border-b border-border pb-4">
               <div className="flex items-baseline gap-4 mb-2">
-                <code className="text-sm bg-gray-100 px-2 py-1 rounded font-mono text-gray-700">
+                <code className="text-sm bg-muted px-2 py-1 rounded font-mono text-muted-foreground">
                   {item.height}
                 </code>
-                <span className="text-sm text-gray-600">{item.label}</span>
+                <span className="text-sm text-muted-foreground">{item.label}</span>
               </div>
-              <p className={`text-base ${item.height} text-gray-900 max-w-lg`}>{item.example}</p>
+              <p className={`text-base ${item.height} text-foreground max-w-lg`}>{item.example}</p>
             </div>
           ))}
         </div>
@@ -103,17 +103,17 @@ export default function TypographyShowcase() {
 
       {/* Font Families */}
       <section>
-        <h2 className="text-2xl font-bold mb-6 text-gray-800">Font Families</h2>
+        <h2 className="text-2xl font-bold mb-6 text-foreground">Font Families</h2>
         <div className="space-y-4">
           {fontFamilies.map((item) => (
-            <div key={item.family} className="border-b border-gray-200 pb-4">
+            <div key={item.family} className="border-b border-border pb-4">
               <div className="flex items-baseline gap-4 mb-2">
-                <code className="text-sm bg-gray-100 px-2 py-1 rounded font-mono text-gray-700">
+                <code className="text-sm bg-muted px-2 py-1 rounded font-mono text-muted-foreground">
                   {item.family}
                 </code>
-                <span className="text-sm text-gray-600">{item.label}</span>
+                <span className="text-sm text-muted-foreground">{item.label}</span>
               </div>
-              <p className={`text-lg ${item.family} text-gray-900`}>{item.example}</p>
+              <p className={`text-lg ${item.family} text-foreground`}>{item.example}</p>
             </div>
           ))}
         </div>

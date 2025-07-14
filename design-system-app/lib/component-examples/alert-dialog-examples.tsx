@@ -75,7 +75,7 @@ export const alertDialogExamples: ComponentExample[] = [
     </AlertDialogHeader>
     <AlertDialogFooter>
       <AlertDialogCancel>Cancel</AlertDialogCancel>
-      <AlertDialogAction className="bg-red-600 text-white hover:bg-red-700">
+      <AlertDialogAction className="bg-destructive text-destructive-foreground hover:bg-destructive-hover">
         Delete Account
       </AlertDialogAction>
     </AlertDialogFooter>
@@ -96,7 +96,7 @@ export const alertDialogExamples: ComponentExample[] = [
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel>Cancel</AlertDialogCancel>
-            <AlertDialogAction className="bg-red-600 text-white hover:bg-red-700">
+            <AlertDialogAction className="bg-destructive text-destructive-foreground hover:bg-destructive-hover">
               Delete Account
             </AlertDialogAction>
           </AlertDialogFooter>
@@ -209,7 +209,7 @@ return (
     description: "Alert dialog with custom trigger element using asChild.",
     code: `<AlertDialog>
   <AlertDialogTrigger asChild>
-    <span className="text-red-600 underline cursor-pointer">
+    <span className="text-destructive underline cursor-pointer">
       Remove item
     </span>
   </AlertDialogTrigger>
@@ -229,7 +229,7 @@ return (
     component: () => (
       <AlertDialog>
         <AlertDialogTrigger asChild>
-          <span className="text-red-600 underline cursor-pointer">
+          <span className="text-destructive underline cursor-pointer">
             Remove item
           </span>
         </AlertDialogTrigger>

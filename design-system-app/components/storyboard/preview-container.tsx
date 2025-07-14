@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Check, Copy, Monitor, Moon, Smartphone, Sun, Tablet } from "lucide-react"
+import { Check, Copy, Monitor, Smartphone, Tablet } from "lucide-react"
 import { CodePreview } from "./code-preview"
 
 interface PreviewContainerProps {
@@ -14,6 +14,9 @@ interface PreviewContainerProps {
   className?: string
   title?: string
   description?: string
+  allowOverflow?: boolean
+  minHeight?: string
+  contentAlignment?: "center" | "top" | "bottom"
 }
 
 export function PreviewContainer({
@@ -21,9 +24,11 @@ export function PreviewContainer({
   code,
   className,
   title,
-  description
+  description,
+  allowOverflow = false,
+  minHeight = "min-h-[200px]",
+  contentAlignment = "center"
 }: PreviewContainerProps) {
-  const [darkMode, setDarkMode] = useState(false)
   const [viewport, setViewport] = useState<"desktop" | "tablet" | "mobile">("desktop")
   const [copied, setCopied] = useState(false)
 
@@ -48,8 +53,8 @@ export function PreviewContainer({
     <div className="space-y-4">
       {(title || description) && (
         <div>
-          {title && <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100">{title}</h3>}
-          {description && <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">{description}</p>}
+          {title && <h3 className="text-lg font-medium text-foreground">{title}</h3>}
+          {description && <p className="mt-1 text-sm text-muted-foreground">{description}</p>}
         </div>
       )}
 
@@ -61,11 +66,11 @@ export function PreviewContainer({
           </TabsList>
 
           <div className="flex items-center gap-2">
-            <div className="flex items-center rounded-md bg-gray-100 p-1 dark:bg-gray-800">
+            <div className="flex items-center rounded-md bg-muted p-1">
               <Button
                 variant="ghost"
                 size="sm"
-                className={cn("h-7 w-7 p-0", viewport === "desktop" && "bg-white dark:bg-gray-900")}
+                className={cn("h-7 w-7 p-0", viewport === "desktop" && "bg-background")}
                 onClick={() => setViewport("desktop")}
               >
                 <Monitor className="h-3.5 w-3.5" />
@@ -73,7 +78,7 @@ export function PreviewContainer({
               <Button
                 variant="ghost"
                 size="sm"
-                className={cn("h-7 w-7 p-0", viewport === "tablet" && "bg-white dark:bg-gray-900")}
+                className={cn("h-7 w-7 p-0", viewport === "tablet" && "bg-background")}
                 onClick={() => setViewport("tablet")}
               >
                 <Tablet className="h-3.5 w-3.5" />
@@ -81,21 +86,13 @@ export function PreviewContainer({
               <Button
                 variant="ghost"
                 size="sm"
-                className={cn("h-7 w-7 p-0", viewport === "mobile" && "bg-white dark:bg-gray-900")}
+                className={cn("h-7 w-7 p-0", viewport === "mobile" && "bg-background")}
                 onClick={() => setViewport("mobile")}
               >
                 <Smartphone className="h-3.5 w-3.5" />
               </Button>
             </div>
 
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setDarkMode(!darkMode)}
-              className="h-8 w-8 p-0"
-            >
-              {darkMode ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-            </Button>
 
             <Button
               variant="ghost"
@@ -119,22 +116,22 @@ export function PreviewContainer({
         </div>
 
         <TabsContent value="preview" className="mt-4">
-          <Card className={cn(
-            "overflow-hidden",
-            darkMode && "dark"
-          )}>
-            <div className="flex items-center justify-center bg-gray-50 p-8 dark:bg-gray-900">
+          <div className={cn("rounded-lg border", !allowOverflow && "overflow-hidden")}>
+            <div className={cn(
+              "flex bg-muted/30 p-6",
+              contentAlignment === "top" ? "items-start" : contentAlignment === "bottom" ? "items-end" : "items-center",
+              "justify-center",
+              minHeight
+            )}>
               <div className={cn(
                 "w-full transition-all duration-300",
                 getViewportWidth(),
                 className
               )}>
-                <div className="bg-white dark:bg-gray-950">
-                  {component}
-                </div>
+                {component}
               </div>
             </div>
-          </Card>
+          </div>
         </TabsContent>
 
         <TabsContent value="code" className="mt-4">

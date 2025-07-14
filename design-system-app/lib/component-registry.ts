@@ -151,7 +151,8 @@ export const componentRegistry: Record<string, Category> = {
               { id: "radio-group", name: "Radio Group", description: "Radio button group" },
               { id: "switch", name: "Switch", description: "Toggle switch" },
               { id: "slider", name: "Slider", description: "Range slider" },
-              { id: "input-otp", name: "Input OTP", description: "One-time password input" }
+              { id: "input-otp", name: "Input OTP", description: "One-time password input" },
+              { id: "date-picker", name: "Date Picker", description: "Calendar-based date selection" }
             ]
           }
         ]

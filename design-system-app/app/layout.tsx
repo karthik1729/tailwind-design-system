@@ -1,7 +1,10 @@
 import type { Metadata } from 'next'
 import { Open_Sans } from 'next/font/google'
-import { Toaster } from 'sonner'
 import { cn } from '@/lib/utils'
+import { ToastProvider } from '@/components/ui/toast-provider'
+import { Toaster } from '@/components/ui/toaster'
+import { getTheme } from '@/lib/theme-cookie'
+import { ThemeScript } from './theme-script'
 import './globals.css'
 
 const openSans = Open_Sans({ subsets: ['latin'] })
@@ -16,11 +19,18 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const theme = getTheme()
+  
   return (
-    <html lang="en">
-      <body className={cn(openSans.className, "overflow-hidden")}>
-        {children}
-        <Toaster position="top-right" />
+    <html lang="en" className={theme} suppressHydrationWarning>
+      <head>
+        <ThemeScript theme={theme} />
+      </head>
+      <body className={cn(openSans.className, "overflow-hidden")} suppressHydrationWarning>
+        <ToastProvider>
+          {children}
+          <Toaster />
+        </ToastProvider>
         <div id="radix-portal-root" tabIndex={-1} aria-hidden="true" />
       </body>
     </html>

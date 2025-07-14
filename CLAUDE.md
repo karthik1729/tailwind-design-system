@@ -1,56 +1,44 @@
 # Tailwind Design System Project
 
-## Important Guidelines
-- The `organized-components` directory is for **reference only** - do not import from it
-- Recreate components independently in `design-system-app/`
-- **Always use Taskfile commands** to manage the project (never use pnpm/npm directly for server operations)
-- **For any task, analyze if it can be divided into subtasks and start subagents to finish the task quicker**
+## Critical Rules
+- **Never import from** `organized-components/` - it's reference only
+- **Always use gotask as task runner**
+- **Always use design tokens** - no hardcoded hex values
+- **Development server will be in background check check for app.log file in the base directory**
 
-## Project Structure
-- `design-system-app/` - Next.js 15 showcase app with App Router
-- Theme configuration is in `design-system-app/app/globals.css` using Tailwind v4's `@theme` directive
-- Using Tailwind CSS v4.0.0-alpha.20 with CSS-first configuration approach
-- Components use Radix UI primitives for accessibility
-- Styling uses class-variance-authority (cva) for variant management
+## Quick Reference
+- Theme config: `design-system-app/app/globals.css` (Tailwind v4 `@theme`)
+- Components: Radix UI + CVA for variants
+- Total: 59 components across 7 categories
+- Current focus: Component enhancements (Issue #2)
 
-## Design System Overview
-- **59 Total Components** organized into categories:
-  - Buttons & Actions (8 components)
-  - Form Elements (13 components)
-  - Feedback Components (8 components)
-  - Navigation Components (9 components)
-  - Data Display (10 components)
-  - Overlay Components (3 components)
-  - Layout Components (4 components)
-  - Additional specialized components
-- **Theme Support**: Light and dark themes with CSS custom properties
-- **Design Principles**: Borderless design, consistent spacing (p-4, gap-4), typography-first approach
+## Key Patterns to Remember
+
+### Colors
+- Use semantic tokens (success, warning, info, destructive)
+- Dark mode: Use lighter variants (300-400) for text/icons
+- Hover states: `bg-primary-subtle-hover` for menus, `bg-primary` for triggers
+
+### Animations
+- Transitions: 200ms (triggers), 150ms (menu items)
+- Scale: `active:scale-[0.98]` for buttons
+- Chevrons: 180° (dropdowns), 90° (submenus)
+
+### Component Standards
+- **Triggers**: Primary bg on hover, scale on active
+- **Menu items**: Subtle hover, `rounded-[2px]`, `px-2 py-1.5`
+- **Forms**: Focus rings, smooth transitions
 
 ## Task Commands
-Use these commands to manage the project:
-- `task dev-bg` - Start development server in background
-- `task stop` - Stop all running services
-- `task restart` - Restart development server
-- `task logs` - View development server logs
-- `task clean` - Clean build files and logs
+- `task dev-bg` - Start dev server (background)
+- `task logs` - View server logs
+- `task stop` - Stop all services
+- `task restart` - Restart server
 
-## Development Workflow
-1. Always check task status with `task status` before starting work
-2. Use `task dev-bg` to start the development server
-3. View logs with `task logs` if needed
-4. Make changes to components in `design-system-app/`
-5. Stop services with `task stop` when done
+## Current Progress
+- Enhancing components: 25/59 done (42.4%)
+- Active: Form Elements (3/13 complete)
+- Details: See `todo/issue-2.md`
 
-## Component Enhancement Plan
-Currently working on systematic enhancement of all components focusing on:
-- Consistent interaction states (hover, focus, active, disabled)
-- Theme coherence across light/dark modes
-- Accessibility improvements
-- Micro-interactions and smooth transitions
-See GitHub Issue #2 for detailed tracking
-
-## Task Management
-- All tasks are tracked in the `todo/` folder
-- Task files are named after GitHub issue numbers (e.g., `todo/issue-2.md`)
-- Each task file contains detailed progress tracking and checklists
-- See `todo/README.md` for the task tracking system documentation
+## Development Logs
+- Development server will be already running check logs in app.log

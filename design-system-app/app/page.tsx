@@ -2,7 +2,7 @@ import Link from "next/link"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-50/50">
+    <main className="min-h-screen bg-muted/50">
       <div className="container mx-auto px-4 py-16 flex items-center justify-center min-h-screen">
         <div className="text-center max-w-2xl space-y-12">
           {/* Hero Section */}
@@ -27,15 +27,15 @@ export default function Home() {
           
           {/* Stats Grid - Using backgrounds instead of borders */}
           <div className="grid grid-cols-3 gap-6">
-            <div className="p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <div className="p-6 bg-background rounded-lg shadow-sm hover:shadow-md transition-shadow">
               <div className="text-3xl font-bold text-foreground">247</div>
               <div className="text-sm text-muted-foreground mt-1">gray-900 uses</div>
             </div>
-            <div className="p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <div className="p-6 bg-background rounded-lg shadow-sm hover:shadow-md transition-shadow">
               <div className="text-3xl font-bold text-primary">106</div>
               <div className="text-sm text-muted-foreground mt-1">padding-4 uses</div>
             </div>
-            <div className="p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <div className="p-6 bg-background rounded-lg shadow-sm hover:shadow-md transition-shadow">
               <div className="text-3xl font-bold text-green-600">410</div>
               <div className="text-sm text-muted-foreground mt-1">components analyzed</div>
             </div>

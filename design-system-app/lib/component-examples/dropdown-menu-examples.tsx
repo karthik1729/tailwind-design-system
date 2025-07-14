@@ -432,7 +432,7 @@ return (
       <span>Move</span>
     </DropdownMenuItem>
     <DropdownMenuSeparator />
-    <DropdownMenuItem className="text-red-600">
+    <DropdownMenuItem className="text-destructive">
       <Trash2 className="mr-2 h-4 w-4" />
       <span>Delete</span>
     </DropdownMenuItem>
@@ -460,7 +460,7 @@ return (
             <span>Move</span>
           </DropdownMenuItem>
           <DropdownMenuSeparator />
-          <DropdownMenuItem className="text-red-600">
+          <DropdownMenuItem className="text-destructive">
             <Trash2 className="mr-2 h-4 w-4" />
             <span>Delete</span>
           </DropdownMenuItem>
@@ -822,6 +822,280 @@ return (
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
+    )
+  },
+  {
+    title: "Fixed Width Dropdown",
+    description: "Dropdown with fixed width to prevent resizing when selection changes.",
+    code: `const [selectedOption, setSelectedOption] = useState("option1")
+
+const options = [
+  { value: "option1", label: "Short" },
+  { value: "option2", label: "Medium Length Option" },
+  { value: "option3", label: "Very Long Option That Could Resize" },
+]
+
+return (
+  <div className="space-y-4">
+    {/* Good: Fixed width prevents resizing */}
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="outline" className="w-[250px] justify-between">
+          <span className="truncate">
+            {options.find(opt => opt.value === selectedOption)?.label}
+          </span>
+          <ChevronDown className="ml-2 h-4 w-4 shrink-0" />
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent className="w-[250px]">
+        <DropdownMenuLabel>Select Option</DropdownMenuLabel>
+        <DropdownMenuSeparator />
+        <DropdownMenuRadioGroup 
+          value={selectedOption} 
+          onValueChange={setSelectedOption}
+        >
+          {options.map((option) => (
+            <DropdownMenuRadioItem 
+              key={option.value} 
+              value={option.value}
+            >
+              {option.label}
+            </DropdownMenuRadioItem>
+          ))}
+        </DropdownMenuRadioGroup>
+      </DropdownMenuContent>
+    </DropdownMenu>
+
+    {/* Alternative: Min-width for flexibility */}
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="outline" className="min-w-[200px] max-w-[300px] justify-between">
+          <span className="truncate">
+            {options.find(opt => opt.value === selectedOption)?.label}
+          </span>
+          <ChevronDown className="ml-2 h-4 w-4 shrink-0" />
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent className="min-w-[200px] max-w-[300px]">
+        <DropdownMenuRadioGroup 
+          value={selectedOption} 
+          onValueChange={setSelectedOption}
+        >
+          {options.map((option) => (
+            <DropdownMenuRadioItem 
+              key={option.value} 
+              value={option.value}
+            >
+              {option.label}
+            </DropdownMenuRadioItem>
+          ))}
+        </DropdownMenuRadioGroup>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  </div>
+)`,
+    component: () => {
+      const [selectedOption, setSelectedOption] = useState("option1")
+
+      const options = [
+        { value: "option1", label: "Short" },
+        { value: "option2", label: "Medium Length Option" },
+        { value: "option3", label: "Very Long Option That Could Resize" },
+      ]
+
+      return (
+        <div className="space-y-4">
+          {/* Good: Fixed width prevents resizing */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline" className="w-[250px] justify-between">
+                <span className="truncate">
+                  {options.find(opt => opt.value === selectedOption)?.label}
+                </span>
+                <ChevronDown className="ml-2 h-4 w-4 shrink-0" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-[250px]">
+              <DropdownMenuLabel>Select Option</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuRadioGroup 
+                value={selectedOption} 
+                onValueChange={setSelectedOption}
+              >
+                {options.map((option) => (
+                  <DropdownMenuRadioItem 
+                    key={option.value} 
+                    value={option.value}
+                  >
+                    {option.label}
+                  </DropdownMenuRadioItem>
+                ))}
+              </DropdownMenuRadioGroup>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          {/* Alternative: Min-width for flexibility */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline" className="min-w-[200px] max-w-[300px] justify-between">
+                <span className="truncate">
+                  {options.find(opt => opt.value === selectedOption)?.label}
+                </span>
+                <ChevronDown className="ml-2 h-4 w-4 shrink-0" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="min-w-[200px] max-w-[300px]">
+              <DropdownMenuRadioGroup 
+                value={selectedOption} 
+                onValueChange={setSelectedOption}
+              >
+                {options.map((option) => (
+                  <DropdownMenuRadioItem 
+                    key={option.value} 
+                    value={option.value}
+                  >
+                    {option.label}
+                  </DropdownMenuRadioItem>
+                ))}
+              </DropdownMenuRadioGroup>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
+      )
+    }
+  },
+  {
+    title: "Enhanced Trigger Animations",
+    description: "Dropdown with enhanced trigger animations and micro-interactions.",
+    code: `<div className="flex gap-4 items-center">
+  <DropdownMenu>
+    <DropdownMenuTrigger asChild>
+      <Button variant="default">
+        Options
+        <ChevronDown className="ml-2 h-4 w-4" />
+      </Button>
+    </DropdownMenuTrigger>
+    <DropdownMenuContent align="end" className="w-48">
+      <DropdownMenuItem>
+        <Edit className="mr-2 h-4 w-4" />
+        Edit
+      </DropdownMenuItem>
+      <DropdownMenuItem>
+        <Copy className="mr-2 h-4 w-4" />
+        Duplicate
+      </DropdownMenuItem>
+      <DropdownMenuItem>
+        <Archive className="mr-2 h-4 w-4" />
+        Archive
+      </DropdownMenuItem>
+      <DropdownMenuSeparator />
+      <DropdownMenuItem variant="destructive">
+        <Trash2 className="mr-2 h-4 w-4" />
+        Delete
+      </DropdownMenuItem>
+    </DropdownMenuContent>
+  </DropdownMenu>
+
+  <DropdownMenu>
+    <DropdownMenuTrigger asChild>
+      <Button variant="outline" size="icon">
+        <MoreHorizontal className="h-4 w-4" />
+      </Button>
+    </DropdownMenuTrigger>
+    <DropdownMenuContent align="end" className="w-48">
+      <DropdownMenuItem>
+        <Share2 className="mr-2 h-4 w-4" />
+        Share
+      </DropdownMenuItem>
+      <DropdownMenuItem>
+        <Download className="mr-2 h-4 w-4" />
+        Download
+      </DropdownMenuItem>
+      <DropdownMenuSeparator />
+      <DropdownMenuItem variant="destructive">
+        <Trash2 className="mr-2 h-4 w-4" />
+        Remove
+      </DropdownMenuItem>
+    </DropdownMenuContent>
+  </DropdownMenu>
+
+  <DropdownMenu>
+    <DropdownMenuTrigger className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-md hover:bg-accent hover:text-accent-foreground">
+      Custom Trigger
+      <ChevronDown className="h-4 w-4" />
+    </DropdownMenuTrigger>
+    <DropdownMenuContent className="w-48">
+      <DropdownMenuItem>Option 1</DropdownMenuItem>
+      <DropdownMenuItem>Option 2</DropdownMenuItem>
+      <DropdownMenuItem>Option 3</DropdownMenuItem>
+    </DropdownMenuContent>
+  </DropdownMenu>
+</div>`,
+    component: () => (
+      <div className="flex gap-4 items-center">
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="default">
+              Options
+              <ChevronDown className="ml-2 h-4 w-4" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end" className="w-48">
+            <DropdownMenuItem>
+              <Edit className="mr-2 h-4 w-4" />
+              Edit
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <Copy className="mr-2 h-4 w-4" />
+              Duplicate
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <Archive className="mr-2 h-4 w-4" />
+              Archive
+            </DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem variant="destructive">
+              <Trash2 className="mr-2 h-4 w-4" />
+              Delete
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="outline" size="icon">
+              <MoreHorizontal className="h-4 w-4" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end" className="w-48">
+            <DropdownMenuItem>
+              <Share2 className="mr-2 h-4 w-4" />
+              Share
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <Download className="mr-2 h-4 w-4" />
+              Download
+            </DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem variant="destructive">
+              <Trash2 className="mr-2 h-4 w-4" />
+              Remove
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+
+        <DropdownMenu>
+          <DropdownMenuTrigger className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-md hover:bg-accent hover:text-accent-foreground">
+            Custom Trigger
+            <ChevronDown className="h-4 w-4" />
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="w-48">
+            <DropdownMenuItem>Option 1</DropdownMenuItem>
+            <DropdownMenuItem>Option 2</DropdownMenuItem>
+            <DropdownMenuItem>Option 3</DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
     )
   }
 ]

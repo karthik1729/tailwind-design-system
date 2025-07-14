@@ -135,9 +135,9 @@ export const aspectRatioExamples: ComponentExample[] = [
     title: "With Placeholder Content",
     description: "Using AspectRatio with placeholder content.",
     code: `<div className="w-[450px]">
-  <AspectRatio ratio={16 / 9} className="bg-slate-100">
+  <AspectRatio ratio={16 / 9} className="bg-muted">
     <div className="flex h-full items-center justify-center">
-      <span className="text-lg font-semibold text-slate-500">
+      <span className="text-lg font-semibold text-muted-foreground">
         16:9 Placeholder
       </span>
     </div>
@@ -145,9 +145,9 @@ export const aspectRatioExamples: ComponentExample[] = [
 </div>`,
     component: () => (
       <div className="w-[450px]">
-        <AspectRatio ratio={16 / 9} className="bg-slate-100">
+        <AspectRatio ratio={16 / 9} className="bg-muted">
           <div className="flex h-full items-center justify-center">
-            <span className="text-lg font-semibold text-slate-500">
+            <span className="text-lg font-semibold text-muted-foreground">
               16:9 Placeholder
             </span>
           </div>
@@ -161,8 +161,8 @@ export const aspectRatioExamples: ComponentExample[] = [
     code: `<div className="grid grid-cols-2 gap-4 md:grid-cols-3">
   {[1, 2, 3, 4, 5, 6].map((i) => (
     <AspectRatio key={i} ratio={1}>
-      <div className="flex h-full items-center justify-center rounded-md bg-slate-100">
-        <span className="text-2xl font-semibold text-slate-500">{i}</span>
+      <div className="flex h-full items-center justify-center rounded-md bg-muted">
+        <span className="text-2xl font-semibold text-muted-foreground">{i}</span>
       </div>
     </AspectRatio>
   ))}
@@ -171,8 +171,8 @@ export const aspectRatioExamples: ComponentExample[] = [
       <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
         {[1, 2, 3, 4, 5, 6].map((i) => (
           <AspectRatio key={i} ratio={1}>
-            <div className="flex h-full items-center justify-center rounded-md bg-slate-100">
-              <span className="text-2xl font-semibold text-slate-500">{i}</span>
+            <div className="flex h-full items-center justify-center rounded-md bg-muted">
+              <span className="text-2xl font-semibold text-muted-foreground">{i}</span>
             </div>
           </AspectRatio>
         ))}

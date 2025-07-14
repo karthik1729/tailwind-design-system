@@ -1,86 +1,119 @@
 import { Badge } from "@/components/ui/badge"
 import { ComponentExample } from "@/lib/component-docs"
-import { CheckCircle2, XCircle, AlertCircle, Info, Clock, Star, TrendingUp, Package } from "lucide-react"
+import { CheckCircle2, XCircle, AlertCircle, Info, Clock, Star, TrendingUp, Package, X } from "lucide-react"
+import Link from "next/link"
 
 export const badgeExamples: ComponentExample[] = [
   {
-    title: "Badge Variants",
-    description: "Badge comes with 4 different variants to convey different meanings.",
-    code: `<div className="flex gap-2">
-  <Badge>Default</Badge>
-  <Badge variant="secondary">Secondary</Badge>
-  <Badge variant="destructive">Destructive</Badge>
-  <Badge variant="outline">Outline</Badge>
+    title: "All Badge Variants",
+    description: "Complete showcase of all badge variants organized by type.",
+    code: `<div className="space-y-6">
+  {/* Basic Variants */}
+  <div>
+    <h4 className="text-sm font-medium text-muted-foreground mb-3">Basic</h4>
+    <div className="flex flex-wrap gap-2">
+      <Badge>Default</Badge>
+      <Badge variant="secondary">Secondary</Badge>
+      <Badge variant="outline">Outline</Badge>
+    </div>
+  </div>
+
+  {/* Semantic Solid Variants */}
+  <div>
+    <h4 className="text-sm font-medium text-muted-foreground mb-3">Semantic (Solid)</h4>
+    <div className="flex flex-wrap gap-2">
+      <Badge variant="success">Success</Badge>
+      <Badge variant="warning">Warning</Badge>
+      <Badge variant="info">Info</Badge>
+      <Badge variant="destructive">Destructive</Badge>
+    </div>
+  </div>
+
+  {/* Semantic Subtle Variants */}
+  <div>
+    <h4 className="text-sm font-medium text-muted-foreground mb-3">Semantic (Subtle)</h4>
+    <div className="flex flex-wrap gap-2">
+      <Badge variant="success-subtle">Success</Badge>
+      <Badge variant="warning-subtle">Warning</Badge>
+      <Badge variant="info-subtle">Info</Badge>
+      <Badge variant="destructive-subtle">Destructive</Badge>
+    </div>
+  </div>
 </div>`,
     component: () => (
-      <div className="flex flex-wrap gap-2">
-        <Badge>Default</Badge>
-        <Badge variant="secondary">Secondary</Badge>
-        <Badge variant="destructive">Destructive</Badge>
-        <Badge variant="outline">Outline</Badge>
-      </div>
-    )
-  },
-  {
-    title: "Status Badges",
-    description: "Common status indicators using different badge variants.",
-    code: `<div className="flex gap-2">
-  <Badge className="bg-green-100 text-green-800 hover:bg-green-100">
-    Active
-  </Badge>
-  <Badge variant="secondary">Pending</Badge>
-  <Badge variant="destructive">Failed</Badge>
-  <Badge variant="outline">Draft</Badge>
-</div>`,
-    component: () => (
-      <div className="flex flex-wrap gap-2">
-        <Badge className="bg-green-100 text-green-800 hover:bg-green-100">
-          Active
-        </Badge>
-        <Badge variant="secondary">Pending</Badge>
-        <Badge variant="destructive">Failed</Badge>
-        <Badge variant="outline">Draft</Badge>
+      <div className="space-y-6">
+        {/* Basic Variants */}
+        <div>
+          <h4 className="text-sm font-medium text-muted-foreground mb-3">Basic</h4>
+          <div className="flex flex-wrap gap-2">
+            <Badge>Default</Badge>
+            <Badge variant="secondary">Secondary</Badge>
+            <Badge variant="outline">Outline</Badge>
+          </div>
+        </div>
+
+        {/* Semantic Solid Variants */}
+        <div>
+          <h4 className="text-sm font-medium text-muted-foreground mb-3">Semantic (Solid)</h4>
+          <div className="flex flex-wrap gap-2">
+            <Badge variant="success">Success</Badge>
+            <Badge variant="warning">Warning</Badge>
+            <Badge variant="info">Info</Badge>
+            <Badge variant="destructive">Destructive</Badge>
+          </div>
+        </div>
+
+        {/* Semantic Subtle Variants */}
+        <div>
+          <h4 className="text-sm font-medium text-muted-foreground mb-3">Semantic (Subtle)</h4>
+          <div className="flex flex-wrap gap-2">
+            <Badge variant="success-subtle">Success</Badge>
+            <Badge variant="warning-subtle">Warning</Badge>
+            <Badge variant="info-subtle">Info</Badge>
+            <Badge variant="destructive-subtle">Destructive</Badge>
+          </div>
+        </div>
       </div>
     )
   },
   {
     title: "Badges with Icons",
-    description: "Badges can include icons to enhance their meaning.",
-    code: `<div className="flex gap-2">
-  <Badge>
+    description: "Badges with icons using semantic colors for clear visual communication.",
+    code: `<div className="flex flex-wrap gap-2">
+  <Badge variant="success">
     <CheckCircle2 className="mr-1 h-3 w-3" />
     Success
+  </Badge>
+  <Badge variant="warning">
+    <AlertCircle className="mr-1 h-3 w-3" />
+    Warning
+  </Badge>
+  <Badge variant="info">
+    <Info className="mr-1 h-3 w-3" />
+    Info
   </Badge>
   <Badge variant="destructive">
     <XCircle className="mr-1 h-3 w-3" />
     Error
   </Badge>
-  <Badge variant="secondary">
-    <AlertCircle className="mr-1 h-3 w-3" />
-    Warning
-  </Badge>
-  <Badge variant="outline">
-    <Info className="mr-1 h-3 w-3" />
-    Info
-  </Badge>
 </div>`,
     component: () => (
       <div className="flex flex-wrap gap-2">
-        <Badge>
+        <Badge variant="success">
           <CheckCircle2 className="mr-1 h-3 w-3" />
           Success
+        </Badge>
+        <Badge variant="warning">
+          <AlertCircle className="mr-1 h-3 w-3" />
+          Warning
+        </Badge>
+        <Badge variant="info">
+          <Info className="mr-1 h-3 w-3" />
+          Info
         </Badge>
         <Badge variant="destructive">
           <XCircle className="mr-1 h-3 w-3" />
           Error
-        </Badge>
-        <Badge variant="secondary">
-          <AlertCircle className="mr-1 h-3 w-3" />
-          Warning
-        </Badge>
-        <Badge variant="outline">
-          <Info className="mr-1 h-3 w-3" />
-          Info
         </Badge>
       </div>
     )
@@ -182,42 +215,234 @@ export const badgeExamples: ComponentExample[] = [
     )
   },
   {
-    title: "Custom Colors",
-    description: "Create custom colored badges using Tailwind classes.",
+    title: "Status Examples",
+    description: "Common status indicators using semantic badges.",
+    code: `<div className="space-y-4">
+  <div className="flex items-center gap-2">
+    <span className="text-sm">Build Status:</span>
+    <Badge variant="success">Passed</Badge>
+  </div>
+  <div className="flex items-center gap-2">
+    <span className="text-sm">Deployment:</span>
+    <Badge variant="warning">In Progress</Badge>
+  </div>
+  <div className="flex items-center gap-2">
+    <span className="text-sm">API Status:</span>
+    <Badge variant="destructive">Failed</Badge>
+  </div>
+  <div className="flex items-center gap-2">
+    <span className="text-sm">Environment:</span>
+    <Badge variant="info">Staging</Badge>
+  </div>
+</div>`,
+    component: () => (
+      <div className="space-y-4">
+        <div className="flex items-center gap-2">
+          <span className="text-sm">Build Status:</span>
+          <Badge variant="success">Passed</Badge>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-sm">Deployment:</span>
+          <Badge variant="warning">In Progress</Badge>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-sm">API Status:</span>
+          <Badge variant="destructive">Failed</Badge>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-sm">Environment:</span>
+          <Badge variant="info">Staging</Badge>
+        </div>
+      </div>
+    )
+  },
+  {
+    title: "Interactive Badges",
+    description: "Clickable badges with hover and active states for navigation or actions.",
     code: `<div className="flex flex-wrap gap-2">
-  <Badge className="bg-purple-100 text-purple-800 hover:bg-purple-100">
-    Purple
+  {/* Link badges */}
+  <Link href="#">
+    <Badge interactive>View Details</Badge>
+  </Link>
+  <Link href="#">
+    <Badge variant="secondary" interactive>
+      Edit Profile
+    </Badge>
+  </Link>
+  
+  {/* Button badges */}
+  <Badge asChild interactive>
+    <button onClick={() => alert('Tag removed!')}>
+      JavaScript
+      <X className="ml-1 h-3 w-3" />
+    </button>
   </Badge>
-  <Badge className="bg-pink-100 text-pink-800 hover:bg-pink-100">
-    Pink
+  
+  {/* Status filter badges */}
+  <Badge variant="success-subtle" asChild interactive>
+    <button>
+      <CheckCircle2 className="mr-1 h-3 w-3" />
+      Completed
+    </button>
   </Badge>
-  <Badge className="bg-indigo-100 text-indigo-800 hover:bg-indigo-100">
-    Indigo
-  </Badge>
-  <Badge className="bg-yellow-100 text-yellow-800 hover:bg-yellow-100">
-    Yellow
-  </Badge>
-  <Badge className="bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:from-blue-600 hover:to-purple-600">
-    Gradient
+  <Badge variant="warning-subtle" asChild interactive>
+    <button>
+      <Clock className="mr-1 h-3 w-3" />
+      In Progress
+    </button>
   </Badge>
 </div>`,
     component: () => (
       <div className="flex flex-wrap gap-2">
-        <Badge className="bg-purple-100 text-purple-800 hover:bg-purple-100">
-          Purple
+        {/* Link badges */}
+        <Link href="#">
+          <Badge interactive>View Details</Badge>
+        </Link>
+        <Link href="#">
+          <Badge variant="secondary" interactive>
+            Edit Profile
+          </Badge>
+        </Link>
+        
+        {/* Button badges */}
+        <Badge asChild interactive>
+          <button onClick={() => alert('Tag removed!')}>
+            JavaScript
+            <X className="ml-1 h-3 w-3" />
+          </button>
         </Badge>
-        <Badge className="bg-pink-100 text-pink-800 hover:bg-pink-100">
-          Pink
+        
+        {/* Status filter badges */}
+        <Badge variant="success-subtle" asChild interactive>
+          <button>
+            <CheckCircle2 className="mr-1 h-3 w-3" />
+            Completed
+          </button>
         </Badge>
-        <Badge className="bg-indigo-100 text-indigo-800 hover:bg-indigo-100">
-          Indigo
+        <Badge variant="warning-subtle" asChild interactive>
+          <button>
+            <Clock className="mr-1 h-3 w-3" />
+            In Progress
+          </button>
         </Badge>
-        <Badge className="bg-yellow-100 text-yellow-800 hover:bg-yellow-100">
-          Yellow
-        </Badge>
-        <Badge className="bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:from-blue-600 hover:to-purple-600">
-          Gradient
-        </Badge>
+      </div>
+    )
+  },
+  {
+    title: "Removable Tags",
+    description: "Interactive badges used as removable tags or filters.",
+    code: `<div className="space-y-4">
+  {/* Selected filters */}
+  <div>
+    <p className="text-sm font-medium mb-2">Applied Filters:</p>
+    <div className="flex flex-wrap gap-2">
+      <Badge variant="secondary" asChild interactive>
+        <button className="group">
+          Category: Electronics
+          <X className="ml-1 h-3 w-3 opacity-70 group-hover:opacity-100" />
+        </button>
+      </Badge>
+      <Badge variant="secondary" asChild interactive>
+        <button className="group">
+          Price: $100-$500
+          <X className="ml-1 h-3 w-3 opacity-70 group-hover:opacity-100" />
+        </button>
+      </Badge>
+      <Badge variant="secondary" asChild interactive>
+        <button className="group">
+          Brand: Apple
+          <X className="ml-1 h-3 w-3 opacity-70 group-hover:opacity-100" />
+        </button>
+      </Badge>
+      <Badge variant="outline" asChild interactive>
+        <button className="text-muted-foreground">
+          Clear all
+        </button>
+      </Badge>
+    </div>
+  </div>
+
+  {/* Skills/Tags selection */}
+  <div>
+    <p className="text-sm font-medium mb-2">Selected Skills:</p>
+    <div className="flex flex-wrap gap-2">
+      <Badge variant="info-subtle" asChild interactive>
+        <button className="group">
+          React
+          <X className="ml-1 h-3 w-3 opacity-70 group-hover:opacity-100" />
+        </button>
+      </Badge>
+      <Badge variant="info-subtle" asChild interactive>
+        <button className="group">
+          TypeScript
+          <X className="ml-1 h-3 w-3 opacity-70 group-hover:opacity-100" />
+        </button>
+      </Badge>
+      <Badge variant="info-subtle" asChild interactive>
+        <button className="group">
+          Node.js
+          <X className="ml-1 h-3 w-3 opacity-70 group-hover:opacity-100" />
+        </button>
+      </Badge>
+    </div>
+  </div>
+</div>`,
+    component: () => (
+      <div className="space-y-4">
+        {/* Selected filters */}
+        <div>
+          <p className="text-sm font-medium mb-2">Applied Filters:</p>
+          <div className="flex flex-wrap gap-2">
+            <Badge variant="secondary" asChild interactive>
+              <button className="group">
+                Category: Electronics
+                <X className="ml-1 h-3 w-3 opacity-70 group-hover:opacity-100" />
+              </button>
+            </Badge>
+            <Badge variant="secondary" asChild interactive>
+              <button className="group">
+                Price: $100-$500
+                <X className="ml-1 h-3 w-3 opacity-70 group-hover:opacity-100" />
+              </button>
+            </Badge>
+            <Badge variant="secondary" asChild interactive>
+              <button className="group">
+                Brand: Apple
+                <X className="ml-1 h-3 w-3 opacity-70 group-hover:opacity-100" />
+              </button>
+            </Badge>
+            <Badge variant="outline" asChild interactive>
+              <button className="text-muted-foreground">
+                Clear all
+              </button>
+            </Badge>
+          </div>
+        </div>
+
+        {/* Skills/Tags selection */}
+        <div>
+          <p className="text-sm font-medium mb-2">Selected Skills:</p>
+          <div className="flex flex-wrap gap-2">
+            <Badge variant="info-subtle" asChild interactive>
+              <button className="group">
+                React
+                <X className="ml-1 h-3 w-3 opacity-70 group-hover:opacity-100" />
+              </button>
+            </Badge>
+            <Badge variant="info-subtle" asChild interactive>
+              <button className="group">
+                TypeScript
+                <X className="ml-1 h-3 w-3 opacity-70 group-hover:opacity-100" />
+              </button>
+            </Badge>
+            <Badge variant="info-subtle" asChild interactive>
+              <button className="group">
+                Node.js
+                <X className="ml-1 h-3 w-3 opacity-70 group-hover:opacity-100" />
+              </button>
+            </Badge>
+          </div>
+        </div>
       </div>
     )
   },
@@ -230,7 +455,7 @@ export const badgeExamples: ComponentExample[] = [
       <h4 className="font-medium">API Documentation</h4>
       <p className="text-sm text-muted-foreground">Learn how to integrate our API</p>
     </div>
-    <Badge variant="secondary">Updated</Badge>
+    <Badge variant="info-subtle">v2.0.0</Badge>
   </div>
   
   <div className="flex items-center justify-between p-4 border rounded-lg">
@@ -238,7 +463,10 @@ export const badgeExamples: ComponentExample[] = [
       <h4 className="font-medium">Premium Plan</h4>
       <p className="text-sm text-muted-foreground">$29/month</p>
     </div>
-    <Badge>Popular</Badge>
+    <div className="flex gap-2">
+      <Badge>Popular</Badge>
+      <Badge variant="success-subtle">20% off</Badge>
+    </div>
   </div>
   
   <div className="flex items-center justify-between p-4 border rounded-lg">
@@ -246,9 +474,20 @@ export const badgeExamples: ComponentExample[] = [
       <h4 className="font-medium">System Status</h4>
       <p className="text-sm text-muted-foreground">All services operational</p>
     </div>
-    <Badge className="bg-green-100 text-green-800 hover:bg-green-100">
+    <Badge variant="success">
       <CheckCircle2 className="mr-1 h-3 w-3" />
       Operational
+    </Badge>
+  </div>
+  
+  <div className="flex items-center justify-between p-4 border rounded-lg">
+    <div>
+      <h4 className="font-medium">Database Backup</h4>
+      <p className="text-sm text-muted-foreground">Last backup: 2 hours ago</p>
+    </div>
+    <Badge variant="warning-subtle">
+      <AlertCircle className="mr-1 h-3 w-3" />
+      Scheduled
     </Badge>
   </div>
 </div>`,
@@ -259,7 +498,7 @@ export const badgeExamples: ComponentExample[] = [
             <h4 className="font-medium">API Documentation</h4>
             <p className="text-sm text-muted-foreground">Learn how to integrate our API</p>
           </div>
-          <Badge variant="secondary">Updated</Badge>
+          <Badge variant="info-subtle">v2.0.0</Badge>
         </div>
         
         <div className="flex items-center justify-between p-4 border rounded-lg">
@@ -267,7 +506,10 @@ export const badgeExamples: ComponentExample[] = [
             <h4 className="font-medium">Premium Plan</h4>
             <p className="text-sm text-muted-foreground">$29/month</p>
           </div>
-          <Badge>Popular</Badge>
+          <div className="flex gap-2">
+            <Badge>Popular</Badge>
+            <Badge variant="success-subtle">20% off</Badge>
+          </div>
         </div>
         
         <div className="flex items-center justify-between p-4 border rounded-lg">
@@ -275,9 +517,20 @@ export const badgeExamples: ComponentExample[] = [
             <h4 className="font-medium">System Status</h4>
             <p className="text-sm text-muted-foreground">All services operational</p>
           </div>
-          <Badge className="bg-green-100 text-green-800 hover:bg-green-100">
+          <Badge variant="success">
             <CheckCircle2 className="mr-1 h-3 w-3" />
             Operational
+          </Badge>
+        </div>
+        
+        <div className="flex items-center justify-between p-4 border rounded-lg">
+          <div>
+            <h4 className="font-medium">Database Backup</h4>
+            <p className="text-sm text-muted-foreground">Last backup: 2 hours ago</p>
+          </div>
+          <Badge variant="warning-subtle">
+            <AlertCircle className="mr-1 h-3 w-3" />
+            Scheduled
           </Badge>
         </div>
       </div>

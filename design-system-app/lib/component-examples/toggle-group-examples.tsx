@@ -242,25 +242,25 @@ export const toggleGroupExamples: ComponentExample[] = [
 >
   <ToggleGroupItem 
     value="day" 
-    className="rounded-full data-[state=on]:bg-violet-600 data-[state=on]:text-white"
+    className="rounded-full data-[state=on]:bg-purple data-[state=on]:text-purple-foreground"
   >
     Day
   </ToggleGroupItem>
   <ToggleGroupItem 
     value="week" 
-    className="rounded-full data-[state=on]:bg-violet-600 data-[state=on]:text-white"
+    className="rounded-full data-[state=on]:bg-purple data-[state=on]:text-purple-foreground"
   >
     Week
   </ToggleGroupItem>
   <ToggleGroupItem 
     value="month" 
-    className="rounded-full data-[state=on]:bg-violet-600 data-[state=on]:text-white"
+    className="rounded-full data-[state=on]:bg-purple data-[state=on]:text-purple-foreground"
   >
     Month
   </ToggleGroupItem>
   <ToggleGroupItem 
     value="year" 
-    className="rounded-full data-[state=on]:bg-violet-600 data-[state=on]:text-white"
+    className="rounded-full data-[state=on]:bg-purple data-[state=on]:text-purple-foreground"
   >
     Year
   </ToggleGroupItem>
@@ -272,25 +272,25 @@ export const toggleGroupExamples: ComponentExample[] = [
       >
         <ToggleGroupItem 
           value="day" 
-          className="rounded-full data-[state=on]:bg-violet-600 data-[state=on]:text-white"
+          className="rounded-full data-[state=on]:bg-purple data-[state=on]:text-purple-foreground"
         >
           Day
         </ToggleGroupItem>
         <ToggleGroupItem 
           value="week" 
-          className="rounded-full data-[state=on]:bg-violet-600 data-[state=on]:text-white"
+          className="rounded-full data-[state=on]:bg-purple data-[state=on]:text-purple-foreground"
         >
           Week
         </ToggleGroupItem>
         <ToggleGroupItem 
           value="month" 
-          className="rounded-full data-[state=on]:bg-violet-600 data-[state=on]:text-white"
+          className="rounded-full data-[state=on]:bg-purple data-[state=on]:text-purple-foreground"
         >
           Month
         </ToggleGroupItem>
         <ToggleGroupItem 
           value="year" 
-          className="rounded-full data-[state=on]:bg-violet-600 data-[state=on]:text-white"
+          className="rounded-full data-[state=on]:bg-purple data-[state=on]:text-purple-foreground"
         >
           Year
         </ToggleGroupItem>

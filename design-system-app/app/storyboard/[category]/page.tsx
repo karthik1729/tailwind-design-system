@@ -17,13 +17,13 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   }
 
   return (
-    <div className="max-w-7xl">
+    <div>
       <div className="space-y-8">
         <div>
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100">
+          <h1 className="text-4xl font-bold text-foreground">
             {category.name}
           </h1>
-          <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
+          <p className="mt-4 text-lg text-muted-foreground">
             {category.description}
           </p>
         </div>
@@ -33,11 +33,11 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             <Link
               key={key}
               href={`/storyboard/${categoryId}/${key}`}
-              className="group relative rounded-lg bg-white p-6 shadow-sm hover:shadow-md dark:bg-gray-900"
+              className="group relative rounded-lg bg-card p-6 shadow-sm hover:shadow-md"
             >
               <div className="space-y-4">
                 <div className="flex items-start justify-between">
-                  <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100">
+                  <h3 className="text-lg font-medium text-foreground">
                     {subcategory.name}
                   </h3>
                   <span className="inline-flex items-center rounded-full bg-indigo-50 px-2.5 py-0.5 text-sm font-medium text-indigo-600 dark:bg-indigo-950/50 dark:text-indigo-400">
@@ -47,12 +47,12 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
                 <div className="space-y-2">
                   {subcategory.sections.slice(0, 3).map((section) => (
-                    <div key={section.id} className="text-sm text-gray-600 dark:text-gray-400">
+                    <div key={section.id} className="text-sm text-muted-foreground">
                       • {section.name}
                     </div>
                   ))}
                   {subcategory.sections.length > 3 && (
-                    <div className="text-sm text-gray-500 dark:text-gray-500">
+                    <div className="text-sm text-muted-foreground">
                       +{subcategory.sections.length - 3} more
                     </div>
                   )}

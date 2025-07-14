@@ -18,7 +18,7 @@ interface ColorGroup {
 const ColorPalette: React.FC = () => {
   const colorGroups: ColorGroup[] = [
     {
-      title: "Primary Colors (Blue/Indigo)",
+      title: "Primary Colors (Blue)",
       description: "The primary brand color palette used for main actions, links, and brand identity",
       colors: [
         { name: "Primary 50", value: "#eff6ff", class: "bg-primary-50", textColor: "text-gray-900" },
@@ -35,29 +35,30 @@ const ColorPalette: React.FC = () => {
       ]
     },
     {
-      title: "Indigo Accent",
+      title: "Accent Colors (Indigo)",
       description: "Secondary accent color for complementary design elements",
       colors: [
-        { name: "Indigo 50", value: "#eef2ff", class: "bg-indigo-50", textColor: "text-gray-900" },
-        { name: "Indigo 100", value: "#e0e7ff", class: "bg-indigo-100", textColor: "text-gray-900" },
-        { name: "Indigo 200", value: "#c7d2fe", class: "bg-indigo-200", textColor: "text-gray-900" },
-        { name: "Indigo 300", value: "#a5b4fc", class: "bg-indigo-300", textColor: "text-gray-900" },
-        { name: "Indigo 400", value: "#818cf8", class: "bg-indigo-400", textColor: "text-white" },
-        { name: "Indigo 500", value: "#6366f1", class: "bg-indigo-500", textColor: "text-white" },
-        { name: "Indigo 600", value: "#4f46e5", class: "bg-indigo-600", textColor: "text-white" },
-        { name: "Indigo 700", value: "#4338ca", class: "bg-indigo-700", textColor: "text-white" },
-        { name: "Indigo 800", value: "#3730a3", class: "bg-indigo-800", textColor: "text-white" },
-        { name: "Indigo 900", value: "#312e81", class: "bg-indigo-900", textColor: "text-white" }
+        { name: "Accent 50", value: "#eef2ff", class: "bg-accent-50", textColor: "text-gray-900" },
+        { name: "Accent 100", value: "#e0e7ff", class: "bg-accent-100", textColor: "text-gray-900" },
+        { name: "Accent 200", value: "#c7d2fe", class: "bg-accent-200", textColor: "text-gray-900" },
+        { name: "Accent 300", value: "#a5b4fc", class: "bg-accent-300", textColor: "text-gray-900" },
+        { name: "Accent 400", value: "#818cf8", class: "bg-accent-400", textColor: "text-white" },
+        { name: "Accent 500", value: "#6366f1", class: "bg-accent-500", textColor: "text-white" },
+        { name: "Accent 600", value: "#4f46e5", class: "bg-accent-600", textColor: "text-white" },
+        { name: "Accent 700", value: "#4338ca", class: "bg-accent-700", textColor: "text-white" },
+        { name: "Accent 800", value: "#3730a3", class: "bg-accent-800", textColor: "text-white" },
+        { name: "Accent 900", value: "#312e81", class: "bg-accent-900", textColor: "text-white" },
+        { name: "Accent 950", value: "#1e1b4b", class: "bg-accent-950", textColor: "text-white" }
       ]
     },
     {
       title: "Gray Scale",
       description: "Neutral colors for text, backgrounds, borders, and UI elements",
       colors: [
-        { name: "Gray 50", value: "#f9fafb", class: "bg-gray-50", textColor: "text-gray-900" },
-        { name: "Gray 100", value: "#f3f4f6", class: "bg-gray-100", textColor: "text-gray-900" },
-        { name: "Gray 200", value: "#e5e7eb", class: "bg-gray-200", textColor: "text-gray-900" },
-        { name: "Gray 300", value: "#d1d5db", class: "bg-gray-300", textColor: "text-gray-900" },
+        { name: "Gray 50", value: "#f9fafb", class: "bg-gray-50", textColor: "text-foreground" },
+        { name: "Gray 100", value: "#f3f4f6", class: "bg-gray-100", textColor: "text-foreground" },
+        { name: "Gray 200", value: "#e5e7eb", class: "bg-gray-200", textColor: "text-foreground" },
+        { name: "Gray 300", value: "#d1d5db", class: "bg-gray-300", textColor: "text-foreground" },
         { name: "Gray 400", value: "#9ca3af", class: "bg-gray-400", textColor: "text-white" },
         { name: "Gray 500", value: "#6b7280", class: "bg-gray-500", textColor: "text-white" },
         { name: "Gray 600", value: "#4b5563", class: "bg-gray-600", textColor: "text-white" },
@@ -112,7 +113,127 @@ const ColorPalette: React.FC = () => {
         { name: "Red 600", value: "#dc2626", class: "bg-red-600", textColor: "text-white" },
         { name: "Red 700", value: "#b91c1c", class: "bg-red-700", textColor: "text-white" },
         { name: "Red 800", value: "#991b1b", class: "bg-red-800", textColor: "text-white" },
-        { name: "Red 900", value: "#7f1d1d", class: "bg-red-900", textColor: "text-white" }
+        { name: "Red 900", value: "#7f1d1d", class: "bg-red-900", textColor: "text-white" },
+        { name: "Red 950", value: "#450a0a", class: "bg-red-950", textColor: "text-white" }
+      ]
+    },
+    {
+      title: "Supplementary Colors - Purple",
+      description: "Used for special accents, highlights, and creative elements",
+      colors: [
+        { name: "Purple 50", value: "#faf5ff", class: "bg-purple-50", textColor: "text-gray-900" },
+        { name: "Purple 100", value: "#f3e8ff", class: "bg-purple-100", textColor: "text-gray-900" },
+        { name: "Purple 200", value: "#e9d5ff", class: "bg-purple-200", textColor: "text-gray-900" },
+        { name: "Purple 300", value: "#d8b4fe", class: "bg-purple-300", textColor: "text-gray-900" },
+        { name: "Purple 400", value: "#c084fc", class: "bg-purple-400", textColor: "text-white" },
+        { name: "Purple 500", value: "#a855f7", class: "bg-purple-500", textColor: "text-white" },
+        { name: "Purple 600", value: "#9333ea", class: "bg-purple-600", textColor: "text-white" },
+        { name: "Purple 700", value: "#7c3aed", class: "bg-purple-700", textColor: "text-white" },
+        { name: "Purple 800", value: "#6b21a8", class: "bg-purple-800", textColor: "text-white" },
+        { name: "Purple 900", value: "#581c87", class: "bg-purple-900", textColor: "text-white" },
+        { name: "Purple 950", value: "#3b0764", class: "bg-purple-950", textColor: "text-white" }
+      ]
+    },
+    {
+      title: "Supplementary Colors - Teal",
+      description: "Used for informational elements and alternative success states",
+      colors: [
+        { name: "Teal 50", value: "#f0fdfa", class: "bg-teal-50", textColor: "text-gray-900" },
+        { name: "Teal 100", value: "#ccfbf1", class: "bg-teal-100", textColor: "text-gray-900" },
+        { name: "Teal 200", value: "#99f6e4", class: "bg-teal-200", textColor: "text-gray-900" },
+        { name: "Teal 300", value: "#5eead4", class: "bg-teal-300", textColor: "text-gray-900" },
+        { name: "Teal 400", value: "#2dd4bf", class: "bg-teal-400", textColor: "text-gray-900" },
+        { name: "Teal 500", value: "#14b8a6", class: "bg-teal-500", textColor: "text-white" },
+        { name: "Teal 600", value: "#0d9488", class: "bg-teal-600", textColor: "text-white" },
+        { name: "Teal 700", value: "#0f766e", class: "bg-teal-700", textColor: "text-white" },
+        { name: "Teal 800", value: "#115e59", class: "bg-teal-800", textColor: "text-white" },
+        { name: "Teal 900", value: "#134e4a", class: "bg-teal-900", textColor: "text-white" },
+        { name: "Teal 950", value: "#042f2e", class: "bg-teal-950", textColor: "text-white" }
+      ]
+    },
+    {
+      title: "Supplementary Colors - Orange",
+      description: "Used for attention-grabbing elements and alternative warning states",
+      colors: [
+        { name: "Orange 50", value: "#fff7ed", class: "bg-orange-50", textColor: "text-gray-900" },
+        { name: "Orange 100", value: "#ffedd5", class: "bg-orange-100", textColor: "text-gray-900" },
+        { name: "Orange 200", value: "#fed7aa", class: "bg-orange-200", textColor: "text-gray-900" },
+        { name: "Orange 300", value: "#fdba74", class: "bg-orange-300", textColor: "text-gray-900" },
+        { name: "Orange 400", value: "#fb923c", class: "bg-orange-400", textColor: "text-gray-900" },
+        { name: "Orange 500", value: "#f97316", class: "bg-orange-500", textColor: "text-white" },
+        { name: "Orange 600", value: "#ea580c", class: "bg-orange-600", textColor: "text-white" },
+        { name: "Orange 700", value: "#c2410c", class: "bg-orange-700", textColor: "text-white" },
+        { name: "Orange 800", value: "#9a3412", class: "bg-orange-800", textColor: "text-white" },
+        { name: "Orange 900", value: "#7c2d12", class: "bg-orange-900", textColor: "text-white" },
+        { name: "Orange 950", value: "#431407", class: "bg-orange-950", textColor: "text-white" }
+      ]
+    },
+    {
+      title: "Additional Brand Colors - Pink",
+      description: "Used for creative accents and special highlights",
+      colors: [
+        { name: "Pink 50", value: "#fdf2f8", class: "bg-pink-50", textColor: "text-gray-900" },
+        { name: "Pink 100", value: "#fce7f3", class: "bg-pink-100", textColor: "text-gray-900" },
+        { name: "Pink 200", value: "#fbcfe8", class: "bg-pink-200", textColor: "text-gray-900" },
+        { name: "Pink 300", value: "#f9a8d4", class: "bg-pink-300", textColor: "text-gray-900" },
+        { name: "Pink 400", value: "#f472b6", class: "bg-pink-400", textColor: "text-white" },
+        { name: "Pink 500", value: "#ec4899", class: "bg-pink-500", textColor: "text-white" },
+        { name: "Pink 600", value: "#db2777", class: "bg-pink-600", textColor: "text-white" },
+        { name: "Pink 700", value: "#be185d", class: "bg-pink-700", textColor: "text-white" },
+        { name: "Pink 800", value: "#9d174d", class: "bg-pink-800", textColor: "text-white" },
+        { name: "Pink 900", value: "#831843", class: "bg-pink-900", textColor: "text-white" },
+        { name: "Pink 950", value: "#500724", class: "bg-pink-950", textColor: "text-white" }
+      ]
+    },
+    {
+      title: "Additional Brand Colors - Cyan",
+      description: "Used for informational highlights and alternative accent colors",
+      colors: [
+        { name: "Cyan 50", value: "#ecfeff", class: "bg-cyan-50", textColor: "text-gray-900" },
+        { name: "Cyan 100", value: "#cffafe", class: "bg-cyan-100", textColor: "text-gray-900" },
+        { name: "Cyan 200", value: "#a5f3fc", class: "bg-cyan-200", textColor: "text-gray-900" },
+        { name: "Cyan 300", value: "#67e8f9", class: "bg-cyan-300", textColor: "text-gray-900" },
+        { name: "Cyan 400", value: "#22d3ee", class: "bg-cyan-400", textColor: "text-gray-900" },
+        { name: "Cyan 500", value: "#06b6d4", class: "bg-cyan-500", textColor: "text-white" },
+        { name: "Cyan 600", value: "#0891b2", class: "bg-cyan-600", textColor: "text-white" },
+        { name: "Cyan 700", value: "#0e7490", class: "bg-cyan-700", textColor: "text-white" },
+        { name: "Cyan 800", value: "#155e75", class: "bg-cyan-800", textColor: "text-white" },
+        { name: "Cyan 900", value: "#164e63", class: "bg-cyan-900", textColor: "text-white" },
+        { name: "Cyan 950", value: "#083344", class: "bg-cyan-950", textColor: "text-white" }
+      ]
+    },
+    {
+      title: "Additional Brand Colors - Lime",
+      description: "Used for positive indicators and success highlights",
+      colors: [
+        { name: "Lime 50", value: "#f7fee7", class: "bg-lime-50", textColor: "text-gray-900" },
+        { name: "Lime 100", value: "#ecfccb", class: "bg-lime-100", textColor: "text-gray-900" },
+        { name: "Lime 200", value: "#d9f99d", class: "bg-lime-200", textColor: "text-gray-900" },
+        { name: "Lime 300", value: "#bef264", class: "bg-lime-300", textColor: "text-gray-900" },
+        { name: "Lime 400", value: "#a3e635", class: "bg-lime-400", textColor: "text-gray-900" },
+        { name: "Lime 500", value: "#84cc16", class: "bg-lime-500", textColor: "text-gray-900" },
+        { name: "Lime 600", value: "#65a30d", class: "bg-lime-600", textColor: "text-white" },
+        { name: "Lime 700", value: "#4d7c0f", class: "bg-lime-700", textColor: "text-white" },
+        { name: "Lime 800", value: "#3f6212", class: "bg-lime-800", textColor: "text-white" },
+        { name: "Lime 900", value: "#365314", class: "bg-lime-900", textColor: "text-white" },
+        { name: "Lime 950", value: "#1a2e05", class: "bg-lime-950", textColor: "text-white" }
+      ]
+    },
+    {
+      title: "Semantic Colors - Warning (Amber)",
+      description: "Alternative warning color palette for more nuanced warning states",
+      colors: [
+        { name: "Amber 50", value: "#fffbeb", class: "bg-amber-50", textColor: "text-gray-900" },
+        { name: "Amber 100", value: "#fef3c7", class: "bg-amber-100", textColor: "text-gray-900" },
+        { name: "Amber 200", value: "#fde68a", class: "bg-amber-200", textColor: "text-gray-900" },
+        { name: "Amber 300", value: "#fcd34d", class: "bg-amber-300", textColor: "text-gray-900" },
+        { name: "Amber 400", value: "#fbbf24", class: "bg-amber-400", textColor: "text-gray-900" },
+        { name: "Amber 500", value: "#f59e0b", class: "bg-amber-500", textColor: "text-gray-900" },
+        { name: "Amber 600", value: "#d97706", class: "bg-amber-600", textColor: "text-white" },
+        { name: "Amber 700", value: "#b45309", class: "bg-amber-700", textColor: "text-white" },
+        { name: "Amber 800", value: "#92400e", class: "bg-amber-800", textColor: "text-white" },
+        { name: "Amber 900", value: "#78350f", class: "bg-amber-900", textColor: "text-white" },
+        { name: "Amber 950", value: "#451a03", class: "bg-amber-950", textColor: "text-white" }
       ]
     }
   ]
@@ -160,10 +281,10 @@ const ColorPalette: React.FC = () => {
   return (
     <div className="w-full max-w-7xl mx-auto p-6 space-y-12">
       <div className="space-y-4">
-        <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-50">
+        <h1 className="text-4xl font-bold text-foreground">
           Color Palette
         </h1>
-        <p className="text-lg text-gray-600 dark:text-gray-400">
+        <p className="text-lg text-muted-foreground">
           A comprehensive color system designed for consistency, accessibility, and visual harmony across all components.
         </p>
       </div>
@@ -172,11 +293,11 @@ const ColorPalette: React.FC = () => {
       {colorGroups.map((group, groupIndex) => (
         <div key={groupIndex} className="space-y-4">
           <div className="space-y-2">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-50">
+            <h2 className="text-2xl font-semibold text-foreground">
               {group.title}
             </h2>
             {group.description && (
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-muted-foreground">
                 {group.description}
               </p>
             )}
@@ -186,7 +307,7 @@ const ColorPalette: React.FC = () => {
             {group.colors.map((color, index) => (
               <div
                 key={index}
-                className="group relative overflow-hidden rounded-lg border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-200"
+                className="group relative overflow-hidden rounded-lg border border-border hover:shadow-lg transition-shadow duration-200"
               >
                 <div
                   className={`h-24 w-full ${color.class} flex items-center justify-center`}
@@ -195,14 +316,14 @@ const ColorPalette: React.FC = () => {
                     {color.value}
                   </span>
                 </div>
-                <div className="p-3 bg-white dark:bg-gray-800 space-y-1">
-                  <p className="text-sm font-medium text-gray-900 dark:text-gray-100">
+                <div className="p-3 bg-background space-y-1">
+                  <p className="text-sm font-medium text-foreground">
                     {color.name}
                   </p>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 font-mono">
+                  <p className="text-xs text-muted-foreground font-mono">
                     {color.value}
                   </p>
-                  <p className="text-xs text-gray-600 dark:text-gray-300 font-mono">
+                  <p className="text-xs text-muted-foreground font-mono">
                     {color.class}
                   </p>
                 </div>
@@ -213,8 +334,8 @@ const ColorPalette: React.FC = () => {
       ))}
 
       {/* Usage Guidelines */}
-      <div className="space-y-6 border-t border-gray-200 dark:border-gray-700 pt-12">
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-50">
+      <div className="space-y-6 border-t border-border pt-12">
+        <h2 className="text-3xl font-bold text-foreground">
           Usage Guidelines
         </h2>
         
@@ -222,16 +343,16 @@ const ColorPalette: React.FC = () => {
           {usageGuidelines.map((section, index) => (
             <div
               key={index}
-              className="space-y-3 p-6 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700"
+              className="space-y-3 p-6 bg-muted rounded-lg border border-border"
             >
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
+              <h3 className="text-lg font-semibold text-foreground">
                 {section.title}
               </h3>
               <ul className="space-y-2">
                 {section.guidelines.map((guideline, guideIndex) => (
                   <li
                     key={guideIndex}
-                    className="text-sm text-gray-600 dark:text-gray-300 flex items-start"
+                    className="text-sm text-muted-foreground flex items-start"
                   >
                     <span className="inline-block w-1.5 h-1.5 rounded-full bg-primary-500 mt-1.5 mr-2 flex-shrink-0" />
                     {guideline}
@@ -244,62 +365,62 @@ const ColorPalette: React.FC = () => {
       </div>
 
       {/* Quick Reference */}
-      <div className="space-y-4 border-t border-gray-200 dark:border-gray-700 pt-12">
+      <div className="space-y-4 border-t border-border pt-12">
         <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-50">
           Quick Reference
         </h2>
         
         <div className="grid gap-4 md:grid-cols-3">
-          <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
-            <h3 className="font-medium text-gray-900 dark:text-gray-100 mb-2">Text Colors</h3>
+          <div className="p-4 bg-muted rounded-lg border border-border">
+            <h3 className="font-medium text-foreground mb-2">Text Colors</h3>
             <div className="space-y-1 text-sm">
               <div className="flex justify-between">
-                <span className="text-gray-600 dark:text-gray-400">Primary:</span>
-                <code className="text-xs bg-gray-200 dark:bg-gray-700 px-2 py-0.5 rounded">text-gray-900</code>
+                <span className="text-muted-foreground">Primary:</span>
+                <code className="text-xs bg-muted px-2 py-0.5 rounded">text-gray-900</code>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-600 dark:text-gray-400">Secondary:</span>
-                <code className="text-xs bg-gray-200 dark:bg-gray-700 px-2 py-0.5 rounded">text-gray-500</code>
+                <code className="text-xs bg-muted px-2 py-0.5 rounded">text-gray-500</code>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-600 dark:text-gray-400">Tertiary:</span>
-                <code className="text-xs bg-gray-200 dark:bg-gray-700 px-2 py-0.5 rounded">text-gray-400</code>
+                <code className="text-xs bg-muted px-2 py-0.5 rounded">text-gray-400</code>
               </div>
             </div>
           </div>
           
-          <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
-            <h3 className="font-medium text-gray-900 dark:text-gray-100 mb-2">Background Colors</h3>
+          <div className="p-4 bg-muted rounded-lg border border-border">
+            <h3 className="font-medium text-foreground mb-2">Background Colors</h3>
             <div className="space-y-1 text-sm">
               <div className="flex justify-between">
-                <span className="text-gray-600 dark:text-gray-400">Primary:</span>
-                <code className="text-xs bg-gray-200 dark:bg-gray-700 px-2 py-0.5 rounded">bg-white</code>
+                <span className="text-muted-foreground">Primary:</span>
+                <code className="text-xs bg-muted px-2 py-0.5 rounded">bg-white</code>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-600 dark:text-gray-400">Secondary:</span>
-                <code className="text-xs bg-gray-200 dark:bg-gray-700 px-2 py-0.5 rounded">bg-gray-50</code>
+                <code className="text-xs bg-muted px-2 py-0.5 rounded">bg-gray-50</code>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-600 dark:text-gray-400">Tertiary:</span>
-                <code className="text-xs bg-gray-200 dark:bg-gray-700 px-2 py-0.5 rounded">bg-gray-100</code>
+                <code className="text-xs bg-muted px-2 py-0.5 rounded">bg-gray-100</code>
               </div>
             </div>
           </div>
           
-          <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
-            <h3 className="font-medium text-gray-900 dark:text-gray-100 mb-2">Border Colors</h3>
+          <div className="p-4 bg-muted rounded-lg border border-border">
+            <h3 className="font-medium text-foreground mb-2">Border Colors</h3>
             <div className="space-y-1 text-sm">
               <div className="flex justify-between">
-                <span className="text-gray-600 dark:text-gray-400">Primary:</span>
-                <code className="text-xs bg-gray-200 dark:bg-gray-700 px-2 py-0.5 rounded">border-gray-300</code>
+                <span className="text-muted-foreground">Primary:</span>
+                <code className="text-xs bg-muted px-2 py-0.5 rounded">border-gray-300</code>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-600 dark:text-gray-400">Secondary:</span>
-                <code className="text-xs bg-gray-200 dark:bg-gray-700 px-2 py-0.5 rounded">border-gray-200</code>
+                <code className="text-xs bg-muted px-2 py-0.5 rounded">border-gray-200</code>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-600 dark:text-gray-400">Brand:</span>
-                <code className="text-xs bg-gray-200 dark:bg-gray-700 px-2 py-0.5 rounded">border-primary-600</code>
+                <code className="text-xs bg-muted px-2 py-0.5 rounded">border-primary-600</code>
               </div>
             </div>
           </div>

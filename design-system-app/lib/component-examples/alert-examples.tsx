@@ -9,7 +9,7 @@ export const alertExamples: ComponentExample[] = [
     title: "Basic Alert",
     description: "A simple alert with title and description.",
     code: `<Alert>
-  <Terminal className="h-4 w-4" />
+  <Terminal />
   <AlertTitle>Heads up!</AlertTitle>
   <AlertDescription>
     You can add components to your app using the cli.
@@ -17,7 +17,7 @@ export const alertExamples: ComponentExample[] = [
 </Alert>`,
     component: () => (
       <Alert>
-        <Terminal className="h-4 w-4" />
+        <Terminal />
         <AlertTitle>Heads up!</AlertTitle>
         <AlertDescription>
           You can add components to your app using the cli.
@@ -29,7 +29,7 @@ export const alertExamples: ComponentExample[] = [
     title: "Destructive Alert",
     description: "Alert with destructive variant for errors or warnings.",
     code: `<Alert variant="destructive">
-  <AlertCircle className="h-4 w-4" />
+  <AlertCircle />
   <AlertTitle>Error</AlertTitle>
   <AlertDescription>
     Your session has expired. Please log in again.
@@ -37,7 +37,7 @@ export const alertExamples: ComponentExample[] = [
 </Alert>`,
     component: () => (
       <Alert variant="destructive">
-        <AlertCircle className="h-4 w-4" />
+        <AlertCircle />
         <AlertTitle>Error</AlertTitle>
         <AlertDescription>
           Your session has expired. Please log in again.
@@ -48,18 +48,18 @@ export const alertExamples: ComponentExample[] = [
   {
     title: "Information Alert",
     description: "Alert styled for informational messages.",
-    code: `<Alert className="border-blue-200 bg-blue-50 text-blue-900">
-  <InfoIcon className="h-4 w-4 text-blue-600" />
+    code: `<Alert variant="info">
+  <InfoIcon />
   <AlertTitle>Information</AlertTitle>
-  <AlertDescription className="text-blue-800">
+  <AlertDescription>
     Your account has been upgraded to Pro. Enjoy all the new features!
   </AlertDescription>
 </Alert>`,
     component: () => (
-      <Alert className="border-blue-200 bg-blue-50 text-blue-900">
-        <InfoIcon className="h-4 w-4 text-blue-600" />
+      <Alert variant="info">
+        <InfoIcon />
         <AlertTitle>Information</AlertTitle>
-        <AlertDescription className="text-blue-800">
+        <AlertDescription>
           Your account has been upgraded to Pro. Enjoy all the new features!
         </AlertDescription>
       </Alert>
@@ -68,18 +68,18 @@ export const alertExamples: ComponentExample[] = [
   {
     title: "Success Alert",
     description: "Alert styled for success messages.",
-    code: `<Alert className="border-green-200 bg-green-50 text-green-900">
-  <CheckCircle2 className="h-4 w-4 text-green-600" />
+    code: `<Alert variant="success">
+  <CheckCircle2 />
   <AlertTitle>Success</AlertTitle>
-  <AlertDescription className="text-green-800">
+  <AlertDescription>
     Your changes have been saved successfully.
   </AlertDescription>
 </Alert>`,
     component: () => (
-      <Alert className="border-green-200 bg-green-50 text-green-900">
-        <CheckCircle2 className="h-4 w-4 text-green-600" />
+      <Alert variant="success">
+        <CheckCircle2 />
         <AlertTitle>Success</AlertTitle>
-        <AlertDescription className="text-green-800">
+        <AlertDescription>
           Your changes have been saved successfully.
         </AlertDescription>
       </Alert>
@@ -88,18 +88,18 @@ export const alertExamples: ComponentExample[] = [
   {
     title: "Warning Alert",
     description: "Alert styled for warning messages.",
-    code: `<Alert className="border-yellow-200 bg-yellow-50 text-yellow-900">
-  <AlertTriangle className="h-4 w-4 text-yellow-600" />
+    code: `<Alert variant="warning">
+  <AlertTriangle />
   <AlertTitle>Warning</AlertTitle>
-  <AlertDescription className="text-yellow-800">
+  <AlertDescription>
     Your subscription is about to expire in 3 days.
   </AlertDescription>
 </Alert>`,
     component: () => (
-      <Alert className="border-yellow-200 bg-yellow-50 text-yellow-900">
-        <AlertTriangle className="h-4 w-4 text-yellow-600" />
+      <Alert variant="warning">
+        <AlertTriangle />
         <AlertTitle>Warning</AlertTitle>
-        <AlertDescription className="text-yellow-800">
+        <AlertDescription>
           Your subscription is about to expire in 3 days.
         </AlertDescription>
       </Alert>
@@ -127,14 +127,14 @@ export const alertExamples: ComponentExample[] = [
     title: "Alert with Only Description",
     description: "Alert with description only, no title.",
     code: `<Alert>
-  <InfoIcon className="h-4 w-4" />
+  <InfoIcon />
   <AlertDescription>
     Use the command palette to quickly navigate between pages.
   </AlertDescription>
 </Alert>`,
     component: () => (
       <Alert>
-        <InfoIcon className="h-4 w-4" />
+        <InfoIcon />
         <AlertDescription>
           Use the command palette to quickly navigate between pages.
         </AlertDescription>
@@ -145,7 +145,7 @@ export const alertExamples: ComponentExample[] = [
     title: "Alert with Action",
     description: "Alert with an action button or link.",
     code: `<Alert>
-  <AlertTriangle className="h-4 w-4" />
+  <AlertTriangle />
   <AlertTitle>Verification Required</AlertTitle>
   <AlertDescription>
     Please verify your email address to continue.{" "}
@@ -156,7 +156,7 @@ export const alertExamples: ComponentExample[] = [
 </Alert>`,
     component: () => (
       <Alert>
-        <AlertTriangle className="h-4 w-4" />
+        <AlertTriangle />
         <AlertTitle>Verification Required</AlertTitle>
         <AlertDescription>
           Please verify your email address to continue.{" "}

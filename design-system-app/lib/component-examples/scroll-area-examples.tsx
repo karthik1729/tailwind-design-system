@@ -348,7 +348,7 @@ export default ScrollAreaExample`
           <td className="p-2">
             <span className={cn(
               "px-2 py-1 rounded-full text-xs",
-              user.status === "Active" ? "bg-green-100 text-green-800" : "bg-gray-100 text-gray-800"
+              user.status === "Active" ? "bg-success-background text-success-text" : "bg-muted text-muted-foreground"
             )}>
               {user.status}
             </span>
@@ -386,7 +386,7 @@ export default ScrollAreaExample`
                   <td className="p-2">
                     <span className={cn(
                       "px-2 py-1 rounded-full text-xs",
-                      user.status === "Active" ? "bg-green-100 text-green-800" : "bg-gray-100 text-gray-800"
+                      user.status === "Active" ? "bg-success-background text-success-text" : "bg-muted text-muted-foreground"
                     )}>
                       {user.status}
                     </span>

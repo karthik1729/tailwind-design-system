@@ -6,10 +6,13 @@ import { Progress } from "@/components/ui/progress"
 import { Skeleton } from "@/components/ui/skeleton"
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog"
+import { Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
+import { Drawer, DrawerClose, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger } from "@/components/ui/drawer"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { PreviewContainer } from "@/components/storyboard/preview-container"
-import { AlertCircle, CheckCircle2, InfoIcon, Terminal, TriangleAlert, XCircle } from "lucide-react"
+import { AlertCircle, CheckCircle2, InfoIcon, Terminal, TriangleAlert, XCircle, Menu, Settings, User, Bell, Search, Plus, Download, Share } from "lucide-react"
+import { ToastExample } from "./toast-example"
 
 export default function FeedbackPage() {
   const [progress, setProgress] = useState(0)
@@ -33,8 +36,8 @@ export default function FeedbackPage() {
     <div className="space-y-12">
       {/* Page Header */}
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Feedback Components</h1>
-        <p className="mt-2 text-gray-600 dark:text-gray-400">
+        <h1 className="text-4xl font-bold text-foreground">Feedback Components</h1>
+        <p className="mt-4 text-lg text-muted-foreground">
           Components for displaying feedback, alerts, loading states, and user confirmations.
         </p>
       </div>
@@ -43,7 +46,7 @@ export default function FeedbackPage() {
       <section className="space-y-8">
         <div>
           <h2 className="text-2xl font-semibold mb-4">Alert</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-muted-foreground mb-6">
             Displays important messages to users with various severity levels.
           </p>
         </div>
@@ -60,7 +63,7 @@ export default function FeedbackPage() {
   </AlertDescription>
 </Alert>`}
           component={
-            <div className="w-full max-w-2xl p-6 space-y-4">
+            <div className="w-full max-w-2xl space-y-4">
               <Alert>
                 <InfoIcon className="h-4 w-4" />
                 <AlertTitle>Heads up!</AlertTitle>
@@ -84,7 +87,7 @@ export default function FeedbackPage() {
   </AlertDescription>
 </Alert>`}
           component={
-            <div className="w-full max-w-2xl p-6 space-y-4">
+            <div className="w-full max-w-2xl space-y-4">
               <Alert variant="destructive">
                 <XCircle className="h-4 w-4" />
                 <AlertTitle>Error</AlertTitle>
@@ -100,54 +103,54 @@ export default function FeedbackPage() {
         <PreviewContainer
           title="Alert Variants"
           description="Different alert styles for various contexts"
-          code={`{/* Success Alert */}
-<Alert className="border-green-200 bg-green-50 dark:border-green-800 dark:bg-green-950">
-  <CheckCircle2 className="h-4 w-4 text-green-600 dark:text-green-400" />
-  <AlertTitle className="text-green-800 dark:text-green-200">Success!</AlertTitle>
-  <AlertDescription className="text-green-700 dark:text-green-300">
+          code={`{/* Success Alert - Using the new success variant */}
+<Alert variant="success">
+  <CheckCircle2 className="h-4 w-4" />
+  <AlertTitle>Success!</AlertTitle>
+  <AlertDescription>
     Your changes have been saved successfully.
   </AlertDescription>
 </Alert>
 
-{/* Warning Alert */}
-<Alert className="border-yellow-200 bg-yellow-50 dark:border-yellow-800 dark:bg-yellow-950">
-  <TriangleAlert className="h-4 w-4 text-yellow-600 dark:text-yellow-400" />
-  <AlertTitle className="text-yellow-800 dark:text-yellow-200">Warning</AlertTitle>
-  <AlertDescription className="text-yellow-700 dark:text-yellow-300">
+{/* Warning Alert - Using the new warning variant */}
+<Alert variant="warning">
+  <TriangleAlert className="h-4 w-4" />
+  <AlertTitle>Warning</AlertTitle>
+  <AlertDescription>
     Your API usage is approaching the monthly limit.
   </AlertDescription>
 </Alert>
 
-{/* Info Alert */}
-<Alert className="border-blue-200 bg-blue-50 dark:border-blue-800 dark:bg-blue-950">
-  <InfoIcon className="h-4 w-4 text-blue-600 dark:text-blue-400" />
-  <AlertTitle className="text-blue-800 dark:text-blue-200">Information</AlertTitle>
-  <AlertDescription className="text-blue-700 dark:text-blue-300">
+{/* Info Alert - Using the new info variant */}
+<Alert variant="info">
+  <InfoIcon className="h-4 w-4" />
+  <AlertTitle>Information</AlertTitle>
+  <AlertDescription>
     A new update is available. Click here to learn more.
   </AlertDescription>
 </Alert>`}
           component={
-            <div className="w-full max-w-2xl p-6 space-y-4">
-              <Alert className="border-green-200 bg-green-50 dark:border-green-800 dark:bg-green-950">
-                <CheckCircle2 className="h-4 w-4 text-green-600 dark:text-green-400" />
-                <AlertTitle className="text-green-800 dark:text-green-200">Success!</AlertTitle>
-                <AlertDescription className="text-green-700 dark:text-green-300">
+            <div className="w-full max-w-2xl space-y-4">
+              <Alert variant="success">
+                <CheckCircle2 className="h-4 w-4" />
+                <AlertTitle>Success!</AlertTitle>
+                <AlertDescription>
                   Your changes have been saved successfully.
                 </AlertDescription>
               </Alert>
 
-              <Alert className="border-yellow-200 bg-yellow-50 dark:border-yellow-800 dark:bg-yellow-950">
-                <TriangleAlert className="h-4 w-4 text-yellow-600 dark:text-yellow-400" />
-                <AlertTitle className="text-yellow-800 dark:text-yellow-200">Warning</AlertTitle>
-                <AlertDescription className="text-yellow-700 dark:text-yellow-300">
+              <Alert variant="warning">
+                <TriangleAlert className="h-4 w-4" />
+                <AlertTitle>Warning</AlertTitle>
+                <AlertDescription>
                   Your API usage is approaching the monthly limit.
                 </AlertDescription>
               </Alert>
 
-              <Alert className="border-blue-200 bg-blue-50 dark:border-blue-800 dark:bg-blue-950">
-                <InfoIcon className="h-4 w-4 text-blue-600 dark:text-blue-400" />
-                <AlertTitle className="text-blue-800 dark:text-blue-200">Information</AlertTitle>
-                <AlertDescription className="text-blue-700 dark:text-blue-300">
+              <Alert variant="info">
+                <InfoIcon className="h-4 w-4" />
+                <AlertTitle>Information</AlertTitle>
+                <AlertDescription>
                   A new update is available. Click here to learn more.
                 </AlertDescription>
               </Alert>
@@ -170,7 +173,7 @@ export default function FeedbackPage() {
   </AlertDescription>
 </Alert>`}
           component={
-            <div className="w-full max-w-2xl p-6">
+            <div className="w-full max-w-2xl">
               <Alert>
                 <Terminal className="h-4 w-4" />
                 <AlertTitle>Terminal</AlertTitle>
@@ -190,7 +193,7 @@ export default function FeedbackPage() {
       <section className="space-y-8">
         <div>
           <h2 className="text-2xl font-semibold mb-4">Progress</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-muted-foreground mb-6">
             Shows the completion progress of a task or process.
           </p>
         </div>
@@ -203,7 +206,7 @@ export default function FeedbackPage() {
 <Progress value={66} className="w-full" />
 <Progress value={100} className="w-full" />`}
           component={
-            <div className="w-full max-w-2xl p-6 space-y-4">
+            <div className="w-full max-w-2xl space-y-4">
               <Progress value={33} className="w-full" />
               <Progress value={66} className="w-full" />
               <Progress value={100} className="w-full" />
@@ -223,7 +226,7 @@ export default function FeedbackPage() {
   <Progress value={progress} className="w-full" />
 </div>`}
           component={
-            <div className="w-full max-w-2xl p-6">
+            <div className="w-full max-w-2xl">
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
                   <span className="text-sm font-medium">Uploading files...</span>
@@ -241,19 +244,20 @@ export default function FeedbackPage() {
         {/* Styled Progress */}
         <PreviewContainer
           title="Styled Progress"
-          description="Progress bars with custom styling"
+          description="Progress bars with custom styling and animations"
           code={`{/* Different Heights */}
 <Progress value={60} className="w-full h-1" />
 <Progress value={60} className="w-full h-2" />
 <Progress value={60} className="w-full h-3" />
 <Progress value={60} className="w-full h-4" />
 
-{/* Custom Colors */}
-<Progress value={80} className="w-full [&>div]:bg-green-500" />
-<Progress value={50} className="w-full [&>div]:bg-yellow-500" />
-<Progress value={30} className="w-full [&>div]:bg-red-500" />`}
+{/* Custom Colors with semantic tokens */}
+<Progress value={80} indicatorClassName="bg-success" />
+<Progress value={50} indicatorClassName="bg-warning" />
+<Progress value={30} indicatorClassName="bg-destructive" />
+<Progress value={70} indicatorClassName="bg-info" />`}
           component={
-            <div className="w-full max-w-2xl p-6 space-y-4">
+            <div className="w-full max-w-2xl space-y-4">
               <div className="space-y-2">
                 <Progress value={60} className="w-full h-1" />
                 <Progress value={60} className="w-full h-2" />
@@ -261,9 +265,34 @@ export default function FeedbackPage() {
                 <Progress value={60} className="w-full h-4" />
               </div>
               <div className="space-y-2 mt-6">
-                <Progress value={80} className="w-full [&>div]:bg-green-500" />
-                <Progress value={50} className="w-full [&>div]:bg-yellow-500" />
-                <Progress value={30} className="w-full [&>div]:bg-red-500" />
+                <div className="space-y-1">
+                  <div className="flex justify-between text-sm">
+                    <span className="text-muted-foreground">Success</span>
+                    <span className="text-success">80%</span>
+                  </div>
+                  <Progress value={80} indicatorClassName="bg-success" />
+                </div>
+                <div className="space-y-1">
+                  <div className="flex justify-between text-sm">
+                    <span className="text-muted-foreground">Warning</span>
+                    <span className="text-warning">50%</span>
+                  </div>
+                  <Progress value={50} indicatorClassName="bg-warning" />
+                </div>
+                <div className="space-y-1">
+                  <div className="flex justify-between text-sm">
+                    <span className="text-muted-foreground">Critical</span>
+                    <span className="text-destructive">30%</span>
+                  </div>
+                  <Progress value={30} indicatorClassName="bg-destructive" />
+                </div>
+                <div className="space-y-1">
+                  <div className="flex justify-between text-sm">
+                    <span className="text-muted-foreground">Information</span>
+                    <span className="text-info">70%</span>
+                  </div>
+                  <Progress value={70} indicatorClassName="bg-info" />
+                </div>
               </div>
             </div>
           }
@@ -274,7 +303,7 @@ export default function FeedbackPage() {
       <section className="space-y-8">
         <div>
           <h2 className="text-2xl font-semibold mb-4">Skeleton</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-muted-foreground mb-6">
             Placeholder loading states that indicate content is being fetched.
           </p>
         </div>
@@ -289,7 +318,7 @@ export default function FeedbackPage() {
   <Skeleton className="h-4 w-[150px]" />
 </div>`}
           component={
-            <div className="w-full max-w-2xl p-6">
+            <div className="w-full max-w-2xl">
               <div className="space-y-2">
                 <Skeleton className="h-4 w-[250px]" />
                 <Skeleton className="h-4 w-[200px]" />
@@ -318,7 +347,7 @@ export default function FeedbackPage() {
   </CardFooter>
 </Card>`}
           component={
-            <div className="w-full max-w-md p-6">
+            <div className="w-full max-w-md">
               <Card>
                 <CardHeader>
                   <Skeleton className="h-6 w-[180px]" />
@@ -354,7 +383,7 @@ export default function FeedbackPage() {
   </div>
 </div>`}
           component={
-            <div className="w-full max-w-2xl p-6">
+            <div className="w-full max-w-2xl">
               <div className="flex items-start space-x-4">
                 <Skeleton className="h-12 w-12 rounded-full" />
                 <div className="space-y-2 flex-1">
@@ -376,7 +405,7 @@ export default function FeedbackPage() {
       <section className="space-y-8">
         <div>
           <h2 className="text-2xl font-semibold mb-4">Dialog</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-muted-foreground mb-6">
             Modal dialogs for presenting content or gathering user input.
           </p>
         </div>
@@ -400,7 +429,7 @@ export default function FeedbackPage() {
   </DialogContent>
 </Dialog>`}
           component={
-            <div className="p-6">
+            <div className="gap-4">
               <Dialog>
                 <DialogTrigger asChild>
                   <Button>Open Dialog</Button>
@@ -464,7 +493,7 @@ export default function FeedbackPage() {
   </DialogContent>
 </Dialog>`}
           component={
-            <div className="p-6">
+            <div className="gap-4">
               <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
                 <DialogTrigger asChild>
                   <Button>Edit Profile</Button>
@@ -514,7 +543,7 @@ export default function FeedbackPage() {
       <section className="space-y-8">
         <div>
           <h2 className="text-2xl font-semibold mb-4">Alert Dialog</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-muted-foreground mb-6">
             Modal dialogs that interrupt the user with important information and require a response.
           </p>
         </div>
@@ -542,7 +571,7 @@ export default function FeedbackPage() {
   </AlertDialogContent>
 </AlertDialog>`}
           component={
-            <div className="p-6">
+            <div className="gap-4">
               <AlertDialog>
                 <AlertDialogTrigger asChild>
                   <Button variant="destructive">Delete Account</Button>
@@ -597,7 +626,7 @@ export default function FeedbackPage() {
   </AlertDialogContent>
 </AlertDialog>`}
           component={
-            <div className="p-6">
+            <div className="gap-4">
               <AlertDialog>
                 <AlertDialogTrigger asChild>
                   <Button variant="outline">
@@ -628,6 +657,593 @@ export default function FeedbackPage() {
             </div>
           }
         />
+      </section>
+
+      {/* Sheet Component */}
+      <section className="space-y-8">
+        <div>
+          <h2 className="text-2xl font-semibold mb-4">Sheet</h2>
+          <p className="text-muted-foreground mb-6">
+            Slide-out panels that overlay content from different sides of the screen.
+          </p>
+        </div>
+
+        {/* Basic Sheet - Right Side */}
+        <PreviewContainer
+          title="Basic Sheet (Right Side)"
+          description="Default sheet that slides in from the right"
+          code={`<Sheet>
+  <SheetTrigger asChild>
+    <Button variant="outline">
+      <Menu className="h-4 w-4 mr-2" />
+      Open Sheet
+    </Button>
+  </SheetTrigger>
+  <SheetContent>
+    <SheetHeader>
+      <SheetTitle>Edit Profile</SheetTitle>
+      <SheetDescription>
+        Make changes to your profile here. Click save when you're done.
+      </SheetDescription>
+    </SheetHeader>
+    <div className="grid gap-4 py-4">
+      <div className="grid grid-cols-4 items-center gap-4">
+        <label htmlFor="name" className="text-right">Name</label>
+        <input id="name" defaultValue="Pedro Duarte" className="col-span-3" />
+      </div>
+      <div className="grid grid-cols-4 items-center gap-4">
+        <label htmlFor="username" className="text-right">Username</label>
+        <input id="username" defaultValue="@peduarte" className="col-span-3" />
+      </div>
+    </div>
+    <SheetFooter>
+      <SheetClose asChild>
+        <Button type="submit">Save changes</Button>
+      </SheetClose>
+    </SheetFooter>
+  </SheetContent>
+</Sheet>`}
+          component={
+            <div className="gap-4">
+              <Sheet>
+                <SheetTrigger asChild>
+                  <Button variant="outline">
+                    <Menu className="h-4 w-4 mr-2" />
+                    Open Sheet
+                  </Button>
+                </SheetTrigger>
+                <SheetContent>
+                  <SheetHeader>
+                    <SheetTitle>Edit Profile</SheetTitle>
+                    <SheetDescription>
+                      Make changes to your profile here. Click save when you're done.
+                    </SheetDescription>
+                  </SheetHeader>
+                  <div className="grid gap-4 py-4">
+                    <div className="grid grid-cols-4 items-center gap-4">
+                      <label htmlFor="name" className="text-right text-sm font-medium">Name</label>
+                      <input 
+                        id="name" 
+                        defaultValue="Pedro Duarte" 
+                        className="col-span-3 flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+                      />
+                    </div>
+                    <div className="grid grid-cols-4 items-center gap-4">
+                      <label htmlFor="username" className="text-right text-sm font-medium">Username</label>
+                      <input 
+                        id="username" 
+                        defaultValue="@peduarte" 
+                        className="col-span-3 flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+                      />
+                    </div>
+                  </div>
+                  <SheetFooter>
+                    <SheetClose asChild>
+                      <Button type="submit">Save changes</Button>
+                    </SheetClose>
+                  </SheetFooter>
+                </SheetContent>
+              </Sheet>
+            </div>
+          }
+        />
+
+        {/* Sheet from Left */}
+        <PreviewContainer
+          title="Sheet from Left"
+          description="Sheet that slides in from the left side"
+          code={`<Sheet>
+  <SheetTrigger asChild>
+    <Button variant="outline">
+      <Settings className="h-4 w-4 mr-2" />
+      Settings
+    </Button>
+  </SheetTrigger>
+  <SheetContent side="left">
+    <SheetHeader>
+      <SheetTitle>Settings</SheetTitle>
+      <SheetDescription>
+        Configure your application settings and preferences.
+      </SheetDescription>
+    </SheetHeader>
+    <div className="py-4 space-y-4">
+      <div className="space-y-2">
+        <h4 className="font-medium">Appearance</h4>
+        <div className="space-y-1">
+          <button className="w-full text-left p-2 hover:bg-muted rounded">Dark mode</button>
+          <button className="w-full text-left p-2 hover:bg-muted rounded">Light mode</button>
+          <button className="w-full text-left p-2 hover:bg-muted rounded">System</button>
+        </div>
+      </div>
+      <div className="space-y-2">
+        <h4 className="font-medium">Notifications</h4>
+        <div className="space-y-1">
+          <button className="w-full text-left p-2 hover:bg-muted rounded">Email notifications</button>
+          <button className="w-full text-left p-2 hover:bg-muted rounded">Push notifications</button>
+        </div>
+      </div>
+    </div>
+  </SheetContent>
+</Sheet>`}
+          component={
+            <div className="gap-4">
+              <Sheet>
+                <SheetTrigger asChild>
+                  <Button variant="outline">
+                    <Settings className="h-4 w-4 mr-2" />
+                    Settings
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="left">
+                  <SheetHeader>
+                    <SheetTitle>Settings</SheetTitle>
+                    <SheetDescription>
+                      Configure your application settings and preferences.
+                    </SheetDescription>
+                  </SheetHeader>
+                  <div className="py-4 space-y-4">
+                    <div className="space-y-2">
+                      <h4 className="font-medium">Appearance</h4>
+                      <div className="space-y-1">
+                        <button className="w-full text-left p-2 hover:bg-muted rounded text-sm">Dark mode</button>
+                        <button className="w-full text-left p-2 hover:bg-muted rounded text-sm">Light mode</button>
+                        <button className="w-full text-left p-2 hover:bg-muted rounded text-sm">System</button>
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <h4 className="font-medium">Notifications</h4>
+                      <div className="space-y-1">
+                        <button className="w-full text-left p-2 hover:bg-muted rounded text-sm">Email notifications</button>
+                        <button className="w-full text-left p-2 hover:bg-muted rounded text-sm">Push notifications</button>
+                      </div>
+                    </div>
+                  </div>
+                </SheetContent>
+              </Sheet>
+            </div>
+          }
+        />
+
+        {/* Sheet from Top */}
+        <PreviewContainer
+          title="Sheet from Top"
+          description="Sheet that slides down from the top"
+          code={`<Sheet>
+  <SheetTrigger asChild>
+    <Button variant="outline">
+      <Search className="h-4 w-4 mr-2" />
+      Search
+    </Button>
+  </SheetTrigger>
+  <SheetContent side="top">
+    <SheetHeader>
+      <SheetTitle>Search</SheetTitle>
+      <SheetDescription>
+        Search through your content and find what you're looking for.
+      </SheetDescription>
+    </SheetHeader>
+    <div className="py-4">
+      <div className="relative">
+        <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
+        <input 
+          placeholder="Search..." 
+          className="w-full pl-8 pr-4 py-2 border border-input bg-background rounded-md"
+        />
+      </div>
+      <div className="mt-4 space-y-2">
+        <div className="p-3 hover:bg-muted rounded border">
+          <div className="font-medium">Recent Search 1</div>
+          <div className="text-sm text-muted-foreground">Description of recent search</div>
+        </div>
+        <div className="p-3 hover:bg-muted rounded border">
+          <div className="font-medium">Recent Search 2</div>
+          <div className="text-sm text-muted-foreground">Description of recent search</div>
+        </div>
+      </div>
+    </div>
+  </SheetContent>
+</Sheet>`}
+          component={
+            <div className="gap-4">
+              <Sheet>
+                <SheetTrigger asChild>
+                  <Button variant="outline">
+                    <Search className="h-4 w-4 mr-2" />
+                    Search
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="top">
+                  <SheetHeader>
+                    <SheetTitle>Search</SheetTitle>
+                    <SheetDescription>
+                      Search through your content and find what you're looking for.
+                    </SheetDescription>
+                  </SheetHeader>
+                  <div className="py-4">
+                    <div className="relative">
+                      <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
+                      <input 
+                        placeholder="Search..." 
+                        className="w-full pl-8 pr-4 py-2 border border-input bg-background rounded-md"
+                      />
+                    </div>
+                    <div className="mt-4 space-y-2">
+                      <div className="p-3 hover:bg-muted rounded border">
+                        <div className="font-medium">Recent Search 1</div>
+                        <div className="text-sm text-muted-foreground">Description of recent search</div>
+                      </div>
+                      <div className="p-3 hover:bg-muted rounded border">
+                        <div className="font-medium">Recent Search 2</div>
+                        <div className="text-sm text-muted-foreground">Description of recent search</div>
+                      </div>
+                    </div>
+                  </div>
+                </SheetContent>
+              </Sheet>
+            </div>
+          }
+        />
+
+        {/* Sheet from Bottom */}
+        <PreviewContainer
+          title="Sheet from Bottom"
+          description="Sheet that slides up from the bottom"
+          code={`<Sheet>
+  <SheetTrigger asChild>
+    <Button variant="outline">
+      <User className="h-4 w-4 mr-2" />
+      Account
+    </Button>
+  </SheetTrigger>
+  <SheetContent side="bottom">
+    <SheetHeader>
+      <SheetTitle>Account Information</SheetTitle>
+      <SheetDescription>
+        View and manage your account details and preferences.
+      </SheetDescription>
+    </SheetHeader>
+    <div className="py-4">
+      <div className="grid grid-cols-2 gap-4">
+        <div className="space-y-2">
+          <h4 className="font-medium">Profile</h4>
+          <div className="text-sm text-muted-foreground">
+            <div>John Doe</div>
+            <div>john.doe@example.com</div>
+          </div>
+        </div>
+        <div className="space-y-2">
+          <h4 className="font-medium">Quick Actions</h4>
+          <div className="space-y-1">
+            <button className="w-full text-left p-2 hover:bg-muted rounded text-sm">Edit Profile</button>
+            <button className="w-full text-left p-2 hover:bg-muted rounded text-sm">Change Password</button>
+            <button className="w-full text-left p-2 hover:bg-muted rounded text-sm">Sign Out</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </SheetContent>
+</Sheet>`}
+          component={
+            <div className="gap-4">
+              <Sheet>
+                <SheetTrigger asChild>
+                  <Button variant="outline">
+                    <User className="h-4 w-4 mr-2" />
+                    Account
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="bottom">
+                  <SheetHeader>
+                    <SheetTitle>Account Information</SheetTitle>
+                    <SheetDescription>
+                      View and manage your account details and preferences.
+                    </SheetDescription>
+                  </SheetHeader>
+                  <div className="py-4">
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <h4 className="font-medium">Profile</h4>
+                        <div className="text-sm text-muted-foreground">
+                          <div>John Doe</div>
+                          <div>john.doe@example.com</div>
+                        </div>
+                      </div>
+                      <div className="space-y-2">
+                        <h4 className="font-medium">Quick Actions</h4>
+                        <div className="space-y-1">
+                          <button className="w-full text-left p-2 hover:bg-muted rounded text-sm">Edit Profile</button>
+                          <button className="w-full text-left p-2 hover:bg-muted rounded text-sm">Change Password</button>
+                          <button className="w-full text-left p-2 hover:bg-muted rounded text-sm">Sign Out</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </SheetContent>
+              </Sheet>
+            </div>
+          }
+        />
+      </section>
+
+      {/* Drawer Component */}
+      <section className="space-y-8">
+        <div>
+          <h2 className="text-2xl font-semibold mb-4">Drawer</h2>
+          <p className="text-muted-foreground mb-6">
+            Mobile-first draggable overlays that can be swiped to dismiss. Built with Vaul for smooth gesture interactions.
+          </p>
+        </div>
+
+        {/* Basic Drawer - Bottom */}
+        <PreviewContainer
+          title="Basic Drawer (Bottom)"
+          description="Default drawer that slides up from the bottom with swipe gestures"
+          code={`<Drawer>
+  <DrawerTrigger asChild>
+    <Button variant="outline">
+      <Plus className="h-4 w-4 mr-2" />
+      Open Drawer
+    </Button>
+  </DrawerTrigger>
+  <DrawerContent>
+    <DrawerHeader>
+      <DrawerTitle>Create New Item</DrawerTitle>
+      <DrawerDescription>
+        Add a new item to your collection. Fill out the form below.
+      </DrawerDescription>
+    </DrawerHeader>
+    <div className="p-4 space-y-4">
+      <div className="space-y-2">
+        <label htmlFor="item-name" className="text-sm font-medium">Name</label>
+        <input 
+          id="item-name" 
+          placeholder="Enter item name" 
+          className="w-full p-2 border border-input bg-background rounded-md"
+        />
+      </div>
+      <div className="space-y-2">
+        <label htmlFor="item-desc" className="text-sm font-medium">Description</label>
+        <textarea 
+          id="item-desc" 
+          placeholder="Enter description" 
+          className="w-full p-2 border border-input bg-background rounded-md h-20"
+        />
+      </div>
+    </div>
+    <DrawerFooter>
+      <Button>Create Item</Button>
+      <DrawerClose asChild>
+        <Button variant="outline">Cancel</Button>
+      </DrawerClose>
+    </DrawerFooter>
+  </DrawerContent>
+</Drawer>`}
+          component={
+            <div className="gap-4">
+              <Drawer>
+                <DrawerTrigger asChild>
+                  <Button variant="outline">
+                    <Plus className="h-4 w-4 mr-2" />
+                    Open Drawer
+                  </Button>
+                </DrawerTrigger>
+                <DrawerContent>
+                  <DrawerHeader>
+                    <DrawerTitle>Create New Item</DrawerTitle>
+                    <DrawerDescription>
+                      Add a new item to your collection. Fill out the form below.
+                    </DrawerDescription>
+                  </DrawerHeader>
+                  <div className="p-4 space-y-4">
+                    <div className="space-y-2">
+                      <label htmlFor="item-name" className="text-sm font-medium">Name</label>
+                      <input 
+                        id="item-name" 
+                        placeholder="Enter item name" 
+                        className="w-full p-2 border border-input bg-background rounded-md"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label htmlFor="item-desc" className="text-sm font-medium">Description</label>
+                      <textarea 
+                        id="item-desc" 
+                        placeholder="Enter description" 
+                        className="w-full p-2 border border-input bg-background rounded-md h-20"
+                      />
+                    </div>
+                  </div>
+                  <DrawerFooter>
+                    <Button>Create Item</Button>
+                    <DrawerClose asChild>
+                      <Button variant="outline">Cancel</Button>
+                    </DrawerClose>
+                  </DrawerFooter>
+                </DrawerContent>
+              </Drawer>
+            </div>
+          }
+        />
+
+        {/* Drawer with Actions */}
+        <PreviewContainer
+          title="Drawer with Actions"
+          description="Drawer with multiple action buttons and content"
+          code={`<Drawer>
+  <DrawerTrigger asChild>
+    <Button variant="outline">
+      <Share className="h-4 w-4 mr-2" />
+      Share Options
+    </Button>
+  </DrawerTrigger>
+  <DrawerContent>
+    <DrawerHeader>
+      <DrawerTitle>Share this item</DrawerTitle>
+      <DrawerDescription>
+        Choose how you want to share this item with others.
+      </DrawerDescription>
+    </DrawerHeader>
+    <div className="p-4 space-y-3">
+      <button className="w-full p-3 text-left hover:bg-muted rounded-md border">
+        <div className="font-medium">Copy Link</div>
+        <div className="text-sm text-muted-foreground">Share via clipboard</div>
+      </button>
+      <button className="w-full p-3 text-left hover:bg-muted rounded-md border">
+        <div className="font-medium">Email</div>
+        <div className="text-sm text-muted-foreground">Send via email</div>
+      </button>
+      <button className="w-full p-3 text-left hover:bg-muted rounded-md border">
+        <div className="font-medium">Social Media</div>
+        <div className="text-sm text-muted-foreground">Share on social platforms</div>
+      </button>
+    </div>
+    <DrawerFooter>
+      <DrawerClose asChild>
+        <Button variant="outline">Cancel</Button>
+      </DrawerClose>
+    </DrawerFooter>
+  </DrawerContent>
+</Drawer>`}
+          component={
+            <div className="gap-4">
+              <Drawer>
+                <DrawerTrigger asChild>
+                  <Button variant="outline">
+                    <Share className="h-4 w-4 mr-2" />
+                    Share Options
+                  </Button>
+                </DrawerTrigger>
+                <DrawerContent>
+                  <DrawerHeader>
+                    <DrawerTitle>Share this item</DrawerTitle>
+                    <DrawerDescription>
+                      Choose how you want to share this item with others.
+                    </DrawerDescription>
+                  </DrawerHeader>
+                  <div className="p-4 space-y-3">
+                    <button className="w-full p-3 text-left hover:bg-muted rounded-md border">
+                      <div className="font-medium">Copy Link</div>
+                      <div className="text-sm text-muted-foreground">Share via clipboard</div>
+                    </button>
+                    <button className="w-full p-3 text-left hover:bg-muted rounded-md border">
+                      <div className="font-medium">Email</div>
+                      <div className="text-sm text-muted-foreground">Send via email</div>
+                    </button>
+                    <button className="w-full p-3 text-left hover:bg-muted rounded-md border">
+                      <div className="font-medium">Social Media</div>
+                      <div className="text-sm text-muted-foreground">Share on social platforms</div>
+                    </button>
+                  </div>
+                  <DrawerFooter>
+                    <DrawerClose asChild>
+                      <Button variant="outline">Cancel</Button>
+                    </DrawerClose>
+                  </DrawerFooter>
+                </DrawerContent>
+              </Drawer>
+            </div>
+          }
+        />
+
+        {/* Drawer with Nested Content */}
+        <PreviewContainer
+          title="Drawer with Nested Content"
+          description="Drawer containing complex content and scrollable areas"
+          code={`<Drawer>
+  <DrawerTrigger asChild>
+    <Button variant="outline">
+      <Download className="h-4 w-4 mr-2" />
+      Download Options
+    </Button>
+  </DrawerTrigger>
+  <DrawerContent>
+    <DrawerHeader>
+      <DrawerTitle>Download Files</DrawerTitle>
+      <DrawerDescription>
+        Select the files you want to download from your library.
+      </DrawerDescription>
+    </DrawerHeader>
+    <div className="p-4 max-h-[300px] overflow-y-auto">
+      <div className="space-y-2">
+        {["Document.pdf", "Image.jpg", "Presentation.pptx", "Spreadsheet.xlsx", "Video.mp4"].map((file) => (
+          <label key={file} className="flex items-center space-x-2 p-2 hover:bg-muted rounded">
+            <input type="checkbox" className="rounded" />
+            <span className="text-sm">{file}</span>
+            <span className="text-xs text-muted-foreground ml-auto">2.3 MB</span>
+          </label>
+        ))}
+      </div>
+    </div>
+    <DrawerFooter>
+      <Button>Download Selected</Button>
+      <DrawerClose asChild>
+        <Button variant="outline">Cancel</Button>
+      </DrawerClose>
+    </DrawerFooter>
+  </DrawerContent>
+</Drawer>`}
+          component={
+            <div className="gap-4">
+              <Drawer>
+                <DrawerTrigger asChild>
+                  <Button variant="outline">
+                    <Download className="h-4 w-4 mr-2" />
+                    Download Options
+                  </Button>
+                </DrawerTrigger>
+                <DrawerContent>
+                  <DrawerHeader>
+                    <DrawerTitle>Download Files</DrawerTitle>
+                    <DrawerDescription>
+                      Select the files you want to download from your library.
+                    </DrawerDescription>
+                  </DrawerHeader>
+                  <div className="p-4 max-h-[300px] overflow-y-auto">
+                    <div className="space-y-2">
+                      {["Document.pdf", "Image.jpg", "Presentation.pptx", "Spreadsheet.xlsx", "Video.mp4"].map((file) => (
+                        <label key={file} className="flex items-center space-x-2 p-2 hover:bg-muted rounded">
+                          <input type="checkbox" className="rounded" />
+                          <span className="text-sm">{file}</span>
+                          <span className="text-xs text-muted-foreground ml-auto">2.3 MB</span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+                  <DrawerFooter>
+                    <Button>Download Selected</Button>
+                    <DrawerClose asChild>
+                      <Button variant="outline">Cancel</Button>
+                    </DrawerClose>
+                  </DrawerFooter>
+                </DrawerContent>
+              </Drawer>
+            </div>
+          }
+        />
+      </section>
+
+      {/* Toast Component */}
+      <section className="space-y-8">
+        <ToastExample />
       </section>
     </div>
   )
