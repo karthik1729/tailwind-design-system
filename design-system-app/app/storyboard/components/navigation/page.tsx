@@ -1388,6 +1388,117 @@ return (
       </section>
 
 
+      {/* Sidebar */}
+      <section className="space-y-8">
+        <div>
+          <h2 className="text-2xl font-semibold mb-4">Sidebar</h2>
+          <p className="text-muted-foreground mb-6">
+            A responsive navigation sidebar with support for mobile and desktop layouts, collapsible sections, and multiple variants.
+          </p>
+        </div>
+
+        <PreviewContainer
+          title="Sidebar Component"
+          description="Full-featured sidebar navigation with responsive design"
+          code={`import {
+  Sidebar,
+  SidebarHeader,
+  SidebarContent,
+  SidebarGroup,
+  SidebarItem,
+  SidebarLink,
+  SidebarFooter,
+  SidebarTrigger,
+} from "@/components/ui/sidebar"
+
+export function AppSidebar() {
+  const [open, setOpen] = useState(false)
+  
+  return (
+    <>
+      {/* Mobile trigger - use SidebarTrigger outside of Sidebar */}
+      <SidebarTrigger icon={MenuIcon} onOpen={() => setOpen(true)} />
+      
+      <Sidebar open={open} onOpenChange={setOpen}>
+        <SidebarHeader>
+          <div className="flex items-center gap-3">
+            <Logo />
+            <span className="font-semibold">App Name</span>
+          </div>
+        </SidebarHeader>
+        
+        <SidebarContent>
+          <SidebarGroup>
+            {navigation.map((item) => (
+              <SidebarItem key={item.name}>
+                <SidebarLink
+                  href={item.href}
+                  active={pathname === item.href}
+                  icon={item.icon}
+                >
+                  {item.name}
+                </SidebarLink>
+              </SidebarItem>
+            ))}
+          </SidebarGroup>
+          
+          <SidebarGroup label="Teams">
+            {teams.map((team) => (
+              <SidebarItem key={team.id}>
+                <SidebarLink href={team.href}>
+                  {team.name}
+                </SidebarLink>
+              </SidebarItem>
+            ))}
+          </SidebarGroup>
+        </SidebarContent>
+        
+        <SidebarFooter>
+          <SidebarLink href="/settings" icon={CogIcon}>
+            Settings
+          </SidebarLink>
+        </SidebarFooter>
+      </Sidebar>
+    </>
+  )
+}`}
+          component={
+            <div className="text-center space-y-6">
+              <div className="inline-flex flex-col items-center gap-4">
+                <div className="text-sm text-muted-foreground">
+                  The sidebar component requires a full-page layout to demonstrate properly.
+                </div>
+                <Link href="/demos/sidebar">
+                  <Button>
+                    View Full Sidebar Demo
+                  </Button>
+                </Link>
+              </div>
+              <div className="grid grid-cols-2 gap-4 max-w-2xl mx-auto text-left">
+                <div className="rounded-lg border border-border p-4">
+                  <h3 className="font-medium mb-2">Features</h3>
+                  <ul className="space-y-1 text-sm text-muted-foreground">
+                    <li>• Responsive mobile drawer</li>
+                    <li>• Multiple variants & sizes</li>
+                    <li>• Collapsible sections</li>
+                    <li>• Active state management</li>
+                  </ul>
+                </div>
+                <div className="rounded-lg border border-border p-4">
+                  <h3 className="font-medium mb-2">Customization</h3>
+                  <ul className="space-y-1 text-sm text-muted-foreground">
+                    <li>• Configurable breakpoints</li>
+                    <li>• Max-width constraints</li>
+                    <li>• Theme-aware styling</li>
+                    <li>• Composable structure</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          }
+        />
+      </section>
+
       {/* Context Menu */}
       <ContextMenuExample />
 
