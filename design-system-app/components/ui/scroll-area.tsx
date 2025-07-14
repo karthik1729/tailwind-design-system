@@ -22,12 +22,12 @@ function ScrollArea({
   return (
     <ScrollAreaPrimitive.Root
       data-slot="scroll-area"
-      className={cn("relative", className)}
+      className={cn("relative overflow-hidden transition-all duration-200 ease-in-out", className)}
       {...props}
     >
       <ScrollAreaPrimitive.Viewport
         data-slot="scroll-area-viewport"
-        className="focus-visible:ring-ring/50 size-full rounded-[inherit] transition-[color,box-shadow] outline-none focus-visible:ring-[3px] focus-visible:outline-1"
+        className="focus-visible:ring-ring/50 size-full rounded-[inherit] transition-all duration-200 ease-in-out outline-none focus-visible:ring-[3px] focus-visible:outline-1"
       >
         {children}
       </ScrollAreaPrimitive.Viewport>
@@ -83,7 +83,7 @@ function ScrollBar({
         "flex touch-none p-px transition-all duration-200 select-none",
         orientation === "vertical" && `h-full ${variantStyles.bar.split(' ')[0]} border-l border-l-transparent`,
         orientation === "horizontal" && `${variantStyles.bar.split(' ')[1]} w-full flex-col border-t border-t-transparent`,
-        fade && "opacity-0 hover:opacity-100 data-[state=visible]:opacity-100",
+        fade && "opacity-0 hover:opacity-100 data-[state=visible]:opacity-100 transition-opacity duration-300",
         className
       )}
       {...props}
