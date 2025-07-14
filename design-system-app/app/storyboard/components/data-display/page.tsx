@@ -30,6 +30,7 @@ import {
 import { PreviewContainer } from "@/components/storyboard/preview-container"
 import { Button } from "@/components/ui/button"
 import { AccordionEnhancedExample } from "./accordion-enhanced-example"
+import { CollapsibleExample } from "./collapsible-example"
 import { MoreHorizontal, Check, X, Clock } from "lucide-react"
 
 export default function DataDisplayPage() {
@@ -906,6 +907,9 @@ export default function DataDisplayPage() {
         {/* Enhanced Accordion Examples */}
         <AccordionEnhancedExample />
       </section>
+
+      {/* Collapsible Component */}
+      <CollapsibleExample />
     </div>
   )
 }

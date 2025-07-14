@@ -78,7 +78,7 @@ Systematic enhancement of all 59 components in the design system, focusing on in
 #### Data Display (3/10)
 - [x] Card - Enhanced with hover lift effects, interactive states, and variant system (default, elevated, flat)
 - [x] Accordion - Enhanced with smooth expand/collapse animations, chevron rotation, and hover states
-- [ ] Collapsible - Height transitions
+- [ ] Collapsible - Height transitions (Note: Radix Collapsible has compatibility issues with smooth animations)
 - [ ] Table - Row hover states, selection feedback
 - [ ] Avatar - Loading states, fallback transitions
 - [x] Badge - Added semantic color variants (success, warning, info) with solid and subtle styles
@@ -133,7 +133,7 @@ Systematic enhancement of all 59 components in the design system, focusing on in
 - Navigation: 8/9 (NavigationMenu, DropdownMenu, ContextMenu, Menubar, Breadcrumb, Pagination, Command, Sidebar)
 - Data Display: 3/10 (Badge, Card, Accordion)
 
-**Next Action**: Continue with Data Display - Collapsible (height transitions), Table (row hover states), Avatar (loading states)
+**Next Action**: Continue with Data Display - Table (row hover states), Avatar (loading states)
 
 ## Key Accomplishments
 
