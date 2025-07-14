@@ -34,6 +34,9 @@ import { CollapsibleExample } from "./collapsible-example"
 import { TableExample } from "./table-example"
 import { AvatarExample } from "./avatar-example"
 import { ChartExample } from "./chart-example"
+import { AspectRatioExample } from "./aspect-ratio-example"
+import { CarouselExample } from "./carousel-example"
+import { ScrollAreaExample } from "./scroll-area-example"
 import { MoreHorizontal, Check, X, Clock } from "lucide-react"
 
 export default function DataDisplayPage() {
@@ -663,6 +666,15 @@ export default function DataDisplayPage() {
 
       {/* Chart Component */}
       <ChartExample />
+
+      {/* Aspect Ratio Component */}
+      <AspectRatioExample />
+
+      {/* Carousel Component */}
+      <CarouselExample />
+
+      {/* Scroll Area Component */}
+      <ScrollAreaExample />
     </div>
   )
 }
