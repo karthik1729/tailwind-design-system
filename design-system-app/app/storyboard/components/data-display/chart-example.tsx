@@ -47,26 +47,28 @@ const chartData = [
   { month: "June", desktop: 214, mobile: 140, revenue: 3100 },
 ]
 
+// Chart colors use the design system's chart-specific color tokens
+// These are optimized for data visualization with proper contrast
 const chartConfig = {
   desktop: {
     label: "Desktop",
-    color: "hsl(var(--primary))",
+    color: "hsl(var(--chart-1))",
   },
   mobile: {
     label: "Mobile",
-    color: "hsl(var(--muted-foreground))",
+    color: "hsl(var(--chart-2))",
   },
   revenue: {
     label: "Revenue",
-    color: "hsl(var(--success))",
+    color: "hsl(var(--chart-3))",
   },
 } satisfies ChartConfig
 
 const pieData = [
-  { name: "Chrome", value: 65, fill: "hsl(var(--primary))" },
-  { name: "Safari", value: 20, fill: "hsl(var(--muted-foreground))" },
-  { name: "Firefox", value: 10, fill: "hsl(var(--secondary))" },
-  { name: "Edge", value: 5, fill: "hsl(var(--destructive))" },
+  { name: "Chrome", value: 65, fill: "hsl(var(--chart-1))" },
+  { name: "Safari", value: 20, fill: "hsl(var(--chart-2))" },
+  { name: "Firefox", value: 10, fill: "hsl(var(--chart-3))" },
+  { name: "Edge", value: 5, fill: "hsl(var(--chart-4))" },
 ]
 
 const radarData = [
@@ -575,7 +577,7 @@ return (
               <ReferenceLine 
                 yAxisId="right" 
                 y={2500} 
-                stroke="hsl(var(--destructive))" 
+                stroke="hsl(var(--muted-foreground))" 
                 strokeDasharray="5 5"
                 label="Target"
               />
