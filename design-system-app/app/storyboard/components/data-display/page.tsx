@@ -32,6 +32,8 @@ import { Button } from "@/components/ui/button"
 import { AccordionEnhancedExample } from "./accordion-enhanced-example"
 import { CollapsibleExample } from "./collapsible-example"
 import { TableExample } from "./table-example"
+import { AvatarExample } from "./avatar-example"
+import { ChartExample } from "./chart-example"
 import { MoreHorizontal, Check, X, Clock } from "lucide-react"
 
 export default function DataDisplayPage() {
@@ -443,99 +445,7 @@ export default function DataDisplayPage() {
       <TableExample />
 
       {/* Avatar Component */}
-      <section className="space-y-8">
-        <div>
-          <h2 className="text-2xl font-semibold mb-4">Avatar</h2>
-          <p className="text-muted-foreground mb-6">
-            Display user profile images with fallback support.
-          </p>
-        </div>
-
-        {/* Avatar Variations */}
-        <PreviewContainer
-          title="Avatar Variations"
-          description="Different avatar states and sizes"
-          code={`{/* With Image */}
-<Avatar>
-  <AvatarImage src="https://github.com/shadcn.png" alt="User" />
-  <AvatarFallback>CN</AvatarFallback>
-</Avatar>
-
-{/* Fallback Only */}
-<Avatar>
-  <AvatarFallback>JD</AvatarFallback>
-</Avatar>
-
-{/* Different Sizes */}
-<Avatar className="h-6 w-6">
-  <AvatarFallback className="text-xs">A</AvatarFallback>
-</Avatar>
-<Avatar>
-  <AvatarFallback>MD</AvatarFallback>
-</Avatar>
-<Avatar className="h-12 w-12">
-  <AvatarFallback className="text-lg">LG</AvatarFallback>
-</Avatar>`}
-          component={
-            <div className="flex items-center gap-4">
-              <Avatar>
-                <AvatarImage src="https://github.com/shadcn.png" alt="User" />
-                <AvatarFallback>CN</AvatarFallback>
-              </Avatar>
-              <Avatar>
-                <AvatarFallback>JD</AvatarFallback>
-              </Avatar>
-              <Avatar className="h-6 w-6">
-                <AvatarFallback className="text-xs">A</AvatarFallback>
-              </Avatar>
-              <Avatar>
-                <AvatarFallback>MD</AvatarFallback>
-              </Avatar>
-              <Avatar className="h-12 w-12">
-                <AvatarFallback className="text-lg">LG</AvatarFallback>
-              </Avatar>
-            </div>
-          }
-        />
-
-        {/* Avatar Group */}
-        <PreviewContainer
-          title="Avatar Group"
-          description="Display multiple avatars together"
-          code={`<div className="flex -space-x-2">
-  <Avatar className="ring-2 ring-background">
-    <AvatarFallback>JD</AvatarFallback>
-  </Avatar>
-  <Avatar className="ring-2 ring-background">
-    <AvatarFallback>AS</AvatarFallback>
-  </Avatar>
-  <Avatar className="ring-2 ring-background">
-    <AvatarFallback>MK</AvatarFallback>
-  </Avatar>
-  <Avatar className="ring-2 ring-background">
-    <AvatarFallback>+3</AvatarFallback>
-  </Avatar>
-</div>`}
-          component={
-            <div className="gap-4">
-              <div className="flex -space-x-2">
-                <Avatar className="ring-2 ring-background">
-                  <AvatarFallback>JD</AvatarFallback>
-                </Avatar>
-                <Avatar className="ring-2 ring-background">
-                  <AvatarFallback>AS</AvatarFallback>
-                </Avatar>
-                <Avatar className="ring-2 ring-background">
-                  <AvatarFallback>MK</AvatarFallback>
-                </Avatar>
-                <Avatar className="ring-2 ring-background">
-                  <AvatarFallback>+3</AvatarFallback>
-                </Avatar>
-              </div>
-            </div>
-          }
-        />
-      </section>
+      <AvatarExample />
 
       {/* Badge Component */}
       <section className="space-y-8">
@@ -750,6 +660,9 @@ export default function DataDisplayPage() {
 
       {/* Collapsible Component */}
       <CollapsibleExample />
+
+      {/* Chart Component */}
+      <ChartExample />
     </div>
   )
 }
